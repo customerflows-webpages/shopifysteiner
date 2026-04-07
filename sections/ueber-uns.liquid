@@ -1,18 +1,14 @@
 <div class="fwb-ueber-uns">
   <div class="fwb-wrap">
 
-    <!-- Hero title -->
     <div class="fwb-ueber-uns__title-block">
-      <h1 class="fwb-display fwb-ueber-uns__title">
-        {{ section.settings.heading | default: 'Grüezi, wir bauen Zukunft.' }}
-      </h1>
+      <h1 class="fwb-display fwb-ueber-uns__title">{{ section.settings.heading | default: 'Grüezi, wir bauen Zukunft.' }}</h1>
     </div>
 
-    <!-- Intro split: text left + two stacked images right -->
     <div class="fwb-ueber-uns__intro-row">
       <div class="fwb-ueber-uns__intro-text">
         <p class="fwb-label">{{ section.settings.label | default: 'Über uns' }}</p>
-        <p class="fwb-body fwb-ueber-uns__lead">{{ section.settings.lead }}</p>
+        <p class="fwb-ueber-uns__lead">{{ section.settings.lead }}</p>
         <p class="fwb-body">{{ section.settings.body }}</p>
       </div>
       <div class="fwb-ueber-uns__intro-images">
@@ -29,19 +25,14 @@
       </div>
     </div>
 
-    <!-- Die Autoren section -->
     <div class="fwb-ueber-uns__autoren">
-
-      {%- if section.settings.team_image != blank -%}
-        <div class="fwb-ueber-uns__team-photo">
+      <div class="fwb-ueber-uns__team-photo">
+        {%- if section.settings.team_image != blank -%}
           <img src="{{ section.settings.team_image | img_url: '1000x' }}" alt="Die Autoren" loading="lazy">
-        </div>
-      {%- else -%}
-        <div class="fwb-ueber-uns__team-photo">
+        {%- else -%}
           <img src="{{ 'ueber-uns-team.jpg' | asset_url }}" alt="Die Autoren" loading="lazy">
-        </div>
-      {%- endif -%}
-
+        {%- endif -%}
+      </div>
       <div class="fwb-ueber-uns__autoren-text">
         <p class="fwb-label">Die Autoren</p>
         <h2 class="fwb-h2 fwb-ueber-uns__autoren-title">{{ section.settings.authors_heading | default: 'Die Autoren' }}</h2>
@@ -49,21 +40,20 @@
       </div>
     </div>
 
-    <!-- Individual founders -->
     <div class="fwb-ueber-uns__founders">
       {%- for block in section.blocks -%}
         <div class="fwb-ueber-uns__founder" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
             <img src="{{ block.settings.image | img_url: '500x' }}" alt="{{ block.settings.name }}" loading="lazy" class="fwb-ueber-uns__founder-portrait">
+          {%- elsif forloop.index == 1 -%}
+            <img src="{{ 'author-rolf-steiner.jpg' | asset_url }}" alt="{{ block.settings.name }}" loading="lazy" class="fwb-ueber-uns__founder-portrait">
+          {%- elsif forloop.index == 2 -%}
+            <img src="{{ 'author-tobias-frick.jpg' | asset_url }}" alt="{{ block.settings.name }}" loading="lazy" class="fwb-ueber-uns__founder-portrait">
           {%- endif -%}
           <div class="fwb-ueber-uns__founder-info">
             <h3 class="fwb-h3 fwb-ueber-uns__founder-name">{{ block.settings.name }}</h3>
-            {%- if block.settings.role != blank -%}
-              <p class="fwb-label">{{ block.settings.role }}</p>
-            {%- endif -%}
-            {%- if block.settings.credentials != blank -%}
-              <p class="fwb-body fwb-ueber-uns__founder-creds">{{ block.settings.credentials }}</p>
-            {%- endif -%}
+            {%- if block.settings.role != blank -%}<p class="fwb-label">{{ block.settings.role }}</p>{%- endif -%}
+            {%- if block.settings.credentials != blank -%}<p class="fwb-body fwb-ueber-uns__founder-creds">{{ block.settings.credentials }}</p>{%- endif -%}
           </div>
         </div>
       {%- endfor -%}
@@ -73,229 +63,55 @@
 </div>
 
 {% stylesheet %}
-  .fwb-ueber-uns {
-    padding-bottom: var(--fwb-section-pad);
-  }
-
-  .fwb-ueber-uns__title-block {
-    padding-block: clamp(4rem, 9vw, 10rem);
-    border-bottom: 1px solid var(--fwb-grey-200);
-    margin-bottom: clamp(4rem, 8vw, 8rem);
-  }
-
-  .fwb-ueber-uns__title {
-    font-weight: 300;
-    max-width: 700px;
-  }
-
-  .fwb-ueber-uns__intro-row {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: clamp(3rem, 6vw, 8rem);
-    align-items: start;
-    margin-bottom: clamp(5rem, 10vw, 12rem);
-  }
-
-  .fwb-ueber-uns__intro-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .fwb-ueber-uns__lead {
-    font-family: var(--fwb-font-heading);
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--fwb-text);
-    line-height: 1.5;
-  }
-
-  .fwb-ueber-uns__intro-images {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .fwb-ueber-uns__intro-images img {
-    width: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-  }
-
-  .fwb-ueber-uns__img-top {
-    aspect-ratio: 4/3;
-  }
-
-  .fwb-ueber-uns__img-bottom {
-    aspect-ratio: 16/9;
-  }
-
-  .fwb-ueber-uns__autoren {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(3rem, 6vw, 8rem);
-    align-items: center;
-    margin-bottom: clamp(5rem, 10vw, 10rem);
-    padding-top: clamp(3rem, 5vw, 5rem);
-    border-top: 1px solid var(--fwb-grey-200);
-  }
-
-  .fwb-ueber-uns__team-photo img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    object-position: top;
-    filter: grayscale(20%);
-  }
-
-  .fwb-ueber-uns__autoren-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .fwb-ueber-uns__autoren-title {
-    font-style: italic;
-  }
-
-  .fwb-ueber-uns__founders {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(2rem, 5vw, 6rem);
-  }
-
-  .fwb-ueber-uns__founder {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .fwb-ueber-uns__founder-portrait {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    object-position: top;
-    filter: grayscale(15%);
-  }
-
-  .fwb-ueber-uns__founder-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .fwb-ueber-uns__founder-name {
-    font-size: 1.3rem;
-  }
-
-  .fwb-ueber-uns__founder-creds {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: var(--fwb-grey-500);
-  }
-
-  @media (max-width: 768px) {
-    .fwb-ueber-uns__intro-row,
-    .fwb-ueber-uns__autoren {
-      grid-template-columns: 1fr;
-    }
-
-    .fwb-ueber-uns__founders {
-      grid-template-columns: 1fr;
-    }
-  }
+  .fwb-ueber-uns { padding-bottom: var(--fwb-section-pad); }
+  .fwb-ueber-uns__title-block { padding-block: clamp(4rem,9vw,10rem); border-bottom: 1px solid var(--fwb-grey-200); margin-bottom: clamp(4rem,8vw,8rem); }
+  .fwb-ueber-uns__title { font-weight: 300; max-width: 700px; }
+  .fwb-ueber-uns__intro-row { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(3rem,6vw,8rem); align-items: start; margin-bottom: clamp(5rem,10vw,12rem); }
+  .fwb-ueber-uns__intro-text { display: flex; flex-direction: column; gap: 1.5rem; }
+  .fwb-ueber-uns__lead { font-family: var(--fwb-font-heading); font-size: clamp(1.1rem,1.8vw,1.5rem); font-weight: 300; font-style: italic; line-height: 1.5; }
+  .fwb-ueber-uns__intro-images { display: flex; flex-direction: column; gap: 1.5rem; }
+  .fwb-ueber-uns__intro-images img { width: 100%; object-fit: cover; filter: grayscale(100%); }
+  .fwb-ueber-uns__img-top { aspect-ratio: 4/3; }
+  .fwb-ueber-uns__img-bottom { aspect-ratio: 16/9; }
+  .fwb-ueber-uns__autoren { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,8rem); align-items: center; margin-bottom: clamp(5rem,10vw,10rem); padding-top: clamp(3rem,5vw,5rem); border-top: 1px solid var(--fwb-grey-200); }
+  .fwb-ueber-uns__team-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; filter: grayscale(20%); }
+  .fwb-ueber-uns__autoren-text { display: flex; flex-direction: column; gap: 1.25rem; }
+  .fwb-ueber-uns__autoren-title { font-style: italic; }
+  .fwb-ueber-uns__founders { display: grid; grid-template-columns: repeat(2,1fr); gap: clamp(2rem,5vw,6rem); }
+  .fwb-ueber-uns__founder { display: flex; flex-direction: column; gap: 1.25rem; }
+  .fwb-ueber-uns__founder-portrait { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; filter: grayscale(15%); }
+  .fwb-ueber-uns__founder-info { display: flex; flex-direction: column; gap: 0.5rem; }
+  .fwb-ueber-uns__founder-name { font-size: 1.3rem; }
+  .fwb-ueber-uns__founder-creds { font-size: 0.8rem; font-style: italic; color: var(--fwb-grey-500); }
+  @media (max-width: 768px) { .fwb-ueber-uns__intro-row, .fwb-ueber-uns__autoren, .fwb-ueber-uns__founders { grid-template-columns: 1fr; } }
 {% endstylesheet %}
 
 {% schema %}
 {
   "name": "Über uns Seite",
   "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Hauptüberschrift",
-      "default": "Grüezi, wir bauen Zukunft."
-    },
-    {
-      "type": "text",
-      "id": "label",
-      "label": "Label",
-      "default": "Über uns"
-    },
-    {
-      "type": "textarea",
-      "id": "lead",
-      "label": "Lead Text",
-      "default": "FachWissenBau ist das Kompetenznetzwerk für die Schweizer Bauwirtschaft."
-    },
-    {
-      "type": "textarea",
-      "id": "body",
-      "label": "Fliesstext",
-      "default": "Als Verlag gegründet, entwickeln wir heute ein umfassendes Ökosystem aus Fachpublikationen, Weiterbildung, Beratung und Vernetzung. Gemeinsam mit führenden Unternehmen, Bauherren, Lieferanten und Bildungspartnern setzen wir neue Standards für eine innovative und nachhaltige Bauwirtschaft.\n\nUnser Ziel ist es, Wissen zu teilen, Kompetenzen zu stärken und Zukunft zu gestalten. Mit Leidenschaft, Weitsicht und einem starken Netzwerk.\n\nSchön, dass Sie den Weg zu uns gefunden haben."
-    },
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "Bild oben rechts"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Bild unten rechts"
-    },
-    {
-      "type": "image_picker",
-      "id": "team_image",
-      "label": "Teambild (Die Autoren)"
-    },
-    {
-      "type": "text",
-      "id": "authors_heading",
-      "label": "Autoren Überschrift",
-      "default": "Die Autoren"
-    },
-    {
-      "type": "textarea",
-      "id": "authors_intro",
-      "label": "Autoren Einleitungstext",
-      "default": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland."
-    }
+    { "type": "text", "id": "heading", "label": "Hauptüberschrift", "default": "Grüezi, wir bauen Zukunft." },
+    { "type": "text", "id": "label", "label": "Label", "default": "Über uns" },
+    { "type": "textarea", "id": "lead", "label": "Lead Text", "default": "FachWissenBau ist das Kompetenznetzwerk für die Schweizer Bauwirtschaft." },
+    { "type": "textarea", "id": "body", "label": "Fliesstext", "default": "Als Verlag gegründet, entwickeln wir heute ein umfassendes Ökosystem aus Fachpublikationen, Weiterbildung, Beratung und Vernetzung. Gemeinsam mit führenden Unternehmen, Bauherren, Lieferanten und Bildungspartnern setzen wir neue Standards für eine innovative und nachhaltige Bauwirtschaft.\n\nUnser Ziel ist es, Wissen zu teilen, Kompetenzen zu stärken und Zukunft zu gestalten. Mit Leidenschaft, Weitsicht und einem starken Netzwerk.\n\nSchön, dass Sie den Weg zu uns gefunden haben." },
+    { "type": "image_picker", "id": "image_1", "label": "Bild oben rechts" },
+    { "type": "image_picker", "id": "image_2", "label": "Bild unten rechts" },
+    { "type": "image_picker", "id": "team_image", "label": "Teambild" },
+    { "type": "text", "id": "authors_heading", "label": "Autoren Überschrift", "default": "Die Autoren" },
+    { "type": "textarea", "id": "authors_intro", "label": "Autoren Einleitungstext", "default": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland." }
   ],
   "blocks": [
     {
       "type": "founder",
       "name": "Gründer",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Portraitbild"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Name"
-        },
-        {
-          "type": "text",
-          "id": "role",
-          "label": "Funktion",
-          "default": "Inhaber und Partner"
-        },
-        {
-          "type": "text",
-          "id": "credentials",
-          "label": "Titel / Abschlüsse"
-        }
+        { "type": "image_picker", "id": "image", "label": "Portraitbild" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "role", "label": "Funktion", "default": "Inhaber und Partner" },
+        { "type": "text", "id": "credentials", "label": "Titel / Abschlüsse" }
       ]
     }
   ],
-  "presets": [
-    {
-      "name": "Über uns Seite"
-    }
-  ]
+  "presets": [{ "name": "Über uns Seite" }]
 }
 {% endschema %}
