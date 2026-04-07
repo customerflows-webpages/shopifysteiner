@@ -5,36 +5,40 @@
       <img
         src="{{ 'logo.jpg' | asset_url }}"
         alt="{{ shop.name }}"
-        width="80"
-        height="40"
+        width="100"
+        height="44"
         loading="eager"
       >
     </a>
-
-    <button class="fwb-header__burger" id="fwb-burger" aria-label="Menü öffnen" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
 
     <nav class="fwb-header__nav" id="fwb-nav" aria-label="Hauptnavigation">
       {% for link in section.settings.menu.links %}
         <a
           href="{{ link.url }}"
           class="fwb-header__nav-link{% if link.active %} is-active{% endif %}"
-        >
-          {{ link.title }}
-        </a>
+        >{{ link.title }}</a>
       {% endfor %}
     </nav>
 
     <div class="fwb-header__actions">
-      <a href="{{ routes.cart_url }}" class="fwb-header__cart" aria-label="Warenkorb">
+      <a href="{{ routes.cart_url }}" class="fwb-header__cart" aria-label="Warenkorb ({{ cart.item_count }})">
         {{ 'icon-cart.svg' | inline_asset_content }}
         {% if cart.item_count > 0 %}
           <span class="fwb-header__cart-count">{{ cart.item_count }}</span>
         {% endif %}
       </a>
+      <button class="fwb-header__burger" id="fwb-burger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </div>
 
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="fwb-header__mobile-nav" id="fwb-mobile-nav" aria-hidden="true">
+    {% for link in section.settings.menu.links %}
+      <a href="{{ link.url }}" class="fwb-header__mobile-link">{{ link.title }}</a>
+    {% endfor %}
   </div>
 </header>
 
@@ -42,66 +46,94 @@
   .fwb-header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: var(--fwb-white);
+    z-index: 200;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--fwb-grey-200);
-    transition: box-shadow var(--fwb-transition);
+    transition: box-shadow 0.3s ease;
   }
 
   .fwb-header.is-scrolled {
-    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.07);
   }
 
   .fwb-header__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    gap: 2rem;
+    height: 68px;
+    gap: 3rem;
+  }
+
+  .fwb-header__logo {
+    flex-shrink: 0;
   }
 
   .fwb-header__logo img {
-    height: 36px;
+    height: 38px;
     width: auto;
     object-fit: contain;
+    display: block;
   }
 
   .fwb-header__nav {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1.2rem, 2.5vw, 2.5rem);
     flex: 1;
     justify-content: center;
   }
 
   .fwb-header__nav-link {
     font-family: var(--fwb-font-body);
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     font-weight: 400;
-    letter-spacing: 0.05em;
-    color: var(--fwb-text);
+    letter-spacing: 0.04em;
+    color: var(--fwb-grey-700);
     transition: color var(--fwb-transition);
-    white-space: nowrap;
+    position: relative;
+    padding-bottom: 1px;
+  }
+
+  .fwb-header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--fwb-black);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+    transform-origin: left;
   }
 
   .fwb-header__nav-link:hover,
   .fwb-header__nav-link.is-active {
     color: var(--fwb-black);
-    border-bottom: 1px solid var(--fwb-black);
+  }
+
+  .fwb-header__nav-link:hover::after,
+  .fwb-header__nav-link.is-active::after {
+    transform: scaleX(1);
   }
 
   .fwb-header__actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
+    flex-shrink: 0;
   }
 
   .fwb-header__cart {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
     position: relative;
+    color: var(--fwb-black);
+    transition: opacity var(--fwb-transition);
   }
+
+  .fwb-header__cart:hover { opacity: 0.6; }
 
   .fwb-header__cart svg {
     width: 20px;
@@ -109,25 +141,25 @@
   }
 
   .fwb-header__cart-count {
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.6rem;
+    font-weight: 600;
     background: var(--fwb-black);
     color: var(--fwb-white);
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -6px;
-    right: -8px;
+    top: -5px;
+    right: -7px;
   }
 
   .fwb-header__burger {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
     padding: 4px;
     background: none;
     border: none;
@@ -136,67 +168,64 @@
 
   .fwb-header__burger span {
     display: block;
-    width: 22px;
+    width: 20px;
     height: 1px;
     background: var(--fwb-black);
-    transition: transform var(--fwb-transition), opacity var(--fwb-transition);
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
-  .fwb-header__burger.is-open span:first-child {
-    transform: translateY(6px) rotate(45deg);
+  .fwb-header__burger[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+  .fwb-header__burger[aria-expanded="true"] span:last-child  { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile nav panel */
+  .fwb-header__mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--fwb-white);
+    border-top: 1px solid var(--fwb-grey-200);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
   }
 
-  .fwb-header__burger.is-open span:nth-child(2) {
-    opacity: 0;
+  .fwb-header__mobile-nav.is-open {
+    max-height: 400px;
   }
 
-  .fwb-header__burger.is-open span:last-child {
-    transform: translateY(-6px) rotate(-45deg);
+  .fwb-header__mobile-link {
+    display: block;
+    padding: 0.9rem var(--fwb-gutter);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--fwb-grey-700);
+    border-bottom: 1px solid var(--fwb-grey-100);
+    transition: color var(--fwb-transition);
   }
 
-  @media (max-width: 768px) {
+  .fwb-header__mobile-link:hover { color: var(--fwb-black); }
+
+  @media (max-width: 860px) {
     .fwb-header__burger { display: flex; }
-
-    .fwb-header__nav {
-      display: none;
-      position: absolute;
-      top: 64px;
-      left: 0;
-      right: 0;
-      background: var(--fwb-white);
-      border-top: 1px solid var(--fwb-grey-200);
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-      padding: 1rem 0;
-    }
-
-    .fwb-header__nav.is-open {
-      display: flex;
-    }
-
-    .fwb-header__nav-link {
-      width: 100%;
-      padding: 0.75rem var(--fwb-gutter);
-      border-bottom: none !important;
-      font-size: 0.9rem;
-    }
+    .fwb-header__nav { display: none; }
+    .fwb-header__mobile-nav { display: flex; }
+    .fwb-header__inner { gap: 1rem; }
   }
 {% endstylesheet %}
 
 {% javascript %}
   const header = document.getElementById('fwb-header');
   const burger = document.getElementById('fwb-burger');
-  const nav = document.getElementById('fwb-nav');
+  const mobileNav = document.getElementById('fwb-mobile-nav');
 
   window.addEventListener('scroll', () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 20);
-  });
+    header.classList.toggle('is-scrolled', window.scrollY > 10);
+  }, { passive: true });
 
   burger.addEventListener('click', () => {
-    const open = burger.classList.toggle('is-open');
-    nav.classList.toggle('is-open', open);
-    burger.setAttribute('aria-expanded', open);
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mobileNav.classList.toggle('is-open', !open);
+    mobileNav.setAttribute('aria-hidden', String(open));
   });
 {% endjavascript %}
 
@@ -204,12 +233,7 @@
 {
   "name": "Header",
   "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Navigationsmenü",
-      "default": "main-menu"
-    }
+    { "type": "link_list", "id": "menu", "label": "Navigationsmenü", "default": "main-menu" }
   ]
 }
 {% endschema %}

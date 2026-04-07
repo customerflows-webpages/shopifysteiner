@@ -1,7 +1,7 @@
 <div class="fwb-hero full-width">
   <div class="fwb-hero__bg">
     {%- if section.settings.image != blank -%}
-      <img src="{{ section.settings.image | img_url: '1800x' }}" alt="{{ section.settings.image.alt | escape }}" class="fwb-hero__img" loading="eager" fetchpriority="high">
+      <img src="{{ section.settings.image | img_url: '1800x' }}" alt="" class="fwb-hero__img" loading="eager" fetchpriority="high">
     {%- else -%}
       <img src="{{ 'hero-bg.jpg' | asset_url }}" alt="" class="fwb-hero__img" loading="eager" fetchpriority="high">
     {%- endif -%}
@@ -9,24 +9,27 @@
   </div>
 
   <div class="fwb-hero__content fwb-wrap">
-    {%- if section.settings.heading != blank -%}
-      <h1 class="fwb-hero__heading fwb-display">{{ section.settings.heading }}</h1>
-    {%- endif -%}
-    {%- if section.settings.subheading != blank -%}
-      <p class="fwb-hero__sub">{{ section.settings.subheading }}</p>
-    {%- endif -%}
-    {%- if section.settings.cta_label != blank -%}
-      <a href="{{ section.settings.cta_url }}" class="fwb-btn fwb-hero__cta">{{ section.settings.cta_label }}</a>
-    {%- endif -%}
+    <div class="fwb-hero__inner">
+      <p class="fwb-hero__label fwb-label">FachWissenBau</p>
+      <h1 class="fwb-hero__heading">{{ section.settings.heading | default: 'Fachkompetenz für Bau und Infrastruktur.' }}</h1>
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url | default: '/collections/verlag' }}" class="fwb-btn fwb-hero__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+    </div>
+    <div class="fwb-hero__scroll-hint" aria-hidden="true">
+      <span class="fwb-hero__scroll-line"></span>
+    </div>
   </div>
 </div>
 
 {% stylesheet %}
   .fwb-hero {
     position: relative;
-    min-height: clamp(420px, 65vh, 700px);
+    height: 100svh;
+    min-height: 560px;
+    max-height: 900px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
   }
   .fwb-hero__bg {
     position: absolute;
@@ -37,42 +40,74 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
-    filter: grayscale(100%) contrast(1.05);
+    object-position: center 35%;
+    filter: grayscale(100%) contrast(1.08) brightness(0.9);
   }
   .fwb-hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.04) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0.18) 40%,
+      rgba(0,0,0,0.72) 100%
+    );
   }
   .fwb-hero__content {
     position: relative;
     z-index: 1;
-    max-width: 760px;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-bottom: clamp(3rem, 6vw, 6rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .fwb-hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 680px;
+  }
+  .fwb-hero__label {
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.18em;
   }
   .fwb-hero__heading {
-    color: var(--fwb-white);
-    text-shadow: 0 1px 20px rgba(0,0,0,0.2);
-    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(2.2rem, 5.5vw, 5rem);
     font-weight: 300;
-  }
-  .fwb-hero__sub {
-    color: rgba(255,255,255,0.85);
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
-    margin-top: 1.2rem;
-    max-width: 540px;
-    line-height: 1.7;
+    line-height: 1.05;
+    color: var(--fwb-white);
+    letter-spacing: -0.01em;
   }
   .fwb-hero__cta {
-    margin-top: 2rem;
-    border-color: rgba(255,255,255,0.9);
+    align-self: flex-start;
+    border-color: rgba(255,255,255,0.7);
     color: var(--fwb-white);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
   }
   .fwb-hero__cta:hover {
     background: var(--fwb-white);
     color: var(--fwb-black);
+    border-color: var(--fwb-white);
+  }
+  .fwb-hero__scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0.5rem;
+  }
+  .fwb-hero__scroll-line {
+    display: block;
+    width: 1px;
+    height: clamp(40px, 6vh, 70px);
+    background: rgba(255,255,255,0.4);
+  }
+  @media (max-width: 640px) {
+    .fwb-hero { max-height: 700px; }
+    .fwb-hero__scroll-hint { display: none; }
+    .fwb-hero__content { padding-bottom: 2.5rem; }
   }
 {% endstylesheet %}
 
@@ -82,8 +117,7 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hintergrundbild" },
     { "type": "textarea", "id": "heading", "label": "Überschrift", "default": "Fachkompetenz für Bau und Infrastruktur – präzise, praxisnah, zukunftsstark." },
-    { "type": "text", "id": "subheading", "label": "Unterzeile" },
-    { "type": "text", "id": "cta_label", "label": "Button Text" },
+    { "type": "text", "id": "cta_label", "label": "Button Text", "default": "Zum Verlag" },
     { "type": "url", "id": "cta_url", "label": "Button Link" }
   ],
   "presets": [{ "name": "Hero" }]

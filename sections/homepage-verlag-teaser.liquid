@@ -2,28 +2,62 @@
   <div class="fwb-wrap fwb-verlag-teaser__inner">
     <div class="fwb-verlag-teaser__image">
       {%- if section.settings.image != blank -%}
-        <img src="{{ section.settings.image | img_url: '900x' }}" alt="{{ section.settings.image.alt | escape }}" loading="lazy">
+        <img src="{{ section.settings.image | img_url: '900x' }}" alt="FachWissenBau Bücher" loading="lazy">
       {%- else -%}
         <img src="{{ 'homepage-books-mockup.jpg' | asset_url }}" alt="FachWissenBau Bücher" loading="lazy">
       {%- endif -%}
     </div>
     <div class="fwb-verlag-teaser__text">
-      {%- if section.settings.label != blank -%}<p class="fwb-label">{{ section.settings.label }}</p>{%- endif -%}
-      {%- if section.settings.heading != blank -%}<h2 class="fwb-h2">{{ section.settings.heading }}</h2>{%- endif -%}
-      {%- if section.settings.body != blank -%}<p class="fwb-body">{{ section.settings.body }}</p>{%- endif -%}
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fwb-verlag-teaser__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <p class="fwb-body">{{ section.settings.body }}</p>
+      {%- endif -%}
       {%- if section.settings.cta_label != blank -%}
-        <a href="{{ section.settings.cta_url }}" class="fwb-btn" style="align-self:flex-start;margin-top:0.75rem;">{{ section.settings.cta_label }}</a>
+        <a href="{{ section.settings.cta_url | default: '/collections/verlag' }}" class="fwb-btn">{{ section.settings.cta_label }}</a>
       {%- endif -%}
     </div>
   </div>
 </div>
 
 {% stylesheet %}
-  .fwb-verlag-teaser { padding-block: var(--fwb-section-pad); background: var(--fwb-white); }
-  .fwb-verlag-teaser__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,8rem); align-items: center; }
-  .fwb-verlag-teaser__image img { width: 100%; object-fit: contain; max-height: 520px; }
-  .fwb-verlag-teaser__text { display: flex; flex-direction: column; gap: 1.25rem; }
-  @media (max-width: 768px) { .fwb-verlag-teaser__inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .fwb-verlag-teaser { padding-block: var(--fwb-section-pad); }
+  .fwb-verlag-teaser__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(4rem, 8vw, 10rem);
+    align-items: center;
+  }
+  .fwb-verlag-teaser__image img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 560px;
+  }
+  .fwb-verlag-teaser__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .fwb-verlag-teaser__heading {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+    font-style: italic;
+  }
+  .fwb-verlag-teaser__text .fwb-body {
+    max-width: 420px;
+    line-height: 1.85;
+  }
+  .fwb-verlag-teaser__text .fwb-btn { align-self: flex-start; }
+  @media (max-width: 768px) {
+    .fwb-verlag-teaser__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .fwb-verlag-teaser__text .fwb-body { max-width: 100%; }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -32,10 +66,10 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Buchbild" },
     { "type": "text", "id": "label", "label": "Label", "default": "Verlag" },
-    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Bauwissen lohnt sich." },
-    { "type": "textarea", "id": "body", "label": "Text", "default": "Bauwissen direkt von den Profis – verständlich, kompakt und voller Praxis. Für alle, die auf der Baustelle oder im Studium den Durchblick wollen." },
-    { "type": "text", "id": "cta_label", "label": "Button Text", "default": "Mehr erfahren" },
-    { "type": "url", "id": "cta_url", "label": "Button Link", "default": "/collections/all" }
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Bereit zum Blättern." },
+    { "type": "textarea", "id": "body", "label": "Text", "default": "Fundiertes Wissen für die Schweizer Bauwirtschaft – präzise aufbereitet, praxisnah verfasst und direkt anwendbar. Für alle, die auf der Baustelle und im Studium den Durchblick wollen." },
+    { "type": "text", "id": "cta_label", "label": "Button Text", "default": "Zum Verlag" },
+    { "type": "url", "id": "cta_url", "label": "Button Link" }
   ],
   "presets": [{ "name": "Verlag Teaser" }]
 }
