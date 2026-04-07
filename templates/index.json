@@ -1,20 +1,60 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "hello-world",
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Fachkompetenz für Bau und Infrastruktur – präzise, praxisnah, zukunftsstark.",
+        "subheading": "",
+        "cta_label": "",
+        "cta_url": ""
+      }
+    },
+    "verlag_teaser": {
+      "type": "homepage-verlag-teaser",
+      "settings": {
+        "label": "Verlag",
+        "heading": "Bachwissen lohnt sich.",
+        "body": "Bachwissen direkt von den Profis – verständlich, kompakt und voller Praxis. Für alle, die auf der Baustelle oder im Studium den Durchblick wollen.",
+        "cta_label": "Mehr erfahren",
+        "cta_url": "/collections/all"
+      }
+    },
+    "academy_teaser": {
+      "type": "homepage-academy-teaser",
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "label": "Academy",
+        "heading": "Wer wirklich mitreden will, muss mehr wissen.",
+        "body": "In der FWB Academy trifft Erfahrung auf frische Ideen – kompakt, praxisnah und bereit für den nächsten Bauprojekt.",
+        "cta_label": "Mehr erfahren",
+        "cta_url": "/pages/academy"
+      }
+    },
+    "book_grid": {
+      "type": "book-grid",
+      "settings": {
+        "bg_color": "#ffffff",
+        "heading": "Bereit zum Blättern."
+      }
+    },
+    "coming_soon": {
+      "type": "coming-soon",
+      "settings": {
+        "heading": "Kommt bald. Baut auf Qualität.",
+        "note": "Diese Bücher befinden sich aktuell in Arbeit. Die Inhalte werden entwickelt, strukturiert und sorgfältig aufgebaut. Weitere Informationen folgen bald."
+      }
+    },
+    "verlag_grid": {
+      "type": "verlag-collection",
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "hero",
+    "verlag_teaser",
+    "academy_teaser",
+    "book_grid",
+    "coming_soon",
+    "verlag_grid"
   ]
 }

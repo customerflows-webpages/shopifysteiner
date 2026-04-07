@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "academy",
+      "settings": {
+        "heading": "FWB Academy – Weil kluge Köpfe besser bauen.",
+        "body_1": "Erfahrene Referentinnen und Referenten vermitteln aktuelles Know-how mit Relevanz für die Praxis – präzise, dialogorientiert und stets mit Blick auf konkrete Herausforderungen im Baualltag. Dabei geht es nicht nur ums Zuhören, sondern ums Mitreden, Reflektieren und direkt Anwenden.",
+        "body_2": "In der FWB Academy trifft Fachkompetenz auf Praxisnähe – und das in einem Rahmen, der so persönlich wie professionell ist. Hier entsteht Raum für Menschen, die im Bauwesen nicht nur mitarbeiten, sondern mitdenken und mitgestalten wollen. Unsere massgeschneiderten Kurse und Diskussionsrunden sind genau dort angesiedelt, wo Wissen Wirkung entfaltet: nah am Arbeitsalltag, fundiert im Inhalt und inspiriert durch Erfahrung.",
+        "body_3": "Die FWB Academy versteht sich als lebendiger Ort des Lernens und Netzwerkens, an dem nicht nur Wissen weitergegeben, sondern auch Perspektiven gewechselt und Zukunft gedacht wird. Persönlich. Kompetent. Mit Substanz."
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,275 @@
+<div class="fwb-testimonials" style="background: {{ section.settings.bg_color }};">
+  <div class="fwb-wrap">
+
+    {%- if section.settings.heading != blank -%}
+      <p class="fwb-testimonials__tagline fwb-h2 fwb-text-center">{{ section.settings.heading }}</p>
+    {%- endif -%}
+
+    <div class="fwb-testimonials__track-wrap">
+      <div class="fwb-testimonials__track" id="fwb-testimonials-track">
+        {%- for block in section.blocks -%}
+          <div class="fwb-testimonials__slide" {{ block.shopify_attributes }}>
+            <blockquote class="fwb-testimonials__quote">
+              <p class="fwb-testimonials__text">{{ block.settings.quote }}</p>
+              <footer class="fwb-testimonials__attribution">
+                {%- if block.settings.avatar != blank -%}
+                  <img
+                    src="{{ block.settings.avatar | img_url: '100x100', crop: 'center' }}"
+                    alt="{{ block.settings.name }}"
+                    class="fwb-testimonials__avatar"
+                    loading="lazy"
+                  >
+                {%- endif -%}
+                <div class="fwb-testimonials__meta">
+                  {%- if block.settings.name != blank -%}
+                    <cite class="fwb-testimonials__name">{{ block.settings.name }}</cite>
+                  {%- endif -%}
+                  {%- if block.settings.role != blank -%}
+                    <span class="fwb-testimonials__role">{{ block.settings.role }}</span>
+                  {%- endif -%}
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="fwb-testimonials__controls">
+        <button class="fwb-testimonials__btn" id="fwb-testi-prev" aria-label="Zurück">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="fwb-testimonials__dots" id="fwb-testi-dots"></div>
+        <button class="fwb-testimonials__btn" id="fwb-testi-next" aria-label="Weiter">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .fwb-testimonials {
+    padding-block: var(--fwb-section-pad);
+    overflow: hidden;
+  }
+
+  .fwb-testimonials__tagline {
+    margin-bottom: clamp(2.5rem, 5vw, 5rem);
+    font-style: italic;
+  }
+
+  .fwb-testimonials__track-wrap {
+    position: relative;
+  }
+
+  .fwb-testimonials__track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .fwb-testimonials__slide {
+    min-width: 100%;
+    padding-inline: clamp(1rem, 8vw, 10rem);
+  }
+
+  .fwb-testimonials__quote {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-style: normal;
+  }
+
+  .fwb-testimonials__text {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--fwb-text);
+    text-align: center;
+    position: relative;
+  }
+
+  .fwb-testimonials__text::before {
+    content: '\201C';
+    font-size: 5rem;
+    line-height: 0;
+    vertical-align: -2.5rem;
+    color: var(--fwb-grey-300);
+    font-family: var(--fwb-font-heading);
+    margin-right: 0.25rem;
+  }
+
+  .fwb-testimonials__attribution {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .fwb-testimonials__avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
+
+  .fwb-testimonials__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .fwb-testimonials__name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--fwb-text);
+  }
+
+  .fwb-testimonials__role {
+    font-size: 0.72rem;
+    color: var(--fwb-grey-500);
+    letter-spacing: 0.04em;
+  }
+
+  .fwb-testimonials__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .fwb-testimonials__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--fwb-grey-300);
+    background: transparent;
+    cursor: pointer;
+    color: var(--fwb-text);
+    transition: border-color var(--fwb-transition), background var(--fwb-transition);
+  }
+
+  .fwb-testimonials__btn:hover {
+    border-color: var(--fwb-black);
+    background: var(--fwb-black);
+    color: var(--fwb-white);
+  }
+
+  .fwb-testimonials__dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .fwb-testimonials__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--fwb-grey-300);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background var(--fwb-transition), transform var(--fwb-transition);
+  }
+
+  .fwb-testimonials__dot.is-active {
+    background: var(--fwb-black);
+    transform: scale(1.3);
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  (function() {
+    const track = document.getElementById('fwb-testimonials-track');
+    if (!track) return;
+
+    const slides = track.querySelectorAll('.fwb-testimonials__slide');
+    const dotsWrap = document.getElementById('fwb-testi-dots');
+    const prevBtn = document.getElementById('fwb-testi-prev');
+    const nextBtn = document.getElementById('fwb-testi-next');
+    let current = 0;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'fwb-testimonials__dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Seite ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsWrap.querySelectorAll('.fwb-testimonials__dot').forEach((d, i) => {
+        d.classList.toggle('is-active', i === current);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Auto-advance
+    let timer = setInterval(() => goTo(current + 1), 6000);
+    track.addEventListener('mouseenter', () => clearInterval(timer));
+    track.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), 6000); });
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#f7f7f5"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Zitat"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Portraitbild"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Funktion / Organisation"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

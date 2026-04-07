@@ -1,76 +1,214 @@
-<header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
+<header class="fwb-header" id="fwb-header">
+  <div class="fwb-header__inner fwb-wrap">
 
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
-
-  <div class="header__icons">
-    {% if shop.customer_accounts_enabled %}
-      <shopify-account menu="{{ section.settings.customer_account_menu }}">
-        {{ 'icon-account.svg' | inline_asset_content }}
-      </shopify-account>
-    {% endif %}
-
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
-      {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
+    <a href="{{ routes.root_url }}" class="fwb-header__logo" aria-label="{{ shop.name }}">
+      <img
+        src="{{ 'logo.png' | asset_url }}"
+        alt="{{ shop.name }}"
+        width="80"
+        height="40"
+        loading="eager"
+      >
     </a>
+
+    <button class="fwb-header__burger" id="fwb-burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="fwb-header__nav" id="fwb-nav" aria-label="Hauptnavigation">
+      {% for link in section.settings.menu.links %}
+        <a
+          href="{{ link.url }}"
+          class="fwb-header__nav-link{% if link.active %} is-active{% endif %}"
+        >
+          {{ link.title }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <div class="fwb-header__actions">
+      <a href="{{ routes.cart_url }}" class="fwb-header__cart" aria-label="Warenkorb">
+        {{ 'icon-cart.svg' | inline_asset_content }}
+        {% if cart.item_count > 0 %}
+          <span class="fwb-header__cart-count">{{ cart.item_count }}</span>
+        {% endif %}
+      </a>
+    </div>
+
   </div>
 </header>
 
 {% stylesheet %}
-  header {
-    height: 5rem;
+  .fwb-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--fwb-white);
+    border-bottom: 1px solid var(--fwb-grey-200);
+    transition: box-shadow var(--fwb-transition);
+  }
+
+  .fwb-header.is-scrolled {
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  }
+
+  .fwb-header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 64px;
+    gap: 2rem;
   }
-  header a {
+
+  .fwb-header__logo img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .fwb-header__nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    flex: 1;
+    justify-content: center;
+  }
+
+  .fwb-header__nav-link {
+    font-family: var(--fwb-font-body);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--fwb-text);
+    transition: color var(--fwb-transition);
+    white-space: nowrap;
+  }
+
+  .fwb-header__nav-link:hover,
+  .fwb-header__nav-link.is-active {
+    color: var(--fwb-black);
+    border-bottom: 1px solid var(--fwb-black);
+  }
+
+  .fwb-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fwb-header__cart {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
     position: relative;
-    text-decoration: none;
-    color: var(--color-foreground);
+  }
+
+  .fwb-header__cart svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .fwb-header__cart-count {
+    font-size: 0.65rem;
+    font-weight: 500;
+    background: var(--fwb-black);
+    color: var(--fwb-white);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  header a sup {
     position: absolute;
-    left: 100%;
-    overflow: hidden;
-    max-width: var(--page-margin);
+    top: -6px;
+    right: -8px;
   }
-  header svg {
-    width: 2rem;
+
+  .fwb-header__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
-  header .header__menu,
-  header .header__icons {
-    display: flex;
-    gap: 1rem;
+
+  .fwb-header__burger span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--fwb-black);
+    transition: transform var(--fwb-transition), opacity var(--fwb-transition);
+  }
+
+  .fwb-header__burger.is-open span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .fwb-header__burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .fwb-header__burger.is-open span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .fwb-header__burger { display: flex; }
+
+    .fwb-header__nav {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--fwb-white);
+      border-top: 1px solid var(--fwb-grey-200);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 1rem 0;
+    }
+
+    .fwb-header__nav.is-open {
+      display: flex;
+    }
+
+    .fwb-header__nav-link {
+      width: 100%;
+      padding: 0.75rem var(--fwb-gutter);
+      border-bottom: none !important;
+      font-size: 0.9rem;
+    }
   }
 {% endstylesheet %}
 
+{% javascript %}
+  const header = document.getElementById('fwb-header');
+  const burger = document.getElementById('fwb-burger');
+  const nav = document.getElementById('fwb-nav');
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 20);
+  });
+
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('is-open');
+    nav.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open);
+  });
+{% endjavascript %}
+
 {% schema %}
 {
-  "name": "t:general.header",
+  "name": "Header",
   "settings": [
     {
       "type": "link_list",
       "id": "menu",
-      "label": "t:labels.menu"
-    },
-    {
-      "type": "link_list",
-      "id": "customer_account_menu",
-      "label": "t:labels.customer_account_menu",
-      "default": "customer-account-main-menu"
+      "label": "Navigationsmenü",
+      "default": "main-menu"
     }
   ]
 }

@@ -1,0 +1,148 @@
+<div class="fwb-verlag">
+
+  <div class="fwb-verlag__hero full-width">
+    <img src="{{ 'verlag-hero.jpg' | asset_url }}" alt="Verlag" class="fwb-verlag__hero-img" loading="eager" fetchpriority="high">
+    <div class="fwb-verlag__hero-overlay"></div>
+  </div>
+
+  <div class="fwb-wrap">
+    <div class="fwb-verlag__header">
+      <p class="fwb-label">FachWissenBau</p>
+      <h1 class="fwb-display fwb-verlag__title">{{ collection.title | default: 'Verlag' }}</h1>
+      {%- if collection.description != blank -%}
+        <p class="fwb-body fwb-verlag__desc">{{ collection.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="fwb-verlag__grid">
+      {%- for product in collection.products -%}
+        <article class="fwb-verlag__card">
+          <a href="{{ product.url }}" class="fwb-verlag__card-image">
+            {%- if product.featured_image != blank -%}
+              <img
+                src="{{ product.featured_image | img_url: '800x' }}"
+                alt="{{ product.featured_image.alt | default: product.title | escape }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+          </a>
+          <div class="fwb-verlag__card-info">
+            <h2 class="fwb-h3 fwb-verlag__card-title">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h2>
+            <p class="fwb-verlag__card-price fwb-label">
+              ab {{ product.price_min | money }}
+            </p>
+          </div>
+        </article>
+      {%- else -%}
+        <p class="fwb-body">Keine Produkte gefunden.</p>
+      {%- endfor -%}
+    </div>
+  </div>
+
+</div>
+
+{% stylesheet %}
+  .fwb-verlag__hero {
+    position: relative;
+    height: clamp(200px, 28vw, 380px);
+    overflow: hidden;
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+  }
+
+  .fwb-verlag__hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: grayscale(100%);
+  }
+
+  .fwb-verlag__hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+  }
+
+  .fwb-verlag__header {
+    text-align: center;
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fwb-verlag__title {
+    font-style: italic;
+  }
+
+  .fwb-verlag__desc {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .fwb-verlag__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(3rem, 6vw, 8rem) clamp(2rem, 4vw, 5rem);
+    padding-bottom: var(--fwb-section-pad);
+  }
+
+  .fwb-verlag__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .fwb-verlag__card-image {
+    display: block;
+    overflow: hidden;
+  }
+
+  .fwb-verlag__card-image img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    filter: grayscale(15%);
+  }
+
+  .fwb-verlag__card-image:hover img {
+    transform: scale(1.02);
+    filter: grayscale(0%);
+  }
+
+  .fwb-verlag__card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .fwb-verlag__card-title a {
+    transition: opacity var(--fwb-transition);
+  }
+
+  .fwb-verlag__card-title a:hover {
+    opacity: 0.65;
+  }
+
+  @media (max-width: 640px) {
+    .fwb-verlag__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Verlag Kollektion",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Verlag Kollektion"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,149 @@
+<div class="fwb-toc">
+  <div class="fwb-wrap fwb-toc__inner">
+
+    <div class="fwb-toc__header">
+      <p class="fwb-label">{{ section.settings.label | default: 'Inhaltsverzeichnis' }}</p>
+      <h2 class="fwb-h2 fwb-toc__title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="fwb-body fwb-toc__sub">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="fwb-toc__list">
+      {%- for block in section.blocks -%}
+        <div class="fwb-toc__chapter" {{ block.shopify_attributes }}>
+          <span class="fwb-toc__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="fwb-toc__chapter-title">{{ block.settings.chapter }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .fwb-toc {
+    padding-block: var(--fwb-section-pad);
+    background: var(--fwb-grey-100);
+  }
+
+  .fwb-toc__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(3rem, 6vw, 8rem);
+    align-items: start;
+  }
+
+  .fwb-toc__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 100px;
+  }
+
+  .fwb-toc__title {
+    font-style: italic;
+  }
+
+  .fwb-toc__sub {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    max-width: 360px;
+  }
+
+  .fwb-toc__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--fwb-grey-300);
+  }
+
+  .fwb-toc__chapter {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--fwb-grey-300);
+    transition: background var(--fwb-transition);
+    padding-inline: 0.25rem;
+  }
+
+  .fwb-toc__chapter:hover {
+    background: var(--fwb-grey-200);
+    padding-inline: 0.75rem;
+  }
+
+  .fwb-toc__number {
+    font-family: var(--fwb-font-heading);
+    font-size: 0.75rem;
+    color: var(--fwb-grey-500);
+    min-width: 28px;
+    flex-shrink: 0;
+  }
+
+  .fwb-toc__chapter-title {
+    font-family: var(--fwb-font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--fwb-text);
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 768px) {
+    .fwb-toc__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .fwb-toc__header {
+      position: static;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Inhaltsverzeichnis",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Inhaltsverzeichnis"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Die Kapitel im Überblick."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unterzeile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chapter",
+      "name": "Kapitel",
+      "settings": [
+        {
+          "type": "text",
+          "id": "chapter",
+          "label": "Kapitelname"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Inhaltsverzeichnis",
+      "blocks": [
+        { "type": "chapter", "settings": { "chapter": "Einführung" } },
+        { "type": "chapter", "settings": { "chapter": "Grundlagen" } },
+        { "type": "chapter", "settings": { "chapter": "Ausführung" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

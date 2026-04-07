@@ -73,10 +73,110 @@ p:empty {
 
 /** Theme styles below */
 body {
-  font-family: var(--font-primary--family);
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  font-family: var(--fwb-font-body);
+  background-color: var(--fwb-white);
+  color: var(--fwb-text);
+  -webkit-font-smoothing: antialiased;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* FWB typography utilities */
+.fwb-display {
+  font-family: var(--fwb-font-heading);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.fwb-h1 {
+  font-family: var(--fwb-font-heading);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.fwb-h2 {
+  font-family: var(--fwb-font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.fwb-h3 {
+  font-family: var(--fwb-font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.fwb-body {
+  font-size: clamp(0.875rem, 1vw, 0.95rem);
+  line-height: 1.75;
+  color: var(--fwb-grey-700);
+}
+
+.fwb-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fwb-grey-500);
+}
+
+/* Layout wrapper */
+.fwb-wrap {
+  width: 100%;
+  max-width: var(--fwb-max-w);
+  margin-inline: auto;
+  padding-inline: var(--fwb-gutter);
+}
+
+/* Buttons */
+.fwb-btn {
+  display: inline-block;
+  padding: 0.65rem 1.8rem;
+  font-family: var(--fwb-font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--fwb-black);
+  color: var(--fwb-black);
+  background: transparent;
+  transition: background var(--fwb-transition), color var(--fwb-transition);
+  cursor: pointer;
+}
+
+.fwb-btn:hover {
+  background: var(--fwb-black);
+  color: var(--fwb-white);
+}
+
+.fwb-btn--solid {
+  background: var(--fwb-black);
+  color: var(--fwb-white);
+}
+
+.fwb-btn--solid:hover {
+  background: var(--fwb-grey-700);
+  border-color: var(--fwb-grey-700);
+}
+
+/* Utility */
+.fwb-text-center { text-align: center; }
+.fwb-mt-sm { margin-top: 1rem; }
+.fwb-mt-md { margin-top: 2rem; }
+.fwb-mt-lg { margin-top: 3.5rem; }
 
 /** Section layout utilities */
 

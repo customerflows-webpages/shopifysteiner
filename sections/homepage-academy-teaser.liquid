@@ -1,0 +1,158 @@
+<div class="fwb-academy-teaser" style="background: {{ section.settings.bg_color }};">
+  <div class="fwb-wrap fwb-academy-teaser__inner">
+
+    <div class="fwb-academy-teaser__img-left">
+      {%- if section.settings.image_left != blank -%}
+        <img src="{{ section.settings.image_left | img_url: '700x' }}" alt="{{ section.settings.image_left.alt | escape }}" loading="lazy">
+      {%- else -%}
+        <img src="{{ 'homepage-tunnel.jpg' | asset_url }}" alt="Untertagbau" loading="lazy">
+      {%- endif -%}
+    </div>
+
+    <div class="fwb-academy-teaser__center">
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fwb-h2 fwb-academy-teaser__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <p class="fwb-body fwb-academy-teaser__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url }}" class="fwb-btn">
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="fwb-academy-teaser__img-right">
+      {%- if section.settings.image_right != blank -%}
+        <img src="{{ section.settings.image_right | img_url: '700x' }}" alt="{{ section.settings.image_right.alt | escape }}" loading="lazy">
+      {%- else -%}
+        <img src="{{ 'homepage-road.jpg' | asset_url }}" alt="Strassenbau" loading="lazy">
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .fwb-academy-teaser {
+    padding-block: var(--fwb-section-pad);
+  }
+
+  .fwb-academy-teaser__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .fwb-academy-teaser__img-left,
+  .fwb-academy-teaser__img-right {
+    overflow: hidden;
+  }
+
+  .fwb-academy-teaser__img-left img,
+  .fwb-academy-teaser__img-right img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+  }
+
+  .fwb-academy-teaser__img-left img:hover,
+  .fwb-academy-teaser__img-right img:hover {
+    filter: grayscale(60%);
+  }
+
+  .fwb-academy-teaser__center {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+    align-items: center;
+    padding-inline: 1rem;
+  }
+
+  .fwb-academy-teaser__heading {
+    font-style: italic;
+  }
+
+  .fwb-academy-teaser__body {
+    max-width: 380px;
+  }
+
+  @media (max-width: 900px) {
+    .fwb-academy-teaser__inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .fwb-academy-teaser__img-left img,
+    .fwb-academy-teaser__img-right img {
+      aspect-ratio: 16/9;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Academy Teaser",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Hintergrundfarbe",
+      "default": "#f7f7f5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Bild links"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Bild rechts"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Academy"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Wer wirklich mitreden will, muss mehr wissen."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Text",
+      "default": "In der FWB Academy trifft Erfahrung auf frische Ideen – kompakt, praxisnah und bereit für den nächsten Bauprojekt."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Text",
+      "default": "Mehr erfahren"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button Link",
+      "default": "/pages/academy"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Academy Teaser"
+    }
+  ]
+}
+{% endschema %}

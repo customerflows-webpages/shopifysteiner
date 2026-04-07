@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "kids",
+      "settings": {
+        "heading": "FWB Kids – Mit Spass auf die Baustelle",
+        "body_1": "Mit FWB Kids bringen wir die Faszination des Bauens direkt ins Klassenzimmer. Eine erfahrene Fachperson aus der Bauwelt besucht gemeinsam mit einer Lehrperson Schulklassen – und vermittelt kindgerecht, was Bauen eigentlich bedeutet. Spielerisch, anschaulich und mit jeder Menge Begeisterung zeigen wir, wie spannend und wichtig Berufe rund um die Baustelle sind.",
+        "body_2": "Mit FWB Kids bringen wir die Faszination des Bauens direkt ins Klassenzimmer. Eine erfahrene Fachperson aus der Bauwelt besucht gemeinsam mit einer Lehrperson Schulklassen – und vermittelt kindgerecht, was Bauen eigentlich bedeutet. Spielerisch, anschaulich und mit jeder Menge Begeisterung zeigen wir, wie spannend und wichtig Berufe rund um die Baustelle sind."
+      }
+    }
+  },
+  "order": ["main"]
+}

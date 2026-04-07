@@ -1,20 +1,63 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "product",
-      "settings": {}
+    "product_main": {
+      "type": "product-main",
+      "settings": {
+        "desc_label": "Beschreibung",
+        "variants_label": "Variationen",
+        "variants_heading": "Gedruckt. Digital. Oder beides.",
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
+      }
+    },
+    "product_toc": {
+      "type": "product-toc",
+      "settings": {
+        "label": "Inhaltsverzeichnis",
+        "heading": "Die Kapitel im Überblick.",
+        "subheading": "Die Kapitel bieten einen systematischen Überblick über zentrale Themen. Sie sind praxisnah aufgebaut und begleiten von den Grundlagen bis zur Ausführung."
+      },
+      "blocks": {
+        "chapter_1": {
+          "type": "chapter",
+          "settings": { "chapter": "Einführung" }
+        },
+        "chapter_2": {
+          "type": "chapter",
+          "settings": { "chapter": "Grundlagen" }
+        },
+        "chapter_3": {
+          "type": "chapter",
+          "settings": { "chapter": "Ausführung" }
+        }
+      },
+      "blocks_order": ["chapter_1", "chapter_2", "chapter_3"]
+    },
+    "product_authors": {
+      "type": "product-authors",
+      "settings": {
+        "label": "Autoren",
+        "heading": "Praxis trifft Persönlichkeit.",
+        "intro": "Mit gemeinsam über 40 Jahren Erfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland vereinen die Autoren umfassendes Fachwissen.",
+        "cta_label": "Jetzt kaufen",
+        "cta_url": "#fwb-product-buy"
+      },
+      "blocks": {},
+      "blocks_order": []
+    },
+    "product_testimonials": {
+      "type": "product-testimonials",
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo Baukompetenz zuhause ist."
+      },
+      "blocks": {},
+      "blocks_order": []
     }
   },
   "order": [
-    "main"
+    "product_main",
+    "product_toc",
+    "product_authors",
+    "product_testimonials"
   ]
 }

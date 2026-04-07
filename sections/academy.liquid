@@ -1,0 +1,172 @@
+<div class="fwb-academy">
+  <div class="fwb-wrap">
+
+    <!-- Page title -->
+    <div class="fwb-academy__title-block">
+      <p class="fwb-label">FWB Academy</p>
+      <h1 class="fwb-display fwb-academy__title">
+        {{ section.settings.heading | default: 'FWB Academy – Weil kluge Köpfe besser bauen.' }}
+      </h1>
+    </div>
+
+    <!-- First split: image left + text right -->
+    <div class="fwb-academy__row fwb-academy__row--img-left">
+      <div class="fwb-academy__image">
+        {%- if section.settings.image_1 != blank -%}
+          <img src="{{ section.settings.image_1 | img_url: '900x' }}" alt="{{ section.settings.image_1.alt | escape }}" loading="lazy">
+        {%- else -%}
+          <img src="{{ 'academy-1.jpg' | asset_url }}" alt="FWB Academy" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="fwb-academy__text">
+        <p class="fwb-body">{{ section.settings.body_1 }}</p>
+      </div>
+    </div>
+
+    <!-- Second split: text left + image right -->
+    <div class="fwb-academy__row fwb-academy__row--img-right">
+      <div class="fwb-academy__text">
+        <p class="fwb-body">{{ section.settings.body_2 }}</p>
+      </div>
+      <div class="fwb-academy__image">
+        {%- if section.settings.image_2 != blank -%}
+          <img src="{{ section.settings.image_2 | img_url: '900x' }}" alt="{{ section.settings.image_2.alt | escape }}" loading="lazy">
+        {%- else -%}
+          <img src="{{ 'academy-2.jpg' | asset_url }}" alt="FWB Academy" loading="lazy">
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Third row: full text + third image -->
+    <div class="fwb-academy__row fwb-academy__row--img-left">
+      <div class="fwb-academy__image">
+        {%- if section.settings.image_3 != blank -%}
+          <img src="{{ section.settings.image_3 | img_url: '900x' }}" alt="{{ section.settings.image_3.alt | escape }}" loading="lazy">
+        {%- else -%}
+          <img src="{{ 'academy-3.jpg' | asset_url }}" alt="FWB Academy" loading="lazy">
+        {%- endif -%}
+      </div>
+      <div class="fwb-academy__text">
+        <p class="fwb-body">{{ section.settings.body_3 }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .fwb-academy {
+    padding-bottom: var(--fwb-section-pad);
+  }
+
+  .fwb-academy__title-block {
+    padding-block: clamp(4rem, 8vw, 9rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--fwb-grey-200);
+    margin-bottom: clamp(4rem, 8vw, 8rem);
+    max-width: 860px;
+  }
+
+  .fwb-academy__title {
+    font-weight: 300;
+  }
+
+  .fwb-academy__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 7vw, 9rem);
+    align-items: center;
+    margin-bottom: clamp(5rem, 10vw, 10rem);
+  }
+
+  .fwb-academy__image {
+    overflow: hidden;
+  }
+
+  .fwb-academy__image img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+
+  .fwb-academy__image:hover img {
+    filter: grayscale(40%);
+  }
+
+  .fwb-academy__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .fwb-academy__text .fwb-body {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    line-height: 1.85;
+  }
+
+  @media (max-width: 768px) {
+    .fwb-academy__row {
+      grid-template-columns: 1fr;
+    }
+
+    .fwb-academy__row--img-right .fwb-academy__image {
+      order: -1;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Academy Seite",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "FWB Academy – Weil kluge Köpfe besser bauen."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Bild 1"
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Text 1",
+      "default": "Erfahrene Referentinnen und Referenten vermitteln aktuelles Know-how mit Relevanz für die Praxis – präzise, dialogorientiert und stets mit Blick auf konkrete Herausforderungen im Baualltag. Dabei geht es nicht nur ums Zuhören, sondern ums Mitreden, Reflektieren und direkt Anwenden."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Bild 2"
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Text 2",
+      "default": "In der FWB Academy trifft Fachkompetenz auf Praxisnähe – und das in einem Rahmen, der so persönlich wie professionell ist. Hier entsteht Raum für Menschen, die im Bauwesen nicht nur mitarbeiten, sondern mitdenken und mitgestalten wollen."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Bild 3"
+    },
+    {
+      "type": "textarea",
+      "id": "body_3",
+      "label": "Text 3",
+      "default": "Die FWB Academy versteht sich als lebendiger Ort des Lernens und Netzwerkens, an dem nicht nur Wissen weitergegeben, sondern auch Perspektiven gewechselt und Zukunft gedacht wird. Persönlich. Kompetent. Mit Substanz."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Academy Seite"
+    }
+  ]
+}
+{% endschema %}

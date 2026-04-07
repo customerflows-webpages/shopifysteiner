@@ -1,0 +1,132 @@
+<div class="fwb-verlag-teaser">
+  <div class="fwb-wrap fwb-verlag-teaser__inner">
+
+    <div class="fwb-verlag-teaser__image">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | img_url: '900x' }}"
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'homepage-books-mockup.jpg' | asset_url }}"
+          alt="FachWissenBau Bücher"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+
+    <div class="fwb-verlag-teaser__text">
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fwb-h2 fwb-verlag-teaser__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <p class="fwb-body fwb-verlag-teaser__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ section.settings.cta_url }}" class="fwb-btn fwb-verlag-teaser__cta">
+          {{ section.settings.cta_label }}
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% stylesheet %}
+  .fwb-verlag-teaser {
+    padding-block: var(--fwb-section-pad);
+    background: var(--fwb-white);
+  }
+
+  .fwb-verlag-teaser__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 8rem);
+    align-items: center;
+  }
+
+  .fwb-verlag-teaser__image img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 520px;
+  }
+
+  .fwb-verlag-teaser__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .fwb-verlag-teaser__heading {
+    margin-top: 0.5rem;
+  }
+
+  .fwb-verlag-teaser__body {
+    max-width: 440px;
+  }
+
+  .fwb-verlag-teaser__cta {
+    align-self: flex-start;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .fwb-verlag-teaser__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Verlag Teaser",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Buchbild"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Verlag"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Bachwissen lohnt sich."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Text",
+      "default": "Bachwissen direkt von den Profis – verständlich, kompakt und voller Praxis. Für alle, die auf der Baustelle oder im Studium den Durchblick wollen."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button Text",
+      "default": "Mehr erfahren"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Verlag Teaser"
+    }
+  ]
+}
+{% endschema %}

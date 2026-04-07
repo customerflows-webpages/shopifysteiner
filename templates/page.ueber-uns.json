@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "main": {
+      "type": "ueber-uns",
+      "settings": {
+        "heading": "Grüezi, wir bauen Zukunft.",
+        "label": "Über uns",
+        "lead": "FachWissenBau ist das Kompetenznetzwerk für die Schweizer Bauwirtschaft.",
+        "body": "Als Verlag gegründet, entwickeln wir heute ein umfassendes Ökosystem aus Fachpublikationen, Weiterbildung, Beratung und Vernetzung. Gemeinsam mit führenden Unternehmen, Bauherren, Lieferanten und Bildungspartnern setzen wir neue Standards für eine innovative und nachhaltige Bauwirtschaft.\n\nUnser Ziel ist es, Wissen zu teilen, Kompetenzen zu stärken und Zukunft zu gestalten. Mit Leidenschaft, Weitsicht und einem starken Netzwerk.\n\nSchön, dass Sie den Weg zu uns gefunden haben.",
+        "authors_heading": "Die Autoren",
+        "authors_intro": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland. Ihr beruflicher Werdegang führte sie dabei in namhafte Planungsbüros und Bauunternehmungen wie z.B. Basler & Hofmann AG, Marti Gruppe und Walo Bertschinger AG."
+      },
+      "blocks": {
+        "rolf": {
+          "type": "founder",
+          "settings": {
+            "name": "Rolf Steiner",
+            "role": "Inhaber und Partner",
+            "credentials": "Bauingenieur FH\nEMBA in General Management"
+          }
+        },
+        "tobias": {
+          "type": "founder",
+          "settings": {
+            "name": "Tobias Frick",
+            "role": "Inhaber und Partner",
+            "credentials": "Bauingenieur ETH\nEMBA in General Management"
+          }
+        }
+      },
+      "blocks_order": ["rolf", "tobias"]
+    }
+  },
+  "order": ["main"]
+}
