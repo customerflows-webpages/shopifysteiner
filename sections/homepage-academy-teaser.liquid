@@ -5,7 +5,7 @@
       {%- if section.settings.image_left != blank -%}
         <img src="{{ section.settings.image_left | img_url: '700x' }}" alt="{{ section.settings.image_left.alt | escape }}" loading="lazy">
       {%- else -%}
-        <img src="{{ 'homepage-tunnel.jpg' | asset_url }}" alt="Untertagbau" loading="lazy">
+        <div class="fwb-placeholder fwb-placeholder--portrait"></div>
       {%- endif -%}
     </div>
 
@@ -30,7 +30,7 @@
       {%- if section.settings.image_right != blank -%}
         <img src="{{ section.settings.image_right | img_url: '700x' }}" alt="{{ section.settings.image_right.alt | escape }}" loading="lazy">
       {%- else -%}
-        <img src="{{ 'homepage-road.jpg' | asset_url }}" alt="Strassenbau" loading="lazy">
+        <div class="fwb-placeholder fwb-placeholder--portrait"></div>
       {%- endif -%}
     </div>
 
@@ -49,23 +49,12 @@
     align-items: center;
   }
 
-  .fwb-academy-teaser__img-left,
-  .fwb-academy-teaser__img-right {
-    overflow: hidden;
-  }
-
   .fwb-academy-teaser__img-left img,
   .fwb-academy-teaser__img-right img {
     width: 100%;
     aspect-ratio: 3/4;
     object-fit: cover;
     filter: grayscale(100%);
-    transition: filter 0.4s ease;
-  }
-
-  .fwb-academy-teaser__img-left img:hover,
-  .fwb-academy-teaser__img-right img:hover {
-    filter: grayscale(60%);
   }
 
   .fwb-academy-teaser__center {
@@ -85,15 +74,19 @@
     max-width: 380px;
   }
 
+  .fwb-placeholder {
+    background: var(--fwb-grey-200);
+    width: 100%;
+  }
+
+  .fwb-placeholder--portrait {
+    aspect-ratio: 3/4;
+  }
+
   @media (max-width: 900px) {
     .fwb-academy-teaser__inner {
       grid-template-columns: 1fr;
       gap: 2rem;
-    }
-
-    .fwb-academy-teaser__img-left img,
-    .fwb-academy-teaser__img-right img {
-      aspect-ratio: 16/9;
     }
   }
 {% endstylesheet %}

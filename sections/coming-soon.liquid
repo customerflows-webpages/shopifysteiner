@@ -1,10 +1,6 @@
 <div class="fwb-coming-soon">
-  <div class="fwb-coming-soon__bg full-width">
-    <img src="{{ 'verlag-books-overview.jpg' | asset_url }}" alt="" class="fwb-coming-soon__bg-img" loading="lazy" aria-hidden="true">
-    <div class="fwb-coming-soon__overlay"></div>
-  </div>
-
   <div class="fwb-wrap fwb-coming-soon__content">
+
     {%- if section.settings.heading != blank -%}
       <h2 class="fwb-display fwb-coming-soon__heading fwb-text-center">
         {{ section.settings.heading }}
@@ -12,62 +8,31 @@
     {%- endif -%}
 
     <div class="fwb-coming-soon__grid">
-      <div class="fwb-coming-soon__book">
-        <img src="{{ 'coming-soon-projektmanagement.jpg' | asset_url }}" alt="Bau- und Projektmanagement" loading="lazy">
-        <p class="fwb-h3 fwb-coming-soon__title">Bau- und Projektmanagement</p>
-      </div>
-      <div class="fwb-coming-soon__book">
-        <img src="{{ 'coming-soon-betonbau.jpg' | asset_url }}" alt="Betonbau" loading="lazy">
-        <p class="fwb-h3 fwb-coming-soon__title">Betonbau</p>
-      </div>
-      <div class="fwb-coming-soon__book">
-        <img src="{{ 'coming-soon-kalkulation.jpg' | asset_url }}" alt="Kalkulation und Preisberechnung" loading="lazy">
-        <p class="fwb-h3 fwb-coming-soon__title">Kalkulation und Preisberechnung</p>
-      </div>
-      <div class="fwb-coming-soon__book">
-        <img src="{{ 'coming-soon-beschaffung.jpg' | asset_url }}" alt="Nachhaltige und innovative Beschaffung" loading="lazy">
-        <p class="fwb-h3 fwb-coming-soon__title">Nachhaltige und innovative Beschaffung</p>
-      </div>
+      {%- for block in section.blocks -%}
+        <div class="fwb-coming-soon__book" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.title }}" loading="lazy">
+          {%- else -%}
+            <div class="fwb-placeholder fwb-placeholder--book"></div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <p class="fwb-h3 fwb-coming-soon__title">{{ block.settings.title }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
     </div>
 
     {%- if section.settings.note != blank -%}
       <p class="fwb-coming-soon__note fwb-body fwb-text-center">{{ section.settings.note }}</p>
     {%- endif -%}
+
   </div>
 </div>
 
 {% stylesheet %}
   .fwb-coming-soon {
-    position: relative;
     padding-block: var(--fwb-section-pad);
-  }
-
-  .fwb-coming-soon__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  .fwb-coming-soon__bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: grayscale(100%) brightness(1.1);
-    opacity: 0.18;
-  }
-
-  .fwb-coming-soon__overlay {
-    position: absolute;
-    inset: 0;
-    background: var(--fwb-white);
-    opacity: 0.7;
-  }
-
-  .fwb-coming-soon__content {
-    position: relative;
-    z-index: 1;
+    background: var(--fwb-grey-100);
   }
 
   .fwb-coming-soon__heading {
@@ -110,6 +75,15 @@
     font-size: 0.85rem;
   }
 
+  .fwb-placeholder {
+    background: var(--fwb-grey-300);
+    width: 100%;
+  }
+
+  .fwb-placeholder--book {
+    aspect-ratio: 3/4;
+  }
+
   @media (max-width: 900px) {
     .fwb-coming-soon__grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -136,9 +110,33 @@
       "default": "Diese Bücher befinden sich aktuell in Arbeit. Die Inhalte werden entwickelt, strukturiert und sorgfältig aufgebaut. Weitere Informationen folgen bald."
     }
   ],
+  "blocks": [
+    {
+      "type": "book",
+      "name": "Buch",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Cover Bild"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Buchtitel"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Kommt bald"
+      "name": "Kommt bald",
+      "blocks": [
+        { "type": "book", "settings": { "title": "Bau- und Projektmanagement" } },
+        { "type": "book", "settings": { "title": "Betonbau" } },
+        { "type": "book", "settings": { "title": "Kalkulation und Preisberechnung" } },
+        { "type": "book", "settings": { "title": "Nachhaltige und innovative Beschaffung" } }
+      ]
     }
   ]
 }

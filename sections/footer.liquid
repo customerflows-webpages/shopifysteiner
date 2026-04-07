@@ -9,13 +9,7 @@
         aria-hidden="true"
       >
     {%- else -%}
-      <img
-        src="{{ 'footer-cityscape.jpg' | asset_url }}"
-        alt=""
-        class="fwb-footer__bg-img"
-        loading="lazy"
-        aria-hidden="true"
-      >
+      <div class="fwb-footer__bg-empty"></div>
     {%- endif -%}
     <div class="fwb-footer__overlay"></div>
   </div>
@@ -60,7 +54,6 @@
   .fwb-footer {
     position: relative;
     overflow: hidden;
-    margin-top: 0;
   }
 
   .fwb-footer__bg {
@@ -75,6 +68,12 @@
     object-fit: cover;
     object-position: center 30%;
     filter: grayscale(100%);
+  }
+
+  .fwb-footer__bg-empty {
+    width: 100%;
+    height: 100%;
+    background: var(--fwb-black);
   }
 
   .fwb-footer__overlay {

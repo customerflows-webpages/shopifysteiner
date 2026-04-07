@@ -43,10 +43,6 @@
         "heading": "Kommt bald. Baut auf Qualität.",
         "note": "Diese Bücher befinden sich aktuell in Arbeit. Die Inhalte werden entwickelt, strukturiert und sorgfältig aufgebaut. Weitere Informationen folgen bald."
       }
-    },
-    "verlag_grid": {
-      "type": "verlag-collection",
-      "settings": {}
     }
   },
   "order": [
@@ -54,7 +50,6 @@
     "verlag_teaser",
     "academy_teaser",
     "book_grid",
-    "coming_soon",
-    "verlag_grid"
+    "coming_soon"
   ]
 }

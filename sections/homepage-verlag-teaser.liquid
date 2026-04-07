@@ -9,11 +9,7 @@
           loading="lazy"
         >
       {%- else -%}
-        <img
-          src="{{ 'homepage-books-mockup.jpg' | asset_url }}"
-          alt="FachWissenBau Bücher"
-          loading="lazy"
-        >
+        <div class="fwb-placeholder fwb-placeholder--tall"></div>
       {%- endif -%}
     </div>
 
@@ -62,10 +58,6 @@
     gap: 1.25rem;
   }
 
-  .fwb-verlag-teaser__heading {
-    margin-top: 0.5rem;
-  }
-
   .fwb-verlag-teaser__body {
     max-width: 440px;
   }
@@ -73,6 +65,15 @@
   .fwb-verlag-teaser__cta {
     align-self: flex-start;
     margin-top: 0.75rem;
+  }
+
+  .fwb-placeholder {
+    background: var(--fwb-grey-200);
+    width: 100%;
+  }
+
+  .fwb-placeholder--tall {
+    aspect-ratio: 3/4;
   }
 
   @media (max-width: 768px) {

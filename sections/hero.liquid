@@ -1,6 +1,6 @@
 <div class="fwb-hero full-width">
-  <div class="fwb-hero__bg">
-    {%- if section.settings.image != blank -%}
+  {%- if section.settings.image != blank -%}
+    <div class="fwb-hero__bg">
       <img
         src="{{ section.settings.image | img_url: '1800x' }}"
         alt="{{ section.settings.image.alt | escape }}"
@@ -8,17 +8,11 @@
         loading="eager"
         fetchpriority="high"
       >
-    {%- else -%}
-      <img
-        src="{{ 'hero-bg.jpg' | asset_url }}"
-        alt=""
-        class="fwb-hero__img"
-        loading="eager"
-        fetchpriority="high"
-      >
-    {%- endif -%}
-    <div class="fwb-hero__overlay"></div>
-  </div>
+      <div class="fwb-hero__overlay"></div>
+    </div>
+  {%- else -%}
+    <div class="fwb-hero__bg fwb-hero__bg--empty"></div>
+  {%- endif -%}
 
   <div class="fwb-hero__content fwb-wrap">
     {%- if section.settings.heading != blank -%}
@@ -47,6 +41,10 @@
     position: absolute;
     inset: 0;
     z-index: 0;
+  }
+
+  .fwb-hero__bg--empty {
+    background: var(--fwb-grey-200);
   }
 
   .fwb-hero__img {
@@ -81,6 +79,11 @@
     text-shadow: 0 1px 20px rgba(0,0,0,0.15);
     font-size: clamp(2rem, 4.5vw, 3.8rem);
     font-weight: 300;
+  }
+
+  .fwb-hero__bg--empty ~ .fwb-hero__content .fwb-hero__heading {
+    color: var(--fwb-text);
+    text-shadow: none;
   }
 
   .fwb-hero__sub {
