@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "product_main": {
@@ -7,17 +16,11 @@
         "desc_heading": "Praxisnah, fundiert, direkt anwendbar.",
         "variants_label": "Variationen",
         "variants_heading": "Gedruckt. Digital. Oder beides.",
-        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen.",
-        "buy_btn_label": "Jetzt kaufen"
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       }
     },
     "product_toc": {
       "type": "product-toc",
-      "settings": {
-        "label": "Inhaltsverzeichnis",
-        "heading": "Die Kapitel im Überblick.",
-        "subheading": "227 Seiten praxisnahe Orientierung im öffentlichen Beschaffungswesen – verständlich, nachvollziehbar und direkt anwendbar."
-      },
       "blocks": {
         "ch01": {
           "type": "chapter",
@@ -56,16 +59,19 @@
         "ch03",
         "ch04",
         "ch05"
-      ]
+      ],
+      "settings": {
+        "label": "Inhaltsverzeichnis",
+        "heading": "Die Kapitel im Überblick.",
+        "subheading": "227 Seiten praxisnahe Orientierung im öffentlichen Beschaffungswesen – verständlich, nachvollziehbar und direkt anwendbar."
+      }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "settings": {
         "bg_color": "#f7f7f5",
         "heading": "Wo Beschaffung auf Qualität trifft."
-      },
-      "blocks": {},
-      "block_order": []
+      }
     }
   },
   "order": [

@@ -1,37 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "ueber-uns",
+      "blocks": {
+        "rolf": {
+          "type": "founder",
+          "settings": {
+            "image": "shopify://shop_images/imgi_5_DSC_0143.jpg",
+            "name": "Rolf Steiner",
+            "role": "Inhaber und Partner",
+            "credentials": "Bauingenieur FH\nEMBA in General Management",
+            "bio": ""
+          }
+        },
+        "tobias": {
+          "type": "founder",
+          "settings": {
+            "image": "shopify://shop_images/imgi_6_DSC_0131.jpg",
+            "name": "Tobias Frick",
+            "role": "Inhaber und Partner",
+            "credentials": "Bauingenieur ETH\nEMBA in General Management",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "rolf",
+        "tobias"
+      ],
       "settings": {
         "heading": "Grüezi, wir bauen Zukunft.",
         "label": "Über uns",
         "lead": "FachWissenBau ist das Kompetenznetzwerk für die Schweizer Bauwirtschaft.",
         "body": "Als Verlag gegründet, entwickeln wir heute ein umfassendes Ökosystem aus Fachpublikationen, Weiterbildung, Beratung und Vernetzung. Gemeinsam mit führenden Unternehmen, Bauherren, Lieferanten und Bildungspartnern setzen wir neue Standards für eine innovative und nachhaltige Bauwirtschaft.\n\nUnser Ziel ist es, Wissen zu teilen, Kompetenzen zu stärken und Zukunft zu gestalten. Mit Leidenschaft, Weitsicht und einem starken Netzwerk.\n\nSchön, dass Sie den Weg zu uns gefunden haben.",
         "authors_heading": "Die Autoren",
-        "authors_intro": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland. Ihr beruflicher Werdegang führte sie dabei in namhafte Planungsbüros und Bauunternehmungen wie z.B. Basler & Hofmann AG, Marti Gruppe und Walo Bertschinger AG. Ihre Erfahrungen in der Geschäftsführung und Projektleitung bringen sie gewinnbringend in der Aus- und Weiterbildung an Hochschulen, am Campus Sursee und auch an der Baugewerblichen Berufsschule ein."
-      },
-      "blocks": {
-        "rolf": {
-          "type": "founder",
-          "settings": {
-            "name": "Rolf Steiner",
-            "role": "Inhaber und Partner",
-            "credentials": "Bauingenieur FH\nEMBA in General Management",
-            "bio": "Mit über 20 Jahren Erfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland bringt Rolf Steiner tiefes Fachwissen aus namhaften Planungsbüros und Bauunternehmungen wie Basler & Hofmann AG und Walo Bertschinger AG mit. Sein Engagement in der Aus- und Weiterbildung an Hochschulen und am Campus Sursee zeigt sein Commitment zur Förderung des Nachwuchses."
-          }
-        },
-        "tobias": {
-          "type": "founder",
-          "settings": {
-            "name": "Tobias Frick",
-            "role": "Inhaber und Partner",
-            "credentials": "Bauingenieur ETH\nEMBA in General Management",
-            "bio": "Tobias Frick verfügt über mehr als 20 Jahre Berufserfahrung in der Planung und Projektleitung von Infrastrukturprojekten. Sein Weg führte ihn durch renommierte Unternehmen wie die Marti Gruppe, wo er weitreichende Erfahrung in der Geschäftsführung und Projektleitung sammelte. Heute teilt er sein Wissen als Dozent an Hochschulen und der Baugewerblichen Berufsschule."
-          }
-        }
-      },
-      "block_order": ["rolf", "tobias"]
+        "authors_intro": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung in der Planung und Ausführung von Infrastrukturprojekten in der Schweiz und im Ausland. Ihr beruflicher Werdegang führte sie dabei in namhafte Planungsbüros und Bauunternehmungen wie z.B. Basler & Hofmann AG, Marti Gruppe und Walo Bertschinger AG. Ihre Erfahrungen in der Geschäftsführung und Projektleitung bringen sie gewinnbringend in der Aus- und Weiterbildung an Hochschulen, am Campus Sursee und auch an der Baugewerblichen Berufsschule ein.",
+        "team_image": "shopify://shop_images/imgi_4_DSC_0077e.jpg"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
