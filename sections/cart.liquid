@@ -1,37 +1,1085 @@
 {% comment %}
-  This section is used in the cart template to render /cart page with an
-  overview of the items in customer's cart.
-
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/cart
+  Cart page — FachWissenBau theme
+  Fully editable via Shopify Theme Editor.
+  Uses AJAX Cart API for quantity updates and item removal.
 {% endcomment %}
 
-<h1>{{ 'cart.title' | t }}</h1>
+<section class="fwb-cart" id="fwb-cart">
+  <div class="fwb-wrap">
 
-<form action="{{ routes.cart_url }}" method="post">
-  <table>
-    {% for item in cart.items %}
-      <tr>
-        <td>
-          {% render 'image', image: item.image, url: item.url %}
-        </td>
-        <td>
-          <p>{{ item.product.title }}</p>
-          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </td>
-        <td>
-          <input type="text" name="updates[]" value="{{ item.quantity }}">
-          <input type="submit" value="{{ 'cart.update' | t }}">
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
+    {%- comment -%} ── Page header ── {%- endcomment -%}
+    <div class="fwb-cart__header">
+      {%- if section.settings.page_label != blank -%}
+        <p class="fwb-label">{{ section.settings.page_label }}</p>
+      {%- endif -%}
+      <h1 class="fwb-h1 fwb-cart__title">
+        {{ section.settings.page_heading | default: 'Warenkorb' }}
+        {%- if cart.item_count > 0 -%}
+          <span class="fwb-cart__count">({{ cart.item_count }})</span>
+        {%- endif -%}
+      </h1>
+    </div>
 
-  <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
-</form>
+    {%- if cart.item_count == 0 -%}
+
+      {%- comment -%} ── Empty state ── {%- endcomment -%}
+      <div class="fwb-cart__empty" id="fwb-cart-empty">
+        <p class="fwb-cart__empty-text">
+          {{ section.settings.empty_text | default: 'Ihr Warenkorb ist leer.' }}
+        </p>
+        <a href="{{ routes.all_products_collection_url }}" class="fwb-btn">
+          {{ section.settings.empty_btn | default: 'Bücher entdecken' }}
+        </a>
+      </div>
+
+    {%- else -%}
+
+      {%- comment -%} ── Filled cart: two-column layout ── {%- endcomment -%}
+      {%- comment -%}
+        Use Shopify's {% form %} tag — it injects the required hidden fields
+        (form_type, utf8) and enables {{ form.payment_button }} for dynamic
+        checkout buttons (Shop Pay, Apple Pay, Google Pay, etc.).
+      {%- endcomment -%}
+      {%- form 'cart', cart, id: 'fwb-cart-form', class: 'fwb-cart__layout' -%}
+
+        {%- comment -%} ── Left: Items ── {%- endcomment -%}
+        <div class="fwb-cart__items" id="fwb-cart-items">
+
+          {%- comment -%} Column labels {%- endcomment -%}
+          <div class="fwb-cart__items-head" aria-hidden="true">
+            <span class="fwb-label">{{ section.settings.col_product | default: 'Produkt' }}</span>
+            <span class="fwb-label fwb-cart__col-qty">{{ section.settings.col_qty | default: 'Menge' }}</span>
+            <span class="fwb-label fwb-cart__col-price">{{ section.settings.col_price | default: 'Preis' }}</span>
+          </div>
+
+          {%- for item in cart.items -%}
+            <div class="fwb-cart__item" data-item-key="{{ item.key }}">
+
+              {%- comment -%} Product image {%- endcomment -%}
+              <a
+                href="{{ item.url }}"
+                class="fwb-cart__item-img-wrap"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                {%- if item.image -%}
+                  <img
+                    src="{{ item.image | img_url: '200x260', crop: 'top' }}"
+                    alt="{{ item.image.alt | default: item.title | escape }}"
+                    width="100"
+                    height="130"
+                    loading="lazy"
+                    class="fwb-cart__item-img"
+                  >
+                {%- else -%}
+                  <div class="fwb-cart__item-img-placeholder"></div>
+                {%- endif -%}
+              </a>
+
+              {%- comment -%} Item details {%- endcomment -%}
+              <div class="fwb-cart__item-details">
+                <a href="{{ item.url }}" class="fwb-cart__item-title">{{ item.product.title }}</a>
+
+                {%- unless item.variant.title == 'Default Title' -%}
+                  <p class="fwb-cart__item-variant">{{ item.variant.title }}</p>
+                {%- endunless -%}
+
+                {%- if item.properties.size > 0 -%}
+                  {%- for property in item.properties -%}
+                    {%- unless property.last == blank -%}
+                      <p class="fwb-cart__item-property">{{ property.first }}: {{ property.last }}</p>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                {%- endif -%}
+
+                <p class="fwb-cart__item-unit">{{ item.price | money }} / {{ section.settings.unit_label | default: 'Stück' }}</p>
+
+                <button
+                  type="button"
+                  class="fwb-cart__remove"
+                  data-item-key="{{ item.key }}"
+                  aria-label="{{ section.settings.remove_label | default: 'Entfernen' }}: {{ item.product.title | escape }}"
+                >{{ section.settings.remove_label | default: 'Entfernen' }}</button>
+              </div>
+
+              {%- comment -%} Quantity stepper {%- endcomment -%}
+              <div class="fwb-cart__item-qty fwb-cart__col-qty" role="group" aria-label="Menge">
+                <div class="fwb-cart__stepper">
+                  <button
+                    type="button"
+                    class="fwb-cart__stepper-btn"
+                    data-action="decrease"
+                    data-item-key="{{ item.key }}"
+                    aria-label="Menge verringern"
+                  >−</button>
+                  <input
+                    type="number"
+                    class="fwb-cart__stepper-input"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    data-item-key="{{ item.key }}"
+                    aria-label="Menge"
+                  >
+                  <button
+                    type="button"
+                    class="fwb-cart__stepper-btn"
+                    data-action="increase"
+                    data-item-key="{{ item.key }}"
+                    aria-label="Menge erhöhen"
+                  >+</button>
+                </div>
+              </div>
+
+              {%- comment -%} Line total {%- endcomment -%}
+              <div
+                class="fwb-cart__item-price fwb-cart__col-price"
+                id="fwb-line-{{ forloop.index }}"
+              >
+                {%- if item.original_line_price != item.final_line_price -%}
+                  <s class="fwb-cart__line-was">{{ item.original_line_price | money }}</s>
+                {%- endif -%}
+                <span class="fwb-cart__line-total">{{ item.final_line_price | money }}</span>
+              </div>
+
+            </div>
+          {%- endfor -%}
+
+        </div>
+        {%- comment -%} /#fwb-cart-items {%- endcomment -%}
+
+        {%- comment -%} ── Right: Order summary ── {%- endcomment -%}
+        <aside class="fwb-cart__summary" aria-label="Bestellübersicht">
+
+          {%- if section.settings.summary_label != blank -%}
+            <p class="fwb-label">{{ section.settings.summary_label }}</p>
+          {%- endif -%}
+          <h2 class="fwb-h3 fwb-cart__summary-title">
+            {{ section.settings.summary_heading | default: 'Bestellübersicht' }}
+          </h2>
+
+          {%- comment -%} Totals {%- endcomment -%}
+          <div class="fwb-cart__totals">
+            <div class="fwb-cart__total-row">
+              <span>{{ section.settings.subtotal_label | default: 'Zwischensumme' }}</span>
+              <span id="fwb-subtotal">{{ cart.total_price | money }}</span>
+            </div>
+            {%- if cart.total_discount > 0 -%}
+              <div class="fwb-cart__total-row fwb-cart__total-row--discount">
+                <span>{{ section.settings.discount_label | default: 'Rabatt' }}</span>
+                <span>−{{ cart.total_discount | money }}</span>
+              </div>
+            {%- endif -%}
+            <div class="fwb-cart__total-row fwb-cart__total-row--shipping">
+              <span>{{ section.settings.shipping_label | default: 'Versand' }}</span>
+              <span class="fwb-cart__muted">{{ section.settings.shipping_value | default: 'Wird im Checkout berechnet' }}</span>
+            </div>
+          </div>
+
+          {%- comment -%} Shipping notice {%- endcomment -%}
+          {%- if section.settings.shipping_notice != blank -%}
+            <p class="fwb-cart__shipping-notice">{{ section.settings.shipping_notice }}</p>
+          {%- endif -%}
+
+          {%- comment -%} Optional order note {%- endcomment -%}
+          {%- if section.settings.show_note -%}
+            <div class="fwb-cart__note-wrap">
+              <label for="fwb-cart-note" class="fwb-label fwb-cart__note-label">
+                {{ section.settings.note_label | default: 'Anmerkung zur Bestellung' }}
+              </label>
+              <textarea
+                id="fwb-cart-note"
+                name="note"
+                class="fwb-cart__note-input"
+                rows="3"
+                placeholder="{{ section.settings.note_placeholder | default: 'Optionale Hinweise zur Bestellung...' }}"
+              >{{ cart.note }}</textarea>
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Checkout CTA {%- endcomment -%}
+          <button
+            type="submit"
+            name="checkout"
+            class="fwb-btn fwb-btn--solid fwb-cart__checkout-btn"
+            id="fwb-checkout-btn"
+          >
+            {{ section.settings.checkout_label | default: 'Zur Kasse' }}
+          </button>
+
+          {%- comment -%}
+            Dynamic checkout buttons — renders Shop Pay, Apple Pay, Google Pay,
+            PayPal etc. automatically based on the merchant's active payment
+            providers. Only shown if enabled in the theme editor.
+          {%- endcomment -%}
+          {%- if section.settings.show_dynamic_checkout -%}
+            <div class="fwb-cart__dynamic-checkout">
+              {{ form | payment_button }}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Continue shopping {%- endcomment -%}
+          <a
+            href="{{ routes.all_products_collection_url }}"
+            class="fwb-cart__continue"
+          >
+            ← {{ section.settings.continue_label | default: 'Weiter einkaufen' }}
+          </a>
+
+          {%- comment -%} Trust signals {%- endcomment -%}
+          {%- if section.settings.show_trust -%}
+            <div class="fwb-cart__trust">
+              {%- if section.settings.trust_1 != blank -%}
+                <div class="fwb-cart__trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{{ section.settings.trust_1 }}</span>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.trust_2 != blank -%}
+                <div class="fwb-cart__trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{{ section.settings.trust_2 }}</span>
+                </div>
+              {%- endif -%}
+              {%- if section.settings.trust_3 != blank -%}
+                <div class="fwb-cart__trust-item">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span>{{ section.settings.trust_3 }}</span>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        </aside>
+
+      {%- endform -%}
+
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% stylesheet %}
+
+  /* ── Cart page layout ───────────────────────────────────────── */
+
+  .fwb-cart {
+    padding-top: clamp(3rem, 6vw, 6rem);
+    padding-bottom: var(--fwb-section-pad);
+  }
+
+  /* ── Header ─────────────────────────────────────────────────── */
+
+  .fwb-cart__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: clamp(2rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--fwb-grey-200);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .fwb-cart__count {
+    font-weight: 300;
+    color: var(--fwb-grey-500);
+    font-size: 0.75em;
+    margin-left: 0.35rem;
+  }
+
+  /* ── Empty state ─────────────────────────────────────────────── */
+
+  .fwb-cart__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-block: clamp(3rem, 8vw, 6rem);
+  }
+
+  .fwb-cart__empty-text {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: var(--fwb-grey-700);
+    line-height: 1.6;
+  }
+
+  /* ── Two-column layout ───────────────────────────────────────── */
+
+  .fwb-cart__layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: clamp(3rem, 5vw, 6rem);
+    align-items: start;
+  }
+
+  /* ── Items list ──────────────────────────────────────────────── */
+
+  .fwb-cart__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fwb-cart__items-head {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--fwb-grey-200);
+    margin-bottom: 0;
+  }
+
+  .fwb-cart__col-qty  { min-width: 120px; text-align: center; }
+  .fwb-cart__col-price { min-width: 90px; text-align: right; }
+
+  /* ── Single item row ─────────────────────────────────────────── */
+
+  .fwb-cart__item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto auto;
+    gap: 1.5rem;
+    align-items: start;
+    padding-block: 1.75rem;
+    border-bottom: 1px solid var(--fwb-grey-200);
+    position: relative;
+    transition: opacity 0.25s ease;
+  }
+
+  .fwb-cart__item.is-loading {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  /* Image */
+  .fwb-cart__item-img-wrap {
+    display: block;
+    width: 100px;
+    height: 130px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: var(--fwb-grey-100);
+  }
+
+  .fwb-cart__item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(6%);
+    display: block;
+    transition: filter 0.25s ease;
+  }
+
+  .fwb-cart__item-img-wrap:hover .fwb-cart__item-img {
+    filter: grayscale(0%);
+  }
+
+  .fwb-cart__item-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--fwb-grey-200);
+  }
+
+  /* Details column */
+  .fwb-cart__item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+  }
+
+  .fwb-cart__item-title {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-weight: 400;
+    color: var(--fwb-text);
+    line-height: 1.3;
+    transition: color var(--fwb-transition);
+    word-break: break-word;
+  }
+
+  .fwb-cart__item-title:hover {
+    color: var(--fwb-grey-700);
+  }
+
+  .fwb-cart__item-variant,
+  .fwb-cart__item-property {
+    font-size: 0.75rem;
+    color: var(--fwb-grey-500);
+    letter-spacing: 0.02em;
+  }
+
+  .fwb-cart__item-unit {
+    font-size: 0.72rem;
+    color: var(--fwb-grey-500);
+    margin-top: 0.2rem;
+  }
+
+  .fwb-cart__remove {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 0.75rem;
+    font-size: 0.65rem;
+    font-family: var(--fwb-font-body);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fwb-grey-500);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--fwb-transition);
+    text-align: left;
+  }
+
+  .fwb-cart__remove:hover {
+    color: var(--fwb-black);
+  }
+
+  /* Quantity stepper */
+  .fwb-cart__item-qty {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.15rem;
+  }
+
+  .fwb-cart__stepper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--fwb-grey-300);
+    background: var(--fwb-white);
+  }
+
+  .fwb-cart__stepper-btn {
+    width: 34px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--fwb-black);
+    cursor: pointer;
+    transition: background var(--fwb-transition);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .fwb-cart__stepper-btn:hover {
+    background: var(--fwb-grey-100);
+  }
+
+  .fwb-cart__stepper-input {
+    width: 44px;
+    height: 38px;
+    border: none;
+    border-left: 1px solid var(--fwb-grey-300);
+    border-right: 1px solid var(--fwb-grey-300);
+    text-align: center;
+    font-family: var(--fwb-font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--fwb-text);
+    background: var(--fwb-white);
+    -moz-appearance: textfield;
+    border-radius: 0;
+  }
+
+  .fwb-cart__stepper-input::-webkit-outer-spin-button,
+  .fwb-cart__stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .fwb-cart__stepper-input:focus {
+    outline: 1px solid var(--fwb-black);
+    outline-offset: -1px;
+  }
+
+  /* Line price */
+  .fwb-cart__item-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    padding-top: 0.1rem;
+    min-width: 90px;
+  }
+
+  .fwb-cart__line-was {
+    font-size: 0.75rem;
+    color: var(--fwb-grey-500);
+    text-decoration: line-through;
+  }
+
+  .fwb-cart__line-total {
+    font-family: var(--fwb-font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fwb-text);
+  }
+
+  /* ── Summary sidebar ─────────────────────────────────────────── */
+
+  .fwb-cart__summary {
+    position: sticky;
+    top: 90px;
+    background: var(--fwb-grey-100);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .fwb-cart__summary-title {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* Totals table */
+  .fwb-cart__totals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--fwb-grey-300);
+  }
+
+  .fwb-cart__total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--fwb-grey-700);
+  }
+
+  .fwb-cart__total-row--discount {
+    color: #5a7a2a;
+  }
+
+  .fwb-cart__muted {
+    color: var(--fwb-grey-500);
+    font-size: 0.75rem;
+  }
+
+  #fwb-subtotal {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--fwb-text);
+    font-family: var(--fwb-font-heading);
+  }
+
+  /* Shipping notice */
+  .fwb-cart__shipping-notice {
+    font-size: 0.7rem;
+    color: var(--fwb-grey-500);
+    line-height: 1.6;
+    margin-top: -0.5rem;
+  }
+
+  /* Order note */
+  .fwb-cart__note-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fwb-cart__note-label {
+    display: block;
+  }
+
+  .fwb-cart__note-input {
+    width: 100%;
+    border: 1px solid var(--fwb-grey-300);
+    background: var(--fwb-white);
+    padding: 0.65rem 0.85rem;
+    font-size: 0.8rem;
+    font-family: var(--fwb-font-body);
+    color: var(--fwb-text);
+    resize: vertical;
+    line-height: 1.6;
+    transition: border-color var(--fwb-transition);
+  }
+
+  .fwb-cart__note-input:focus {
+    outline: none;
+    border-color: var(--fwb-black);
+  }
+
+  /* Dynamic checkout buttons (Shop Pay, Apple Pay, etc.) */
+  .fwb-cart__dynamic-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Shopify injects shopify-payment-button class — ensure it fills width */
+  .fwb-cart__dynamic-checkout .shopify-payment-button {
+    width: 100%;
+  }
+
+  .fwb-cart__dynamic-checkout .shopify-payment-button__button {
+    width: 100%;
+    border-radius: var(--fwb-btn-radius, 0) !important;
+  }
+
+  /* Checkout button */
+  .fwb-cart__checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .fwb-cart__checkout-btn.is-loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Continue shopping link */
+  .fwb-cart__continue {
+    display: block;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--fwb-grey-500);
+    transition: color var(--fwb-transition);
+    text-decoration: none;
+    margin-top: -0.25rem;
+  }
+
+  .fwb-cart__continue:hover {
+    color: var(--fwb-black);
+  }
+
+  /* Trust signals */
+  .fwb-cart__trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--fwb-grey-300);
+  }
+
+  .fwb-cart__trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.72rem;
+    color: var(--fwb-grey-700);
+    letter-spacing: 0.01em;
+  }
+
+  .fwb-cart__trust-item svg {
+    flex-shrink: 0;
+    color: var(--fwb-grey-500);
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────── */
+
+  @media (max-width: 900px) {
+    .fwb-cart__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .fwb-cart__summary {
+      position: static;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .fwb-cart__items-head {
+      display: none;
+    }
+
+    .fwb-cart__item {
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      row-gap: 1rem;
+    }
+
+    .fwb-cart__item-qty {
+      grid-column: 2;
+      justify-content: flex-start;
+    }
+
+    .fwb-cart__item-price {
+      display: none;
+    }
+
+    .fwb-cart__item-img-wrap {
+      width: 80px;
+      height: 105px;
+      grid-row: 1 / 3;
+    }
+  }
+
+{% endstylesheet %}
+
+{% javascript %}
+
+  (function () {
+    'use strict';
+
+    /* ── Helpers ────────────────────────────────────────────────── */
+
+    function cartRequest(body) {
+      return fetch('/cart/change.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      }).then(function (r) { return r.json(); });
+    }
+
+    function formatMoney(cents) {
+      // Formats cents to shop money string (e.g. CHF 12.90)
+      // Uses Shopify's money_format from meta tag if present, else simple fallback
+      var meta = document.querySelector('meta[name="money-format"]');
+      if (meta) {
+        var fmt = decodeURIComponent(meta.getAttribute('content'));
+        return fmt.replace('{{amount}}', (cents / 100).toFixed(2))
+                  .replace('{{amount_no_decimals}}', Math.round(cents / 100));
+      }
+      return 'CHF\u00a0' + (cents / 100).toFixed(2);
+    }
+
+    function setItemLoading(itemEl, state) {
+      itemEl.classList.toggle('is-loading', state);
+    }
+
+    /* ── Update header cart count ───────────────────────────────── */
+
+    function updateHeaderCount(count) {
+      var badge = document.querySelector('.fwb-header__cart-count');
+      var cartLink = document.querySelector('.fwb-header__cart');
+      if (!cartLink) return;
+
+      if (count > 0) {
+        if (badge) {
+          badge.textContent = count;
+        } else {
+          badge = document.createElement('span');
+          badge.className = 'fwb-header__cart-count';
+          badge.textContent = count;
+          cartLink.appendChild(badge);
+        }
+      } else {
+        if (badge) badge.remove();
+      }
+
+      cartLink.setAttribute('aria-label', 'Warenkorb (' + count + ')');
+    }
+
+    /* ── Update subtotal display ────────────────────────────────── */
+
+    function updateSubtotal(cart) {
+      var el = document.getElementById('fwb-subtotal');
+      if (el) el.textContent = formatMoney(cart.total_price);
+    }
+
+    /* ── Remove an item from the DOM ────────────────────────────── */
+
+    function removeItemFromDOM(key) {
+      var itemEl = document.querySelector('.fwb-cart__item[data-item-key="' + key + '"]');
+      if (!itemEl) return;
+      itemEl.style.transition = 'opacity 0.25s ease, max-height 0.35s ease';
+      itemEl.style.overflow = 'hidden';
+      itemEl.style.maxHeight = itemEl.offsetHeight + 'px';
+      requestAnimationFrame(function () {
+        itemEl.style.opacity = '0';
+        itemEl.style.maxHeight = '0';
+        itemEl.style.paddingBlock = '0';
+        itemEl.style.marginBlock = '0';
+      });
+      setTimeout(function () { itemEl.remove(); }, 380);
+    }
+
+    /* ── Show empty state if no items left ──────────────────────── */
+
+    function checkEmpty(cart) {
+      if (cart.item_count === 0) {
+        // Reload so the empty state section renders from Liquid
+        window.location.reload();
+      }
+    }
+
+    /* ── Quantity change handler ─────────────────────────────────── */
+
+    function changeQuantity(key, newQty) {
+      var itemEl = document.querySelector('.fwb-cart__item[data-item-key="' + key + '"]');
+      if (itemEl) setItemLoading(itemEl, true);
+
+      cartRequest({ id: key, quantity: newQty })
+        .then(function (cart) {
+          updateHeaderCount(cart.item_count);
+          updateSubtotal(cart);
+
+          if (newQty === 0) {
+            removeItemFromDOM(key);
+            checkEmpty(cart);
+          } else {
+            // Find updated line and refresh price
+            var updatedItem = cart.items.find(function (i) { return i.key === key; });
+            if (updatedItem && itemEl) {
+              var priceEl = itemEl.querySelector('.fwb-cart__line-total');
+              if (priceEl) priceEl.textContent = formatMoney(updatedItem.final_line_price);
+              var input = itemEl.querySelector('.fwb-cart__stepper-input');
+              if (input) input.value = updatedItem.quantity;
+              setItemLoading(itemEl, false);
+            }
+          }
+        })
+        .catch(function () {
+          if (itemEl) setItemLoading(itemEl, false);
+        });
+    }
+
+    /* ── Bind events ─────────────────────────────────────────────── */
+
+    var itemsContainer = document.getElementById('fwb-cart-items');
+    if (!itemsContainer) return;
+
+    // Stepper +/− buttons
+    itemsContainer.addEventListener('click', function (e) {
+      var btn = e.target.closest('.fwb-cart__stepper-btn');
+      if (!btn) return;
+
+      var key = btn.dataset.itemKey;
+      var action = btn.dataset.action;
+      var input = itemsContainer.querySelector('.fwb-cart__stepper-input[data-item-key="' + key + '"]');
+      if (!input) return;
+
+      var current = parseInt(input.value, 10) || 0;
+      var newQty = action === 'increase' ? current + 1 : Math.max(0, current - 1);
+
+      input.value = newQty;
+      changeQuantity(key, newQty);
+    });
+
+    // Direct input change (on blur)
+    itemsContainer.addEventListener('change', function (e) {
+      var input = e.target.closest('.fwb-cart__stepper-input');
+      if (!input) return;
+
+      var key = input.dataset.itemKey;
+      var newQty = Math.max(0, parseInt(input.value, 10) || 0);
+      input.value = newQty;
+      changeQuantity(key, newQty);
+    });
+
+    // Remove button
+    itemsContainer.addEventListener('click', function (e) {
+      var btn = e.target.closest('.fwb-cart__remove');
+      if (!btn) return;
+
+      var key = btn.dataset.itemKey;
+      var itemEl = document.querySelector('.fwb-cart__item[data-item-key="' + key + '"]');
+      if (itemEl) setItemLoading(itemEl, true);
+      changeQuantity(key, 0);
+    });
+
+    // Checkout button loading state
+    var checkoutBtn = document.getElementById('fwb-checkout-btn');
+    if (checkoutBtn) {
+      checkoutBtn.closest('form').addEventListener('submit', function () {
+        checkoutBtn.classList.add('is-loading');
+        checkoutBtn.textContent = '…';
+      });
+    }
+
+  })();
+
+{% endjavascript %}
 
 {% schema %}
 {
-  "name": "t:general.cart",
-  "settings": []
+  "name": "Warenkorb",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Seitenüberschrift"
+    },
+    {
+      "type": "text",
+      "id": "page_label",
+      "label": "Label (klein, über dem Titel)",
+      "default": "Ihre Auswahl"
+    },
+    {
+      "type": "text",
+      "id": "page_heading",
+      "label": "Seitentitel",
+      "default": "Warenkorb"
+    },
+    {
+      "type": "header",
+      "content": "Leerer Warenkorb"
+    },
+    {
+      "type": "text",
+      "id": "empty_text",
+      "label": "Hinweistext",
+      "default": "Ihr Warenkorb ist noch leer."
+    },
+    {
+      "type": "text",
+      "id": "empty_btn",
+      "label": "Button-Text",
+      "default": "Bücher entdecken"
+    },
+    {
+      "type": "header",
+      "content": "Tabellen-Spalten"
+    },
+    {
+      "type": "text",
+      "id": "col_product",
+      "label": "Spalte: Produkt",
+      "default": "Produkt"
+    },
+    {
+      "type": "text",
+      "id": "col_qty",
+      "label": "Spalte: Menge",
+      "default": "Menge"
+    },
+    {
+      "type": "text",
+      "id": "col_price",
+      "label": "Spalte: Preis",
+      "default": "Preis"
+    },
+    {
+      "type": "text",
+      "id": "unit_label",
+      "label": "Einheitsbezeichnung",
+      "default": "Stück"
+    },
+    {
+      "type": "text",
+      "id": "remove_label",
+      "label": "Entfernen-Link Text",
+      "default": "Entfernen"
+    },
+    {
+      "type": "header",
+      "content": "Bestellübersicht (rechte Spalte)"
+    },
+    {
+      "type": "text",
+      "id": "summary_label",
+      "label": "Label (klein)",
+      "default": "Übersicht"
+    },
+    {
+      "type": "text",
+      "id": "summary_heading",
+      "label": "Überschrift",
+      "default": "Bestellübersicht"
+    },
+    {
+      "type": "text",
+      "id": "subtotal_label",
+      "label": "Zeile: Zwischensumme",
+      "default": "Zwischensumme"
+    },
+    {
+      "type": "text",
+      "id": "discount_label",
+      "label": "Zeile: Rabatt",
+      "default": "Rabatt"
+    },
+    {
+      "type": "text",
+      "id": "shipping_label",
+      "label": "Zeile: Versand",
+      "default": "Versand"
+    },
+    {
+      "type": "text",
+      "id": "shipping_value",
+      "label": "Versand-Wert (Anzeigetext)",
+      "default": "Wird im Checkout berechnet"
+    },
+    {
+      "type": "text",
+      "id": "shipping_notice",
+      "label": "Versandhinweis (klein, unter Tabelle)",
+      "default": "Preise inkl. MwSt. Versandkosten werden im Checkout berechnet."
+    },
+    {
+      "type": "text",
+      "id": "checkout_label",
+      "label": "Kassen-Button Text",
+      "default": "Zur Kasse"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "Schnellkauf-Buttons anzeigen (Shop Pay, Apple Pay, etc.)",
+      "info": "Zeigt die in Ihrem Shopify-Konto aktivierten Zahlungsmethoden als Schnellkauf-Buttons an.",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "continue_label",
+      "label": "Weiter-einkaufen Link",
+      "default": "Weiter einkaufen"
+    },
+    {
+      "type": "header",
+      "content": "Bestellnotiz"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_note",
+      "label": "Bestellnotiz anzeigen",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "note_label",
+      "label": "Notiz-Label",
+      "default": "Anmerkung zur Bestellung"
+    },
+    {
+      "type": "text",
+      "id": "note_placeholder",
+      "label": "Platzhaltertext",
+      "default": "Optionale Hinweise zur Bestellung..."
+    },
+    {
+      "type": "header",
+      "content": "Vertrauenssignale"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust",
+      "label": "Vertrauenssignale anzeigen",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Signal 1",
+      "default": "Sichere Zahlung"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Signal 2",
+      "default": "Versand innerhalb von 2–4 Werktagen"
+    },
+    {
+      "type": "text",
+      "id": "trust_3",
+      "label": "Signal 3",
+      "default": "Fachverlag mit über 20 Jahren Erfahrung"
+    }
+  ]
 }
 {% endschema %}

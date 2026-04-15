@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "product_main": {
+      "type": "product-main",
+      "settings": {
+        "desc_label": "Beschreibung",
+        "desc_heading": "Das Erstwerk mit Tiefgang – 2. Auflage",
+        "variants_label": "Variationen",
+        "variants_heading": "Gedruckt. Digital. Oder beides.",
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen.",
+        "buy_btn_label": "Jetzt kaufen"
+      }
+    },
+    "product_toc": {
+      "type": "product-toc",
+      "settings": {
+        "label": "Inhaltsverzeichnis",
+        "heading": "Die Kapitel im Überblick.",
+        "subheading": "Auf über 630 Seiten in zwei Bänden: Von der Auftragsbeschaffung bis zum Abschluss der Ausführung werden alle relevanten Themen behandelt – praxisnah und als umfassende Grundlage für ausführungsspezifische Themen im Tief- und Strassenbau."
+      },
+      "blocks": {
+        "ch01": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bauwesen Schweiz"
+          }
+        },
+        "ch02": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Auftragsbeschaffung"
+          }
+        },
+        "ch03": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Arbeitsvorbereitung"
+          }
+        },
+        "ch04": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bauprogramm"
+          }
+        },
+        "ch05": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Organisationsstrukturen und Berufe des Bauhauptgewerbes"
+          }
+        },
+        "ch06": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Baustelleneinrichtung"
+          }
+        },
+        "ch07": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Inventar und Gerätschaften"
+          }
+        },
+        "ch08": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Logistik und Transportmittel"
+          }
+        },
+        "ch09": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausführung Tiefbau"
+          }
+        },
+        "ch10": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausführung Strassenbau"
+          }
+        },
+        "ch11": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Baumaterialien"
+          }
+        },
+        "ch12": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Vermessung und Absteckung"
+          }
+        },
+        "ch13": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Arbeitssicherheit und Gesundheitsschutz"
+          }
+        }
+      },
+      "block_order": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13"
+      ]
+    },
+    "product_testimonials": {
+      "type": "product-testimonials",
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo Baukompetenz zuhause ist."
+      },
+      "blocks": {
+        "t01": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Die beiden Autoren entwickelten eine Vision [...]. Das vorliegende Buch soll aufzeigen, wie Strassenbau geht! Aber so, dass es der Strassenbauer auch versteht und nachhaltiger Lernerfolg sichergestellt ist.",
+            "name": "Thomas Stocker",
+            "role": "Geschäftsführer CAMPUS SURSEE, Bildungszentrum Bau"
+          }
+        }
+      },
+      "block_order": [
+        "t01"
+      ]
+    }
+  },
+  "order": [
+    "product_main",
+    "product_toc",
+    "product_testimonials"
+  ]
+}

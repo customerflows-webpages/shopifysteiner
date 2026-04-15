@@ -2,7 +2,6 @@
   <div class="fwb-wrap">
 
     <div class="fwb-academy__title-block">
-      <p class="fwb-label">FWB Academy</p>
       <h1 class="fwb-display fwb-academy__title">{{ section.settings.heading | default: 'FWB Academy – Weil kluge Köpfe besser bauen.' }}</h1>
     </div>
 
@@ -15,13 +14,13 @@
         {%- endif -%}
       </div>
       <div class="fwb-academy__text">
-        <p class="fwb-body">{{ section.settings.body_1 }}</p>
+        <p class="fwb-body">{{ section.settings.body_2 }}</p>
       </div>
     </div>
 
     <div class="fwb-academy__row fwb-academy__row--img-right">
       <div class="fwb-academy__text">
-        <p class="fwb-body">{{ section.settings.body_2 }}</p>
+        <p class="fwb-body">{{ section.settings.body_1 }}</p>
       </div>
       <div class="fwb-academy__image">
         {%- if section.settings.image_2 != blank -%}
@@ -50,10 +49,10 @@
 
 {% stylesheet %}
   .fwb-academy { padding-bottom: var(--fwb-section-pad); }
-  .fwb-academy__title-block { padding-block: clamp(4rem,8vw,9rem); display: flex; flex-direction: column; gap: 1.25rem; border-bottom: 1px solid var(--fwb-grey-200); margin-bottom: clamp(4rem,8vw,8rem); max-width: 860px; }
-  .fwb-academy__title { font-weight: 300; }
-  .fwb-academy__row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,7vw,9rem); align-items: center; margin-bottom: clamp(5rem,10vw,10rem); }
-  .fwb-academy__image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(100%); }
+  .fwb-academy__title-block { padding-block: clamp(3rem,5vw,6rem); display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: clamp(1.5rem,3vw,3rem); max-width: 960px; margin-inline: auto; text-align: center; }
+  .fwb-academy__title { font-weight: 400; font-size: clamp(2rem,4vw,3.5rem); }
+  .fwb-academy__row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem,5vw,6rem); align-items: center; margin-bottom: clamp(1rem,2vw,2rem); }
+  .fwb-academy__image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: grayscale(100%); }
   .fwb-academy__text .fwb-body { font-size: clamp(0.9rem,1.1vw,1rem); line-height: 1.85; }
   @media (max-width: 768px) {
     .fwb-academy__row { grid-template-columns: 1fr; }

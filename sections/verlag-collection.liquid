@@ -2,12 +2,16 @@
   <div class="fwb-wrap">
 
     <div class="fwb-verlag__header">
-      <p class="fwb-label">FachWissenBau</p>
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
       <h1 class="fwb-display fwb-verlag__title">{{ collection.title | default: 'Verlag' }}</h1>
-      <p class="fwb-verlag__subtitle fwb-body">Fachpublikationen für die Schweizer Bauwirtschaft – präzise, praxisnah und nachhaltig relevant.</p>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="fwb-verlag__subtitle fwb-body">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
     </div>
 
-    <div class="fwb-verlag__grid">
+    <div class="fwb-verlag__grid" style="--cols:{{ section.settings.columns }}">
       {%- for product in collection.products -%}
         <article class="fwb-verlag__card">
           <a href="{{ product.url }}" class="fwb-verlag__card-image">
@@ -21,14 +25,14 @@
               <div class="fwb-verlag__card-placeholder"></div>
             {%- endif -%}
             <div class="fwb-verlag__card-overlay">
-              <span class="fwb-label">Mehr erfahren →</span>
+              <span class="fwb-label">{{ section.settings.card_hover_label | default: 'Mehr erfahren →' }}</span>
             </div>
           </a>
           <div class="fwb-verlag__card-info">
             <h2 class="fwb-verlag__card-title">{{ product.title }}</h2>
             <p class="fwb-verlag__card-price">ab {{ product.price_min | money }}</p>
             <p class="fwb-verlag__card-desc fwb-body">{{ product.description | strip_html | truncate: 110 }}</p>
-            <a href="{{ product.url }}" class="fwb-btn fwb-verlag__card-btn">Mehr erfahren</a>
+            <a href="{{ product.url }}" class="fwb-btn fwb-verlag__card-btn">{{ section.settings.card_btn_label | default: 'Mehr erfahren' }}</a>
           </div>
         </article>
       {%- else -%}
@@ -62,7 +66,7 @@
 
   .fwb-verlag__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(var(--cols, 2), 1fr);
     gap: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
   }
 
@@ -148,7 +152,11 @@
     letter-spacing: 0.14em;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
+    .fwb-verlag__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
     .fwb-verlag__grid { grid-template-columns: 1fr; }
   }
 {% endstylesheet %}
@@ -156,7 +164,22 @@
 {% schema %}
 {
   "name": "Verlag Kollektion",
-  "settings": [],
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "FachWissenBau" },
+    { "type": "textarea", "id": "subtitle", "label": "Untertitel", "default": "Fachpublikationen für die Schweizer Bauwirtschaft – präzise, praxisnah und nachhaltig relevant." },
+    {
+      "type": "select", "id": "columns", "label": "Spalten",
+      "options": [
+        { "value": "1", "label": "1 Spalte" },
+        { "value": "2", "label": "2 Spalten" },
+        { "value": "3", "label": "3 Spalten" },
+        { "value": "4", "label": "4 Spalten" }
+      ],
+      "default": "4"
+    },
+    { "type": "text", "id": "card_hover_label", "label": "Karte Hover-Text", "default": "Mehr erfahren →" },
+    { "type": "text", "id": "card_btn_label", "label": "Karte Button Text", "default": "Mehr erfahren" }
+  ],
   "presets": [{ "name": "Verlag Kollektion" }]
 }
 {% endschema %}

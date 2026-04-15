@@ -30,7 +30,7 @@
           "settings": { "chapter": "Ausführung" }
         }
       },
-      "blocks_order": ["chapter_1", "chapter_2", "chapter_3"]
+      "block_order": ["chapter_1", "chapter_2", "chapter_3"]
     },
     "product_authors": {
       "type": "product-authors",
@@ -42,7 +42,7 @@
         "cta_url": "#fwb-product-buy"
       },
       "blocks": {},
-      "blocks_order": []
+      "block_order": []
     },
     "product_testimonials": {
       "type": "product-testimonials",
@@ -51,7 +51,7 @@
         "heading": "Wo Baukompetenz zuhause ist."
       },
       "blocks": {},
-      "blocks_order": []
+      "block_order": []
     }
   },
   "order": [

@@ -1,0 +1,95 @@
+<div class="fwb-divider" style="
+  --divider-color: {{ section.settings.color }};
+  --divider-spacing: {{ section.settings.spacing }}px;
+">
+  {%- if section.settings.style == 'line' -%}
+    <div class="fwb-divider__line"></div>
+  {%- elsif section.settings.style == 'line-label' -%}
+    <div class="fwb-divider__line-label">
+      {%- if section.settings.label != blank -%}
+        <span class="fwb-divider__text">{{ section.settings.label }}</span>
+      {%- endif -%}
+    </div>
+  {%- elsif section.settings.style == 'space' -%}
+    {{- '' -}}
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .fwb-divider {
+    padding-block: var(--divider-spacing, 40px);
+  }
+
+  .fwb-divider__line {
+    width: 100%;
+    height: 1px;
+    background: var(--divider-color, var(--fwb-grey-200));
+  }
+
+  .fwb-divider__line-label {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .fwb-divider__line-label::before,
+  .fwb-divider__line-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--divider-color, var(--fwb-grey-200));
+  }
+
+  .fwb-divider__text {
+    font-family: var(--fwb-font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--divider-color, var(--fwb-grey-500));
+    white-space: nowrap;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Trenner",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Stil",
+      "options": [
+        { "value": "space", "label": "Nur Abstand" },
+        { "value": "line", "label": "Linie" },
+        { "value": "line-label", "label": "Linie mit Text" }
+      ],
+      "default": "line"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Text (bei Linie mit Text)",
+      "default": "FachWissenBau"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Farbe",
+      "default": "#efefed"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 0,
+      "max": 120,
+      "step": 8,
+      "unit": "px",
+      "label": "Abstand oben/unten",
+      "default": 40
+    }
+  ],
+  "presets": [
+    { "name": "Trenner" }
+  ]
+}
+{% endschema %}

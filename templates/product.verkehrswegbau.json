@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "product_main": {
+      "type": "product-main",
+      "settings": {
+        "desc_label": "Beschreibung",
+        "desc_heading": "So geht Verkehrswegbau!",
+        "variants_label": "Variationen",
+        "variants_heading": "Gedruckt. Digital. Oder beides.",
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen.",
+        "buy_btn_label": "Jetzt kaufen"
+      }
+    },
+    "product_toc": {
+      "type": "product-toc",
+      "settings": {
+        "label": "Inhaltsverzeichnis",
+        "heading": "Die Kapitel im Überblick.",
+        "subheading": "768 Seiten in drei Bänden – das Inhaltsverzeichnis zeigt, wie fundiert und praxisnah das Thema von Grund auf aufgebaut ist: vom ersten Konzept bis zur baureifen Planung."
+      },
+      "blocks": {
+        "ch01": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Entwicklung Verkehrsinfrastruktur"
+          }
+        },
+        "ch02": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Eigentümer und Beschaffungswesen"
+          }
+        },
+        "ch03": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Strassensysteme"
+          }
+        },
+        "ch04": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Projektbearbeitung und Plandarstellung"
+          }
+        },
+        "ch05": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Grundlagen der Projektierung"
+          }
+        },
+        "ch06": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 2 – Projektierung von Elementen für den Strassenverkehr"
+          }
+        },
+        "ch07": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 3 – Grundlagen für die Projektierung des Strassenbaus"
+          }
+        },
+        "ch08": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 3 – Grundlagen für die Projektierung von Tiefbauarbeiten"
+          }
+        }
+      },
+      "block_order": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08"
+      ]
+    },
+    "product_testimonials": {
+      "type": "product-testimonials",
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo Zukunft geplant wird."
+      },
+      "blocks": {
+        "t01": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Die Einsatzbereitschaft und die Leidenschaft, die alle Beteiligten in einem Bauprojekt zeigen, begeistern mich immer wieder aufs Neue. Mit dem Bau, Betrieb und Unterhalt der Verkehrswege leisten Sie einen wichtigen, nachhaltigen und dauerhaften Beitrag für die Entwicklung von Wirtschaft und Gesellschaft.",
+            "name": "Jürg Röthlisberger",
+            "role": "Direktor Bundesamt für Strassen (ASTRA)"
+          }
+        },
+        "t02": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Das vorliegende Werk bietet eine lehrreiche, spannende Grundlage für die Vermittlung und den Erhalt der Fachkompetenzen. Es fördert die Zusammenarbeit, indem es Verständnis schafft für die vor- und nachgelagerten Prozesse im gesamten Phasenmodell von Bauprojekten. Nur mit einem ganzheitlichen Ansatz und einem weiten Horizont in der Projektierung kann echte Nachhaltigkeit erreicht werden – ökologisch, wirtschaftlich und sozial.",
+            "name": "Adrian Dinkelmann",
+            "role": "Geschäftsführer Infra Suisse"
+          }
+        }
+      },
+      "block_order": [
+        "t01",
+        "t02"
+      ]
+    }
+  },
+  "order": [
+    "product_main",
+    "product_toc",
+    "product_testimonials"
+  ]
+}

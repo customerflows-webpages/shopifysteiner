@@ -1,20 +1,48 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
       "type": "verlag-collection",
-      "settings": {}
+      "settings": {
+        "label": "FachWissenBau",
+        "subtitle": "Fachpublikationen für die Schweizer Bauwirtschaft – präzise, praxisnah und nachhaltig relevant.",
+        "card_hover_label": "Mehr erfahren →",
+        "card_btn_label": "Mehr erfahren"
+      }
+    },
+    "divider": {
+      "type": "divider",
+      "settings": {
+        "style": "line",
+        "color": "#efefed",
+        "spacing": 0
+      }
+    },
+    "coming_soon": {
+      "type": "coming-soon",
+      "settings": {
+        "heading": "Kommt bald. Baut auf Qualität.",
+        "note": "Diese Bücher befinden sich aktuell in Arbeit. Die Inhalte werden entwickelt, strukturiert und sorgfältig aufgebaut. Weitere Informationen folgen bald."
+      },
+      "blocks": {
+        "book_1": {
+          "type": "book",
+          "settings": { "title": "Bau- und Projektmanagement" }
+        },
+        "book_2": {
+          "type": "book",
+          "settings": { "title": "Betonbau" }
+        },
+        "book_3": {
+          "type": "book",
+          "settings": { "title": "Kalkulation und Preisberechnung" }
+        },
+        "book_4": {
+          "type": "book",
+          "settings": { "title": "Nachhaltige und innovative Beschaffung" }
+        }
+      },
+      "block_order": ["book_1", "book_2", "book_3", "book_4"]
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main", "divider", "coming_soon"]
 }

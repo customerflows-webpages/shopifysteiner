@@ -1,7 +1,7 @@
 <div class="fwb-kids">
   <div class="fwb-wrap">
     <div class="fwb-kids__title-block">
-      <p class="fwb-label">FWB Kids</p>
+      {%- if section.settings.label != blank -%}<p class="fwb-label">{{ section.settings.label }}</p>{%- endif -%}
       <h1 class="fwb-display fwb-kids__title">{{ section.settings.heading | default: 'FWB Kids – Mit Spass auf die Baustelle' }}</h1>
     </div>
   </div>
@@ -70,6 +70,7 @@
 {
   "name": "Kids Seite",
   "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "FWB Kids" },
     { "type": "text", "id": "heading", "label": "Überschrift", "default": "FWB Kids – Mit Spass auf die Baustelle" },
     { "type": "image_picker", "id": "characters_image", "label": "Bild Charaktere" },
     { "type": "textarea", "id": "body_1", "label": "Text 1", "default": "Mit FWB Kids bringen wir die Faszination des Bauens direkt ins Klassenzimmer. Eine erfahrene Fachperson aus der Bauwelt besucht gemeinsam mit einer Lehrperson Schulklassen – und vermittelt kindgerecht, was Bauen eigentlich bedeutet. Spielerisch, anschaulich und mit jeder Menge Begeisterung zeigen wir, wie spannend und wichtig Berufe rund um die Baustelle sind." },

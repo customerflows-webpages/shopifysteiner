@@ -1,0 +1,187 @@
+{
+  "sections": {
+    "product_main": {
+      "type": "product-main",
+      "settings": {
+        "desc_label": "Beschreibung",
+        "desc_heading": "Das Erstwerk mit Blick in den Tunnel – 1. Auflage",
+        "variants_label": "Variationen",
+        "variants_heading": "Gedruckt. Digital. Oder beides.",
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen.",
+        "buy_btn_label": "Jetzt kaufen"
+      }
+    },
+    "product_toc": {
+      "type": "product-toc",
+      "settings": {
+        "label": "Inhaltsverzeichnis",
+        "heading": "Vom ersten Sprengknall bis zur letzten Lüftungsklappe.",
+        "subheading": "Über 670 Seiten in zwei Bänden – das Inhaltsverzeichnis zeigt die gesamte Bandbreite des Baubetriebs im Untertagbau: klar strukturiert, praxisnah und tief im Detail."
+      },
+      "blocks": {
+        "ch01": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Einführung"
+          }
+        },
+        "ch02": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Grundlagen"
+          }
+        },
+        "ch03": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Begriffe"
+          }
+        },
+        "ch04": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Entwicklung und heutige Bedeutung"
+          }
+        },
+        "ch05": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Vortriebsmethoden"
+          }
+        },
+        "ch06": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Sprengvortrieb"
+          }
+        },
+        "ch07": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Maschinenunterstützter Vortrieb"
+          }
+        },
+        "ch08": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "TBM-Vortrieb im Fels"
+          }
+        },
+        "ch09": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Schildmaschinen-Vortrieb im Lockergestein"
+          }
+        },
+        "ch10": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausbruchsicherung"
+          }
+        },
+        "ch11": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bauhilfsmassnahmen"
+          }
+        },
+        "ch12": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Abdichtung und Entwässerung"
+          }
+        },
+        "ch13": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausbau"
+          }
+        },
+        "ch14": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bewirtschaftung des Ausbruchmaterials"
+          }
+        },
+        "ch15": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Umweltschutz auf Untertagbaustellen"
+          }
+        },
+        "ch16": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Arbeitssicherheit im Untertagbau"
+          }
+        },
+        "ch17": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Baulüftung und Baukühlung"
+          }
+        },
+        "ch18": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Logistik von Untertagbaustellen"
+          }
+        }
+      },
+      "block_order": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13",
+        "ch14",
+        "ch15",
+        "ch16",
+        "ch17",
+        "ch18"
+      ]
+    },
+    "product_testimonials": {
+      "type": "product-testimonials",
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo andere nur Fels sehen."
+      },
+      "blocks": {
+        "t01": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Das vorliegende Buch «BauPraxis – Der Untertagbau» zeigt die theoretischen Zusammenhänge für den Baubetrieb auf, ergänzt mit Erfahrungen aus ausgeführten Projekten und Meinungen von Fachleuten. Möge das Buch einen Beitrag dazu leisten, dass kommende Untertagbauprojekte noch besser ausgeführt werden können.",
+            "name": "Adolf Ogi",
+            "role": "Alt Bundesrat, ehemaliger Verkehrsminister der Schweiz"
+          }
+        },
+        "t02": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Mit der Lektüre des vorliegenden Buches wird man nicht automatisch zum perfekten Tunnelbauer, aber es liegt eine professionelle und übersichtliche Grundlage vor, um sich in der faszinierenden Welt des Untertagbaus zurechtzufinden.",
+            "name": "Andreas Reber",
+            "role": "Geschäftsführer, Marti Tunnel AG"
+          }
+        }
+      },
+      "block_order": [
+        "t01",
+        "t02"
+      ]
+    }
+  },
+  "order": [
+    "product_main",
+    "product_toc",
+    "product_testimonials"
+  ]
+}

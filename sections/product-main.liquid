@@ -1,100 +1,126 @@
+<div class="fwb-product-notice">
+  <div class="fwb-wrap fwb-product-notice__inner">
+    <span class="fwb-product-notice__icon">&#9432;</span>
+    <p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns vor der Bestellung über unser <a href="/pages/kontakt">Kontaktformular</a>.</p>
+  </div>
+</div>
+
 <article class="fwb-product">
   <div class="fwb-wrap">
 
-    <!-- Product title -->
+    <!-- Product header -->
     <div class="fwb-product__header">
       <p class="fwb-label">{{ product.type | default: 'Verlag' }}</p>
       <h1 class="fwb-display fwb-product__title">{{ product.title }}</h1>
     </div>
 
-    <!-- Hero image + description -->
-    <div class="fwb-product__hero-row">
-      <div class="fwb-product__hero-image">
+    <!-- Two-column: image LEFT, description + buy RIGHT -->
+    <div class="fwb-product__main-row">
+
+      <div class="fwb-product__image-col">
         {%- if product.featured_image != blank -%}
           <img
             src="{{ product.featured_image | img_url: '1000x' }}"
             alt="{{ product.featured_image.alt | default: product.title | escape }}"
             loading="eager"
             fetchpriority="high"
+            class="fwb-product__hero-img"
           >
         {%- endif -%}
       </div>
 
-      <div class="fwb-product__desc-col">
-        {%- if section.settings.desc_label != blank -%}
-          <p class="fwb-label">{{ section.settings.desc_label }}</p>
-        {%- endif -%}
-        {%- if section.settings.desc_heading != blank -%}
-          <h2 class="fwb-h2 fwb-product__desc-heading">{{ section.settings.desc_heading }}</h2>
-        {%- endif -%}
-        <div class="fwb-product__description fwb-body">
-          {{ product.description }}
-        </div>
-      </div>
-    </div>
+      <div class="fwb-product__info-col">
 
-    <!-- Variants + Add to Cart -->
-    <div class="fwb-product__buy" id="fwb-product-buy">
-      <div class="fwb-product__variants-header">
-        <p class="fwb-label">{{ section.settings.variants_label | default: 'Variationen' }}</p>
-        <h2 class="fwb-h2">{{ section.settings.variants_heading | default: 'Gedruckt. Digital. Oder beides.' }}</h2>
-        {%- if section.settings.variants_body != blank -%}
-          <p class="fwb-body fwb-product__variants-desc">{{ section.settings.variants_body }}</p>
-        {%- endif -%}
-      </div>
-
-      {%- form 'product', product, id: 'fwb-product-form', novalidate: 'novalidate' -%}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
-        {%- if product.has_only_default_variant == false -%}
-          <div class="fwb-product__variant-list">
-            {%- for variant in product.variants -%}
-              <label class="fwb-product__variant-option{% if variant == product.selected_or_first_available_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}">
-                <input
-                  type="radio"
-                  name="variant"
-                  value="{{ variant.id }}"
-                  {% if variant == product.selected_or_first_available_variant %}checked{% endif %}
-                  {% unless variant.available %}disabled{% endunless %}
-                  data-variant-id="{{ variant.id }}"
-                >
-                <span class="fwb-product__variant-title">{{ variant.title }}</span>
-                <span class="fwb-product__variant-price">{{ variant.price | money }}</span>
-              </label>
-            {%- endfor -%}
-          </div>
-        {%- else -%}
-          <p class="fwb-product__single-price fwb-h3">{{ product.price | money }}</p>
-        {%- endif -%}
-
-        <button
-          type="submit"
-          name="add"
-          class="fwb-btn fwb-btn--solid fwb-product__add-btn"
-          {% unless product.available %}disabled{% endunless %}
-        >
-          {%- if product.available -%}
-            Jetzt kaufen
-          {%- else -%}
-            Nicht verfügbar
+        <!-- Description -->
+        <div class="fwb-product__desc-block">
+          {%- if section.settings.desc_label != blank -%}
+            <p class="fwb-label">{{ section.settings.desc_label }}</p>
           {%- endif -%}
-        </button>
+          {%- if section.settings.desc_heading != blank -%}
+            <h2 class="fwb-h2 fwb-product__desc-heading">{{ section.settings.desc_heading }}</h2>
+          {%- endif -%}
+          <div class="fwb-product__description fwb-body">
+            {{ product.description }}
+          </div>
+        </div>
 
-      {%- endform -%}
+        <!-- Buy / Variants -->
+        <div class="fwb-product__buy" id="fwb-product-buy">
+          <div class="fwb-product__variants-header">
+            <p class="fwb-label">{{ section.settings.variants_label | default: 'Variationen' }}</p>
+            <h3 class="fwb-h3 fwb-product__variants-title">{{ section.settings.variants_heading | default: 'Gedruckt. Digital. Oder beides.' }}</h3>
+            {%- if section.settings.variants_body != blank -%}
+              <p class="fwb-body fwb-product__variants-desc">{{ section.settings.variants_body }}</p>
+            {%- endif -%}
+          </div>
+
+          {%- form 'product', product, id: 'fwb-product-form', novalidate: 'novalidate' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+            {%- if product.has_only_default_variant == false -%}
+              <div class="fwb-product__variant-list">
+                {%- for variant in product.variants -%}
+                  <label class="fwb-product__variant-option{% if variant == product.selected_or_first_available_variant %} is-selected{% endif %}{% unless variant.available %} is-unavailable{% endunless %}">
+                    <input
+                      type="radio"
+                      name="variant"
+                      value="{{ variant.id }}"
+                      {% if variant == product.selected_or_first_available_variant %}checked{% endif %}
+                      {% unless variant.available %}disabled{% endunless %}
+                      data-variant-id="{{ variant.id }}"
+                    >
+                    <span class="fwb-product__variant-title">{{ variant.title }}</span>
+                    <span class="fwb-product__variant-price">{{ variant.price | money }}</span>
+                  </label>
+                {%- endfor -%}
+              </div>
+            {%- else -%}
+              <p class="fwb-product__single-price fwb-h3">{{ product.price | money }}</p>
+            {%- endif -%}
+
+            <button
+              type="submit"
+              name="add"
+              class="fwb-btn fwb-btn--solid fwb-product__add-btn"
+              {% unless product.available %}disabled{% endunless %}
+            >
+              {%- if product.available -%}
+                {{ section.settings.buy_btn_label | default: 'Jetzt kaufen' }}
+              {%- else -%}
+                {{ section.settings.unavailable_label | default: 'Nicht verfügbar' }}
+              {%- endif -%}
+            </button>
+          {%- endform -%}
+        </div>
+
+      </div>
     </div>
 
-    <!-- Interior images gallery -->
+    <!-- Interior image carousel -->
     {%- if product.images.size > 1 -%}
-      <div class="fwb-product__gallery">
-        {%- for image in product.images offset: 1 limit: 4 -%}
-          <div class="fwb-product__gallery-item">
-            <img
-              src="{{ image | img_url: '800x' }}"
-              alt="{{ image.alt | default: product.title | escape }}"
-              loading="lazy"
-            >
+      <div class="fwb-product__gallery-wrap">
+        <p class="fwb-label fwb-product__gallery-label">{{ section.settings.gallery_label | default: 'Einblick' }}</p>
+        <div class="fwb-product__gallery-track-wrap">
+          <button class="fwb-product__gallery-btn" id="fwb-gallery-prev" aria-label="Zurück">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="fwb-product__gallery-viewport">
+            <div class="fwb-product__gallery-track" id="fwb-gallery-track">
+              {%- for image in product.images offset: 1 -%}
+                <div class="fwb-product__gallery-slide">
+                  <img
+                    src="{{ image | img_url: '900x' }}"
+                    alt="{{ image.alt | default: product.title | escape }}"
+                    loading="lazy"
+                  >
+                </div>
+              {%- endfor -%}
+            </div>
           </div>
-        {%- endfor -%}
+          <button class="fwb-product__gallery-btn" id="fwb-gallery-next" aria-label="Weiter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
     {%- endif -%}
 
@@ -102,10 +128,39 @@
 </article>
 
 {% stylesheet %}
+  /* Notice banner */
+  .fwb-product-notice {
+    background: #f0f4e8;
+    border-bottom: 1px solid #d4e0b8;
+    padding: 0.75rem 0;
+  }
+  .fwb-product-notice__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .fwb-product-notice__icon {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5a7a2a;
+    flex-shrink: 0;
+  }
+  .fwb-product-notice p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #3d3d3d;
+  }
+  .fwb-product-notice a {
+    color: #5a7a2a;
+    text-decoration: underline;
+  }
+
   .fwb-product {
     padding-bottom: var(--fwb-section-pad);
   }
 
+  /* Header */
   .fwb-product__header {
     padding-block: clamp(3rem, 6vw, 7rem);
     display: flex;
@@ -115,31 +170,43 @@
     margin-bottom: clamp(3rem, 6vw, 6rem);
   }
 
-  .fwb-product__title {
-    max-width: 800px;
-  }
+  .fwb-product__title { max-width: 800px; }
 
-  .fwb-product__hero-row {
+  /* Main two-column row */
+  .fwb-product__main-row {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: clamp(3rem, 6vw, 8rem);
     align-items: start;
     margin-bottom: clamp(4rem, 8vw, 8rem);
   }
 
-  .fwb-product__hero-image img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    filter: grayscale(10%);
+  /* Left: image */
+  .fwb-product__image-col {
+    position: sticky;
+    top: 90px;
   }
 
-  .fwb-product__desc-col {
+  .fwb-product__hero-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    filter: grayscale(8%);
+    display: block;
+  }
+
+  /* Right: description + buy */
+  .fwb-product__info-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .fwb-product__desc-block {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    position: sticky;
-    top: 100px;
   }
 
   .fwb-product__desc-heading {
@@ -148,41 +215,46 @@
 
   .fwb-product__description {
     font-size: 0.9rem;
-    line-height: 1.8;
+    line-height: 1.85;
     color: var(--fwb-grey-700);
   }
 
+  /* Buy block */
   .fwb-product__buy {
     background: var(--fwb-grey-100);
-    padding: clamp(2rem, 5vw, 5rem);
-    margin-bottom: clamp(4rem, 8vw, 8rem);
-    max-width: 780px;
+    padding: clamp(1.5rem, 4vw, 3rem);
   }
 
   .fwb-product__variants-header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .fwb-product__variants-desc {
-    max-width: 540px;
-    font-size: 0.85rem;
-  }
-
-  .fwb-product__variant-list {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     margin-bottom: 2rem;
   }
 
+  .fwb-product__variants-title {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .fwb-product__variants-desc {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--fwb-grey-600);
+  }
+
+  .fwb-product__variant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
   .fwb-product__variant-option {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.25rem;
+    padding: 0.9rem 1.1rem;
     border: 1px solid var(--fwb-grey-300);
     background: var(--fwb-white);
     cursor: pointer;
@@ -206,14 +278,14 @@
   }
 
   .fwb-product__variant-title {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 500;
     letter-spacing: 0.03em;
   }
 
   .fwb-product__variant-price {
-    font-size: 0.85rem;
-    color: var(--fwb-grey-700);
+    font-size: 0.82rem;
+    color: var(--fwb-grey-600);
   }
 
   .fwb-product__single-price {
@@ -229,35 +301,84 @@
     justify-content: center;
   }
 
-  .fwb-product__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-top: clamp(2rem, 4vw, 4rem);
+  /* Gallery carousel */
+  .fwb-product__gallery-wrap {
+    margin-bottom: clamp(3rem, 6vw, 6rem);
   }
 
-  .fwb-product__gallery-item img {
+  .fwb-product__gallery-label {
+    margin-bottom: 1.5rem;
+  }
+
+  .fwb-product__gallery-track-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .fwb-product__gallery-viewport {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .fwb-product__gallery-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .fwb-product__gallery-slide {
+    min-width: calc(50% - 0.75rem);
+    flex-shrink: 0;
+  }
+
+  .fwb-product__gallery-slide img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
+    display: block;
   }
 
-  @media (max-width: 768px) {
-    .fwb-product__hero-row {
+  .fwb-product__gallery-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid var(--fwb-grey-300);
+    background: transparent;
+    cursor: pointer;
+    color: var(--fwb-text);
+    transition: border-color var(--fwb-transition), background var(--fwb-transition);
+  }
+
+  .fwb-product__gallery-btn:hover {
+    border-color: var(--fwb-black);
+    background: var(--fwb-black);
+    color: var(--fwb-white);
+  }
+
+  .fwb-product__gallery-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 860px) {
+    .fwb-product__main-row {
       grid-template-columns: 1fr;
     }
-
-    .fwb-product__desc-col {
+    .fwb-product__image-col {
       position: static;
     }
-
-    .fwb-product__gallery {
-      grid-template-columns: 1fr;
+    .fwb-product__gallery-slide {
+      min-width: calc(100% - 0px);
     }
   }
 {% endstylesheet %}
 
 {% javascript %}
+  // Variant selector
   const variantOptions = document.querySelectorAll('.fwb-product__variant-option');
   const hiddenInput = document.querySelector('#fwb-product-form input[name="id"]');
 
@@ -271,46 +392,43 @@
       if (hiddenInput) hiddenInput.value = radio.dataset.variantId;
     });
   });
+
+  // Gallery carousel
+  const track = document.getElementById('fwb-gallery-track');
+  if (track) {
+    const prevBtn = document.getElementById('fwb-gallery-prev');
+    const nextBtn = document.getElementById('fwb-gallery-next');
+    const slides = track.querySelectorAll('.fwb-product__gallery-slide');
+    let current = 0;
+    const visibleCount = window.innerWidth <= 860 ? 1 : 2;
+
+    function updateGallery() {
+      const slideWidth = slides[0] ? slides[0].offsetWidth + 24 : 0;
+      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current >= slides.length - visibleCount;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (current > 0) { current--; updateGallery(); } });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (current < slides.length - visibleCount) { current++; updateGallery(); } });
+
+    updateGallery();
+  }
 {% endjavascript %}
 
 {% schema %}
 {
   "name": "Produkt Hauptbereich",
   "settings": [
-    {
-      "type": "text",
-      "id": "desc_label",
-      "label": "Beschreibungs-Label",
-      "default": "Beschreibung"
-    },
-    {
-      "type": "text",
-      "id": "desc_heading",
-      "label": "Beschreibungs-Überschrift"
-    },
-    {
-      "type": "text",
-      "id": "variants_label",
-      "label": "Variationen Label",
-      "default": "Variationen"
-    },
-    {
-      "type": "text",
-      "id": "variants_heading",
-      "label": "Variationen Überschrift",
-      "default": "Gedruckt. Digital. Oder beides."
-    },
-    {
-      "type": "textarea",
-      "id": "variants_body",
-      "label": "Variationen Text",
-      "default": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
-    }
+    { "type": "text", "id": "desc_label", "label": "Beschreibungs-Label", "default": "Beschreibung" },
+    { "type": "text", "id": "desc_heading", "label": "Beschreibungs-Überschrift" },
+    { "type": "text", "id": "variants_label", "label": "Variationen Label", "default": "Variationen" },
+    { "type": "text", "id": "variants_heading", "label": "Variationen Überschrift", "default": "Gedruckt. Digital. Oder beides." },
+    { "type": "textarea", "id": "variants_body", "label": "Variationen Text", "default": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich." },
+    { "type": "text", "id": "gallery_label", "label": "Einblick Label", "default": "Einblick" },
+    { "type": "text", "id": "buy_btn_label", "label": "Kaufen Button Text", "default": "Jetzt kaufen" },
+    { "type": "text", "id": "unavailable_label", "label": "Nicht verfügbar Text", "default": "Nicht verfügbar" }
   ],
-  "presets": [
-    {
-      "name": "Produkt Hauptbereich"
-    }
-  ]
+  "presets": [{ "name": "Produkt Hauptbereich" }]
 }
 {% endschema %}

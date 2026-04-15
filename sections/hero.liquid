@@ -10,7 +10,7 @@
 
   <div class="fwb-hero__content fwb-wrap">
     <div class="fwb-hero__inner">
-      <p class="fwb-hero__label fwb-label">FachWissenBau</p>
+      {%- if section.settings.label != blank -%}<p class="fwb-hero__label fwb-label">{{ section.settings.label }}</p>{%- endif -%}
       <h1 class="fwb-hero__heading">{{ section.settings.heading | default: 'Fachkompetenz für Bau und Infrastruktur.' }}</h1>
       {%- if section.settings.cta_label != blank -%}
         <a href="{{ section.settings.cta_url | default: '/collections/verlag' }}" class="fwb-btn fwb-hero__cta">{{ section.settings.cta_label }}</a>
@@ -116,6 +116,7 @@
   "name": "Hero",
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hintergrundbild" },
+    { "type": "text", "id": "label", "label": "Label", "default": "FachWissenBau" },
     { "type": "textarea", "id": "heading", "label": "Überschrift", "default": "Fachkompetenz für Bau und Infrastruktur – präzise, praxisnah, zukunftsstark." },
     { "type": "text", "id": "cta_label", "label": "Button Text", "default": "Zum Verlag" },
     { "type": "url", "id": "cta_url", "label": "Button Link" }
