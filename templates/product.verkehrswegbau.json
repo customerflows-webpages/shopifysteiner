@@ -39,7 +39,7 @@
           "type": "text",
           "settings": {
             "title": "Lieferung & Versand",
-            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns über unser <a href=\"/pages/kontakt\">Kontaktformular</a>.</p>"
+            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Leseproben: <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/Verkehrswegbua_Band_1-Leseprobe.pdf\" target=\"_blank\">Band 1</a>, <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/Verkehrswegbua_Band_2-Leseprobe.pdf\" target=\"_blank\">Band 2</a>, <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/Verkehrswegbua_Band_3-Leseprobe.pdf\" target=\"_blank\">Band 3</a></p><p>Für <a href=\"/pages/kontakt?typ=auszubildende-studierende-dozierende\">Auszubildende, Studierende &amp; Dozierende</a> und <a href=\"/pages/kontakt?typ=buchhandlungen\">Buchhandlungen</a> bieten wir spezielle Konditionen an.</p>"
           }
         }
       },
@@ -75,8 +75,39 @@
     },
     "product_sponsors": {
       "type": "product-sponsors",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "tier_01": { "type": "heading", "settings": { "title": "Latinsponsoren" } },
+        "sp_01": { "type": "sponsor", "settings": { "name": "ACO AG", "url": "https://www.aco.ch/" } },
+        "sp_02": { "type": "sponsor", "settings": { "name": "Basler & Hofmann", "url": "https://www.baslerhofmann.ch/" } },
+        "sp_03": { "type": "sponsor", "settings": { "name": "BITEX BIMOID AG", "url": "https://bitexbimoid.ch/" } },
+        "sp_04": { "type": "sponsor", "settings": { "name": "Cellere Bau AG", "url": "https://cellere.ch/" } },
+        "sp_05": { "type": "sponsor", "settings": { "name": "flexBelag bau ag", "url": "http://flexbelag.ch/" } },
+        "sp_06": { "type": "sponsor", "settings": { "name": "Hüppi AG", "url": "https://www.hueppi.ch/" } },
+        "sp_07": { "type": "sponsor", "settings": { "name": "Implenia Schweiz AG", "url": "https://www.implenia.com/" } },
+        "sp_08": { "type": "sponsor", "settings": { "name": "Marti Gruppe", "url": "https://www.martiag.ch/" } },
+        "sp_09": { "type": "sponsor", "settings": { "name": "Neuteerbit AG Salmsach", "url": "https://www.neuteerbit.ch/" } },
+        "sp_10": { "type": "sponsor", "settings": { "name": "Schweizerischer Baumeisterverband", "url": "http://www.baumeister.ch/de/" } },
+        "sp_11": { "type": "sponsor", "settings": { "name": "ViaTec AG", "url": "https://viatec.ch/" } },
+        "sp_12": { "type": "sponsor", "settings": { "name": "Walo Bertschinger AG", "url": "https://walo.ch/" } },
+        "tier_02": { "type": "heading", "settings": { "title": "Goldsponsoren" } },
+        "sp_13": { "type": "sponsor", "settings": { "name": "Bau Power Group AG", "url": "https://www.baupowergroup.com/" } },
+        "sp_14": { "type": "sponsor", "settings": { "name": "BHZ Baustoff Holding Zürich", "url": "https://www.bhz-zh.ch/" } },
+        "sp_15": { "type": "sponsor", "settings": { "name": "CREABETON BAUSTOFF AG", "url": "https://creabeton-baustoff.ch/" } },
+        "sp_16": { "type": "sponsor", "settings": { "name": "Infra Suisse", "url": "https://infra-suisse.ch/" } },
+        "sp_17": { "type": "sponsor", "settings": { "name": "Ingenieurbureau Heierli AG", "url": "https://www.heierli.ch/" } },
+        "sp_18": { "type": "sponsor", "settings": { "name": "Locher Ingenieure AG", "url": "https://locher-ing.ch/" } },
+        "sp_19": { "type": "sponsor", "settings": { "name": "Ebicon AG", "url": "http://www.ebicon.ch/" } },
+        "sp_20": { "type": "sponsor", "settings": { "name": "Eckert Baulogistik AG", "url": "http://www.eckert-bag.ch/" } },
+        "sp_21": { "type": "sponsor", "settings": { "name": "EcoSoil AG", "url": "https://ecosoil.ch/" } },
+        "sp_22": { "type": "sponsor", "settings": { "name": "OST Ostschweizer Fachhochschule", "url": "https://www.ost.ch/" } },
+        "sp_23": { "type": "sponsor", "settings": { "name": "Q Point AG", "url": "https://q-point.com/" } },
+        "sp_24": { "type": "sponsor", "settings": { "name": "Schällibaum AG", "url": "https://www.schaellibaum.ch/" } },
+        "sp_25": { "type": "sponsor", "settings": { "name": "EFP AG", "url": "https://www.efp.ch/" } },
+        "sp_26": { "type": "sponsor", "settings": { "name": "Grund- und Tiefbau AG Basel", "url": "https://www.grundundtiefbauag.ch/" } },
+        "sp_27": { "type": "sponsor", "settings": { "name": "STRABAG AG, Schweiz", "url": "https://www.strabag.ch/" } },
+        "sp_28": { "type": "sponsor", "settings": { "name": "Geoinfra Ingenieure AG", "url": "https://www.geoinfra.ch/" } }
+      },
+      "block_order": ["tier_01","sp_01","sp_02","sp_03","sp_04","sp_05","sp_06","sp_07","sp_08","sp_09","sp_10","sp_11","sp_12","tier_02","sp_13","sp_14","sp_15","sp_16","sp_17","sp_18","sp_19","sp_20","sp_21","sp_22","sp_23","sp_24","sp_25","sp_26","sp_27","sp_28"],
       "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {

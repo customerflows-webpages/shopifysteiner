@@ -39,7 +39,7 @@
           "type": "text",
           "settings": {
             "title": "Lieferung & Versand",
-            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns über unser <a href=\"/pages/kontakt\">Kontaktformular</a>.</p>"
+            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Leseproben: <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/LeseprobeUntertagbau_Band_1.pdf\" target=\"_blank\">Band 1</a>, <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/LeseprobeUntertagbau_Band_2.pdf\" target=\"_blank\">Band 2</a></p><p>Für <a href=\"/pages/kontakt?typ=auszubildende-studierende-dozierende\">Auszubildende, Studierende &amp; Dozierende</a> und <a href=\"/pages/kontakt?typ=buchhandlungen\">Buchhandlungen</a> bieten wir spezielle Konditionen an.</p>"
           }
         }
       },
@@ -77,17 +77,26 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": { "type": "author", "settings": { "name": "Heinz Ehrbar", "role": "Autor", "credentials": "Dipl. Bauingenieur ETH/SIA", "bio": "Seit 1981 auf dem Gebiet des Untertagbaus tätig, während rund 20 Jahren bei der Planung und Realisierung von Wasserkraftanlagen in der Schweiz und im Ausland. 1996 Wechsel in den Verkehrstunnelbau als Projektleiter für den Teilabschnitt Sedrun des Gotthard-Basistunnels, ab 2001 stellvertretender Leiter und ab 2006 Leiter Tunnel- und Trasseebau Gotthard-Basistunnel und Mitglied der Geschäftsleitung der AlpTransit Gotthard AG. 2013 bis 2017 Leiter Management Grossprojekte bei der DB Netz AG, Frankfurt am Main. Lehraufträge an der RWTH Aachen (2014 bis 2021) und an der ETH Zürich (2017 bis 2022). Heute Inhaber einer eigenen Beratungsfirma." } },
-        "author_02": { "type": "author", "settings": { "name": "Olivier Böckli", "role": "Autor", "credentials": "", "bio": "" } },
-        "author_03": { "type": "author", "settings": { "name": "Christian Ammon", "role": "Autor", "credentials": "", "bio": "" } }
+        "author_01": { "type": "author", "settings": { "name": "Heinz Ehrbar", "role": "Autor", "credentials": "Dipl. Bauingenieur ETH/SIA", "bio": "Seit 1981 auf dem Gebiet des Untertagbaus tätig, während rund 20 Jahren bei der Planung und Realisierung von Wasserkraftanlagen in der Schweiz und im Ausland. 1996 Wechsel in den Verkehrstunnelbau als Projektleiter für den Teilabschnitt Sedrun des Gotthard-Basistunnels, ab 2001 stellvertretender Leiter und ab 2006 Leiter Tunnel- und Trasseebau Gotthard-Basistunnel und Mitglied der Geschäftsleitung der AlpTransit Gotthard AG. 2013 bis 2017 Leiter Management Grossprojekte bei der DB Netz AG, Frankfurt am Main. Lehraufträge an der RWTH Aachen (2014 bis 2021) und an der ETH Zürich (2017 bis 2022) für Baubetrieb im Tunnelbau und Organisation von Untertagbauprojekten. Heute Inhaber einer eigenen Beratungsfirma. Nebenamtliche Aktivitäten als Vorstandsmitglied der FGU (2004 bis 2016), Leiter ITA-Working Group 19 «Conventional Tunnelling» (2004 bis 2016) und Mitglied des DAUB (seit 2016)." } },
+        "author_02": { "type": "author", "settings": { "name": "Olivier Böckli", "role": "Autor", "credentials": "Dipl. Bauingenieur ETH/SIA, EMBA in Leadership and Sustainability", "bio": "Knapp 30 Jahre Berufserfahrung in der Geschäftsführung und Ausführung von Tunnelbauprojekten in der Schweiz und im Ausland. Funktionen unter anderem als Baustellenchef am Gotthard-Basistunnel, als Geschäftsführer der Implenia Frankreich für vier Metrotunnel-Baulose am Grand-Paris-Express-Projekt und in Lyon sowie für zwei grosse Microtunnelling-Projekte im Mittleren Osten. Heute Mitglied der Geschäftsleitung der Marti Tunnel AG, verantwortlich für die Infrastrukturprojekte in Skandinavien, in der Slowakei sowie für die Entwicklung neuer Märkte für die Marti-Tunnelgruppe." } },
+        "author_03": { "type": "author", "settings": { "name": "Christian Ammon", "role": "Autor", "credentials": "Dipl. Kulturingenieur ETH/SIA", "bio": "37 Jahre Baubetriebserfahrung in der Ausführung von Tunnelbauprojekten in den Funktionen Bauführung, Baustellenchef und Projektleiter sowie 20 Jahre Geschäftsleitungsmitglied der Rothpletz, Lienhard + Cie AG und verantwortlicher Abteilungsleiter Tunnelbau. Verantwortlich für massgebende Infrastrukturprojekte mit allen gängigen Methoden des bergmännischen Tunnelbaus und anspruchsvolles Vertragsmanagement mit privaten, institutionellen und internationalen Vertragspartnern. Vier Jahre Mitwirkung in der Baupraxis-orientierten Ausbildung der Masterstudien D-BAUG ETH Zürich unter Einbezug gelebter Berufserfahrung." } }
       },
       "block_order": ["author_01", "author_02", "author_03"],
       "settings": { "label": "Autoren", "heading": "Erfahrung aus dem Untergrund.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "tier_01": { "type": "heading", "settings": { "title": "Latinsponsoren" } },
+        "sp_01": { "type": "sponsor", "settings": { "name": "ACO AG", "url": "https://www.aco.ch/" } },
+        "sp_02": { "type": "sponsor", "settings": { "name": "Herrenknecht AG", "url": "https://www.herrenknecht.com/" } },
+        "sp_03": { "type": "sponsor", "settings": { "name": "Infra Suisse", "url": "https://infra-suisse.ch/" } },
+        "sp_04": { "type": "sponsor", "settings": { "name": "Marti Technik AG", "url": "https://www.martitechnik.com/" } },
+        "sp_05": { "type": "sponsor", "settings": { "name": "Marti Tunnel AG", "url": "https://www.martiag.ch/" } },
+        "sp_06": { "type": "sponsor", "settings": { "name": "Schweizerischer Baumeisterverband", "url": "http://www.baumeister.ch/de/" } },
+        "sp_07": { "type": "sponsor", "settings": { "name": "Sika Schweiz AG", "url": "https://che.sika.com/" } }
+      },
+      "block_order": ["tier_01","sp_01","sp_02","sp_03","sp_04","sp_05","sp_06","sp_07"],
       "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {

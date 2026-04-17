@@ -17,35 +17,39 @@
     {%- if section.blocks.size > 0 -%}
       <div class="fwb-sponsors__grid">
         {%- for block in section.blocks -%}
-          <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
-            {%- if block.settings.image != blank -%}
-              <div class="fwb-sponsors__logo-wrap">
-                {%- if block.settings.url != blank -%}
-                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
-                {%- endif -%}
-                <img
-                  src="{{ block.settings.image | img_url: '400x' }}"
-                  alt="{{ block.settings.name | default: 'Sponsor' }}"
-                  loading="lazy"
-                  class="fwb-sponsors__logo"
-                >
-                {%- if block.settings.url != blank -%}
-                  </a>
-                {%- endif -%}
-              </div>
-            {%- elsif block.settings.name != blank -%}
-              <div class="fwb-sponsors__name-only">
-                {%- if block.settings.url != blank -%}
-                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
-                {%- else -%}
-                  {{ block.settings.name }}
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-            {%- if block.settings.caption != blank -%}
-              <p class="fwb-sponsors__caption">{{ block.settings.caption }}</p>
-            {%- endif -%}
-          </div>
+          {%- if block.type == 'heading' -%}
+            <div class="fwb-sponsors__tier-heading" {{ block.shopify_attributes }}>{{ block.settings.title }}</div>
+          {%- else -%}
+            <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                <div class="fwb-sponsors__logo-wrap">
+                  {%- if block.settings.url != blank -%}
+                    <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
+                  {%- endif -%}
+                  <img
+                    src="{{ block.settings.image | img_url: '400x' }}"
+                    alt="{{ block.settings.name | default: 'Sponsor' }}"
+                    loading="lazy"
+                    class="fwb-sponsors__logo"
+                  >
+                  {%- if block.settings.url != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+              {%- elsif block.settings.name != blank -%}
+                <div class="fwb-sponsors__name-only">
+                  {%- if block.settings.url != blank -%}
+                    <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
+                  {%- else -%}
+                    {{ block.settings.name }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.caption != blank -%}
+                <p class="fwb-sponsors__caption">{{ block.settings.caption }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
     {%- else -%}
@@ -84,6 +88,23 @@
     flex-wrap: wrap;
     gap: 2.5rem 4rem;
     align-items: center;
+  }
+
+  .fwb-sponsors__tier-heading {
+    flex-basis: 100%;
+    width: 100%;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fwb-grey-500);
+    padding-top: 2rem;
+    border-top: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-sponsors__tier-heading:first-child {
+    padding-top: 0;
+    border-top: none;
   }
 
   .fwb-sponsors__item {
@@ -162,6 +183,18 @@
     }
   ],
   "blocks": [
+    {
+      "type": "heading",
+      "name": "Tier-Überschrift",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bezeichnung",
+          "default": "Latinsponsoren"
+        }
+      ]
+    },
     {
       "type": "sponsor",
       "name": "Sponsor",

@@ -39,7 +39,7 @@
           "type": "text",
           "settings": {
             "title": "Lieferung & Versand",
-            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns über unser <a href=\"/pages/kontakt\">Kontaktformular</a>.</p>"
+            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für <a href=\"/pages/kontakt?typ=auszubildende-studierende-dozierende\">Auszubildende, Studierende &amp; Dozierende</a> und <a href=\"/pages/kontakt?typ=buchhandlungen\">Buchhandlungen</a> bieten wir spezielle Konditionen an.</p>"
           }
         }
       },
@@ -64,7 +64,7 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": { "type": "author", "settings": { "name": "Philipp Troesch", "role": "Autor", "credentials": "", "bio": "" } },
+        "author_01": { "type": "author", "settings": { "name": "Philipp Troesch", "role": "Autor", "credentials": "Rechtsanwalt, lic. iur.", "bio": "Philipp Troesch verfügt über mehr als 25 Jahre Berufserfahrung als Rechtsanwalt in der Schweiz und im Ausland. Sein beruflicher Werdegang führte ihn in verschiedene Anwaltskanzleien in Zürich, Bern und Santiago de Chile sowie in eine führende internationale Kanzlei in Yangon (Myanmar), wo er als Senior Counsel tätig war. Seit 2020 ist er Rechtsanwalt und Partner bei ZL ZurichLawyers. Seine vielfältige Erfahrung aus anwaltlicher Tätigkeit, Verwaltung und internationalen Mandaten bringt er praxisnah und gewinnbringend in seine berufliche Arbeit ein." } },
         "author_02": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
         "author_03": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
       },

@@ -39,7 +39,7 @@
           "type": "text",
           "settings": {
             "title": "Lieferung & Versand",
-            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns über unser <a href=\"/pages/kontakt\">Kontaktformular</a>.</p>"
+            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Leseprobe: <a href=\"https://www.fachwissenbau.ch/wp-content/uploads/BIM-Leseprobe.pdf\" target=\"_blank\">PDF herunterladen</a></p><p>Für <a href=\"/pages/kontakt?typ=auszubildende-studierende-dozierende\">Auszubildende, Studierende &amp; Dozierende</a> und <a href=\"/pages/kontakt?typ=buchhandlungen\">Buchhandlungen</a> bieten wir spezielle Konditionen an.</p>"
           }
         }
       },
@@ -71,8 +71,14 @@
     },
     "product_sponsors": {
       "type": "product-sponsors",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "tier_01": { "type": "heading", "settings": { "title": "Goldsponsoren" } },
+        "sp_01": { "type": "sponsor", "settings": { "name": "OST Ostschweizer Fachhochschule", "url": "https://www.ost.ch/" } },
+        "sp_02": { "type": "sponsor", "settings": { "name": "Gemeinde Küsnacht", "url": "https://www.kuesnacht.ch/" } },
+        "sp_03": { "type": "sponsor", "settings": { "name": "Basler & Hofmann", "url": "https://www.baslerhofmann.ch/" } },
+        "sp_04": { "type": "sponsor", "settings": { "name": "Walo Bertschinger AG", "url": "https://walo.ch/" } }
+      },
+      "block_order": ["tier_01","sp_01","sp_02","sp_03","sp_04"],
       "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
