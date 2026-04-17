@@ -486,20 +486,23 @@
   }
 
   /* Gallery carousel */
+  /* ── Gallery ── */
   .fwb-product__gallery-wrap {
     margin-bottom: clamp(3rem, 6vw, 6rem);
   }
 
   .fwb-product__gallery-label {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
+  /* Outer row: arrows sit outside the viewport */
   .fwb-product__gallery-track-wrap {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
+  /* Viewport clips the track but also shows the peek on both sides */
   .fwb-product__gallery-viewport {
     flex: 1;
     overflow: hidden;
@@ -507,19 +510,22 @@
 
   .fwb-product__gallery-track {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Initial offset centres slide 0 — set by JS */
   }
 
+  /* Each slide is 72% of the viewport width → ~14% peek on each side */
   .fwb-product__gallery-slide {
-    min-width: calc(50% - 0.75rem);
+    min-width: 72%;
     flex-shrink: 0;
   }
 
   .fwb-product__gallery-slide img {
     width: 100%;
-    aspect-ratio: 4/3;
+    height: 180px; /* ≈ 5 cm on a standard screen */
     object-fit: cover;
+    object-position: center;
     display: block;
   }
 
@@ -527,8 +533,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
     border: 1px solid var(--fwb-grey-300);
     background: transparent;
@@ -544,7 +550,7 @@
   }
 
   .fwb-product__gallery-btn:disabled {
-    opacity: 0.3;
+    opacity: 0.25;
     cursor: not-allowed;
   }
 
@@ -555,8 +561,12 @@
     .fwb-product__image-col {
       position: static;
     }
+    /* On mobile show one slide nearly full-width */
     .fwb-product__gallery-slide {
-      min-width: calc(100% - 0px);
+      min-width: 86%;
+    }
+    .fwb-product__gallery-slide img {
+      height: 140px;
     }
   }
 {% endstylesheet %}
@@ -587,27 +597,44 @@
     });
   });
 
-  // Gallery carousel
-  const track = document.getElementById('fwb-gallery-track');
-  if (track) {
+  // Gallery carousel — centred peek layout
+  (function () {
+    const track   = document.getElementById('fwb-gallery-track');
+    if (!track) return;
+
     const prevBtn = document.getElementById('fwb-gallery-prev');
     const nextBtn = document.getElementById('fwb-gallery-next');
-    const slides = track.querySelectorAll('.fwb-product__gallery-slide');
-    let current = 0;
-    const visibleCount = window.innerWidth <= 860 ? 1 : 2;
+    const viewport = track.parentElement;
+    const slides  = Array.from(track.querySelectorAll('.fwb-product__gallery-slide'));
+    const GAP     = 16; // matches gap: 1rem in CSS
+    let current   = 0;
 
-    function updateGallery() {
-      const slideWidth = slides[0] ? slides[0].offsetWidth + 24 : 0;
-      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
-      if (prevBtn) prevBtn.disabled = current === 0;
-      if (nextBtn) nextBtn.disabled = current >= slides.length - visibleCount;
+    function slideWidth() {
+      return slides[0] ? slides[0].offsetWidth : 0;
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => { if (current > 0) { current--; updateGallery(); } });
-    if (nextBtn) nextBtn.addEventListener('click', () => { if (current < slides.length - visibleCount) { current++; updateGallery(); } });
+    function offsetForIndex(i) {
+      // Shift so that slide i is horizontally centred in the viewport
+      const sw   = slideWidth();
+      const vw   = viewport.offsetWidth;
+      const base = i * (sw + GAP);          // left edge of slide i
+      const centre = base - (vw - sw) / 2; // pull it to centre
+      return Math.max(0, centre);
+    }
 
-    updateGallery();
-  }
+    function update() {
+      track.style.transform = 'translateX(-' + offsetForIndex(current) + 'px)';
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { if (current > 0) { current--; update(); } });
+    if (nextBtn) nextBtn.addEventListener('click', () => { if (current < slides.length - 1) { current++; update(); } });
+
+    // Recalculate on resize
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  })();
 {% endjavascript %}
 
 {% schema %}
