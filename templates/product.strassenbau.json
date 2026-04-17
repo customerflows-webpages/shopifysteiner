@@ -27,19 +27,27 @@
         "acc_specs": {
           "type": "specs",
           "settings": {
-            "title": "Buchdetails",
-            "spec_label_1": "Seiten",
-            "spec_value_1": "630 (2 Bände)",
-            "spec_label_2": "Format",
-            "spec_value_2": "A4",
-            "spec_label_3": "Einband",
-            "spec_value_3": "Hardcover",
-            "spec_label_4": "Sprache",
-            "spec_value_4": "Deutsch",
-            "spec_label_5": "Verlag",
-            "spec_value_5": "FachWissenBau",
-            "spec_label_6": "Auflage",
-            "spec_value_6": "2. Auflage"
+            "title": "Zusätzliche Information",
+            "spec_label_1": "ISBN",
+            "spec_value_1": "Band 1: 978-3-9525139-2-7, Band 2: 978-3-9525139-3-4",
+            "spec_label_2": "Verlag",
+            "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren",
+            "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr",
+            "spec_value_4": "2021",
+            "spec_label_5": "Auflage",
+            "spec_value_5": "2. Auflage",
+            "spec_label_6": "Einband",
+            "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten",
+            "spec_value_7": "Band 1: 367 Seiten, Band 2: 296 Seiten",
+            "spec_label_8": "Grösse",
+            "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht",
+            "spec_value_9": "ca. 3.5 kg",
+            "spec_label_10": "Sprache",
+            "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -159,6 +167,48 @@
         "subheading": "Auf über 630 Seiten in zwei Bänden: Von der Auftragsbeschaffung bis zum Abschluss der Ausführung werden alle relevanten Themen behandelt – praxisnah und als umfassende Grundlage für ausführungsspezifische Themen im Tief- und Strassenbau."
       }
     },
+    "product_authors": {
+      "type": "product-authors",
+      "blocks": {
+        "author_01": {
+          "type": "author",
+          "settings": {
+            "name": "Rolf Steiner",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Tobias Frick",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "author_01",
+        "author_02"
+      ],
+      "settings": {
+        "label": "Autoren",
+        "heading": "Praxis trifft Persönlichkeit.",
+        "intro": ""
+      }
+    },
+    "product_sponsors": {
+      "type": "product-sponsors",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "label": "Sponsoren",
+        "heading": "Ermöglicht durch unsere Partner.",
+        "intro": ""
+      }
+    },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
@@ -183,6 +233,8 @@
   "order": [
     "product_main",
     "product_toc",
+    "product_authors",
+    "product_sponsors",
     "product_testimonials"
   ]
 }

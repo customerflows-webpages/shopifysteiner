@@ -1,0 +1,198 @@
+{%- if section.blocks.size > 0 or section.settings.heading != blank -%}
+<div class="fwb-sponsors">
+  <div class="fwb-wrap">
+
+    <div class="fwb-sponsors__header">
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="fwb-h2 fwb-sponsors__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.intro != blank -%}
+        <p class="fwb-body fwb-sponsors__intro">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="fwb-sponsors__grid">
+        {%- for block in section.blocks -%}
+          <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <div class="fwb-sponsors__logo-wrap">
+                {%- if block.settings.url != blank -%}
+                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
+                {%- endif -%}
+                <img
+                  src="{{ block.settings.image | img_url: '400x' }}"
+                  alt="{{ block.settings.name | default: 'Sponsor' }}"
+                  loading="lazy"
+                  class="fwb-sponsors__logo"
+                >
+                {%- if block.settings.url != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- elsif block.settings.name != blank -%}
+              <div class="fwb-sponsors__name-only">
+                {%- if block.settings.url != blank -%}
+                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
+                {%- else -%}
+                  {{ block.settings.name }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.caption != blank -%}
+              <p class="fwb-sponsors__caption">{{ block.settings.caption }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="fwb-sponsors__placeholder fwb-body">Sponsoreninformationen folgen in Kürze.</p>
+    {%- endif -%}
+
+  </div>
+</div>
+{%- endif -%}
+
+{% stylesheet %}
+
+  .fwb-sponsors {
+    padding-block: var(--fwb-section-pad);
+    background: var(--fwb-grey-100);
+  }
+
+  .fwb-sponsors__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .fwb-sponsors__title {
+    font-style: italic;
+  }
+
+  .fwb-sponsors__intro {
+    max-width: 640px;
+    font-size: 0.9rem;
+  }
+
+  .fwb-sponsors__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 4rem;
+    align-items: center;
+  }
+
+  .fwb-sponsors__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .fwb-sponsors__logo-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .fwb-sponsors__logo-link {
+    display: block;
+  }
+
+  .fwb-sponsors__logo {
+    max-height: 60px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+
+  .fwb-sponsors__logo-link:hover .fwb-sponsors__logo {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .fwb-sponsors__name-only {
+    font-family: var(--fwb-font-heading);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--fwb-grey-700);
+    letter-spacing: 0.05em;
+  }
+
+  .fwb-sponsors__caption {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fwb-grey-500);
+  }
+
+  .fwb-sponsors__placeholder {
+    color: var(--fwb-grey-500);
+    font-style: italic;
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sponsoren",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Sponsoren"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Ermöglicht durch unsere Partner."
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Einleitungstext"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sponsor",
+      "name": "Sponsor",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Firmenname (falls kein Logo)"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Beschriftung (optional)"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sponsoren"
+    }
+  ]
+}
+{% endschema %}

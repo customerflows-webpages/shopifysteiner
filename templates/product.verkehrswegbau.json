@@ -27,19 +27,27 @@
         "acc_specs": {
           "type": "specs",
           "settings": {
-            "title": "Buchdetails",
-            "spec_label_1": "Seiten",
-            "spec_value_1": "",
-            "spec_label_2": "Format",
-            "spec_value_2": "A4",
-            "spec_label_3": "Einband",
-            "spec_value_3": "Hardcover",
-            "spec_label_4": "Sprache",
-            "spec_value_4": "Deutsch",
-            "spec_label_5": "Verlag",
-            "spec_value_5": "FachWissenBau",
-            "spec_label_6": "",
-            "spec_value_6": ""
+            "title": "Zusätzliche Information",
+            "spec_label_1": "ISBN",
+            "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
+            "spec_label_2": "Verlag",
+            "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren",
+            "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr",
+            "spec_value_4": "2024",
+            "spec_label_5": "Auflage",
+            "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband",
+            "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten",
+            "spec_value_7": "Band 1: 246 Seiten, Band 2: 212 Seiten, Band 3: 300 Seiten",
+            "spec_label_8": "Grösse",
+            "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht",
+            "spec_value_9": "ca. 5 kg",
+            "spec_label_10": "Sprache",
+            "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -124,6 +132,48 @@
         "subheading": "768 Seiten in drei Bänden – das Inhaltsverzeichnis zeigt, wie fundiert und praxisnah das Thema von Grund auf aufgebaut ist: vom ersten Konzept bis zur baureifen Planung."
       }
     },
+    "product_authors": {
+      "type": "product-authors",
+      "blocks": {
+        "author_01": {
+          "type": "author",
+          "settings": {
+            "name": "Rolf Steiner",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Tobias Frick",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "author_01",
+        "author_02"
+      ],
+      "settings": {
+        "label": "Autoren",
+        "heading": "Praxis trifft Persönlichkeit.",
+        "intro": ""
+      }
+    },
+    "product_sponsors": {
+      "type": "product-sponsors",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "label": "Sponsoren",
+        "heading": "Ermöglicht durch unsere Partner.",
+        "intro": ""
+      }
+    },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
@@ -157,6 +207,8 @@
   "order": [
     "product_main",
     "product_toc",
+    "product_authors",
+    "product_sponsors",
     "product_testimonials"
   ]
 }

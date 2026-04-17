@@ -27,19 +27,27 @@
         "acc_specs": {
           "type": "specs",
           "settings": {
-            "title": "Buchdetails",
-            "spec_label_1": "Seiten",
-            "spec_value_1": "",
-            "spec_label_2": "Format",
-            "spec_value_2": "A4",
-            "spec_label_3": "Einband",
-            "spec_value_3": "Hardcover",
-            "spec_label_4": "Sprache",
-            "spec_value_4": "Deutsch",
-            "spec_label_5": "Verlag",
-            "spec_value_5": "FachWissenBau",
-            "spec_label_6": "",
-            "spec_value_6": ""
+            "title": "Zusätzliche Information",
+            "spec_label_1": "ISBN",
+            "spec_value_1": "Band 1: 978-3-9525139-7-2, Band 2: 978-3-9525139-8-9",
+            "spec_label_2": "Verlag",
+            "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren",
+            "spec_value_3": "Heinz Ehrbar, Olivier Böckli, Christian Ammon",
+            "spec_label_4": "Erscheinungsjahr",
+            "spec_value_4": "2023",
+            "spec_label_5": "Auflage",
+            "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband",
+            "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten",
+            "spec_value_7": "Band 1: 335 Seiten, Band 2: 335 Seiten",
+            "spec_label_8": "Grösse",
+            "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht",
+            "spec_value_9": "ca. 3.6 kg",
+            "spec_label_10": "Sprache",
+            "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -194,6 +202,58 @@
         "subheading": "Über 670 Seiten in zwei Bänden – das Inhaltsverzeichnis zeigt die gesamte Bandbreite des Baubetriebs im Untertagbau: klar strukturiert, praxisnah und tief im Detail."
       }
     },
+    "product_authors": {
+      "type": "product-authors",
+      "blocks": {
+        "author_01": {
+          "type": "author",
+          "settings": {
+            "name": "Heinz Ehrbar",
+            "role": "Autor",
+            "credentials": "Dipl. Bauingenieur ETH/SIA",
+            "bio": "Seit 1981 auf dem Gebiet des Untertagbaus tätig, während rund 20 Jahren bei der Planung und Realisierung von Wasserkraftanlagen in der Schweiz und im Ausland. 1996 Wechsel in den Verkehrstunnelbau als Projektleiter für den Teilabschnitt Sedrun des Gotthard-Basistunnels, ab 2001 stellvertretender Leiter und ab 2006 Leiter Tunnel- und Trasseebau Gotthard-Basistunnel und Mitglied der Geschäftsleitung der AlpTransit Gotthard AG. 2013 bis 2017 Leiter Management Grossprojekte bei der DB Netz AG, Frankfurt am Main. Lehraufträge an der RWTH Aachen (2014 bis 2021) und an der ETH Zürich (2017 bis 2022) für Baubetrieb im Tunnelbau und Organisation von Untertagbauprojekten. Heute Inhaber einer eigenen Beratungsfirma."
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Olivier Böckli",
+            "role": "Autor",
+            "credentials": "",
+            "bio": ""
+          }
+        },
+        "author_03": {
+          "type": "author",
+          "settings": {
+            "name": "Christian Ammon",
+            "role": "Autor",
+            "credentials": "",
+            "bio": ""
+          }
+        }
+      },
+      "block_order": [
+        "author_01",
+        "author_02",
+        "author_03"
+      ],
+      "settings": {
+        "label": "Autoren",
+        "heading": "Erfahrung aus dem Untergrund.",
+        "intro": ""
+      }
+    },
+    "product_sponsors": {
+      "type": "product-sponsors",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "label": "Sponsoren",
+        "heading": "Ermöglicht durch unsere Partner.",
+        "intro": ""
+      }
+    },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
@@ -227,6 +287,8 @@
   "order": [
     "product_main",
     "product_toc",
+    "product_authors",
+    "product_sponsors",
     "product_testimonials"
   ]
 }
