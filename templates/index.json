@@ -27,6 +27,24 @@
         "cta_url": "/collections/verlag"
       }
     },
+    "featured_book": {
+      "type": "featured-book",
+      "settings": {
+        "badge": "Neu im Verlag",
+        "label": "Öffentliche Beschaffung",
+        "heading": "Baupraxis – Öffentliche Beschaffung",
+        "body": "Das Fachbuch zur öffentlichen Beschaffung in der Schweizer Bauwirtschaft. Verständlich, nachvollziehbar und direkt anwendbar – für alle, die Beschaffungsprozesse verantworten oder begleiten.",
+        "chapter_1": "Beschaffung im Umbruch",
+        "chapter_2": "Innovation und Nachhaltigkeit richtig umsetzen",
+        "chapter_3": "Praxisnah umsetzen",
+        "chapter_4": "Global denken",
+        "chapter_5": "Wissen vertiefen",
+        "price_label": "Ab",
+        "cta_label": "Jetzt entdecken",
+        "cta_secondary_label": "Leseprobe ansehen",
+        "cta_secondary_url": "/products/baupraxis-oeffentliche-beschaffung"
+      }
+    },
     "academy_teaser": {
       "type": "homepage-academy-teaser",
       "settings": {
@@ -41,6 +59,7 @@
   "order": [
     "hero",
     "verlag_teaser",
+    "featured_book",
     "academy_teaser"
   ]
 }

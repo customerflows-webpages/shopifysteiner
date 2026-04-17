@@ -1,0 +1,452 @@
+{% comment %}
+  Featured Book — spotlight a single product on the homepage.
+  Product is selected via theme editor (product picker).
+  Falls back to handle-based lookup if no product is picked.
+{% endcomment %}
+
+{%- liquid
+  if section.settings.product != blank
+    assign book = section.settings.product
+  else
+    assign book = all_products['baupraxis-oeffentliche-beschaffung']
+  endif
+-%}
+
+{%- if book != blank and book.available != null -%}
+
+<div class="fwb-featured-book">
+
+  {%- comment -%} Top rule {%- endcomment -%}
+  <div class="fwb-featured-book__rule"></div>
+
+  <div class="fwb-wrap fwb-featured-book__inner">
+
+    {%- comment -%} ── Left: book cover ── {%- endcomment -%}
+    <div class="fwb-featured-book__visual">
+      <a href="{{ book.url }}" class="fwb-featured-book__cover-link" tabindex="-1" aria-hidden="true">
+        {%- if book.featured_image -%}
+          <img
+            src="{{ book.featured_image | img_url: '700x' }}"
+            alt="{{ book.featured_image.alt | default: book.title | escape }}"
+            class="fwb-featured-book__cover"
+            loading="lazy"
+            width="350"
+            height="470"
+          >
+        {%- endif -%}
+      </a>
+
+      {%- comment -%} Interior preview strip {%- endcomment -%}
+      {%- if book.images.size > 2 -%}
+        <div class="fwb-featured-book__previews">
+          {%- for image in book.images offset: 2 limit: 3 -%}
+            <div class="fwb-featured-book__preview">
+              <img
+                src="{{ image | img_url: '300x' }}"
+                alt="{{ image.alt | default: book.title | escape }}"
+                loading="lazy"
+              >
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} ── Right: info + buy ── {%- endcomment -%}
+    <div class="fwb-featured-book__content">
+
+      {%- comment -%} Badge {%- endcomment -%}
+      {%- if section.settings.badge != blank -%}
+        <span class="fwb-featured-book__badge">{{ section.settings.badge }}</span>
+      {%- endif -%}
+
+      {%- comment -%} Label {%- endcomment -%}
+      {%- if section.settings.label != blank -%}
+        <p class="fwb-label">{{ section.settings.label }}</p>
+      {%- endif -%}
+
+      {%- comment -%} Title {%- endcomment -%}
+      <h2 class="fwb-featured-book__title">
+        {%- if section.settings.heading != blank -%}
+          {{ section.settings.heading }}
+        {%- else -%}
+          {{ book.title }}
+        {%- endif -%}
+      </h2>
+
+      {%- comment -%} Description {%- endcomment -%}
+      {%- if section.settings.body != blank -%}
+        <p class="fwb-featured-book__body fwb-body">{{ section.settings.body }}</p>
+      {%- elsif book.description != blank -%}
+        <div class="fwb-featured-book__body fwb-body">{{ book.description | strip_html | truncate: 220 }}</div>
+      {%- endif -%}
+
+      {%- comment -%} Chapter list {%- endcomment -%}
+      {%- assign has_chapters = false -%}
+      {%- for i in (1..5) -%}
+        {%- assign ch_key = 'chapter_' | append: i -%}
+        {%- if section.settings[ch_key] != blank -%}{%- assign has_chapters = true -%}{%- endif -%}
+      {%- endfor -%}
+
+      {%- if has_chapters -%}
+        <ul class="fwb-featured-book__chapters">
+          {%- for i in (1..5) -%}
+            {%- assign ch_key = 'chapter_' | append: i -%}
+            {%- if section.settings[ch_key] != blank -%}
+              <li class="fwb-featured-book__chapter">
+                <span class="fwb-featured-book__chapter-num">{{ i | prepend: '0' | slice: -2, 2 }}</span>
+                <span>{{ section.settings[ch_key] }}</span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- comment -%} Price + CTA {%- endcomment -%}
+      <div class="fwb-featured-book__buy">
+        <div class="fwb-featured-book__price">
+          <span class="fwb-label">{{ section.settings.price_label | default: 'Ab' }}</span>
+          <span class="fwb-featured-book__price-amount">{{ book.price_min | money }}</span>
+        </div>
+        <a
+          href="{{ book.url }}"
+          class="fwb-btn fwb-btn--solid fwb-featured-book__cta"
+        >
+          {{ section.settings.cta_label | default: 'Jetzt entdecken' }}
+        </a>
+        {%- if section.settings.cta_secondary_label != blank -%}
+          <a
+            href="{{ section.settings.cta_secondary_url | default: book.url }}"
+            class="fwb-btn fwb-featured-book__cta-secondary"
+          >
+            {{ section.settings.cta_secondary_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{%- endif -%}
+
+{% stylesheet %}
+
+  .fwb-featured-book {
+    padding-bottom: var(--fwb-section-pad);
+    background: var(--fwb-white);
+  }
+
+  .fwb-featured-book__rule {
+    height: 1px;
+    background: var(--fwb-grey-200);
+    margin-bottom: clamp(3rem, 6vw, 6rem);
+  }
+
+  /* ── Two-column inner ────────────────────────────────────────── */
+
+  .fwb-featured-book__inner {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: clamp(4rem, 7vw, 9rem);
+    align-items: start;
+  }
+
+  /* ── Left: Visual ────────────────────────────────────────────── */
+
+  .fwb-featured-book__visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 90px;
+  }
+
+  .fwb-featured-book__cover-link {
+    display: block;
+  }
+
+  .fwb-featured-book__cover {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    filter: grayscale(6%);
+    transition: filter 0.3s ease;
+  }
+
+  .fwb-featured-book__cover-link:hover .fwb-featured-book__cover {
+    filter: grayscale(0%);
+  }
+
+  /* Interior preview strip */
+  .fwb-featured-book__previews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .fwb-featured-book__preview {
+    overflow: hidden;
+    background: var(--fwb-grey-100);
+  }
+
+  .fwb-featured-book__preview img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter 0.25s ease;
+  }
+
+  .fwb-featured-book__preview:hover img {
+    filter: grayscale(0%);
+  }
+
+  /* ── Right: Content ──────────────────────────────────────────── */
+
+  .fwb-featured-book__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  /* Badge */
+  .fwb-featured-book__badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--fwb-black);
+    color: var(--fwb-white);
+    align-self: flex-start;
+  }
+
+  /* Title */
+  .fwb-featured-book__title {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(1.9rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    font-style: italic;
+    color: var(--fwb-black);
+  }
+
+  /* Body */
+  .fwb-featured-book__body {
+    max-width: 520px;
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--fwb-grey-700);
+    margin-top: -0.25rem;
+  }
+
+  /* Chapter list */
+  .fwb-featured-book__chapters {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-featured-book__chapter {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--fwb-grey-200);
+    font-size: 0.82rem;
+    color: var(--fwb-grey-700);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+
+  .fwb-featured-book__chapter-num {
+    font-family: var(--fwb-font-heading);
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--fwb-grey-500);
+    flex-shrink: 0;
+    min-width: 1.8rem;
+  }
+
+  /* Buy row */
+  .fwb-featured-book__buy {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-featured-book__price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 60px;
+  }
+
+  .fwb-featured-book__price-amount {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-weight: 300;
+    color: var(--fwb-black);
+    line-height: 1;
+  }
+
+  .fwb-featured-book__cta {
+    padding: 0.85rem 2.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .fwb-featured-book__cta-secondary {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    padding: 0.85rem 2.2rem;
+  }
+
+  /* ── Responsive ──────────────────────────────────────────────── */
+
+  @media (max-width: 1024px) {
+    .fwb-featured-book__inner {
+      grid-template-columns: 340px 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .fwb-featured-book__inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .fwb-featured-book__visual {
+      position: static;
+    }
+
+    .fwb-featured-book__cover {
+      aspect-ratio: 3/2;
+      object-position: center top;
+      max-height: 380px;
+    }
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Featured Book",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Produkt auswählen"
+    },
+    {
+      "type": "header",
+      "content": "Texte"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge (z.B. Neu)",
+      "default": "Neu im Verlag"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Öffentliche Beschaffung"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift (leer = Produkttitel)",
+      "default": "Baupraxis – Öffentliche Beschaffung"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Beschreibungstext (leer = aus Produkt)",
+      "default": "Das Fachbuch zur öffentlichen Beschaffung in der Schweizer Bauwirtschaft. Verständlich, nachvollziehbar und direkt anwendbar – für alle, die Beschaffungsprozesse verantworten oder begleiten."
+    },
+    {
+      "type": "header",
+      "content": "Kapitel (optional)"
+    },
+    {
+      "type": "text",
+      "id": "chapter_1",
+      "label": "Kapitel 1",
+      "default": "Beschaffung im Umbruch"
+    },
+    {
+      "type": "text",
+      "id": "chapter_2",
+      "label": "Kapitel 2",
+      "default": "Innovation und Nachhaltigkeit richtig umsetzen"
+    },
+    {
+      "type": "text",
+      "id": "chapter_3",
+      "label": "Kapitel 3",
+      "default": "Praxisnah umsetzen"
+    },
+    {
+      "type": "text",
+      "id": "chapter_4",
+      "label": "Kapitel 4",
+      "default": "Global denken"
+    },
+    {
+      "type": "text",
+      "id": "chapter_5",
+      "label": "Kapitel 5",
+      "default": "Wissen vertiefen"
+    },
+    {
+      "type": "header",
+      "content": "Preis & Buttons"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Preis-Label",
+      "default": "Ab"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Haupt-Button",
+      "default": "Jetzt entdecken"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_label",
+      "label": "Zweiter Button (optional)"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Zweiter Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Book"
+    }
+  ]
+}
+{% endschema %}
