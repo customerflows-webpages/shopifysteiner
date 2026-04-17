@@ -13,11 +13,48 @@
       "type": "product-main",
       "settings": {
         "desc_label": "Beschreibung",
-        "desc_heading": "Praxisnah, fundiert, direkt anwendbar.",
         "variants_label": "Variationen",
         "variants_heading": "Gedruckt. Digital. Oder beides.",
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
-      }
+      },
+      "blocks": {
+        "acc_desc": {
+          "type": "description",
+          "settings": {
+            "title": "Beschreibung"
+          }
+        },
+        "acc_specs": {
+          "type": "specs",
+          "settings": {
+            "title": "Buchdetails",
+            "spec_label_1": "Seiten",
+            "spec_value_1": "227",
+            "spec_label_2": "Format",
+            "spec_value_2": "A4",
+            "spec_label_3": "Einband",
+            "spec_value_3": "Hardcover",
+            "spec_label_4": "Sprache",
+            "spec_value_4": "Deutsch",
+            "spec_label_5": "Verlag",
+            "spec_value_5": "FachWissenBau",
+            "spec_label_6": "",
+            "spec_value_6": ""
+          }
+        },
+        "acc_shipping": {
+          "type": "text",
+          "settings": {
+            "title": "Lieferung & Versand",
+            "content": "<p>Die gedruckte Ausgabe wird innerhalb von 2–4 Werktagen versandfertig gemacht und per Post geliefert. Den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie nach Zahlungseingang per E-Mail.</p><p>Für Auszubildende, Studierende, Dozierende und Buchhandlungen bieten wir spezielle Konditionen an. Bitte kontaktieren Sie uns über unser <a href=\"/pages/kontakt\">Kontaktformular</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "acc_desc",
+        "acc_specs",
+        "acc_shipping"
+      ]
     },
     "product_toc": {
       "type": "product-toc",

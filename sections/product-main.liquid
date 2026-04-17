@@ -31,17 +31,63 @@
 
       <div class="fwb-product__info-col">
 
-        <!-- Description -->
-        <div class="fwb-product__desc-block">
-          {%- if section.settings.desc_label != blank -%}
-            <p class="fwb-label">{{ section.settings.desc_label }}</p>
+        <!-- Accordion details -->
+        <div class="fwb-product__accordions">
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              <div class="fwb-product__accordion" {{ block.shopify_attributes }}>
+                <button
+                  class="fwb-product__accordion-trigger"
+                  aria-expanded="{{ forloop.first | default: false }}"
+                  aria-controls="fwb-acc-body-{{ block.id }}"
+                >
+                  <span class="fwb-product__accordion-title">{{ block.settings.title }}</span>
+                  <span class="fwb-product__accordion-icon" aria-hidden="true"></span>
+                </button>
+                <div
+                  class="fwb-product__accordion-body{% if forloop.first %} is-open{% endif %}"
+                  id="fwb-acc-body-{{ block.id }}"
+                >
+                  <div class="fwb-product__accordion-inner">
+                    {%- case block.type -%}
+                      {%- when 'description' -%}
+                        <div class="fwb-body fwb-product__acc-description">{{ product.description }}</div>
+                      {%- when 'text' -%}
+                        {%- if block.settings.content != blank -%}
+                          <div class="fwb-body fwb-product__acc-text">{{ block.settings.content }}</div>
+                        {%- endif -%}
+                      {%- when 'specs' -%}
+                        <dl class="fwb-product__specs">
+                          {%- for i in (1..6) -%}
+                            {%- assign lbl = 'spec_label_' | append: i -%}
+                            {%- assign val = 'spec_value_' | append: i -%}
+                            {%- if block.settings[lbl] != blank and block.settings[val] != blank -%}
+                              <div class="fwb-product__spec-row">
+                                <dt class="fwb-product__spec-label">{{ block.settings[lbl] }}</dt>
+                                <dd class="fwb-product__spec-value">{{ block.settings[val] }}</dd>
+                              </div>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </dl>
+                    {%- endcase -%}
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- comment -%} Fallback: no blocks set — show product description as single accordion {%- endcomment -%}
+            <div class="fwb-product__accordion">
+              <button class="fwb-product__accordion-trigger" aria-expanded="true" aria-controls="fwb-acc-body-default">
+                <span class="fwb-product__accordion-title">{{ section.settings.desc_label | default: 'Beschreibung' }}</span>
+                <span class="fwb-product__accordion-icon" aria-hidden="true"></span>
+              </button>
+              <div class="fwb-product__accordion-body is-open" id="fwb-acc-body-default">
+                <div class="fwb-product__accordion-inner">
+                  <div class="fwb-body fwb-product__acc-description">{{ product.description }}</div>
+                </div>
+              </div>
+            </div>
           {%- endif -%}
-          {%- if section.settings.desc_heading != blank -%}
-            <h2 class="fwb-h2 fwb-product__desc-heading">{{ section.settings.desc_heading }}</h2>
-          {%- endif -%}
-          <div class="fwb-product__description fwb-body">
-            {{ product.description }}
-          </div>
         </div>
 
         <!-- Buy / Variants -->
@@ -203,20 +249,158 @@
     gap: clamp(2.5rem, 5vw, 4rem);
   }
 
-  .fwb-product__desc-block {
+  /* ── Accordions ── */
+  .fwb-product__accordions {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    border-top: 1px solid var(--fwb-grey-200);
   }
 
-  .fwb-product__desc-heading {
-    font-style: italic;
+  .fwb-product__accordion {
+    border-bottom: 1px solid var(--fwb-grey-200);
   }
 
-  .fwb-product__description {
-    font-size: 0.9rem;
+  .fwb-product__accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: color var(--fwb-transition);
+  }
+
+  .fwb-product__accordion-trigger:hover {
+    color: var(--fwb-grey-700);
+  }
+
+  .fwb-product__accordion-title {
+    font-family: var(--fwb-font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: inherit;
+    flex: 1;
+  }
+
+  /* +/- icon */
+  .fwb-product__accordion-icon {
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .fwb-product__accordion-icon::before,
+  .fwb-product__accordion-icon::after {
+    content: '';
+    position: absolute;
+    background: var(--fwb-black);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .fwb-product__accordion-icon::before {
+    width: 14px; height: 1px;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+  }
+
+  .fwb-product__accordion-icon::after {
+    width: 1px; height: 14px;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .fwb-product__accordion-trigger[aria-expanded="true"] .fwb-product__accordion-icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  /* Panel */
+  .fwb-product__accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .fwb-product__accordion-body.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .fwb-product__accordion-inner {
+    overflow: hidden;
+  }
+
+  .fwb-product__acc-description,
+  .fwb-product__acc-text {
+    font-size: 0.875rem;
     line-height: 1.85;
     color: var(--fwb-grey-700);
+    padding-bottom: 1.25rem;
+  }
+
+  .fwb-product__acc-description p,
+  .fwb-product__acc-text p {
+    margin-bottom: 0.75em;
+  }
+
+  .fwb-product__acc-description p:last-child,
+  .fwb-product__acc-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .fwb-product__acc-description h3,
+  .fwb-product__acc-text h3 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+
+  .fwb-product__acc-description ul,
+  .fwb-product__acc-text ul {
+    padding-left: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+
+  /* Specs table */
+  .fwb-product__specs {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.25rem;
+  }
+
+  .fwb-product__spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--fwb-grey-200);
+    font-size: 0.82rem;
+  }
+
+  .fwb-product__spec-row:last-child {
+    border-bottom: none;
+  }
+
+  .fwb-product__spec-label {
+    color: var(--fwb-grey-500);
+    flex-shrink: 0;
+  }
+
+  .fwb-product__spec-value {
+    color: var(--fwb-text);
+    text-align: right;
+    font-weight: 500;
   }
 
   /* Buy block */
@@ -378,6 +562,16 @@
 {% endstylesheet %}
 
 {% javascript %}
+  // Accordions
+  document.querySelectorAll('.fwb-product__accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      const body   = document.getElementById(trigger.getAttribute('aria-controls'));
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      if (body) body.classList.toggle('is-open', !isOpen);
+    });
+  });
+
   // Variant selector
   const variantOptions = document.querySelectorAll('.fwb-product__variant-option');
   const hiddenInput = document.querySelector('#fwb-product-form input[name="id"]');
@@ -420,14 +614,49 @@
 {
   "name": "Produkt Hauptbereich",
   "settings": [
-    { "type": "text", "id": "desc_label", "label": "Beschreibungs-Label", "default": "Beschreibung" },
-    { "type": "text", "id": "desc_heading", "label": "Beschreibungs-Überschrift" },
+    { "type": "text", "id": "desc_label", "label": "Fallback Accordion Titel", "default": "Beschreibung" },
     { "type": "text", "id": "variants_label", "label": "Variationen Label", "default": "Variationen" },
     { "type": "text", "id": "variants_heading", "label": "Variationen Überschrift", "default": "Gedruckt. Digital. Oder beides." },
     { "type": "textarea", "id": "variants_body", "label": "Variationen Text", "default": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich." },
     { "type": "text", "id": "gallery_label", "label": "Einblick Label", "default": "Einblick" },
     { "type": "text", "id": "buy_btn_label", "label": "Kaufen Button Text", "default": "Jetzt kaufen" },
     { "type": "text", "id": "unavailable_label", "label": "Nicht verfügbar Text", "default": "Nicht verfügbar" }
+  ],
+  "blocks": [
+    {
+      "type": "description",
+      "name": "Buchbeschreibung",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Accordion Titel", "default": "Beschreibung" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Textblock",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Accordion Titel", "default": "Details" },
+        { "type": "richtext", "id": "content", "label": "Inhalt" }
+      ]
+    },
+    {
+      "type": "specs",
+      "name": "Buchdetails",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Accordion Titel", "default": "Buchdetails" },
+        { "type": "text", "id": "spec_label_1", "label": "Feld 1 – Bezeichnung", "default": "Seiten" },
+        { "type": "text", "id": "spec_value_1", "label": "Feld 1 – Wert" },
+        { "type": "text", "id": "spec_label_2", "label": "Feld 2 – Bezeichnung", "default": "Format" },
+        { "type": "text", "id": "spec_value_2", "label": "Feld 2 – Wert" },
+        { "type": "text", "id": "spec_label_3", "label": "Feld 3 – Bezeichnung", "default": "Einband" },
+        { "type": "text", "id": "spec_value_3", "label": "Feld 3 – Wert", "default": "Hardcover" },
+        { "type": "text", "id": "spec_label_4", "label": "Feld 4 – Bezeichnung", "default": "Sprache" },
+        { "type": "text", "id": "spec_value_4", "label": "Feld 4 – Wert", "default": "Deutsch" },
+        { "type": "text", "id": "spec_label_5", "label": "Feld 5 – Bezeichnung", "default": "Verlag" },
+        { "type": "text", "id": "spec_value_5", "label": "Feld 5 – Wert", "default": "FachWissenBau" },
+        { "type": "text", "id": "spec_label_6", "label": "Feld 6 – Bezeichnung" },
+        { "type": "text", "id": "spec_value_6", "label": "Feld 6 – Wert" }
+      ]
+    }
   ],
   "presets": [{ "name": "Produkt Hauptbereich" }]
 }
