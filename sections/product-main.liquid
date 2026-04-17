@@ -38,14 +38,14 @@
               <div class="fwb-product__accordion" {{ block.shopify_attributes }}>
                 <button
                   class="fwb-product__accordion-trigger"
-                  aria-expanded="{{ forloop.first | default: false }}"
+                  aria-expanded="false"
                   aria-controls="fwb-acc-body-{{ block.id }}"
                 >
                   <span class="fwb-product__accordion-title">{{ block.settings.title }}</span>
                   <span class="fwb-product__accordion-icon" aria-hidden="true"></span>
                 </button>
                 <div
-                  class="fwb-product__accordion-body{% if forloop.first %} is-open{% endif %}"
+                  class="fwb-product__accordion-body"
                   id="fwb-acc-body-{{ block.id }}"
                 >
                   <div class="fwb-product__accordion-inner">
@@ -77,11 +77,11 @@
           {%- else -%}
             {%- comment -%} Fallback: no blocks set — show product description as single accordion {%- endcomment -%}
             <div class="fwb-product__accordion">
-              <button class="fwb-product__accordion-trigger" aria-expanded="true" aria-controls="fwb-acc-body-default">
+              <button class="fwb-product__accordion-trigger" aria-expanded="false" aria-controls="fwb-acc-body-default">
                 <span class="fwb-product__accordion-title">{{ section.settings.desc_label | default: 'Beschreibung' }}</span>
                 <span class="fwb-product__accordion-icon" aria-hidden="true"></span>
               </button>
-              <div class="fwb-product__accordion-body is-open" id="fwb-acc-body-default">
+              <div class="fwb-product__accordion-body" id="fwb-acc-body-default">
                 <div class="fwb-product__accordion-inner">
                   <div class="fwb-body fwb-product__acc-description">{{ product.description }}</div>
                 </div>
