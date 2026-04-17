@@ -18,36 +18,21 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": {
-          "type": "description",
-          "settings": {
-            "title": "Beschreibung"
-          }
-        },
+        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN",
-            "spec_value_1": "978-3-9525983-4-4",
-            "spec_label_2": "Verlag",
-            "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren",
-            "spec_value_3": "Philipp Troesch, Rolf Steiner, Tobias Frick",
-            "spec_label_4": "Erscheinungsjahr",
-            "spec_value_4": "2026",
-            "spec_label_5": "Auflage",
-            "spec_value_5": "1. Auflage",
-            "spec_label_6": "Einband",
-            "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "227 Seiten",
-            "spec_label_8": "Grösse",
-            "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 0.8 kg",
-            "spec_label_10": "Sprache",
-            "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN", "spec_value_1": "978-3-9525983-4-4",
+            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren", "spec_value_3": "Philipp Troesch, Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2026",
+            "spec_label_5": "Auflage", "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten", "spec_value_7": "227 Seiten",
+            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht", "spec_value_9": "ca. 0.8 kg",
+            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -58,53 +43,18 @@
           }
         }
       },
-      "block_order": [
-        "acc_desc",
-        "acc_specs",
-        "acc_shipping"
-      ]
+      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Beschaffung im Umbruch"
-          }
-        },
-        "ch02": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Innovation und Nachhaltigkeit richtig umsetzen"
-          }
-        },
-        "ch03": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Praxisnah umsetzen"
-          }
-        },
-        "ch04": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Global denken"
-          }
-        },
-        "ch05": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Wissen vertiefen"
-          }
-        }
+        "ch01": { "type": "chapter", "settings": { "chapter": "Beschaffung im Umbruch", "sub_chapters": "Beschaffungswesen Schweiz\nNeueste Entwicklungen unter dem revidierten Recht\nStrategien und Standards im Überblick" } },
+        "ch02": { "type": "chapter", "settings": { "chapter": "Innovation und Nachhaltigkeit richtig umsetzen", "sub_chapters": "Nachhaltigkeit konkret umsetzen\nInnovation ermöglichen und fördern\nAnforderungen richtig formulieren" } },
+        "ch03": { "type": "chapter", "settings": { "chapter": "Praxisnah umsetzen", "sub_chapters": "Zusammenarbeit klären\nVergabe vorbereiten\nKriterien definieren und bewerten\nZuschlag erteilen und Vertrag abschliessen\nRechtliche Risiken erkennen und rechtssicher handeln" } },
+        "ch04": { "type": "chapter", "settings": { "chapter": "Global denken", "sub_chapters": "Europa im Blick\nUnterschiedliche Modelle in der Ausschreibung" } },
+        "ch05": { "type": "chapter", "settings": { "chapter": "Wissen vertiefen", "sub_chapters": "Vertiefende Quellen und Plattformen" } }
       },
-      "block_order": [
-        "ch01",
-        "ch02",
-        "ch03",
-        "ch04",
-        "ch05"
-      ],
+      "block_order": ["ch01", "ch02", "ch03", "ch04", "ch05"],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -114,68 +64,23 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": {
-          "type": "author",
-          "settings": {
-            "name": "Philipp Troesch",
-            "role": "Autor",
-            "credentials": "",
-            "bio": ""
-          }
-        },
-        "author_02": {
-          "type": "author",
-          "settings": {
-            "name": "Rolf Steiner",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        },
-        "author_03": {
-          "type": "author",
-          "settings": {
-            "name": "Tobias Frick",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        }
+        "author_01": { "type": "author", "settings": { "name": "Philipp Troesch", "role": "Autor", "credentials": "", "bio": "" } },
+        "author_02": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
+        "author_03": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
       },
-      "block_order": [
-        "author_01",
-        "author_02",
-        "author_03"
-      ],
-      "settings": {
-        "label": "Autoren",
-        "heading": "Praxis trifft Persönlichkeit.",
-        "intro": ""
-      }
+      "block_order": ["author_01", "author_02", "author_03"],
+      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {},
       "block_order": [],
-      "settings": {
-        "label": "Sponsoren",
-        "heading": "Ermöglicht durch unsere Partner.",
-        "intro": ""
-      }
+      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
       "type": "product-testimonials",
-      "settings": {
-        "bg_color": "#f7f7f5",
-        "heading": "Wo Beschaffung auf Qualität trifft."
-      }
+      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Beschaffung auf Qualität trifft." }
     }
   },
-  "order": [
-    "product_main",
-    "product_toc",
-    "product_authors",
-    "product_sponsors",
-    "product_testimonials"
-  ]
+  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
 }
