@@ -18,36 +18,21 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": {
-          "type": "description",
-          "settings": {
-            "title": "Beschreibung"
-          }
-        },
+        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN",
-            "spec_value_1": "Band 1: 978-3-9525139-7-2, Band 2: 978-3-9525139-8-9",
-            "spec_label_2": "Verlag",
-            "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren",
-            "spec_value_3": "Heinz Ehrbar, Olivier Böckli, Christian Ammon",
-            "spec_label_4": "Erscheinungsjahr",
-            "spec_value_4": "2023",
-            "spec_label_5": "Auflage",
-            "spec_value_5": "1. Auflage",
-            "spec_label_6": "Einband",
-            "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "Band 1: 335 Seiten, Band 2: 335 Seiten",
-            "spec_label_8": "Grösse",
-            "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 3.6 kg",
-            "spec_label_10": "Sprache",
-            "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN", "spec_value_1": "Band 1: 978-3-9525139-7-2, Band 2: 978-3-9525139-8-9",
+            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren", "spec_value_3": "Heinz Ehrbar, Olivier Böckli, Christian Ammon",
+            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2023",
+            "spec_label_5": "Auflage", "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten", "spec_value_7": "Band 1: 335 Seiten, Band 2: 335 Seiten",
+            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht", "spec_value_9": "ca. 3.6 kg",
+            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -58,144 +43,31 @@
           }
         }
       },
-      "block_order": [
-        "acc_desc",
-        "acc_specs",
-        "acc_shipping"
-      ]
+      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Einführung"
-          }
-        },
-        "ch02": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Grundlagen"
-          }
-        },
-        "ch03": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Begriffe"
-          }
-        },
-        "ch04": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Entwicklung und heutige Bedeutung"
-          }
-        },
-        "ch05": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Vortriebsmethoden"
-          }
-        },
-        "ch06": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Sprengvortrieb"
-          }
-        },
-        "ch07": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Maschinenunterstützter Vortrieb"
-          }
-        },
-        "ch08": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "TBM-Vortrieb im Fels"
-          }
-        },
-        "ch09": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Schildmaschinen-Vortrieb im Lockergestein"
-          }
-        },
-        "ch10": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Ausbruchsicherung"
-          }
-        },
-        "ch11": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Bauhilfsmassnahmen"
-          }
-        },
-        "ch12": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Abdichtung und Entwässerung"
-          }
-        },
-        "ch13": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Ausbau"
-          }
-        },
-        "ch14": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Bewirtschaftung des Ausbruchmaterials"
-          }
-        },
-        "ch15": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Umweltschutz auf Untertagbaustellen"
-          }
-        },
-        "ch16": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Arbeitssicherheit im Untertagbau"
-          }
-        },
-        "ch17": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Baulüftung und Baukühlung"
-          }
-        },
-        "ch18": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Logistik von Untertagbaustellen"
-          }
-        }
+        "ch01": { "type": "chapter", "settings": { "chapter": "Einführung", "sub_chapters": "Projektanforderungen\nZeitlicher Ablauf eines Projekts\nQualität im Bauwesen\nDer Baugrund als wichtigstes Baumaterial\nBeschreibung und Beurteilung des Gebirges\nGrundprinzipien zur Tragwerksplanung" } },
+        "ch02": { "type": "chapter", "settings": { "chapter": "Grundlagen", "sub_chapters": "Gesetze und Verordnungen\nNormen und Empfehlungen\nRichtlinien\nVertraglicher Rahmen" } },
+        "ch03": { "type": "chapter", "settings": { "chapter": "Begriffe", "sub_chapters": "Generelle Begriffsdefinitionen im Tunnelbau\nKlassierung nach Funktionalität\nQuerschnittsformen\nTunnelbauverfahren\nVortriebsverfahren\nAusbrucharten\nSicherungsklassen gemäss Norm SIA 118/198" } },
+        "ch04": { "type": "chapter", "settings": { "chapter": "Entwicklung und heutige Bedeutung", "sub_chapters": "Historische Entwicklung\nWirtschaftliche Bedeutung" } },
+        "ch05": { "type": "chapter", "settings": { "chapter": "Vortriebsmethoden", "sub_chapters": "Klassierung der Vortriebsmethoden\nCharakteristik des konventionellen Vortriebs\nCharakteristik des maschinellen Vortriebs\nKriterien zur Auswahl der Vortriebsmethode\nEntscheidungsablauf\nFallbeispiele" } },
+        "ch06": { "type": "chapter", "settings": { "chapter": "Sprengvortrieb", "sub_chapters": "Vortriebszyklus im Sprengvortrieb\nSprengstoffe\nZündmittel\nSprengschema\nBohren von Sprenglöchern\nLaden\nVerdämmen\nZündung\nLüften\nSchutterung\nFelsreinigung und Nachprofilieren\nProvisорische Ausbruchsicherung\nErmittlung der Zykluszeiten" } },
+        "ch07": { "type": "chapter", "settings": { "chapter": "Maschinenunterstützter Vortrieb", "sub_chapters": "Ausbrucharten und Einsatzmöglichkeiten\nBaggervortrieb\nRippern\nKaltfräsen\nDrill and split\nTeilschnittmaschinen (TSM)" } },
+        "ch08": { "type": "chapter", "settings": { "chapter": "TBM-Vortrieb im Fels", "sub_chapters": "Tunnelbohrmaschinen (TBM)\nHistorische Entwicklung des maschinellen Vortriebs\nLösen des Gebirges mit Hartgesteins-TBM\nBauarten\nErmittlung des Vortriebsprogramms\nEinsatzbereiche" } },
+        "ch09": { "type": "chapter", "settings": { "chapter": "Schildmaschinen-Vortrieb im Lockergestein", "sub_chapters": "Die Schlüsselfrage Ortbruststabilität\nSchildmaschinen-Grundtypen\nMultimode-Maschinen\nEinsatzbereiche" } },
+        "ch10": { "type": "chapter", "settings": { "chapter": "Ausbruchsicherung", "sub_chapters": "Baugrundbedingte Gefährdungsbilder\nAnker\nStahleinbau\nVorauseilende horizontale Ausbruchsicherungen\nSpritzbeton\nAusbruchsicherung mit Tübbingen" } },
+        "ch11": { "type": "chapter", "settings": { "chapter": "Bauhilfsmassnahmen", "sub_chapters": "Rohrschirme\nInjektionen\nDüsenstrahlverfahren\nVorausdrainagen\nLange Ortbrustanker\nVereisung" } },
+        "ch12": { "type": "chapter", "settings": { "chapter": "Abdichtung und Entwässerung", "sub_chapters": "Generelles zum Wasserhaushalt über und unter Tag\nEntwässerungs- und Abdichtungskonzept\nAbdichtungssysteme\nEntwässerungssysteme\nMassnahmen zur Verhinderung von Versinterungen\nUnterhalt mit mechanischen Verfahren" } },
+        "ch13": { "type": "chapter", "settings": { "chapter": "Ausbau", "sub_chapters": "Ausbauarten\nAnforderungen an die Innenschale\nEinbau der Innenschale\nEinbau der Sohle\nEinbau des Gewölbes\nFirstspaltverpressung\nFahrbahnentwässerung von Strassentunneln" } },
+        "ch14": { "type": "chapter", "settings": { "chapter": "Bewirtschaftung des Ausbruchmaterials", "sub_chapters": "Rechtliche Rahmenbedingungen\nMaterialflussschema\nVerwertung von Ausbruchmaterial\nAblagerung von Ausbruchmaterial\nMaterialtransporte und Deponiegrössen\nBeispiel Gotthard-Basistunnel" } },
+        "ch15": { "type": "chapter", "settings": { "chapter": "Umweltschutz auf Untertagbaustellen", "sub_chapters": "Allgemeine Grundsätze\nGesetze und Verordnungen\nRichtlinien und Empfehlungen\nBerücksichtigung in Projektierung und Ausschreibung\nOrganisatorische Massnahmen\nMassnahmen in der Realisierung" } },
+        "ch16": { "type": "chapter", "settings": { "chapter": "Arbeitssicherheit im Untertagbau", "sub_chapters": "Bedeutung der Arbeitssicherheit\nRechtlicher Rahmen\nPflichten der am Projekt Beteiligten\nPhasenbezogene Umsetzung\nAnforderungen nach Vortriebsmethode\nMassnahmen zur Verhütung von Hitzeerkrankungen\nRettungsorganisation für den Ereignisfall" } },
+        "ch17": { "type": "chapter", "settings": { "chapter": "Baulüftung und Baukühlung", "sub_chapters": "Baulüftung\nAnforderungen an Lüftungssysteme\nLüftungssysteme\nVerantwortlichkeiten bei der Planung\nLüftungsinstallationen\nEntstaubungsanlagen\nGrundlagen zur Dimensionierung\nBaukühlung und Arbeitsplatztemperaturen" } },
+        "ch18": { "type": "chapter", "settings": { "chapter": "Logistik von Untertagbaustellen", "sub_chapters": "Logistische Herausforderungen von Linienbaustellen\nAusgestaltung des Installationsplatzes\nErschliessung des Installationsplatzes\nProduktionsanlagen auf dem Installationsplatz\nLogistik im Vortriebsbereich\nTransporte unter Tag\nVersorgungs- und Entsorgungssysteme\nKommunikationssysteme im Tunnelbau\nInstallationen zur Wasserhaltung" } }
       },
-      "block_order": [
-        "ch01",
-        "ch02",
-        "ch03",
-        "ch04",
-        "ch05",
-        "ch06",
-        "ch07",
-        "ch08",
-        "ch09",
-        "ch10",
-        "ch11",
-        "ch12",
-        "ch13",
-        "ch14",
-        "ch15",
-        "ch16",
-        "ch17",
-        "ch18"
-      ],
+      "block_order": ["ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12","ch13","ch14","ch15","ch16","ch17","ch18"],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Vom ersten Sprengknall bis zur letzten Lüftungsklappe.",
@@ -205,90 +77,28 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": {
-          "type": "author",
-          "settings": {
-            "name": "Heinz Ehrbar",
-            "role": "Autor",
-            "credentials": "Dipl. Bauingenieur ETH/SIA",
-            "bio": "Seit 1981 auf dem Gebiet des Untertagbaus tätig, während rund 20 Jahren bei der Planung und Realisierung von Wasserkraftanlagen in der Schweiz und im Ausland. 1996 Wechsel in den Verkehrstunnelbau als Projektleiter für den Teilabschnitt Sedrun des Gotthard-Basistunnels, ab 2001 stellvertretender Leiter und ab 2006 Leiter Tunnel- und Trasseebau Gotthard-Basistunnel und Mitglied der Geschäftsleitung der AlpTransit Gotthard AG. 2013 bis 2017 Leiter Management Grossprojekte bei der DB Netz AG, Frankfurt am Main. Lehraufträge an der RWTH Aachen (2014 bis 2021) und an der ETH Zürich (2017 bis 2022) für Baubetrieb im Tunnelbau und Organisation von Untertagbauprojekten. Heute Inhaber einer eigenen Beratungsfirma."
-          }
-        },
-        "author_02": {
-          "type": "author",
-          "settings": {
-            "name": "Olivier Böckli",
-            "role": "Autor",
-            "credentials": "",
-            "bio": ""
-          }
-        },
-        "author_03": {
-          "type": "author",
-          "settings": {
-            "name": "Christian Ammon",
-            "role": "Autor",
-            "credentials": "",
-            "bio": ""
-          }
-        }
+        "author_01": { "type": "author", "settings": { "name": "Heinz Ehrbar", "role": "Autor", "credentials": "Dipl. Bauingenieur ETH/SIA", "bio": "Seit 1981 auf dem Gebiet des Untertagbaus tätig, während rund 20 Jahren bei der Planung und Realisierung von Wasserkraftanlagen in der Schweiz und im Ausland. 1996 Wechsel in den Verkehrstunnelbau als Projektleiter für den Teilabschnitt Sedrun des Gotthard-Basistunnels, ab 2001 stellvertretender Leiter und ab 2006 Leiter Tunnel- und Trasseebau Gotthard-Basistunnel und Mitglied der Geschäftsleitung der AlpTransit Gotthard AG. 2013 bis 2017 Leiter Management Grossprojekte bei der DB Netz AG, Frankfurt am Main. Lehraufträge an der RWTH Aachen (2014 bis 2021) und an der ETH Zürich (2017 bis 2022). Heute Inhaber einer eigenen Beratungsfirma." } },
+        "author_02": { "type": "author", "settings": { "name": "Olivier Böckli", "role": "Autor", "credentials": "", "bio": "" } },
+        "author_03": { "type": "author", "settings": { "name": "Christian Ammon", "role": "Autor", "credentials": "", "bio": "" } }
       },
-      "block_order": [
-        "author_01",
-        "author_02",
-        "author_03"
-      ],
-      "settings": {
-        "label": "Autoren",
-        "heading": "Erfahrung aus dem Untergrund.",
-        "intro": ""
-      }
+      "block_order": ["author_01", "author_02", "author_03"],
+      "settings": { "label": "Autoren", "heading": "Erfahrung aus dem Untergrund.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {},
       "block_order": [],
-      "settings": {
-        "label": "Sponsoren",
-        "heading": "Ermöglicht durch unsere Partner.",
-        "intro": ""
-      }
+      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Das vorliegende Buch «BauPraxis – Der Untertagbau» zeigt die theoretischen Zusammenhänge für den Baubetrieb auf, ergänzt mit Erfahrungen aus ausgeführten Projekten und Meinungen von Fachleuten. Möge das Buch einen Beitrag dazu leisten, dass kommende Untertagbauprojekte noch besser ausgeführt werden können.",
-            "name": "Adolf Ogi",
-            "role": "Alt Bundesrat, ehemaliger Verkehrsminister der Schweiz"
-          }
-        },
-        "t02": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Mit der Lektüre des vorliegenden Buches wird man nicht automatisch zum perfekten Tunnelbauer, aber es liegt eine professionelle und übersichtliche Grundlage vor, um sich in der faszinierenden Welt des Untertagbaus zurechtzufinden.",
-            "name": "Andreas Reber",
-            "role": "Geschäftsführer, Marti Tunnel AG"
-          }
-        }
+        "t01": { "type": "testimonial", "settings": { "quote": "Das vorliegende Buch «BauPraxis – Der Untertagbau» zeigt die theoretischen Zusammenhänge für den Baubetrieb auf, ergänzt mit Erfahrungen aus ausgeführten Projekten und Meinungen von Fachleuten. Möge das Buch einen Beitrag dazu leisten, dass kommende Untertagbauprojekte noch besser ausgeführt werden können.", "name": "Adolf Ogi", "role": "Alt Bundesrat, ehemaliger Verkehrsminister der Schweiz" } },
+        "t02": { "type": "testimonial", "settings": { "quote": "Mit der Lektüre des vorliegenden Buches wird man nicht automatisch zum perfekten Tunnelbauer, aber es liegt eine professionelle und übersichtliche Grundlage vor, um sich in der faszinierenden Welt des Untertagbaus zurechtzufinden.", "name": "Andreas Reber", "role": "Geschäftsführer, Marti Tunnel AG" } }
       },
-      "block_order": [
-        "t01",
-        "t02"
-      ],
-      "settings": {
-        "bg_color": "#f7f7f5",
-        "heading": "Wo andere nur Fels sehen."
-      }
+      "block_order": ["t01", "t02"],
+      "settings": { "bg_color": "#f7f7f5", "heading": "Wo andere nur Fels sehen." }
     }
   },
-  "order": [
-    "product_main",
-    "product_toc",
-    "product_authors",
-    "product_sponsors",
-    "product_testimonials"
-  ]
+  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
 }

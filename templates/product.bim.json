@@ -18,36 +18,21 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": {
-          "type": "description",
-          "settings": {
-            "title": "Beschreibung"
-          }
-        },
+        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN",
-            "spec_value_1": "978-3-9525139-4-1",
-            "spec_label_2": "Verlag",
-            "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren",
-            "spec_value_3": "Lukas Mathis",
-            "spec_label_4": "Erscheinungsjahr",
-            "spec_value_4": "2022",
-            "spec_label_5": "Auflage",
-            "spec_value_5": "1. Auflage",
-            "spec_label_6": "Einband",
-            "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "120 Seiten",
-            "spec_label_8": "Grösse",
-            "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 0.8 kg",
-            "spec_label_10": "Sprache",
-            "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN", "spec_value_1": "978-3-9525139-4-1",
+            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren", "spec_value_3": "Lukas Mathis",
+            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2022",
+            "spec_label_5": "Auflage", "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten", "spec_value_7": "120 Seiten",
+            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht", "spec_value_9": "ca. 0.8 kg",
+            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -58,53 +43,18 @@
           }
         }
       },
-      "block_order": [
-        "acc_desc",
-        "acc_specs",
-        "acc_shipping"
-      ]
+      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Einführung in die BIM-basierte Arbeitsmethode"
-          }
-        },
-        "ch02": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Stakeholder-Analyse"
-          }
-        },
-        "ch03": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Projektorganisation und Projektphasen"
-          }
-        },
-        "ch04": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Modelle"
-          }
-        },
-        "ch05": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Bauausführung"
-          }
-        }
+        "ch01": { "type": "chapter", "settings": { "chapter": "Einführung in die BIM-basierte Arbeitsmethode", "sub_chapters": "Einleitung\nVorgehen\nVorstellung der Fallbeispiele" } },
+        "ch02": { "type": "chapter", "settings": { "chapter": "Stakeholder-Analyse", "sub_chapters": "Wichtige Aspekte bei der Einführung der BIM-basierten Arbeitsmethode\nBauherr\nPlaner\nBauunternehmer\nFazit und Handlungsempfehlung" } },
+        "ch03": { "type": "chapter", "settings": { "chapter": "Projektorganisation und Projektphasen", "sub_chapters": "BIM im Hoch- und Tiefbau\nKern- und Leitdokumente\nProjektorganisation\nHerausforderung: Durchgängigkeit\nHerausforderung: Vertraulichkeit und Datenschutz\nBeispiel Gemeinde Küsnacht\nFazit und Handlungsempfehlung" } },
+        "ch04": { "type": "chapter", "settings": { "chapter": "Modelle", "sub_chapters": "Der Begriff «Modell» in der BIM-basierten Arbeitsmethode\nModellierungsregeln\nModellbau\nAs-is-Modell (Bestandsmodell)\nAs-planned-Modell (Planungsmodell)\nAs-built-Modell (Digitaler Zwilling)\nDetaillierungsgrad\nFazit und Handlungsempfehlung" } },
+        "ch05": { "type": "chapter", "settings": { "chapter": "Bauausführung", "sub_chapters": "Ausschreibung und Auftragsvergabe\nEinbindung Lieferant\nTerminplanung und Bauprogramm (4-D-Planung)\nKostenplanung (5-D-Planung)\nAbsteckung\nQualitätsmanagement\nErstellung des As-built-Modells\nFazit und Handlungsempfehlung" } }
       },
-      "block_order": [
-        "ch01",
-        "ch02",
-        "ch03",
-        "ch04",
-        "ch05"
-      ],
+      "block_order": ["ch01","ch02","ch03","ch04","ch05"],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -114,61 +64,25 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": {
-          "type": "author",
-          "settings": {
-            "name": "Lukas Mathis",
-            "role": "Autor",
-            "credentials": "Bauingenieur FH",
-            "bio": "Der Autor konnte im Rahmen eines zweijährigen angewandten Forschungsprojekts an der Ostschweizer Fachhochschule (OST) diverse Pilotprojekte mitverfolgen und diese intensiv analysieren. Der berufliche Werdegang führte den Autor auf dem klassischen Weg vom Bauzeichner zum Bauingenieur. Er durfte an Grossprojekten in der Schweiz wie auch im Ausland mitwirken und berufliche Erfahrungen sammeln."
-          }
-        }
+        "author_01": { "type": "author", "settings": { "name": "Lukas Mathis", "role": "Autor", "credentials": "Bauingenieur FH", "bio": "Der Autor konnte im Rahmen eines zweijährigen angewandten Forschungsprojekts an der Ostschweizer Fachhochschule (OST) diverse Pilotprojekte mitverfolgen und diese intensiv analysieren. Der berufliche Werdegang führte den Autor auf dem klassischen Weg vom Bauzeichner zum Bauingenieur. Er durfte an Grossprojekten in der Schweiz wie auch im Ausland mitwirken und berufliche Erfahrungen sammeln." } }
       },
-      "block_order": [
-        "author_01"
-      ],
-      "settings": {
-        "label": "Autoren",
-        "heading": "Praxis trifft Persönlichkeit.",
-        "intro": ""
-      }
+      "block_order": ["author_01"],
+      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {},
       "block_order": [],
-      "settings": {
-        "label": "Sponsoren",
-        "heading": "Ermöglicht durch unsere Partner.",
-        "intro": ""
-      }
+      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Das Buch soll nicht eine pfannenfertige Lösung für die Anwendung der BIM-basierten Arbeitsmethoden liefern, sondern vielmehr Hinweise und Zusammenhänge aufzeigen, damit diese neue Arbeitstechnik erfolgreich angewendet werden kann.",
-            "name": "Lukas Mathis",
-            "role": "BSc FHO Bauingenieurwesen, Autor"
-          }
-        }
+        "t01": { "type": "testimonial", "settings": { "quote": "Das Buch soll nicht eine pfannenfertige Lösung für die Anwendung der BIM-basierten Arbeitsmethoden liefern, sondern vielmehr Hinweise und Zusammenhänge aufzeigen, damit diese neue Arbeitstechnik erfolgreich angewendet werden kann.", "name": "Lukas Mathis", "role": "BSc FHO Bauingenieurwesen, Autor" } }
       },
-      "block_order": [
-        "t01"
-      ],
-      "settings": {
-        "bg_color": "#f7f7f5",
-        "heading": "Wo Digitalisierung konkret wird."
-      }
+      "block_order": ["t01"],
+      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Digitalisierung konkret wird." }
     }
   },
-  "order": [
-    "product_main",
-    "product_toc",
-    "product_authors",
-    "product_sponsors",
-    "product_testimonials"
-  ]
+  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
 }

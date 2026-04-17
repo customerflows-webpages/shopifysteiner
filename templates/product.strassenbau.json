@@ -18,36 +18,21 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": {
-          "type": "description",
-          "settings": {
-            "title": "Beschreibung"
-          }
-        },
+        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN",
-            "spec_value_1": "Band 1: 978-3-9525139-2-7, Band 2: 978-3-9525139-3-4",
-            "spec_label_2": "Verlag",
-            "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren",
-            "spec_value_3": "Rolf Steiner, Tobias Frick",
-            "spec_label_4": "Erscheinungsjahr",
-            "spec_value_4": "2021",
-            "spec_label_5": "Auflage",
-            "spec_value_5": "2. Auflage",
-            "spec_label_6": "Einband",
-            "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "Band 1: 367 Seiten, Band 2: 296 Seiten",
-            "spec_label_8": "Grösse",
-            "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 3.5 kg",
-            "spec_label_10": "Sprache",
-            "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN", "spec_value_1": "Band 1: 978-3-9525139-2-7, Band 2: 978-3-9525139-3-4",
+            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren", "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2021",
+            "spec_label_5": "Auflage", "spec_value_5": "2. Auflage",
+            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten", "spec_value_7": "Band 1: 367 Seiten, Band 2: 296 Seiten",
+            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht", "spec_value_9": "ca. 3.5 kg",
+            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -58,109 +43,26 @@
           }
         }
       },
-      "block_order": [
-        "acc_desc",
-        "acc_specs",
-        "acc_shipping"
-      ]
+      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Bauwesen Schweiz"
-          }
-        },
-        "ch02": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Auftragsbeschaffung"
-          }
-        },
-        "ch03": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Arbeitsvorbereitung"
-          }
-        },
-        "ch04": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Bauprogramm"
-          }
-        },
-        "ch05": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Organisationsstrukturen und Berufe des Bauhauptgewerbes"
-          }
-        },
-        "ch06": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Baustelleneinrichtung"
-          }
-        },
-        "ch07": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Inventar und Gerätschaften"
-          }
-        },
-        "ch08": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Logistik und Transportmittel"
-          }
-        },
-        "ch09": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Ausführung Tiefbau"
-          }
-        },
-        "ch10": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Ausführung Strassenbau"
-          }
-        },
-        "ch11": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Baumaterialien"
-          }
-        },
-        "ch12": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Vermessung und Absteckung"
-          }
-        },
-        "ch13": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Arbeitssicherheit und Gesundheitsschutz"
-          }
-        }
+        "ch01": { "type": "chapter", "settings": { "chapter": "Bauwesen Schweiz", "sub_chapters": "Schweizer Bauwirtschaft\nSchweizer Bauunternehmungen\nTief- und Strassenbauunternehmungen\nRechtliche Grundlagen und Normen\nLandesmantelvertrag LMV" } },
+        "ch02": { "type": "chapter", "settings": { "chapter": "Auftragsbeschaffung", "sub_chapters": "Beschaffungswesen\nNormpositionen-Katalog NPK\nAngebot des Unternehmers\nAngebotsbearbeitung" } },
+        "ch03": { "type": "chapter", "settings": { "chapter": "Arbeitsvorbereitung", "sub_chapters": "Bedeutung der Arbeitsvorbereitung\nKaufmännische Arbeitsvorbereitung\nTechnische Arbeitsvorbereitung" } },
+        "ch04": { "type": "chapter", "settings": { "chapter": "Bauprogramm", "sub_chapters": "Bauablauf und Terminplanung\nBeschleunigungsmassnahmen" } },
+        "ch05": { "type": "chapter", "settings": { "chapter": "Organisationsstrukturen und Berufe des Bauhauptgewerbes", "sub_chapters": "Organisationsstrukturen\nBerufe im Bauhauptgewerbe" } },
+        "ch06": { "type": "chapter", "settings": { "chapter": "Baustelleneinrichtung", "sub_chapters": "Bedeutung der Baustelleneinrichtung\nFlächen für Lager und Baustelleneinrichtung\nEinrichtungen für die Baustelle\nBaustellensignalisation und Provisorien" } },
+        "ch07": { "type": "chapter", "settings": { "chapter": "Inventar und Gerätschaften", "sub_chapters": "Mensch und Maschine\nHauptinventar für Tiefbau\nHauptinventar für Strassenbau\nSpezialinventar\nInventarbeschaffung" } },
+        "ch08": { "type": "chapter", "settings": { "chapter": "Logistik und Transportmittel", "sub_chapters": "Logistik\nTransportmittel\nMulden" } },
+        "ch09": { "type": "chapter", "settings": { "chapter": "Ausführung Tiefbau", "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nStützsysteme im Strassenbau" } },
+        "ch10": { "type": "chapter", "settings": { "chapter": "Ausführung Strassenbau", "sub_chapters": "Strassenoberbau\nFundationen\nAsphaltbeläge\nBetonfahrbahnen\nModulsysteme aus Beton-Fertigelementen\nAbschlüsse\nPflästerungen\nOberflächenbehandlung und Risssanierung\nMarkierungen" } },
+        "ch11": { "type": "chapter", "settings": { "chapter": "Baumaterialien", "sub_chapters": "Materialien für Asphaltbeläge\nMaterialien für Naturstrassen\nMaterialien für Abschlüsse und Pflästerungen\nGeokunststoffe\nMaterialien für Werkleitungs- und Kanalisationsbau\nMaterialien für Schächte und Schachtabdeckungen\nMaterialien für Entwässerungsrinnen\nAushub- und Abbruchmaterialien\nBaustoffkreislauf" } },
+        "ch12": { "type": "chapter", "settings": { "chapter": "Vermessung und Absteckung", "sub_chapters": "Vermessungsgeräte\nVermessungs- und Absteckarbeiten" } },
+        "ch13": { "type": "chapter", "settings": { "chapter": "Arbeitssicherheit und Gesundheitsschutz", "sub_chapters": "Arbeitssicherheit\nGesundheitsschutz" } }
       },
-      "block_order": [
-        "ch01",
-        "ch02",
-        "ch03",
-        "ch04",
-        "ch05",
-        "ch06",
-        "ch07",
-        "ch08",
-        "ch09",
-        "ch10",
-        "ch11",
-        "ch12",
-        "ch13"
-      ],
+      "block_order": ["ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12","ch13"],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -170,71 +72,26 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": {
-          "type": "author",
-          "settings": {
-            "name": "Rolf Steiner",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        },
-        "author_02": {
-          "type": "author",
-          "settings": {
-            "name": "Tobias Frick",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        }
+        "author_01": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
+        "author_02": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
       },
-      "block_order": [
-        "author_01",
-        "author_02"
-      ],
-      "settings": {
-        "label": "Autoren",
-        "heading": "Praxis trifft Persönlichkeit.",
-        "intro": ""
-      }
+      "block_order": ["author_01", "author_02"],
+      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {},
       "block_order": [],
-      "settings": {
-        "label": "Sponsoren",
-        "heading": "Ermöglicht durch unsere Partner.",
-        "intro": ""
-      }
+      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Die beiden Autoren entwickelten eine Vision [...]. Das vorliegende Buch soll aufzeigen, wie Strassenbau geht! Aber so, dass es der Strassenbauer auch versteht und nachhaltiger Lernerfolg sichergestellt ist.",
-            "name": "Thomas Stocker",
-            "role": "Geschäftsführer CAMPUS SURSEE, Bildungszentrum Bau"
-          }
-        }
+        "t01": { "type": "testimonial", "settings": { "quote": "Die beiden Autoren entwickelten eine Vision [...]. Das vorliegende Buch soll aufzeigen, wie Strassenbau geht! Aber so, dass es der Strassenbauer auch versteht und nachhaltiger Lernerfolg sichergestellt ist.", "name": "Thomas Stocker", "role": "Geschäftsführer CAMPUS SURSEE, Bildungszentrum Bau" } }
       },
-      "block_order": [
-        "t01"
-      ],
-      "settings": {
-        "bg_color": "#f7f7f5",
-        "heading": "Wo Baukompetenz zuhause ist."
-      }
+      "block_order": ["t01"],
+      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Baukompetenz zuhause ist." }
     }
   },
-  "order": [
-    "product_main",
-    "product_toc",
-    "product_authors",
-    "product_sponsors",
-    "product_testimonials"
-  ]
+  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
 }

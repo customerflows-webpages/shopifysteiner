@@ -18,36 +18,21 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": {
-          "type": "description",
-          "settings": {
-            "title": "Beschreibung"
-          }
-        },
+        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN",
-            "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
-            "spec_label_2": "Verlag",
-            "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren",
-            "spec_value_3": "Rolf Steiner, Tobias Frick",
-            "spec_label_4": "Erscheinungsjahr",
-            "spec_value_4": "2024",
-            "spec_label_5": "Auflage",
-            "spec_value_5": "1. Auflage",
-            "spec_label_6": "Einband",
-            "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "Band 1: 246 Seiten, Band 2: 212 Seiten, Band 3: 300 Seiten",
-            "spec_label_8": "Grösse",
-            "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 5 kg",
-            "spec_label_10": "Sprache",
-            "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN", "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
+            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren", "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2024",
+            "spec_label_5": "Auflage", "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten", "spec_value_7": "Band 1: 246 Seiten, Band 2: 212 Seiten, Band 3: 300 Seiten",
+            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht", "spec_value_9": "ca. 5 kg",
+            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -58,74 +43,21 @@
           }
         }
       },
-      "block_order": [
-        "acc_desc",
-        "acc_specs",
-        "acc_shipping"
-      ]
+      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 1 – Entwicklung Verkehrsinfrastruktur"
-          }
-        },
-        "ch02": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 1 – Eigentümer und Beschaffungswesen"
-          }
-        },
-        "ch03": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 1 – Strassensysteme"
-          }
-        },
-        "ch04": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 1 – Projektbearbeitung und Plandarstellung"
-          }
-        },
-        "ch05": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 1 – Grundlagen der Projektierung"
-          }
-        },
-        "ch06": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 2 – Projektierung von Elementen für den Strassenverkehr"
-          }
-        },
-        "ch07": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 3 – Grundlagen für die Projektierung des Strassenbaus"
-          }
-        },
-        "ch08": {
-          "type": "chapter",
-          "settings": {
-            "chapter": "Band 3 – Grundlagen für die Projektierung von Tiefbauarbeiten"
-          }
-        }
+        "ch01": { "type": "chapter", "settings": { "chapter": "Band 1 – Entwicklung Verkehrsinfrastruktur", "sub_chapters": "Historische Entwicklung\nStand heute\nVerkehrsperspektiven 2050" } },
+        "ch02": { "type": "chapter", "settings": { "chapter": "Band 1 – Eigentümer und Beschaffungswesen", "sub_chapters": "Rechtliche Grundlagen und Normen\nEigentümer der Verkehrsinfrastruktur in der Schweiz\nBeschaffungswesen\nNormpositionen-Katalog NPK\nFazit und Handlungsempfehlung" } },
+        "ch03": { "type": "chapter", "settings": { "chapter": "Band 1 – Strassensysteme", "sub_chapters": "Klassifizierung von Strassen\nStrassennetze\nLeistungsfähigkeit und Belastbarkeit\nBestimmung der Verkehrsmenge\nElemente von Strassenverkehrsanlagen" } },
+        "ch04": { "type": "chapter", "settings": { "chapter": "Band 1 – Projektbearbeitung und Plandarstellung", "sub_chapters": "Projektbearbeitung\nPlandarstellung" } },
+        "ch05": { "type": "chapter", "settings": { "chapter": "Band 1 – Grundlagen der Projektierung", "sub_chapters": "System Fahrer–Fahrzeug–Fahrbahn\nFahrzeuggeometrie und Lichtraumprofile\nGeschwindigkeit und Strassenentwurf\nSichtverhältnisse und Sichtweiten\nGrundlagenbeschaffung und Beweisaufnahmen\nSondagen und Belagsuntersuchungen\nVerkehrssicherheit\nNutzungsvereinbarung" } },
+        "ch06": { "type": "chapter", "settings": { "chapter": "Band 2 – Projektierung von Elementen für den Strassenverkehr", "sub_chapters": "Querprofil, geometrisches Normalprofil, Kurvenaufweitung\nHorizontale, vertikale und räumliche Linienführung\nKnoten\nVerkehrskreisel\nTempozonen\nHindernisfreies Bauen\nVerkehrsberuhigungselemente\nFussverkehr\nLeichter Zweiradverkehr\nParkierungsanlagen\nHaltestellen des öffentlichen Verkehrs\nKunstbauten\nSignalisation\nStrassenraumgestaltung" } },
+        "ch07": { "type": "chapter", "settings": { "chapter": "Band 3 – Grundlagen für die Projektierung des Strassenbaus", "sub_chapters": "Strassenoberbau\nGeokunststoffe\nFundationen\nAsphaltbeläge\nDimensionierung Strassenoberbau\nBetonfahrbahnen\nAbschlüsse\nPflästerungen\nStrassenentwässerung\nOberflächenbehandlung und Risssanierung" } },
+        "ch08": { "type": "chapter", "settings": { "chapter": "Band 3 – Grundlagen für die Projektierung von Tiefbauarbeiten", "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nLogistik" } }
       },
-      "block_order": [
-        "ch01",
-        "ch02",
-        "ch03",
-        "ch04",
-        "ch05",
-        "ch06",
-        "ch07",
-        "ch08"
-      ],
+      "block_order": ["ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08"],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -135,80 +67,27 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": {
-          "type": "author",
-          "settings": {
-            "name": "Rolf Steiner",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        },
-        "author_02": {
-          "type": "author",
-          "settings": {
-            "name": "Tobias Frick",
-            "role": "Autor & Verleger",
-            "credentials": "",
-            "bio": ""
-          }
-        }
+        "author_01": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
+        "author_02": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
       },
-      "block_order": [
-        "author_01",
-        "author_02"
-      ],
-      "settings": {
-        "label": "Autoren",
-        "heading": "Praxis trifft Persönlichkeit.",
-        "intro": ""
-      }
+      "block_order": ["author_01", "author_02"],
+      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {},
       "block_order": [],
-      "settings": {
-        "label": "Sponsoren",
-        "heading": "Ermöglicht durch unsere Partner.",
-        "intro": ""
-      }
+      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Die Einsatzbereitschaft und die Leidenschaft, die alle Beteiligten in einem Bauprojekt zeigen, begeistern mich immer wieder aufs Neue. Mit dem Bau, Betrieb und Unterhalt der Verkehrswege leisten Sie einen wichtigen, nachhaltigen und dauerhaften Beitrag für die Entwicklung von Wirtschaft und Gesellschaft.",
-            "name": "Jürg Röthlisberger",
-            "role": "Direktor Bundesamt für Strassen (ASTRA)"
-          }
-        },
-        "t02": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "Das vorliegende Werk bietet eine lehrreiche, spannende Grundlage für die Vermittlung und den Erhalt der Fachkompetenzen. Es fördert die Zusammenarbeit, indem es Verständnis schafft für die vor- und nachgelagerten Prozesse im gesamten Phasenmodell von Bauprojekten. Nur mit einem ganzheitlichen Ansatz und einem weiten Horizont in der Projektierung kann echte Nachhaltigkeit erreicht werden – ökologisch, wirtschaftlich und sozial.",
-            "name": "Adrian Dinkelmann",
-            "role": "Geschäftsführer Infra Suisse"
-          }
-        }
+        "t01": { "type": "testimonial", "settings": { "quote": "Die Einsatzbereitschaft und die Leidenschaft, die alle Beteiligten in einem Bauprojekt zeigen, begeistern mich immer wieder aufs Neue. Mit dem Bau, Betrieb und Unterhalt der Verkehrswege leisten Sie einen wichtigen, nachhaltigen und dauerhaften Beitrag für die Entwicklung von Wirtschaft und Gesellschaft.", "name": "Jürg Röthlisberger", "role": "Direktor Bundesamt für Strassen (ASTRA)" } },
+        "t02": { "type": "testimonial", "settings": { "quote": "Das vorliegende Werk bietet eine lehrreiche, spannende Grundlage für die Vermittlung und den Erhalt der Fachkompetenzen. Es fördert die Zusammenarbeit, indem es Verständnis schafft für die vor- und nachgelagerten Prozesse im gesamten Phasenmodell von Bauprojekten.", "name": "Adrian Dinkelmann", "role": "Geschäftsführer Infra Suisse" } }
       },
-      "block_order": [
-        "t01",
-        "t02"
-      ],
-      "settings": {
-        "bg_color": "#f7f7f5",
-        "heading": "Wo Zukunft geplant wird."
-      }
+      "block_order": ["t01", "t02"],
+      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Zukunft geplant wird." }
     }
   },
-  "order": [
-    "product_main",
-    "product_toc",
-    "product_authors",
-    "product_sponsors",
-    "product_testimonials"
-  ]
+  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
 }
