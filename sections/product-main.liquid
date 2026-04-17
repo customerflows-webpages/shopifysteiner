@@ -576,71 +576,73 @@
   }
 {% endstylesheet %}
 
-{% javascript %}
-  // Accordions
-  document.querySelectorAll('.fwb-product__accordion-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      const body   = document.getElementById(trigger.getAttribute('aria-controls'));
-      trigger.setAttribute('aria-expanded', String(!isOpen));
-      if (body) body.classList.toggle('is-open', !isOpen);
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // ── Accordions ──────────────────────────────────────────────────
+    document.querySelectorAll('.fwb-product__accordion-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        var body   = document.getElementById(trigger.getAttribute('aria-controls'));
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        if (body) body.classList.toggle('is-open', !isOpen);
+      });
     });
-  });
 
-  // Variant selector
-  const variantOptions = document.querySelectorAll('.fwb-product__variant-option');
-  const hiddenInput = document.querySelector('#fwb-product-form input[name="id"]');
+    // ── Variant selector ────────────────────────────────────────────
+    var variantOptions = document.querySelectorAll('.fwb-product__variant-option');
+    var hiddenInput    = document.querySelector('#fwb-product-form input[name="id"]');
 
-  variantOptions.forEach(option => {
-    option.addEventListener('click', () => {
-      const radio = option.querySelector('input[type="radio"]');
-      if (radio.disabled) return;
-      variantOptions.forEach(o => o.classList.remove('is-selected'));
-      option.classList.add('is-selected');
-      radio.checked = true;
-      if (hiddenInput) hiddenInput.value = radio.dataset.variantId;
+    variantOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        var radio = option.querySelector('input[type="radio"]');
+        if (radio.disabled) return;
+        variantOptions.forEach(function (o) { o.classList.remove('is-selected'); });
+        option.classList.add('is-selected');
+        radio.checked = true;
+        if (hiddenInput) hiddenInput.value = radio.dataset.variantId;
+      });
     });
+
+    // ── Gallery carousel — centred peek layout ───────────────────────
+    (function () {
+      var track = document.getElementById('fwb-gallery-track');
+      if (!track) return;
+
+      var prevBtn  = document.getElementById('fwb-gallery-prev');
+      var nextBtn  = document.getElementById('fwb-gallery-next');
+      var viewport = track.parentElement;
+      var slides   = Array.from(track.querySelectorAll('.fwb-product__gallery-slide'));
+      var GAP      = 16;
+      var current  = 0;
+
+      function slideWidth() {
+        return slides[0] ? slides[0].offsetWidth : 0;
+      }
+
+      function offsetForIndex(i) {
+        var sw     = slideWidth();
+        var vw     = viewport.offsetWidth;
+        var base   = i * (sw + GAP);
+        var centre = base - (vw - sw) / 2;
+        return Math.max(0, centre);
+      }
+
+      function update() {
+        track.style.transform = 'translateX(-' + offsetForIndex(current) + 'px)';
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+      }
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { if (current > 0) { current--; update(); } });
+      if (nextBtn) nextBtn.addEventListener('click', function () { if (current < slides.length - 1) { current++; update(); } });
+
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    })();
+
   });
-
-  // Gallery carousel — centred peek layout
-  (function () {
-    const track   = document.getElementById('fwb-gallery-track');
-    if (!track) return;
-
-    const prevBtn = document.getElementById('fwb-gallery-prev');
-    const nextBtn = document.getElementById('fwb-gallery-next');
-    const viewport = track.parentElement;
-    const slides  = Array.from(track.querySelectorAll('.fwb-product__gallery-slide'));
-    const GAP     = 16; // matches gap: 1rem in CSS
-    let current   = 0;
-
-    function slideWidth() {
-      return slides[0] ? slides[0].offsetWidth : 0;
-    }
-
-    function offsetForIndex(i) {
-      // Shift so that slide i is horizontally centred in the viewport
-      const sw   = slideWidth();
-      const vw   = viewport.offsetWidth;
-      const base = i * (sw + GAP);          // left edge of slide i
-      const centre = base - (vw - sw) / 2; // pull it to centre
-      return Math.max(0, centre);
-    }
-
-    function update() {
-      track.style.transform = 'translateX(-' + offsetForIndex(current) + 'px)';
-      if (prevBtn) prevBtn.disabled = current === 0;
-      if (nextBtn) nextBtn.disabled = current === slides.length - 1;
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', () => { if (current > 0) { current--; update(); } });
-    if (nextBtn) nextBtn.addEventListener('click', () => { if (current < slides.length - 1) { current++; update(); } });
-
-    // Recalculate on resize
-    window.addEventListener('resize', update, { passive: true });
-    update();
-  })();
-{% endjavascript %}
+</script>
 
 {% schema %}
 {
