@@ -327,17 +327,17 @@
 
   /* Panel */
   .fwb-product__accordion-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
   }
 
   .fwb-product__accordion-body.is-open {
-    grid-template-rows: 1fr;
+    max-height: 3000px;
   }
 
   .fwb-product__accordion-inner {
-    overflow: hidden;
+    padding-bottom: 0.1px; /* prevent margin collapse */
   }
 
   .fwb-product__acc-description,
