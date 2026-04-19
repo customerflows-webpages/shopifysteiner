@@ -18,21 +18,36 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
+        "acc_desc": {
+          "type": "description",
+          "settings": {
+            "title": "Beschreibung"
+          }
+        },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN", "spec_value_1": "Band 1: 978-3-9525139-2-7, Band 2: 978-3-9525139-3-4",
-            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren", "spec_value_3": "Rolf Steiner, Tobias Frick",
-            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2021",
-            "spec_label_5": "Auflage", "spec_value_5": "2. Auflage",
-            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten", "spec_value_7": "Band 1: 367 Seiten, Band 2: 296 Seiten",
-            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht", "spec_value_9": "ca. 3.5 kg",
-            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN",
+            "spec_value_1": "Band 1: 978-3-9525139-2-7, Band 2: 978-3-9525139-3-4",
+            "spec_label_2": "Verlag",
+            "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren",
+            "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr",
+            "spec_value_4": "2021",
+            "spec_label_5": "Auflage",
+            "spec_value_5": "2. Auflage",
+            "spec_label_6": "Einband",
+            "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten",
+            "spec_value_7": "Band 1: 367 Seiten, Band 2: 296 Seiten",
+            "spec_label_8": "Grösse",
+            "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht",
+            "spec_value_9": "ca. 3.5 kg",
+            "spec_label_10": "Sprache",
+            "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -43,26 +58,122 @@
           }
         }
       },
-      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
+      "block_order": [
+        "acc_desc",
+        "acc_specs",
+        "acc_shipping"
+      ]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": { "type": "chapter", "settings": { "chapter": "Bauwesen Schweiz", "sub_chapters": "Schweizer Bauwirtschaft\nSchweizer Bauunternehmungen\nTief- und Strassenbauunternehmungen\nRechtliche Grundlagen und Normen\nLandesmantelvertrag LMV" } },
-        "ch02": { "type": "chapter", "settings": { "chapter": "Auftragsbeschaffung", "sub_chapters": "Beschaffungswesen\nNormpositionen-Katalog NPK\nAngebot des Unternehmers\nAngebotsbearbeitung" } },
-        "ch03": { "type": "chapter", "settings": { "chapter": "Arbeitsvorbereitung", "sub_chapters": "Bedeutung der Arbeitsvorbereitung\nKaufmännische Arbeitsvorbereitung\nTechnische Arbeitsvorbereitung" } },
-        "ch04": { "type": "chapter", "settings": { "chapter": "Bauprogramm", "sub_chapters": "Bauablauf und Terminplanung\nBeschleunigungsmassnahmen" } },
-        "ch05": { "type": "chapter", "settings": { "chapter": "Organisationsstrukturen und Berufe des Bauhauptgewerbes", "sub_chapters": "Organisationsstrukturen\nBerufe im Bauhauptgewerbe" } },
-        "ch06": { "type": "chapter", "settings": { "chapter": "Baustelleneinrichtung", "sub_chapters": "Bedeutung der Baustelleneinrichtung\nFlächen für Lager und Baustelleneinrichtung\nEinrichtungen für die Baustelle\nBaustellensignalisation und Provisorien" } },
-        "ch07": { "type": "chapter", "settings": { "chapter": "Inventar und Gerätschaften", "sub_chapters": "Mensch und Maschine\nHauptinventar für Tiefbau\nHauptinventar für Strassenbau\nSpezialinventar\nInventarbeschaffung" } },
-        "ch08": { "type": "chapter", "settings": { "chapter": "Logistik und Transportmittel", "sub_chapters": "Logistik\nTransportmittel\nMulden" } },
-        "ch09": { "type": "chapter", "settings": { "chapter": "Ausführung Tiefbau", "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nStützsysteme im Strassenbau" } },
-        "ch10": { "type": "chapter", "settings": { "chapter": "Ausführung Strassenbau", "sub_chapters": "Strassenoberbau\nFundationen\nAsphaltbeläge\nBetonfahrbahnen\nModulsysteme aus Beton-Fertigelementen\nAbschlüsse\nPflästerungen\nOberflächenbehandlung und Risssanierung\nMarkierungen" } },
-        "ch11": { "type": "chapter", "settings": { "chapter": "Baumaterialien", "sub_chapters": "Materialien für Asphaltbeläge\nMaterialien für Naturstrassen\nMaterialien für Abschlüsse und Pflästerungen\nGeokunststoffe\nMaterialien für Werkleitungs- und Kanalisationsbau\nMaterialien für Schächte und Schachtabdeckungen\nMaterialien für Entwässerungsrinnen\nAushub- und Abbruchmaterialien\nBaustoffkreislauf" } },
-        "ch12": { "type": "chapter", "settings": { "chapter": "Vermessung und Absteckung", "sub_chapters": "Vermessungsgeräte\nVermessungs- und Absteckarbeiten" } },
-        "ch13": { "type": "chapter", "settings": { "chapter": "Arbeitssicherheit und Gesundheitsschutz", "sub_chapters": "Arbeitssicherheit\nGesundheitsschutz" } }
+        "ch01": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bauwesen Schweiz",
+            "sub_chapters": "Schweizer Bauwirtschaft\nSchweizer Bauunternehmungen\nTief- und Strassenbauunternehmungen\nRechtliche Grundlagen und Normen\nLandesmantelvertrag LMV"
+          }
+        },
+        "ch02": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Auftragsbeschaffung",
+            "sub_chapters": "Beschaffungswesen\nNormpositionen-Katalog NPK\nAngebot des Unternehmers\nAngebotsbearbeitung"
+          }
+        },
+        "ch03": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Arbeitsvorbereitung",
+            "sub_chapters": "Bedeutung der Arbeitsvorbereitung\nKaufmännische Arbeitsvorbereitung\nTechnische Arbeitsvorbereitung"
+          }
+        },
+        "ch04": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Bauprogramm",
+            "sub_chapters": "Bauablauf und Terminplanung\nBeschleunigungsmassnahmen"
+          }
+        },
+        "ch05": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Organisationsstrukturen und Berufe des Bauhauptgewerbes",
+            "sub_chapters": "Organisationsstrukturen\nBerufe im Bauhauptgewerbe"
+          }
+        },
+        "ch06": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Baustelleneinrichtung",
+            "sub_chapters": "Bedeutung der Baustelleneinrichtung\nFlächen für Lager und Baustelleneinrichtung\nEinrichtungen für die Baustelle\nBaustellensignalisation und Provisorien"
+          }
+        },
+        "ch07": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Inventar und Gerätschaften",
+            "sub_chapters": "Mensch und Maschine\nHauptinventar für Tiefbau\nHauptinventar für Strassenbau\nSpezialinventar\nInventarbeschaffung"
+          }
+        },
+        "ch08": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Logistik und Transportmittel",
+            "sub_chapters": "Logistik\nTransportmittel\nMulden"
+          }
+        },
+        "ch09": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausführung Tiefbau",
+            "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nStützsysteme im Strassenbau"
+          }
+        },
+        "ch10": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Ausführung Strassenbau",
+            "sub_chapters": "Strassenoberbau\nFundationen\nAsphaltbeläge\nBetonfahrbahnen\nModulsysteme aus Beton-Fertigelementen\nAbschlüsse\nPflästerungen\nOberflächenbehandlung und Risssanierung\nMarkierungen"
+          }
+        },
+        "ch11": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Baumaterialien",
+            "sub_chapters": "Materialien für Asphaltbeläge\nMaterialien für Naturstrassen\nMaterialien für Abschlüsse und Pflästerungen\nGeokunststoffe\nMaterialien für Werkleitungs- und Kanalisationsbau\nMaterialien für Schächte und Schachtabdeckungen\nMaterialien für Entwässerungsrinnen\nAushub- und Abbruchmaterialien\nBaustoffkreislauf"
+          }
+        },
+        "ch12": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Vermessung und Absteckung",
+            "sub_chapters": "Vermessungsgeräte\nVermessungs- und Absteckarbeiten"
+          }
+        },
+        "ch13": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Arbeitssicherheit und Gesundheitsschutz",
+            "sub_chapters": "Arbeitssicherheit\nGesundheitsschutz"
+          }
+        }
       },
-      "block_order": ["ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08","ch09","ch10","ch11","ch12","ch13"],
+      "block_order": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08",
+        "ch09",
+        "ch10",
+        "ch11",
+        "ch12",
+        "ch13"
+      ],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -72,69 +183,447 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
-        "author_02": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
+        "author_01": {
+          "type": "author",
+          "settings": {
+            "name": "Rolf Steiner",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Tobias Frick",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        }
       },
-      "block_order": ["author_01", "author_02"],
-      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
+      "block_order": [
+        "author_01",
+        "author_02"
+      ],
+      "settings": {
+        "label": "Autoren",
+        "heading": "Praxis trifft Persönlichkeit.",
+        "intro": ""
+      }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {
-        "tier_01": { "type": "heading", "settings": { "title": "Goldsponsoren" } },
-        "sp_01": { "type": "sponsor", "settings": { "name": "ACO AG", "url": "https://www.aco.ch/" } },
-        "sp_02": { "type": "sponsor", "settings": { "name": "CRB", "url": "https://www.crb.ch/" } },
-        "sp_03": { "type": "sponsor", "settings": { "name": "CREABETON BAUSTOFF AG", "url": "https://creabeton-baustoff.ch/" } },
-        "sp_04": { "type": "sponsor", "settings": { "name": "Eberhard Unternehmungen", "url": "https://eberhard.ch/" } },
-        "sp_05": { "type": "sponsor", "settings": { "name": "Ebicon AG", "url": "http://www.ebicon.ch/" } },
-        "sp_06": { "type": "sponsor", "settings": { "name": "flexBelag bau ag", "url": "http://flexbelag.ch/" } },
-        "sp_07": { "type": "sponsor", "settings": { "name": "Hüppi AG", "url": "https://www.hueppi.ch/" } },
-        "sp_08": { "type": "sponsor", "settings": { "name": "Implenia Schweiz AG", "url": "https://www.implenia.com/" } },
-        "sp_09": { "type": "sponsor", "settings": { "name": "INAUEN & INAUEN AG", "url": "https://inauen-inauen.ch/" } },
-        "sp_10": { "type": "sponsor", "settings": { "name": "Infra Suisse", "url": "https://infra-suisse.ch/" } },
-        "sp_11": { "type": "sponsor", "settings": { "name": "Keller-Frei AG", "url": "https://keller-frei.ch/" } },
-        "sp_12": { "type": "sponsor", "settings": { "name": "Marti Gruppe", "url": "https://www.martiag.ch/" } },
-        "sp_13": { "type": "sponsor", "settings": { "name": "Mauderli AG", "url": "https://www.mauderli.ch/" } },
-        "sp_14": { "type": "sponsor", "settings": { "name": "Neuteerbit AG Salmsach", "url": "https://www.neuteerbit.ch/" } },
-        "sp_15": { "type": "sponsor", "settings": { "name": "OST Ostschweizer Fachhochschule", "url": "https://www.ost.ch/" } },
-        "sp_16": { "type": "sponsor", "settings": { "name": "Schweizerischer Baumeisterverband", "url": "http://www.baumeister.ch/de/" } },
-        "sp_17": { "type": "sponsor", "settings": { "name": "STRABAG AG, Schweiz", "url": "https://www.strabag.ch/" } },
-        "sp_18": { "type": "sponsor", "settings": { "name": "Walo Bertschinger AG", "url": "https://walo.ch/" } },
-        "tier_02": { "type": "heading", "settings": { "title": "Silbersponsoren" } },
-        "sp_19": { "type": "sponsor", "settings": { "name": "Ammann Schweiz AG", "url": "https://www.ammann.com/ch-de/" } },
-        "sp_20": { "type": "sponsor", "settings": { "name": "asphaltsuisse", "url": "https://asphaltsuisse.ch/" } },
-        "sp_21": { "type": "sponsor", "settings": { "name": "Avesco AG", "url": "https://www.avesco.ch/" } },
-        "sp_22": { "type": "sponsor", "settings": { "name": "Bau Power Group AG", "url": "https://www.baupowergroup.com/" } },
-        "sp_23": { "type": "sponsor", "settings": { "name": "Baumeisterverband Zürich/Schaffhausen", "url": "https://www.bau.ch/" } },
-        "sp_24": { "type": "sponsor", "settings": { "name": "Bereuter Holding AG", "url": "https://bereuter-gruppe.ch/" } },
-        "sp_25": { "type": "sponsor", "settings": { "name": "BHZ Baustoff Holding Zürich", "url": "https://www.bhz-zh.ch/" } },
-        "sp_26": { "type": "sponsor", "settings": { "name": "Eckert Baulogistik AG", "url": "http://www.eckert-bag.ch/" } },
-        "sp_27": { "type": "sponsor", "settings": { "name": "Frutiger Company AG", "url": "https://frutiger.com/" } },
-        "sp_28": { "type": "sponsor", "settings": { "name": "Interstein Holding AG", "url": "https://www.interstein.com/" } },
-        "sp_29": { "type": "sponsor", "settings": { "name": "Kalkfabrik Netstal AG", "url": "https://www.kfn.ch/" } },
-        "sp_30": { "type": "sponsor", "settings": { "name": "Karl Morf AG", "url": "https://www.morf-ag.ch/" } },
-        "sp_31": { "type": "sponsor", "settings": { "name": "KIBAG Beton AG", "url": "https://www.kibag.ch/de/" } },
-        "sp_32": { "type": "sponsor", "settings": { "name": "Microtunnel.ch AG", "url": "https://www.microtunnel.ch/" } },
-        "sp_33": { "type": "sponsor", "settings": { "name": "MÖKAH AG", "url": "https://www.moekah.ch/" } },
-        "sp_34": { "type": "sponsor", "settings": { "name": "Reproad AG", "url": "https://www.reproad.com/" } },
-        "sp_35": { "type": "sponsor", "settings": { "name": "Ribbert AG", "url": "https://ribbert.swiss/" } },
-        "sp_36": { "type": "sponsor", "settings": { "name": "Reparatur- und Sanierungstechnik Nord AG", "url": "https://www.rsag-schweiz.ch/" } },
-        "sp_37": { "type": "sponsor", "settings": { "name": "RSS Flüssigboden (Schweiz) AG", "url": "https://www.rss-fluessigboden.ch/" } },
-        "sp_38": { "type": "sponsor", "settings": { "name": "Jak. Scheifele AG", "url": "https://www.scheifele.com/" } },
-        "sp_39": { "type": "sponsor", "settings": { "name": "SYTEC Bausysteme AG", "url": "https://www.sytec.ch/" } },
-        "sp_40": { "type": "sponsor", "settings": { "name": "VZS Verkehrswegebauer Zürich Schaffhausen", "url": "https://www.bau.ch/" } }
+        "sponsor_block_1": {
+          "type": "heading",
+          "settings": {
+            "title": "Goldsponsoren"
+          }
+        },
+        "sponsor_block_2": {
+          "type": "sponsor",
+          "settings": {
+            "name": "ACO AG",
+            "url": "https://www.aco.ch/",
+            "asset_name": "sponsor-image30-343ddb92.png"
+          }
+        },
+        "sponsor_block_3": {
+          "type": "sponsor",
+          "settings": {
+            "name": "CRB",
+            "url": "https://www.crb.ch/",
+            "asset_name": "sponsor-image31-3d4066e0.png"
+          }
+        },
+        "sponsor_block_4": {
+          "type": "sponsor",
+          "settings": {
+            "name": "CREABETON BAUSTOFF AG",
+            "url": "https://creabeton-baustoff.ch/",
+            "asset_name": "sponsor-image32-5dd56313.png"
+          }
+        },
+        "sponsor_block_5": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Eberhard Unternehmungen",
+            "url": "https://eberhard.ch/",
+            "asset_name": "sponsor-image33-bda9f4ef.png"
+          }
+        },
+        "sponsor_block_6": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Ebicon AG",
+            "url": "http://www.ebicon.ch/",
+            "asset_name": "sponsor-image34-2e08b887.png"
+          }
+        },
+        "sponsor_block_7": {
+          "type": "sponsor",
+          "settings": {
+            "name": "flexBelag bau ag",
+            "url": "http://flexbelag.ch/",
+            "asset_name": "sponsor-image35-cadbbc35.png"
+          }
+        },
+        "sponsor_block_8": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Hüppi AG",
+            "url": "https://www.hueppi.ch/",
+            "asset_name": "sponsor-image36-64a2a847.png"
+          }
+        },
+        "sponsor_block_9": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Implenia Schweiz AG",
+            "url": "https://www.implenia.com/",
+            "asset_name": "sponsor-image37-77522bad.png"
+          }
+        },
+        "sponsor_block_10": {
+          "type": "sponsor",
+          "settings": {
+            "name": "INAUEN & INAUEN AG",
+            "url": "https://inauen-inauen.ch/",
+            "asset_name": "sponsor-image38-19cc68e2.png"
+          }
+        },
+        "sponsor_block_11": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Infra Suisse",
+            "url": "https://infra-suisse.ch/",
+            "asset_name": "sponsor-image39-dab6c03c.png"
+          }
+        },
+        "sponsor_block_12": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Keller-Frei AG",
+            "url": "https://keller-frei.ch/",
+            "asset_name": "sponsor-image40-1cc87842.png"
+          }
+        },
+        "sponsor_block_13": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Marti Grupe",
+            "url": "https://www.martiag.ch/",
+            "asset_name": "sponsor-image41-753db82d.png"
+          }
+        },
+        "sponsor_block_14": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Mauderli AG",
+            "url": "https://www.mauderli.ch/",
+            "asset_name": "sponsor-image42-5a34d521.png"
+          }
+        },
+        "sponsor_block_15": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Neuteerbit AG Salmsach",
+            "url": "https://www.neuteerbit.ch/",
+            "asset_name": "sponsor-image43-2f9f3884.png"
+          }
+        },
+        "sponsor_block_16": {
+          "type": "sponsor",
+          "settings": {
+            "name": "OST Ostschweizer Fachhochschule",
+            "url": "https://www.ost.ch/",
+            "asset_name": "sponsor-image44-33a66ccf.png"
+          }
+        },
+        "sponsor_block_17": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Schweizerischer Baumeisterverband",
+            "url": "http://www.baumeister.ch/de/",
+            "asset_name": "sponsor-image45-06d237b7.png"
+          }
+        },
+        "sponsor_block_18": {
+          "type": "sponsor",
+          "settings": {
+            "name": "STRABAG AG, Schweiz",
+            "url": "https://www.strabag.ch/",
+            "asset_name": "sponsor-image46-0a5d0a9e.png"
+          }
+        },
+        "sponsor_block_19": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Walo Bertschinger AG",
+            "url": "https://walo.ch/",
+            "asset_name": ""
+          }
+        },
+        "sponsor_block_20": {
+          "type": "heading",
+          "settings": {
+            "title": "Silbersponsoren"
+          }
+        },
+        "sponsor_block_21": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Ammann Schweiz AG",
+            "url": "https://www.ammann.com/ch-de/",
+            "asset_name": "sponsor-image48-fd525a0d.png"
+          }
+        },
+        "sponsor_block_22": {
+          "type": "sponsor",
+          "settings": {
+            "name": "asphaltsuisse",
+            "url": "https://asphaltsuisse.ch/",
+            "asset_name": "sponsor-image49-de84af71.png"
+          }
+        },
+        "sponsor_block_23": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Avesco AG",
+            "url": "https://www.avesco.ch/",
+            "asset_name": "sponsor-image50-77ce4f7d.png"
+          }
+        },
+        "sponsor_block_24": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Bau Power Group AG",
+            "url": "https://www.baupowergroup.com/",
+            "asset_name": "sponsor-image51-37aac983.png"
+          }
+        },
+        "sponsor_block_25": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Baumeisterverband Zürich/Schaffhausen",
+            "url": "https://www.bau.ch/",
+            "asset_name": "sponsor-image52-04a743ed.png"
+          }
+        },
+        "sponsor_block_26": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Bereuter Holding AG",
+            "url": "https://bereuter-gruppe.ch/",
+            "asset_name": "sponsor-image53-427d5447.png"
+          }
+        },
+        "sponsor_block_27": {
+          "type": "sponsor",
+          "settings": {
+            "name": "BHZ Baustoff Holding Zürich",
+            "url": "https://www.bhz-zh.ch/",
+            "asset_name": "sponsor-image54-1eeebe9d.png"
+          }
+        },
+        "sponsor_block_28": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Eckert Baulogistik AG",
+            "url": "http://www.eckert-bag.ch/",
+            "asset_name": "sponsor-image55-426066ef.png"
+          }
+        },
+        "sponsor_block_29": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Frutiger Company AG",
+            "url": "https://frutiger.com/",
+            "asset_name": "sponsor-image56-f5303917.png"
+          }
+        },
+        "sponsor_block_30": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Interstein Holding AG",
+            "url": "https://www.interstein.com/",
+            "asset_name": "sponsor-image57-2705533c.png"
+          }
+        },
+        "sponsor_block_31": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Kalkfabrik Netstal AG",
+            "url": "https://www.kfn.ch/",
+            "asset_name": "sponsor-image58-48328f59.png"
+          }
+        },
+        "sponsor_block_32": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Karl Morf AG",
+            "url": "https://www.morf-ag.ch/",
+            "asset_name": "sponsor-image59-6cab801b.png"
+          }
+        },
+        "sponsor_block_33": {
+          "type": "sponsor",
+          "settings": {
+            "name": "KIBAG Beton AG",
+            "url": "https://www.kibag.ch/de/",
+            "asset_name": "sponsor-image60-0893416e.png"
+          }
+        },
+        "sponsor_block_34": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Microtunnel.ch AG",
+            "url": "https://www.microtunnel.ch/i",
+            "asset_name": "sponsor-image61-15f6b9c1.png"
+          }
+        },
+        "sponsor_block_35": {
+          "type": "sponsor",
+          "settings": {
+            "name": "MÖKAH AG",
+            "url": "https://www.moekah.ch/",
+            "asset_name": "sponsor-image62-b2616403.png"
+          }
+        },
+        "sponsor_block_36": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Reproad AG",
+            "url": "https://www.reproad.com/",
+            "asset_name": "sponsor-image63-98653e80.png"
+          }
+        },
+        "sponsor_block_37": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Ribbert AG",
+            "url": "https://ribbert.swiss/",
+            "asset_name": "sponsor-image64-012b5ebd.png"
+          }
+        },
+        "sponsor_block_38": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Reparatur- und Sanierungstechnik Nord AG",
+            "url": "https://www.rsag-schweiz.ch/",
+            "asset_name": "sponsor-image65-4922a90a.png"
+          }
+        },
+        "sponsor_block_39": {
+          "type": "sponsor",
+          "settings": {
+            "name": "RSS Flüssigboden (Schweiz) AG",
+            "url": "https://www.rss-fluessigboden.ch/",
+            "asset_name": "sponsor-image66-389d4710.png"
+          }
+        },
+        "sponsor_block_40": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Jak. Scheifele AG",
+            "url": "https://www.scheifele.com/",
+            "asset_name": "sponsor-image67-3ff8ef2e.png"
+          }
+        },
+        "sponsor_block_41": {
+          "type": "sponsor",
+          "settings": {
+            "name": "SYTEC Bausysteme AG",
+            "url": "https://www.sytec.ch/de",
+            "asset_name": "sponsor-image68-200b880a.png"
+          }
+        },
+        "sponsor_block_42": {
+          "type": "sponsor",
+          "settings": {
+            "name": "VZS Verkehrswegebauer Zürich Schaffhausen",
+            "url": "https://www.bau.ch/",
+            "asset_name": ""
+          }
+        }
       },
-      "block_order": ["tier_01","sp_01","sp_02","sp_03","sp_04","sp_05","sp_06","sp_07","sp_08","sp_09","sp_10","sp_11","sp_12","sp_13","sp_14","sp_15","sp_16","sp_17","sp_18","tier_02","sp_19","sp_20","sp_21","sp_22","sp_23","sp_24","sp_25","sp_26","sp_27","sp_28","sp_29","sp_30","sp_31","sp_32","sp_33","sp_34","sp_35","sp_36","sp_37","sp_38","sp_39","sp_40"],
-      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
+      "block_order": [
+        "sponsor_block_1",
+        "sponsor_block_2",
+        "sponsor_block_3",
+        "sponsor_block_4",
+        "sponsor_block_5",
+        "sponsor_block_6",
+        "sponsor_block_7",
+        "sponsor_block_8",
+        "sponsor_block_9",
+        "sponsor_block_10",
+        "sponsor_block_11",
+        "sponsor_block_12",
+        "sponsor_block_13",
+        "sponsor_block_14",
+        "sponsor_block_15",
+        "sponsor_block_16",
+        "sponsor_block_17",
+        "sponsor_block_18",
+        "sponsor_block_19",
+        "sponsor_block_20",
+        "sponsor_block_21",
+        "sponsor_block_22",
+        "sponsor_block_23",
+        "sponsor_block_24",
+        "sponsor_block_25",
+        "sponsor_block_26",
+        "sponsor_block_27",
+        "sponsor_block_28",
+        "sponsor_block_29",
+        "sponsor_block_30",
+        "sponsor_block_31",
+        "sponsor_block_32",
+        "sponsor_block_33",
+        "sponsor_block_34",
+        "sponsor_block_35",
+        "sponsor_block_36",
+        "sponsor_block_37",
+        "sponsor_block_38",
+        "sponsor_block_39",
+        "sponsor_block_40",
+        "sponsor_block_41",
+        "sponsor_block_42"
+      ],
+      "settings": {
+        "label": "Sponsoren",
+        "heading": "Ermöglicht durch unsere Partner.",
+        "intro": ""
+      }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": { "type": "testimonial", "settings": { "quote": "Die beiden Autoren entwickelten eine Vision [...]. Das vorliegende Buch soll aufzeigen, wie Strassenbau geht! Aber so, dass es der Strassenbauer auch versteht und nachhaltiger Lernerfolg sichergestellt ist.", "name": "Thomas Stocker", "role": "Geschäftsführer CAMPUS SURSEE, Bildungszentrum Bau" } }
+        "t01": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Die beiden Autoren entwickelten eine Vision [...]. Das vorliegende Buch soll aufzeigen, wie Strassenbau geht! Aber so, dass es der Strassenbauer auch versteht und nachhaltiger Lernerfolg sichergestellt ist.",
+            "name": "Thomas Stocker",
+            "role": "Geschäftsführer CAMPUS SURSEE, Bildungszentrum Bau"
+          }
+        }
       },
-      "block_order": ["t01"],
-      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Baukompetenz zuhause ist." }
+      "block_order": [
+        "t01"
+      ],
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo Baukompetenz zuhause ist."
+      }
     }
   },
-  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
+  "order": [
+    "product_main",
+    "product_toc",
+    "product_authors",
+    "product_sponsors",
+    "product_testimonials"
+  ]
 }

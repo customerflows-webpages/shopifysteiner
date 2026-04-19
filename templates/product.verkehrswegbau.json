@@ -18,21 +18,36 @@
         "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
       },
       "blocks": {
-        "acc_desc": { "type": "description", "settings": { "title": "Beschreibung" } },
+        "acc_desc": {
+          "type": "description",
+          "settings": {
+            "title": "Beschreibung"
+          }
+        },
         "acc_specs": {
           "type": "specs",
           "settings": {
             "title": "Zusätzliche Information",
-            "spec_label_1": "ISBN", "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
-            "spec_label_2": "Verlag", "spec_value_2": "FachWissenBau GmbH",
-            "spec_label_3": "Autoren", "spec_value_3": "Rolf Steiner, Tobias Frick",
-            "spec_label_4": "Erscheinungsjahr", "spec_value_4": "2024",
-            "spec_label_5": "Auflage", "spec_value_5": "1. Auflage",
-            "spec_label_6": "Einband", "spec_value_6": "E-Book, Hardcover",
-            "spec_label_7": "Anzahl Seiten", "spec_value_7": "Band 1: 246 Seiten, Band 2: 212 Seiten, Band 3: 300 Seiten",
-            "spec_label_8": "Grösse", "spec_value_8": "22.3 × 28.6 cm",
-            "spec_label_9": "Gewicht", "spec_value_9": "ca. 5 kg",
-            "spec_label_10": "Sprache", "spec_value_10": "Deutsch"
+            "spec_label_1": "ISBN",
+            "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
+            "spec_label_2": "Verlag",
+            "spec_value_2": "FachWissenBau GmbH",
+            "spec_label_3": "Autoren",
+            "spec_value_3": "Rolf Steiner, Tobias Frick",
+            "spec_label_4": "Erscheinungsjahr",
+            "spec_value_4": "2024",
+            "spec_label_5": "Auflage",
+            "spec_value_5": "1. Auflage",
+            "spec_label_6": "Einband",
+            "spec_value_6": "E-Book, Hardcover",
+            "spec_label_7": "Anzahl Seiten",
+            "spec_value_7": "Band 1: 246 Seiten, Band 2: 212 Seiten, Band 3: 300 Seiten",
+            "spec_label_8": "Grösse",
+            "spec_value_8": "22.3 × 28.6 cm",
+            "spec_label_9": "Gewicht",
+            "spec_value_9": "ca. 5 kg",
+            "spec_label_10": "Sprache",
+            "spec_value_10": "Deutsch"
           }
         },
         "acc_shipping": {
@@ -43,21 +58,82 @@
           }
         }
       },
-      "block_order": ["acc_desc", "acc_specs", "acc_shipping"]
+      "block_order": [
+        "acc_desc",
+        "acc_specs",
+        "acc_shipping"
+      ]
     },
     "product_toc": {
       "type": "product-toc",
       "blocks": {
-        "ch01": { "type": "chapter", "settings": { "chapter": "Band 1 – Entwicklung Verkehrsinfrastruktur", "sub_chapters": "Historische Entwicklung\nStand heute\nVerkehrsperspektiven 2050" } },
-        "ch02": { "type": "chapter", "settings": { "chapter": "Band 1 – Eigentümer und Beschaffungswesen", "sub_chapters": "Rechtliche Grundlagen und Normen\nEigentümer der Verkehrsinfrastruktur in der Schweiz\nBeschaffungswesen\nNormpositionen-Katalog NPK\nFazit und Handlungsempfehlung" } },
-        "ch03": { "type": "chapter", "settings": { "chapter": "Band 1 – Strassensysteme", "sub_chapters": "Klassifizierung von Strassen\nStrassennetze\nLeistungsfähigkeit und Belastbarkeit\nBestimmung der Verkehrsmenge\nElemente von Strassenverkehrsanlagen" } },
-        "ch04": { "type": "chapter", "settings": { "chapter": "Band 1 – Projektbearbeitung und Plandarstellung", "sub_chapters": "Projektbearbeitung\nPlandarstellung" } },
-        "ch05": { "type": "chapter", "settings": { "chapter": "Band 1 – Grundlagen der Projektierung", "sub_chapters": "System Fahrer–Fahrzeug–Fahrbahn\nFahrzeuggeometrie und Lichtraumprofile\nGeschwindigkeit und Strassenentwurf\nSichtverhältnisse und Sichtweiten\nGrundlagenbeschaffung und Beweisaufnahmen\nSondagen und Belagsuntersuchungen\nVerkehrssicherheit\nNutzungsvereinbarung" } },
-        "ch06": { "type": "chapter", "settings": { "chapter": "Band 2 – Projektierung von Elementen für den Strassenverkehr", "sub_chapters": "Querprofil, geometrisches Normalprofil, Kurvenaufweitung\nHorizontale, vertikale und räumliche Linienführung\nKnoten\nVerkehrskreisel\nTempozonen\nHindernisfreies Bauen\nVerkehrsberuhigungselemente\nFussverkehr\nLeichter Zweiradverkehr\nParkierungsanlagen\nHaltestellen des öffentlichen Verkehrs\nKunstbauten\nSignalisation\nStrassenraumgestaltung" } },
-        "ch07": { "type": "chapter", "settings": { "chapter": "Band 3 – Grundlagen für die Projektierung des Strassenbaus", "sub_chapters": "Strassenoberbau\nGeokunststoffe\nFundationen\nAsphaltbeläge\nDimensionierung Strassenoberbau\nBetonfahrbahnen\nAbschlüsse\nPflästerungen\nStrassenentwässerung\nOberflächenbehandlung und Risssanierung" } },
-        "ch08": { "type": "chapter", "settings": { "chapter": "Band 3 – Grundlagen für die Projektierung von Tiefbauarbeiten", "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nLogistik" } }
+        "ch01": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Entwicklung Verkehrsinfrastruktur",
+            "sub_chapters": "Historische Entwicklung\nStand heute\nVerkehrsperspektiven 2050"
+          }
+        },
+        "ch02": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Eigentümer und Beschaffungswesen",
+            "sub_chapters": "Rechtliche Grundlagen und Normen\nEigentümer der Verkehrsinfrastruktur in der Schweiz\nBeschaffungswesen\nNormpositionen-Katalog NPK\nFazit und Handlungsempfehlung"
+          }
+        },
+        "ch03": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Strassensysteme",
+            "sub_chapters": "Klassifizierung von Strassen\nStrassennetze\nLeistungsfähigkeit und Belastbarkeit\nBestimmung der Verkehrsmenge\nElemente von Strassenverkehrsanlagen"
+          }
+        },
+        "ch04": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Projektbearbeitung und Plandarstellung",
+            "sub_chapters": "Projektbearbeitung\nPlandarstellung"
+          }
+        },
+        "ch05": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 1 – Grundlagen der Projektierung",
+            "sub_chapters": "System Fahrer–Fahrzeug–Fahrbahn\nFahrzeuggeometrie und Lichtraumprofile\nGeschwindigkeit und Strassenentwurf\nSichtverhältnisse und Sichtweiten\nGrundlagenbeschaffung und Beweisaufnahmen\nSondagen und Belagsuntersuchungen\nVerkehrssicherheit\nNutzungsvereinbarung"
+          }
+        },
+        "ch06": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 2 – Projektierung von Elementen für den Strassenverkehr",
+            "sub_chapters": "Querprofil, geometrisches Normalprofil, Kurvenaufweitung\nHorizontale, vertikale und räumliche Linienführung\nKnoten\nVerkehrskreisel\nTempozonen\nHindernisfreies Bauen\nVerkehrsberuhigungselemente\nFussverkehr\nLeichter Zweiradverkehr\nParkierungsanlagen\nHaltestellen des öffentlichen Verkehrs\nKunstbauten\nSignalisation\nStrassenraumgestaltung"
+          }
+        },
+        "ch07": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 3 – Grundlagen für die Projektierung des Strassenbaus",
+            "sub_chapters": "Strassenoberbau\nGeokunststoffe\nFundationen\nAsphaltbeläge\nDimensionierung Strassenoberbau\nBetonfahrbahnen\nAbschlüsse\nPflästerungen\nStrassenentwässerung\nOberflächenbehandlung und Risssanierung"
+          }
+        },
+        "ch08": {
+          "type": "chapter",
+          "settings": {
+            "chapter": "Band 3 – Grundlagen für die Projektierung von Tiefbauarbeiten",
+            "sub_chapters": "Grabenbau und Grabenverbauten\nWasserhaltung\nWerkleitungen\nKanalisation\nGrabenlose Bauverfahren\nFlüssigboden\nLogistik"
+          }
+        }
       },
-      "block_order": ["ch01","ch02","ch03","ch04","ch05","ch06","ch07","ch08"],
+      "block_order": [
+        "ch01",
+        "ch02",
+        "ch03",
+        "ch04",
+        "ch05",
+        "ch06",
+        "ch07",
+        "ch08"
+      ],
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
@@ -67,58 +143,348 @@
     "product_authors": {
       "type": "product-authors",
       "blocks": {
-        "author_01": { "type": "author", "settings": { "name": "Rolf Steiner", "role": "Autor & Verleger", "credentials": "", "bio": "" } },
-        "author_02": { "type": "author", "settings": { "name": "Tobias Frick", "role": "Autor & Verleger", "credentials": "", "bio": "" } }
+        "author_01": {
+          "type": "author",
+          "settings": {
+            "name": "Rolf Steiner",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Tobias Frick",
+            "role": "Autor & Verleger",
+            "credentials": "",
+            "bio": ""
+          }
+        }
       },
-      "block_order": ["author_01", "author_02"],
-      "settings": { "label": "Autoren", "heading": "Praxis trifft Persönlichkeit.", "intro": "" }
+      "block_order": [
+        "author_01",
+        "author_02"
+      ],
+      "settings": {
+        "label": "Autoren",
+        "heading": "Praxis trifft Persönlichkeit.",
+        "intro": ""
+      }
     },
     "product_sponsors": {
       "type": "product-sponsors",
       "blocks": {
-        "tier_01": { "type": "heading", "settings": { "title": "Latinsponsoren" } },
-        "sp_01": { "type": "sponsor", "settings": { "name": "ACO AG", "url": "https://www.aco.ch/" } },
-        "sp_02": { "type": "sponsor", "settings": { "name": "Basler & Hofmann", "url": "https://www.baslerhofmann.ch/" } },
-        "sp_03": { "type": "sponsor", "settings": { "name": "BITEX BIMOID AG", "url": "https://bitexbimoid.ch/" } },
-        "sp_04": { "type": "sponsor", "settings": { "name": "Cellere Bau AG", "url": "https://cellere.ch/" } },
-        "sp_05": { "type": "sponsor", "settings": { "name": "flexBelag bau ag", "url": "http://flexbelag.ch/" } },
-        "sp_06": { "type": "sponsor", "settings": { "name": "Hüppi AG", "url": "https://www.hueppi.ch/" } },
-        "sp_07": { "type": "sponsor", "settings": { "name": "Implenia Schweiz AG", "url": "https://www.implenia.com/" } },
-        "sp_08": { "type": "sponsor", "settings": { "name": "Marti Gruppe", "url": "https://www.martiag.ch/" } },
-        "sp_09": { "type": "sponsor", "settings": { "name": "Neuteerbit AG Salmsach", "url": "https://www.neuteerbit.ch/" } },
-        "sp_10": { "type": "sponsor", "settings": { "name": "Schweizerischer Baumeisterverband", "url": "http://www.baumeister.ch/de/" } },
-        "sp_11": { "type": "sponsor", "settings": { "name": "ViaTec AG", "url": "https://viatec.ch/" } },
-        "sp_12": { "type": "sponsor", "settings": { "name": "Walo Bertschinger AG", "url": "https://walo.ch/" } },
-        "tier_02": { "type": "heading", "settings": { "title": "Goldsponsoren" } },
-        "sp_13": { "type": "sponsor", "settings": { "name": "Bau Power Group AG", "url": "https://www.baupowergroup.com/" } },
-        "sp_14": { "type": "sponsor", "settings": { "name": "BHZ Baustoff Holding Zürich", "url": "https://www.bhz-zh.ch/" } },
-        "sp_15": { "type": "sponsor", "settings": { "name": "CREABETON BAUSTOFF AG", "url": "https://creabeton-baustoff.ch/" } },
-        "sp_16": { "type": "sponsor", "settings": { "name": "Infra Suisse", "url": "https://infra-suisse.ch/" } },
-        "sp_17": { "type": "sponsor", "settings": { "name": "Ingenieurbureau Heierli AG", "url": "https://www.heierli.ch/" } },
-        "sp_18": { "type": "sponsor", "settings": { "name": "Locher Ingenieure AG", "url": "https://locher-ing.ch/" } },
-        "sp_19": { "type": "sponsor", "settings": { "name": "Ebicon AG", "url": "http://www.ebicon.ch/" } },
-        "sp_20": { "type": "sponsor", "settings": { "name": "Eckert Baulogistik AG", "url": "http://www.eckert-bag.ch/" } },
-        "sp_21": { "type": "sponsor", "settings": { "name": "EcoSoil AG", "url": "https://ecosoil.ch/" } },
-        "sp_22": { "type": "sponsor", "settings": { "name": "OST Ostschweizer Fachhochschule", "url": "https://www.ost.ch/" } },
-        "sp_23": { "type": "sponsor", "settings": { "name": "Q Point AG", "url": "https://q-point.com/" } },
-        "sp_24": { "type": "sponsor", "settings": { "name": "Schällibaum AG", "url": "https://www.schaellibaum.ch/" } },
-        "sp_25": { "type": "sponsor", "settings": { "name": "EFP AG", "url": "https://www.efp.ch/" } },
-        "sp_26": { "type": "sponsor", "settings": { "name": "Grund- und Tiefbau AG Basel", "url": "https://www.grundundtiefbauag.ch/" } },
-        "sp_27": { "type": "sponsor", "settings": { "name": "STRABAG AG, Schweiz", "url": "https://www.strabag.ch/" } },
-        "sp_28": { "type": "sponsor", "settings": { "name": "Geoinfra Ingenieure AG", "url": "https://www.geoinfra.ch/" } }
+        "sponsor_block_1": {
+          "type": "heading",
+          "settings": {
+            "title": "Platinsponsoren"
+          }
+        },
+        "sponsor_block_2": {
+          "type": "sponsor",
+          "settings": {
+            "name": "ACO AG",
+            "url": "https://www.aco.ch/",
+            "asset_name": "sponsor-image2-1f433bb0.png"
+          }
+        },
+        "sponsor_block_3": {
+          "type": "sponsor",
+          "settings": {
+            "name": "​Basler & Hofmann",
+            "url": "https://www.baslerhofmann.ch/",
+            "asset_name": "sponsor-image3-f9e25bc7.png"
+          }
+        },
+        "sponsor_block_4": {
+          "type": "sponsor",
+          "settings": {
+            "name": "BITEX BIMOID AG",
+            "url": "https://bitexbimoid.ch/",
+            "asset_name": "sponsor-image4-27ba7f1e.png"
+          }
+        },
+        "sponsor_block_5": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Cellere Bau AG",
+            "url": "https://cellere.ch/",
+            "asset_name": "sponsor-image5-2e08b887.png"
+          }
+        },
+        "sponsor_block_6": {
+          "type": "sponsor",
+          "settings": {
+            "name": "flexBelag bau ag",
+            "url": "http://flexbelag.ch/",
+            "asset_name": "sponsor-image6-cadbbc35.png"
+          }
+        },
+        "sponsor_block_7": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Hüppi AG",
+            "url": "https://www.hueppi.ch/",
+            "asset_name": "sponsor-image7-64a2a847.png"
+          }
+        },
+        "sponsor_block_8": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Implenia Schweiz AG",
+            "url": "https://www.implenia.com/",
+            "asset_name": "sponsor-image8-1cc87842.png"
+          }
+        },
+        "sponsor_block_9": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Marti Grupe",
+            "url": "https://www.martiag.ch/",
+            "asset_name": "sponsor-image9-5a34d521.png"
+          }
+        },
+        "sponsor_block_10": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Neuteerbit AG Salmsach",
+            "url": "https://www.neuteerbit.ch/",
+            "asset_name": "sponsor-image10-33a66ccf.png"
+          }
+        },
+        "sponsor_block_11": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Schweizerischer Baumeisterverband",
+            "url": "http://www.baumeister.ch/de/",
+            "asset_name": "sponsor-image11-1c8677fb.png"
+          }
+        },
+        "sponsor_block_12": {
+          "type": "sponsor",
+          "settings": {
+            "name": "ViaTec AG",
+            "url": "https://viatec.ch/",
+            "asset_name": "sponsor-image12-0a5d0a9e.png"
+          }
+        },
+        "sponsor_block_13": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Walo Bertschinger AG",
+            "url": "https://walo.ch/",
+            "asset_name": ""
+          }
+        },
+        "sponsor_block_14": {
+          "type": "heading",
+          "settings": {
+            "title": "Goldsponsoren"
+          }
+        },
+        "sponsor_block_15": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Bau Power Group AG",
+            "url": "https://www.baupowergroup.com/",
+            "asset_name": "sponsor-image14-427d5447.png"
+          }
+        },
+        "sponsor_block_16": {
+          "type": "sponsor",
+          "settings": {
+            "name": "BHZ Baustoff Holding Zürich",
+            "url": "https://www.bhz-zh.ch/",
+            "asset_name": "sponsor-image15-3d4066e0.png"
+          }
+        },
+        "sponsor_block_17": {
+          "type": "sponsor",
+          "settings": {
+            "name": "CREABETON BAUSTOFF AG",
+            "url": "https://creabeton-baustoff.ch/",
+            "asset_name": "sponsor-image16-19cc68e2.png"
+          }
+        },
+        "sponsor_block_18": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Infra Suisse",
+            "url": "https://infra-suisse.ch/",
+            "asset_name": "sponsor-image17-dca67908.png"
+          }
+        },
+        "sponsor_block_19": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Ingenieurbureau Heierli AG",
+            "url": "https://www.heierli.ch/",
+            "asset_name": "sponsor-image18-940db7c8.png"
+          }
+        },
+        "sponsor_block_20": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Locher Ingenieure AG",
+            "url": "https://locher-ing.ch/",
+            "asset_name": "sponsor-image19-bda9f4ef.png"
+          }
+        },
+        "sponsor_block_21": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Ebicon AG",
+            "url": "http://www.ebicon.ch/",
+            "asset_name": "sponsor-image20-1eeebe9d.png"
+          }
+        },
+        "sponsor_block_22": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Eckert Baulogistik AG",
+            "url": "http://www.eckert-bag.ch/",
+            "asset_name": "sponsor-image21-82d01b97.png"
+          }
+        },
+        "sponsor_block_23": {
+          "type": "sponsor",
+          "settings": {
+            "name": "EcoSoil AG",
+            "url": "https://ecosoil.ch/",
+            "asset_name": "sponsor-image22-2f9f3884.png"
+          }
+        },
+        "sponsor_block_24": {
+          "type": "sponsor",
+          "settings": {
+            "name": "OST Ostschweizer Fachhochschule",
+            "url": "https://www.ost.ch/",
+            "asset_name": "sponsor-image23-b73fa34d.png"
+          }
+        },
+        "sponsor_block_25": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Q Point AG",
+            "url": "https://q-point.com/",
+            "asset_name": "sponsor-image24-3aefbb4f.png"
+          }
+        },
+        "sponsor_block_26": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Schällibaum AG",
+            "url": "https://www.schaellibaum.ch/",
+            "asset_name": "sponsor-image25-f1e641a8.png"
+          }
+        },
+        "sponsor_block_27": {
+          "type": "sponsor",
+          "settings": {
+            "name": "EFP AG",
+            "url": "https://www.efp.ch/",
+            "asset_name": "sponsor-image26-76ac6e2e.png"
+          }
+        },
+        "sponsor_block_28": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Grund- und Tiefbau AG Basel",
+            "url": "https://www.grundundtiefbauag.ch/",
+            "asset_name": "sponsor-image27-06d237b7.png"
+          }
+        },
+        "sponsor_block_29": {
+          "type": "sponsor",
+          "settings": {
+            "name": "STRABAG AG, Schweiz",
+            "url": "https://www.strabag.ch/",
+            "asset_name": "sponsor-image28-02381d61.png"
+          }
+        },
+        "sponsor_block_30": {
+          "type": "sponsor",
+          "settings": {
+            "name": "Geoinfra Ingenieure AG",
+            "url": "https://www.geoinfra.ch/",
+            "asset_name": ""
+          }
+        }
       },
-      "block_order": ["tier_01","sp_01","sp_02","sp_03","sp_04","sp_05","sp_06","sp_07","sp_08","sp_09","sp_10","sp_11","sp_12","tier_02","sp_13","sp_14","sp_15","sp_16","sp_17","sp_18","sp_19","sp_20","sp_21","sp_22","sp_23","sp_24","sp_25","sp_26","sp_27","sp_28"],
-      "settings": { "label": "Sponsoren", "heading": "Ermöglicht durch unsere Partner.", "intro": "" }
+      "block_order": [
+        "sponsor_block_1",
+        "sponsor_block_2",
+        "sponsor_block_3",
+        "sponsor_block_4",
+        "sponsor_block_5",
+        "sponsor_block_6",
+        "sponsor_block_7",
+        "sponsor_block_8",
+        "sponsor_block_9",
+        "sponsor_block_10",
+        "sponsor_block_11",
+        "sponsor_block_12",
+        "sponsor_block_13",
+        "sponsor_block_14",
+        "sponsor_block_15",
+        "sponsor_block_16",
+        "sponsor_block_17",
+        "sponsor_block_18",
+        "sponsor_block_19",
+        "sponsor_block_20",
+        "sponsor_block_21",
+        "sponsor_block_22",
+        "sponsor_block_23",
+        "sponsor_block_24",
+        "sponsor_block_25",
+        "sponsor_block_26",
+        "sponsor_block_27",
+        "sponsor_block_28",
+        "sponsor_block_29",
+        "sponsor_block_30"
+      ],
+      "settings": {
+        "label": "Sponsoren",
+        "heading": "Ermöglicht durch unsere Partner.",
+        "intro": ""
+      }
     },
     "product_testimonials": {
       "type": "product-testimonials",
       "blocks": {
-        "t01": { "type": "testimonial", "settings": { "quote": "Die Einsatzbereitschaft und die Leidenschaft, die alle Beteiligten in einem Bauprojekt zeigen, begeistern mich immer wieder aufs Neue. Mit dem Bau, Betrieb und Unterhalt der Verkehrswege leisten Sie einen wichtigen, nachhaltigen und dauerhaften Beitrag für die Entwicklung von Wirtschaft und Gesellschaft.", "name": "Jürg Röthlisberger", "role": "Direktor Bundesamt für Strassen (ASTRA)" } },
-        "t02": { "type": "testimonial", "settings": { "quote": "Das vorliegende Werk bietet eine lehrreiche, spannende Grundlage für die Vermittlung und den Erhalt der Fachkompetenzen. Es fördert die Zusammenarbeit, indem es Verständnis schafft für die vor- und nachgelagerten Prozesse im gesamten Phasenmodell von Bauprojekten.", "name": "Adrian Dinkelmann", "role": "Geschäftsführer Infra Suisse" } }
+        "t01": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Die Einsatzbereitschaft und die Leidenschaft, die alle Beteiligten in einem Bauprojekt zeigen, begeistern mich immer wieder aufs Neue. Mit dem Bau, Betrieb und Unterhalt der Verkehrswege leisten Sie einen wichtigen, nachhaltigen und dauerhaften Beitrag für die Entwicklung von Wirtschaft und Gesellschaft.",
+            "name": "Jürg Röthlisberger",
+            "role": "Direktor Bundesamt für Strassen (ASTRA)"
+          }
+        },
+        "t02": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Das vorliegende Werk bietet eine lehrreiche, spannende Grundlage für die Vermittlung und den Erhalt der Fachkompetenzen. Es fördert die Zusammenarbeit, indem es Verständnis schafft für die vor- und nachgelagerten Prozesse im gesamten Phasenmodell von Bauprojekten.",
+            "name": "Adrian Dinkelmann",
+            "role": "Geschäftsführer Infra Suisse"
+          }
+        }
       },
-      "block_order": ["t01", "t02"],
-      "settings": { "bg_color": "#f7f7f5", "heading": "Wo Zukunft geplant wird." }
+      "block_order": [
+        "t01",
+        "t02"
+      ],
+      "settings": {
+        "bg_color": "#f7f7f5",
+        "heading": "Wo Zukunft geplant wird."
+      }
     }
   },
-  "order": ["product_main", "product_toc", "product_authors", "product_sponsors", "product_testimonials"]
+  "order": [
+    "product_main",
+    "product_toc",
+    "product_authors",
+    "product_sponsors",
+    "product_testimonials"
+  ]
 }

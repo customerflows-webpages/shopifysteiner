@@ -21,21 +21,48 @@
             <div class="fwb-sponsors__tier-heading" {{ block.shopify_attributes }}>{{ block.settings.title }}</div>
           {%- else -%}
             <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
-              {%- if block.settings.image != blank -%}
+              {%- if block.settings.asset_name != blank or block.settings.image_url != blank or block.settings.image != blank -%}
                 <div class="fwb-sponsors__logo-wrap">
                   {%- if block.settings.url != blank -%}
                     <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
                   {%- endif -%}
-                  <img
-                    src="{{ block.settings.image | img_url: '400x' }}"
-                    alt="{{ block.settings.name | default: 'Sponsor' }}"
-                    loading="lazy"
-                    class="fwb-sponsors__logo"
-                  >
+                  {%- if block.settings.asset_name != blank -%}
+                    <img
+                      src="{{ block.settings.asset_name | asset_url }}"
+                      alt="{{ block.settings.name | default: 'Sponsor' }}"
+                      loading="lazy"
+                      class="fwb-sponsors__logo"
+                      onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
+                    >
+                  {%- elsif block.settings.image_url != blank -%}
+                    <img
+                      src="{{ block.settings.image_url }}"
+                      alt="{{ block.settings.name | default: 'Sponsor' }}"
+                      loading="lazy"
+                      class="fwb-sponsors__logo"
+                      onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
+                    >
+                  {%- else -%}
+                    <img
+                      src="{{ block.settings.image | img_url: '400x' }}"
+                      alt="{{ block.settings.name | default: 'Sponsor' }}"
+                      loading="lazy"
+                      class="fwb-sponsors__logo"
+                    >
+                  {%- endif -%}
                   {%- if block.settings.url != blank -%}
                     </a>
                   {%- endif -%}
                 </div>
+                {%- if block.settings.name != blank -%}
+                  <div class="fwb-sponsors__name-fallback" style="display:none">
+                    {%- if block.settings.url != blank -%}
+                      <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
+                    {%- else -%}
+                      {{ block.settings.name }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
               {%- elsif block.settings.name != blank -%}
                 <div class="fwb-sponsors__name-only">
                   {%- if block.settings.url != blank -%}
@@ -124,12 +151,12 @@
   }
 
   .fwb-sponsors__logo {
-    max-height: 60px;
+    max-height: 48px;
     width: auto;
-    max-width: 200px;
+    max-width: 160px;
     object-fit: contain;
     filter: grayscale(100%);
-    opacity: 0.7;
+    opacity: 0.65;
     transition: filter 0.2s ease, opacity 0.2s ease;
   }
 
@@ -138,12 +165,24 @@
     opacity: 1;
   }
 
-  .fwb-sponsors__name-only {
+  .fwb-sponsors__name-only,
+  .fwb-sponsors__name-fallback {
     font-family: var(--fwb-font-heading);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 300;
     color: var(--fwb-grey-700);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+  }
+
+  .fwb-sponsors__name-only a,
+  .fwb-sponsors__name-fallback a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .fwb-sponsors__name-only a:hover,
+  .fwb-sponsors__name-fallback a:hover {
+    color: var(--fwb-grey-900);
   }
 
   .fwb-sponsors__caption {
@@ -200,14 +239,24 @@
       "name": "Sponsor",
       "settings": [
         {
+          "type": "text",
+          "id": "asset_name",
+          "label": "Logo (Theme Asset Dateiname)"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Logo-URL (extern)"
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Logo"
+          "label": "Logo (hochgeladen)"
         },
         {
           "type": "text",
           "id": "name",
-          "label": "Firmenname (falls kein Logo)"
+          "label": "Firmenname"
         },
         {
           "type": "text",
