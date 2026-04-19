@@ -467,6 +467,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "Das vorliegende Buch «BauPraxis – Der Untertagbau» zeigt die theoretischen Zusammenhänge für den Baubetrieb auf, ergänzt mit Erfahrungen aus ausgeführten Projekten und Meinungen von Fachleuten. Möge das Buch einen Beitrag dazu leisten, dass kommende Untertagbauprojekte noch besser ausgeführt werden können.",
+            "avatar_asset": "author-adolf-ogi.png",
             "name": "Adolf Ogi",
             "role": "Alt Bundesrat, ehemaliger Verkehrsminister der Schweiz"
           }
@@ -475,6 +476,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "Mit der Lektüre des vorliegenden Buches wird man nicht automatisch zum perfekten Tunnelbauer, aber es liegt eine professionelle und übersichtliche Grundlage vor, um sich in der faszinierenden Welt des Untertagbaus zurechtzufinden.",
+            "avatar_asset": "author-andreas-reber.jpg",
             "name": "Andreas Reber",
             "role": "Geschäftsführer, Marti Tunnel AG"
           }
