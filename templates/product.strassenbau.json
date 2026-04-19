@@ -189,7 +189,8 @@
             "name": "Rolf Steiner",
             "role": "Autor & Verleger",
             "credentials": "",
-            "bio": ""
+            "bio": "",
+            "image_asset": "author-rolf-steiner.jpg"
           }
         },
         "author_02": {
@@ -198,7 +199,8 @@
             "name": "Tobias Frick",
             "role": "Autor & Verleger",
             "credentials": "",
-            "bio": ""
+            "bio": "",
+            "image_asset": "author-tobias-frick.jpg"
           }
         }
       },

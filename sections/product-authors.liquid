@@ -11,14 +11,26 @@
 
     <div class="fwb-authors__grid">
       {%- for block in section.blocks -%}
-        <div class="fwb-authors__author" {{ block.shopify_attributes }}>
-          {%- if block.settings.image != blank -%}
+        {%- assign has_portrait = false -%}
+        {%- if block.settings.image_asset != blank or block.settings.image != blank -%}
+          {%- assign has_portrait = true -%}
+        {%- endif -%}
+        <div class="fwb-authors__author{% unless has_portrait %} fwb-authors__author--no-portrait{% endunless %}" {{ block.shopify_attributes }}>
+          {%- if has_portrait -%}
             <div class="fwb-authors__portrait">
-              <img
-                src="{{ block.settings.image | img_url: '400x' }}"
-                alt="{{ block.settings.name }}"
-                loading="lazy"
-              >
+              {%- if block.settings.image_asset != blank -%}
+                <img
+                  src="{{ block.settings.image_asset | asset_url }}"
+                  alt="{{ block.settings.name }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                <img
+                  src="{{ block.settings.image | img_url: '400x' }}"
+                  alt="{{ block.settings.name }}"
+                  loading="lazy"
+                >
+              {%- endif -%}
             </div>
           {%- endif -%}
           <div class="fwb-authors__info">
@@ -30,7 +42,14 @@
               <p class="fwb-body fwb-authors__credentials">{{ block.settings.credentials }}</p>
             {%- endif -%}
             {%- if block.settings.bio != blank -%}
-              <p class="fwb-body fwb-authors__bio">{{ block.settings.bio }}</p>
+              <div class="fwb-authors__bio-wrap">
+                <p class="fwb-body fwb-authors__bio">{{ block.settings.bio }}</p>
+                <button class="fwb-authors__toggle" aria-expanded="false">
+                  <span class="fwb-authors__toggle-more">Mehr lesen</span>
+                  <span class="fwb-authors__toggle-less">Weniger</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
             {%- endif -%}
           </div>
         </div>
@@ -81,11 +100,16 @@
 
   .fwb-authors__author {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: clamp(2rem, 5vw, 6rem);
+    grid-template-columns: 240px 1fr;
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: start;
     padding-bottom: clamp(3rem, 6vw, 6rem);
     border-bottom: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-authors__author--no-portrait {
+    grid-template-columns: 1fr;
+    max-width: 680px;
   }
 
   .fwb-authors__author:last-child {
@@ -117,10 +141,63 @@
     font-style: italic;
   }
 
+  /* Bio collapse */
+  .fwb-authors__bio-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .fwb-authors__bio {
     font-size: 0.875rem;
     line-height: 1.8;
-    max-width: 600px;
+    overflow: hidden;
+    max-height: 5.4em; /* ~3 lines */
+    transition: max-height 0.35s ease;
+  }
+
+  .fwb-authors__bio-wrap.is-expanded .fwb-authors__bio {
+    max-height: 999px;
+  }
+
+  .fwb-authors__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--fwb-grey-600);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color var(--fwb-transition);
+  }
+
+  .fwb-authors__toggle:hover {
+    color: var(--fwb-black);
+  }
+
+  .fwb-authors__toggle svg {
+    transition: transform 0.3s ease;
+  }
+
+  .fwb-authors__toggle-less {
+    display: none;
+  }
+
+  .fwb-authors__bio-wrap.is-expanded .fwb-authors__toggle-more {
+    display: none;
+  }
+
+  .fwb-authors__bio-wrap.is-expanded .fwb-authors__toggle-less {
+    display: inline;
+  }
+
+  .fwb-authors__bio-wrap.is-expanded .fwb-authors__toggle svg {
+    transform: rotate(180deg);
   }
 
   .fwb-authors__cta-wrap {
@@ -147,6 +224,16 @@
     }
   }
 {% endstylesheet %}
+
+{% javascript %}
+  document.querySelectorAll('.fwb-authors__toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var wrap = btn.closest('.fwb-authors__bio-wrap');
+      var expanded = wrap.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', expanded);
+    });
+  });
+{% endjavascript %}
 
 {% schema %}
 {
@@ -192,9 +279,14 @@
       "name": "Autor",
       "settings": [
         {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Portraitbild (Theme Asset Dateiname)"
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Portraitbild"
+          "label": "Portraitbild (hochgeladen)"
         },
         {
           "type": "text",
