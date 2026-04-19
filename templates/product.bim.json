@@ -201,6 +201,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "Das Buch soll nicht eine pfannenfertige Lösung für die Anwendung der BIM-basierten Arbeitsmethoden liefern, sondern vielmehr Hinweise und Zusammenhänge aufzeigen, damit diese neue Arbeitstechnik erfolgreich angewendet werden kann.",
+            "avatar_asset": "author-lukas-mathis.jpg",
             "name": "Lukas Mathis",
             "role": "BSc FHO Bauingenieurwesen, Autor"
           }

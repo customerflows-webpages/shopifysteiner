@@ -13,7 +13,14 @@
             <blockquote class="fwb-testimonials__quote">
               <p class="fwb-testimonials__text">{{ block.settings.quote }}</p>
               <footer class="fwb-testimonials__attribution">
-                {%- if block.settings.avatar != blank -%}
+                {%- if block.settings.avatar_asset != blank -%}
+                  <img
+                    src="{{ block.settings.avatar_asset | asset_url }}"
+                    alt="{{ block.settings.name }}"
+                    class="fwb-testimonials__avatar"
+                    loading="lazy"
+                  >
+                {%- elsif block.settings.avatar != blank -%}
                   <img
                     src="{{ block.settings.avatar | img_url: '100x100', crop: 'center' }}"
                     alt="{{ block.settings.name }}"
@@ -250,9 +257,14 @@
           "label": "Zitat"
         },
         {
+          "type": "text",
+          "id": "avatar_asset",
+          "label": "Portraitbild (Theme Asset Dateiname)"
+        },
+        {
           "type": "image_picker",
           "id": "avatar",
-          "label": "Portraitbild"
+          "label": "Portraitbild (hochgeladen)"
         },
         {
           "type": "text",
