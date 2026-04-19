@@ -274,7 +274,8 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/walo.ch"
           }
         },
         "sponsor_block_14": {
@@ -408,7 +409,8 @@
           "settings": {
             "name": "Geoinfra Ingenieure AG",
             "url": "https://www.geoinfra.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/geoinfra.ch"
           }
         }
       },

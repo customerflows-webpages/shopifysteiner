@@ -332,7 +332,8 @@
           "settings": {
             "name": "Simatec Maschinenbau AG",
             "url": "https://www.simatec.org/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/simatec.org"
           }
         },
         "sponsor_block_10": {
@@ -394,7 +395,8 @@
           "settings": {
             "name": "Rothpletz, Lienhard \\+ Cie AG",
             "url": "https://www.rothpletz.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/rothpletz.ch"
           }
         },
         "sponsor_block_18": {
@@ -424,7 +426,8 @@
           "settings": {
             "name": "suisse.ing",
             "url": "https://www.suisse-ing.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/suisse-ing.ch"
           }
         }
       },

@@ -362,7 +362,8 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/walo.ch"
           }
         },
         "sponsor_block_20": {
@@ -544,7 +545,8 @@
           "settings": {
             "name": "VZS Verkehrswegebauer Zürich Schaffhausen",
             "url": "https://www.bau.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/bau.ch"
           }
         }
       },

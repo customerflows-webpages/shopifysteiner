@@ -176,7 +176,8 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": ""
+            "asset_name": "",
+            "image_url": "https://logo.clearbit.com/walo.ch"
           }
         }
       },
