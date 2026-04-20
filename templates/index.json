@@ -12,17 +12,8 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "label": "FachWissenBau",
         "heading": "Fachkompetenz für Bau und Infrastruktur – präzise, praxisnah, zukunftsstark.",
-        "cta_label": "Zum Verlag",
-        "cta_url": "/collections/verlag"
-      }
-    },
-    "verlag_teaser": {
-      "type": "homepage-verlag-teaser",
-      "settings": {
-        "label": "Verlag",
-        "heading": "Bereit zum Blättern.",
-        "body": "Fundiertes Wissen für die Schweizer Bauwirtschaft – präzise aufbereitet, praxisnah verfasst und direkt anwendbar. Für alle, die auf der Baustelle und im Studium den Durchblick wollen.",
         "cta_label": "Zum Verlag",
         "cta_url": "/collections/verlag"
       }
@@ -30,6 +21,7 @@
     "featured_book": {
       "type": "featured-book",
       "settings": {
+        "product": "",
         "badge": "Neu im Verlag",
         "label": "Öffentliche Beschaffung",
         "heading": "Baupraxis – Öffentliche Beschaffung",
@@ -45,6 +37,16 @@
         "cta_secondary_url": "/products/baupraxis-oeffentliche-beschaffung"
       }
     },
+    "verlag_teaser": {
+      "type": "homepage-verlag-teaser",
+      "settings": {
+        "label": "Verlag",
+        "heading": "Bereit zum Blättern.",
+        "body": "Fundiertes Wissen für die Schweizer Bauwirtschaft – präzise aufbereitet, praxisnah verfasst und direkt anwendbar. Für alle, die auf der Baustelle und im Studium den Durchblick wollen.",
+        "cta_label": "Zum Verlag",
+        "cta_url": "/collections/verlag"
+      }
+    },
     "academy_teaser": {
       "type": "homepage-academy-teaser",
       "settings": {
@@ -58,8 +60,8 @@
   },
   "order": [
     "hero",
-    "verlag_teaser",
     "featured_book",
+    "verlag_teaser",
     "academy_teaser"
   ]
 }
