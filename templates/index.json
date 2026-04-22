@@ -47,8 +47,21 @@
         "cta_url": "/collections/verlag"
       }
     },
-    "academy_teaser": {
+    "homepage_verlag_teaser_j4eaiK": {
+      "type": "homepage-verlag-teaser",
+      "name": "Über uns Teaser",
+      "settings": {
+        "image": "shopify://shop_images/imgi_4_DSC_0077e.jpg",
+        "label": "Über uns",
+        "heading": "Bereit zum Blättern.",
+        "body": "FachWissenBau ist das Kompetenznetzwerk für die Schweizer Bauwirtschaft.\n\nUnser Ziel ist es, Wissen zu teilen, Kompetenzen zu stärken und Zukunft zu gestalten.\nMit Leidenschaft, Weitsicht und einem starken Netzwerk.",
+        "cta_label": "Mehr erfahren",
+        "cta_url": "shopify://pages/ueber-uns"
+      }
+    },
+    "homepage_academy_teaser_RzA77D": {
       "type": "homepage-academy-teaser",
+      "disabled": true,
       "settings": {
         "label": "Academy",
         "heading": "Wer wirklich mitreden will, muss mehr wissen.",
@@ -62,6 +75,7 @@
     "hero",
     "featured_book",
     "verlag_teaser",
-    "academy_teaser"
+    "homepage_verlag_teaser_j4eaiK",
+    "homepage_academy_teaser_RzA77D"
   ]
 }
