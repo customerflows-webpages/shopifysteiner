@@ -25,7 +25,7 @@
       {%- assign hidden_links = 'Academy,Expertise,Kids' | split: ',' -%}
       {% for link in section.settings.menu.links %}
         {%- unless hidden_links contains link.title -%}
-          {%- if link.title == 'Verlag' -%}
+          {%- if link.title == 'Verlag' or link.title == 'Publikationen' -%}
             {%- assign verlag_products = collections['verlag'].products -%}
             <div class="fwb-header__dropdown">
               <button class="fwb-header__nav-link fwb-header__dropdown-trigger" aria-expanded="false">
@@ -66,6 +66,9 @@
                   {%- endfor -%}
                 {%- endif -%}
                 <a href="{{ link.url }}" class="fwb-header__dropdown-all">Alle Bücher ansehen &rarr;</a>
+                {%- if link.title == 'Publikationen' -%}
+                  <a href="/collections/verlag" class="fwb-header__dropdown-all" style="border-top: none;">Zum Verlag &rarr;</a>
+                {%- endif -%}
               </div>
             </div>
           {%- elsif link.links.size > 0 -%}
@@ -113,7 +116,7 @@
     {%- assign hidden_links = 'Academy,Expertise,Kids' | split: ',' -%}
     {% for link in section.settings.menu.links %}
       {%- unless hidden_links contains link.title -%}
-        {%- if link.title == 'Verlag' -%}
+        {%- if link.title == 'Verlag' or link.title == 'Publikationen' -%}
           {%- assign verlag_products = collections['verlag'].products -%}
           <div class="fwb-header__mobile-group">
             <a href="{{ link.url }}" class="fwb-header__mobile-link fwb-header__mobile-parent">{{ link.title }}</a>
@@ -125,6 +128,9 @@
               {%- for product in collections.all.products limit:4 -%}
                 <a href="{{ product.url }}" class="fwb-header__mobile-link fwb-header__mobile-child">{{ product.title }}</a>
               {%- endfor -%}
+            {%- endif -%}
+            {%- if link.title == 'Publikationen' -%}
+              <a href="/collections/verlag" class="fwb-header__mobile-link fwb-header__mobile-child">Zum Verlag &rarr;</a>
             {%- endif -%}
           </div>
         {%- elsif link.links.size > 0 -%}
