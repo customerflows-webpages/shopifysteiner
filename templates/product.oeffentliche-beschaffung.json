@@ -11,12 +11,6 @@
   "sections": {
     "product_main": {
       "type": "product-main",
-      "settings": {
-        "desc_label": "Beschreibung",
-        "variants_label": "Variationen",
-        "variants_heading": "Gedruckt. Digital. Oder beides.",
-        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
-      },
       "blocks": {
         "acc_desc": {
           "type": "description",
@@ -62,7 +56,13 @@
         "acc_desc",
         "acc_specs",
         "acc_shipping"
-      ]
+      ],
+      "settings": {
+        "desc_label": "Beschreibung",
+        "variants_label": "Variationen",
+        "variants_heading": "Gedruckt. Digital. Oder beides.",
+        "variants_body": "Das Fachbuch ist als hochwertiger Hardcover-Band, als digitale Version via Edubase-Reader oder im Kombiangebot erhältlich. Die gedruckte Ausgabe wird Ihnen bequem nach Hause geliefert – den persönlichen Lizenzschlüssel für den digitalen Zugang erhalten Sie per E-Mail. So haben Sie Ihr Bauwissen stets dort, wo Sie es brauchen."
+      }
     },
     "product_toc": {
       "type": "product-toc",
@@ -131,21 +131,21 @@
         "author_02": {
           "type": "author",
           "settings": {
+            "image_asset": "author-rolf-steiner.jpg",
             "name": "Rolf Steiner",
             "role": "Autor & Verleger",
             "credentials": "",
-            "bio": "",
-            "image_asset": "author-rolf-steiner.jpg"
+            "bio": ""
           }
         },
         "author_03": {
           "type": "author",
           "settings": {
+            "image_asset": "author-tobias-frick.jpg",
             "name": "Tobias Frick",
             "role": "Autor & Verleger",
             "credentials": "",
-            "bio": "",
-            "image_asset": "author-tobias-frick.jpg"
+            "bio": ""
           }
         }
       },
@@ -162,8 +162,6 @@
     },
     "product_sponsors": {
       "type": "product-sponsors",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "label": "Sponsoren",
         "heading": "Ermöglicht durch unsere Partner.",
