@@ -287,69 +287,43 @@
   }
 
   .fwb-traeger__grid {
-    display: grid;
-    gap: 2px;
-  }
-
-  .fwb-traeger__grid--platin {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-
-  .fwb-traeger__grid--gold {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem 4rem;
+    align-items: center;
   }
 
   .fwb-traeger__item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1.5rem 1.25rem;
-    background: var(--fwb-grey-100);
-  }
-
-  .fwb-traeger__grid--platin .fwb-traeger__item {
-    height: 110px;
-  }
-
-  .fwb-traeger__grid--gold .fwb-traeger__item {
-    height: 90px;
   }
 
   .fwb-traeger__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    display: block;
+    line-height: 0;
   }
 
   .fwb-traeger__logo {
     object-fit: contain;
-    width: 100%;
-    height: 100%;
+    width: auto;
     filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.65;
     transition: filter 0.2s ease, opacity 0.2s ease;
+  }
+
+  .fwb-traeger__grid--platin .fwb-traeger__logo {
+    max-height: 88px;
+    max-width: 260px;
+  }
+
+  .fwb-traeger__grid--gold .fwb-traeger__logo {
+    max-height: 72px;
+    max-width: 220px;
   }
 
   .fwb-traeger__link:hover .fwb-traeger__logo {
     filter: grayscale(0%);
     opacity: 1;
-  }
-
-  @media (max-width: 600px) {
-    .fwb-traeger__grid--platin {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    }
-    .fwb-traeger__grid--gold {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-    .fwb-traeger__grid--platin .fwb-traeger__item {
-      height: 90px;
-    }
-    .fwb-traeger__grid--gold .fwb-traeger__item {
-      height: 75px;
-    }
   }
 
 {% endstylesheet %}
