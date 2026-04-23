@@ -228,7 +228,7 @@
           "settings": {
             "name": "ACO AG",
             "url": "https://www.aco.ch/",
-            "asset_name": "sponsor-image30-343ddb92.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_3": {
@@ -236,7 +236,7 @@
           "settings": {
             "name": "CRB",
             "url": "https://www.crb.ch/",
-            "asset_name": "sponsor-image31-3d4066e0.png"
+            "asset_name": "sponsor-image30-343ddb92.png"
           }
         },
         "sponsor_block_4": {
@@ -244,7 +244,7 @@
           "settings": {
             "name": "CREABETON BAUSTOFF AG",
             "url": "https://creabeton-baustoff.ch/",
-            "asset_name": "sponsor-image32-5dd56313.png"
+            "asset_name": "sponsor-image31-3d4066e0.png"
           }
         },
         "sponsor_block_5": {
@@ -252,7 +252,7 @@
           "settings": {
             "name": "Eberhard Unternehmungen",
             "url": "https://eberhard.ch/",
-            "asset_name": "sponsor-image33-bda9f4ef.png"
+            "asset_name": "sponsor-image32-5dd56313.png"
           }
         },
         "sponsor_block_6": {
@@ -260,7 +260,7 @@
           "settings": {
             "name": "Ebicon AG",
             "url": "http://www.ebicon.ch/",
-            "asset_name": "sponsor-image34-2e08b887.png"
+            "asset_name": "sponsor-image33-bda9f4ef.png"
           }
         },
         "sponsor_block_7": {
@@ -268,7 +268,7 @@
           "settings": {
             "name": "flexBelag bau ag",
             "url": "http://flexbelag.ch/",
-            "asset_name": "sponsor-image35-cadbbc35.png"
+            "asset_name": "sponsor-image34-2e08b887.png"
           }
         },
         "sponsor_block_8": {
@@ -276,7 +276,7 @@
           "settings": {
             "name": "Hüppi AG",
             "url": "https://www.hueppi.ch/",
-            "asset_name": "sponsor-image36-64a2a847.png"
+            "asset_name": "sponsor-image35-cadbbc35.png"
           }
         },
         "sponsor_block_9": {
@@ -284,7 +284,7 @@
           "settings": {
             "name": "Implenia Schweiz AG",
             "url": "https://www.implenia.com/",
-            "asset_name": "sponsor-image37-77522bad.png"
+            "asset_name": "sponsor-image36-64a2a847.png"
           }
         },
         "sponsor_block_10": {
@@ -292,7 +292,7 @@
           "settings": {
             "name": "INAUEN & INAUEN AG",
             "url": "https://inauen-inauen.ch/",
-            "asset_name": "sponsor-image38-19cc68e2.png"
+            "asset_name": "sponsor-image37-77522bad.png"
           }
         },
         "sponsor_block_11": {
@@ -300,7 +300,7 @@
           "settings": {
             "name": "Infra Suisse",
             "url": "https://infra-suisse.ch/",
-            "asset_name": "sponsor-image39-dab6c03c.png"
+            "asset_name": "sponsor-image38-19cc68e2.png"
           }
         },
         "sponsor_block_12": {
@@ -308,7 +308,7 @@
           "settings": {
             "name": "Keller-Frei AG",
             "url": "https://keller-frei.ch/",
-            "asset_name": "sponsor-image40-1cc87842.png"
+            "asset_name": "sponsor-image39-dab6c03c.png"
           }
         },
         "sponsor_block_13": {
@@ -316,7 +316,7 @@
           "settings": {
             "name": "Marti Grupe",
             "url": "https://www.martiag.ch/",
-            "asset_name": "sponsor-image41-753db82d.png"
+            "asset_name": "sponsor-image40-1cc87842.png"
           }
         },
         "sponsor_block_14": {
@@ -324,7 +324,7 @@
           "settings": {
             "name": "Mauderli AG",
             "url": "https://www.mauderli.ch/",
-            "asset_name": "sponsor-image42-5a34d521.png"
+            "asset_name": "sponsor-image41-753db82d.png"
           }
         },
         "sponsor_block_15": {
@@ -332,7 +332,7 @@
           "settings": {
             "name": "Neuteerbit AG Salmsach",
             "url": "https://www.neuteerbit.ch/",
-            "asset_name": "sponsor-image43-2f9f3884.png"
+            "asset_name": "sponsor-image42-5a34d521.png"
           }
         },
         "sponsor_block_16": {
@@ -340,7 +340,7 @@
           "settings": {
             "name": "OST Ostschweizer Fachhochschule",
             "url": "https://www.ost.ch/",
-            "asset_name": "sponsor-image44-33a66ccf.png"
+            "asset_name": "sponsor-image43-2f9f3884.png"
           }
         },
         "sponsor_block_17": {
@@ -348,7 +348,7 @@
           "settings": {
             "name": "Schweizerischer Baumeisterverband",
             "url": "http://www.baumeister.ch/de/",
-            "asset_name": "sponsor-image45-06d237b7.png"
+            "asset_name": "sponsor-image44-33a66ccf.png"
           }
         },
         "sponsor_block_18": {
@@ -356,7 +356,7 @@
           "settings": {
             "name": "STRABAG AG, Schweiz",
             "url": "https://www.strabag.ch/",
-            "asset_name": "sponsor-image46-0a5d0a9e.png"
+            "asset_name": "sponsor-image45-06d237b7.png"
           }
         },
         "sponsor_block_19": {
@@ -364,8 +364,7 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/walo.ch"
+            "asset_name": "sponsor-image46-0a5d0a9e.png"
           }
         },
         "sponsor_block_20": {
@@ -379,7 +378,7 @@
           "settings": {
             "name": "Ammann Schweiz AG",
             "url": "https://www.ammann.com/ch-de/",
-            "asset_name": "sponsor-image48-fd525a0d.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_22": {
@@ -387,7 +386,7 @@
           "settings": {
             "name": "asphaltsuisse",
             "url": "https://asphaltsuisse.ch/",
-            "asset_name": "sponsor-image49-de84af71.png"
+            "asset_name": "sponsor-image48-fd525a0d.png"
           }
         },
         "sponsor_block_23": {
@@ -395,7 +394,7 @@
           "settings": {
             "name": "Avesco AG",
             "url": "https://www.avesco.ch/",
-            "asset_name": "sponsor-image50-77ce4f7d.png"
+            "asset_name": "sponsor-image49-de84af71.png"
           }
         },
         "sponsor_block_24": {
@@ -403,7 +402,7 @@
           "settings": {
             "name": "Bau Power Group AG",
             "url": "https://www.baupowergroup.com/",
-            "asset_name": "sponsor-image51-37aac983.png"
+            "asset_name": "sponsor-image50-77ce4f7d.png"
           }
         },
         "sponsor_block_25": {
@@ -411,7 +410,7 @@
           "settings": {
             "name": "Baumeisterverband Zürich/Schaffhausen",
             "url": "https://www.bau.ch/",
-            "asset_name": "sponsor-image52-04a743ed.png"
+            "asset_name": "sponsor-image51-37aac983.png"
           }
         },
         "sponsor_block_26": {
@@ -419,7 +418,7 @@
           "settings": {
             "name": "Bereuter Holding AG",
             "url": "https://bereuter-gruppe.ch/",
-            "asset_name": "sponsor-image53-427d5447.png"
+            "asset_name": "sponsor-image52-04a743ed.png"
           }
         },
         "sponsor_block_27": {
@@ -427,7 +426,7 @@
           "settings": {
             "name": "BHZ Baustoff Holding Zürich",
             "url": "https://www.bhz-zh.ch/",
-            "asset_name": "sponsor-image54-1eeebe9d.png"
+            "asset_name": "sponsor-image53-427d5447.png"
           }
         },
         "sponsor_block_28": {
@@ -435,7 +434,7 @@
           "settings": {
             "name": "Eckert Baulogistik AG",
             "url": "http://www.eckert-bag.ch/",
-            "asset_name": "sponsor-image55-426066ef.png"
+            "asset_name": "sponsor-image54-1eeebe9d.png"
           }
         },
         "sponsor_block_29": {
@@ -443,7 +442,7 @@
           "settings": {
             "name": "Frutiger Company AG",
             "url": "https://frutiger.com/",
-            "asset_name": "sponsor-image56-f5303917.png"
+            "asset_name": "sponsor-image55-426066ef.png"
           }
         },
         "sponsor_block_30": {
@@ -451,7 +450,7 @@
           "settings": {
             "name": "Interstein Holding AG",
             "url": "https://www.interstein.com/",
-            "asset_name": "sponsor-image57-2705533c.png"
+            "asset_name": "sponsor-image56-f5303917.png"
           }
         },
         "sponsor_block_31": {
@@ -459,7 +458,7 @@
           "settings": {
             "name": "Kalkfabrik Netstal AG",
             "url": "https://www.kfn.ch/",
-            "asset_name": "sponsor-image58-48328f59.png"
+            "asset_name": "sponsor-image57-2705533c.png"
           }
         },
         "sponsor_block_32": {
@@ -467,7 +466,7 @@
           "settings": {
             "name": "Karl Morf AG",
             "url": "https://www.morf-ag.ch/",
-            "asset_name": "sponsor-image59-6cab801b.png"
+            "asset_name": "sponsor-image58-48328f59.png"
           }
         },
         "sponsor_block_33": {
@@ -475,7 +474,7 @@
           "settings": {
             "name": "KIBAG Beton AG",
             "url": "https://www.kibag.ch/de/",
-            "asset_name": "sponsor-image60-0893416e.png"
+            "asset_name": "sponsor-image59-6cab801b.png"
           }
         },
         "sponsor_block_34": {
@@ -483,7 +482,7 @@
           "settings": {
             "name": "Microtunnel.ch AG",
             "url": "https://www.microtunnel.ch/i",
-            "asset_name": "sponsor-image61-15f6b9c1.png"
+            "asset_name": "sponsor-image60-0893416e.png"
           }
         },
         "sponsor_block_35": {
@@ -491,7 +490,7 @@
           "settings": {
             "name": "MÖKAH AG",
             "url": "https://www.moekah.ch/",
-            "asset_name": "sponsor-image62-b2616403.png"
+            "asset_name": "sponsor-image61-15f6b9c1.png"
           }
         },
         "sponsor_block_36": {
@@ -499,7 +498,7 @@
           "settings": {
             "name": "Reproad AG",
             "url": "https://www.reproad.com/",
-            "asset_name": "sponsor-image63-98653e80.png"
+            "asset_name": "sponsor-image62-b2616403.png"
           }
         },
         "sponsor_block_37": {
@@ -507,7 +506,7 @@
           "settings": {
             "name": "Ribbert AG",
             "url": "https://ribbert.swiss/",
-            "asset_name": "sponsor-image64-012b5ebd.png"
+            "asset_name": "sponsor-image63-98653e80.png"
           }
         },
         "sponsor_block_38": {
@@ -515,7 +514,7 @@
           "settings": {
             "name": "Reparatur- und Sanierungstechnik Nord AG",
             "url": "https://www.rsag-schweiz.ch/",
-            "asset_name": "sponsor-image65-4922a90a.png"
+            "asset_name": "sponsor-image64-012b5ebd.png"
           }
         },
         "sponsor_block_39": {
@@ -523,7 +522,7 @@
           "settings": {
             "name": "RSS Flüssigboden (Schweiz) AG",
             "url": "https://www.rss-fluessigboden.ch/",
-            "asset_name": "sponsor-image66-389d4710.png"
+            "asset_name": "sponsor-image65-4922a90a.png"
           }
         },
         "sponsor_block_40": {
@@ -531,7 +530,7 @@
           "settings": {
             "name": "Jak. Scheifele AG",
             "url": "https://www.scheifele.com/",
-            "asset_name": "sponsor-image67-3ff8ef2e.png"
+            "asset_name": "sponsor-image66-389d4710.png"
           }
         },
         "sponsor_block_41": {
@@ -539,7 +538,7 @@
           "settings": {
             "name": "SYTEC Bausysteme AG",
             "url": "https://www.sytec.ch/de",
-            "asset_name": "sponsor-image68-200b880a.png"
+            "asset_name": "sponsor-image67-3ff8ef2e.png"
           }
         },
         "sponsor_block_42": {
@@ -547,8 +546,7 @@
           "settings": {
             "name": "VZS Verkehrswegebauer Zürich Schaffhausen",
             "url": "https://www.bau.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/bau.ch"
+            "asset_name": "sponsor-image68-200b880a.png"
           }
         }
       },

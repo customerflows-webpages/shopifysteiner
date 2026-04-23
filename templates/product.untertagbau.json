@@ -279,7 +279,7 @@
           "settings": {
             "name": "ACO AG",
             "url": "https://www.aco.ch/",
-            "asset_name": "sponsor-image78-1b811aa2.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_3": {
@@ -287,7 +287,7 @@
           "settings": {
             "name": "Herrenknecht AG",
             "url": "https://www.herrenknecht.com/",
-            "asset_name": "sponsor-image79-19cc68e2.png"
+            "asset_name": "sponsor-image78-1b811aa2.png"
           }
         },
         "sponsor_block_4": {
@@ -295,7 +295,7 @@
           "settings": {
             "name": "Infra Suisse",
             "url": "https://infra-suisse.ch/",
-            "asset_name": "sponsor-image80-310ee76e.png"
+            "asset_name": "sponsor-image79-19cc68e2.png"
           }
         },
         "sponsor_block_5": {
@@ -303,7 +303,7 @@
           "settings": {
             "name": "Marti Technik AG",
             "url": "https://www.martitechnik.com/",
-            "asset_name": "sponsor-image81-a9aa0753.png"
+            "asset_name": "sponsor-image80-310ee76e.png"
           }
         },
         "sponsor_block_6": {
@@ -311,7 +311,7 @@
           "settings": {
             "name": "Marti Tunnel AG",
             "url": "https://www.martiag.ch/",
-            "asset_name": "sponsor-image82-33a66ccf.png"
+            "asset_name": "sponsor-image81-a9aa0753.png"
           }
         },
         "sponsor_block_7": {
@@ -319,7 +319,7 @@
           "settings": {
             "name": "Schweizerischer Baumeisterverband",
             "url": "http://www.baumeister.ch/de/",
-            "asset_name": "sponsor-image83-8286550f.png"
+            "asset_name": "sponsor-image82-33a66ccf.png"
           }
         },
         "sponsor_block_8": {
@@ -327,7 +327,7 @@
           "settings": {
             "name": "Sika Schweiz AG",
             "url": "https://che.sika.com/",
-            "asset_name": "sponsor-image84-4e476398.png"
+            "asset_name": "sponsor-image83-8286550f.png"
           }
         },
         "sponsor_block_9": {
@@ -335,8 +335,7 @@
           "settings": {
             "name": "Simatec Maschinenbau AG",
             "url": "https://www.simatec.org/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/simatec.org"
+            "asset_name": "sponsor-image84-4e476398.png"
           }
         },
         "sponsor_block_10": {
@@ -350,7 +349,7 @@
           "settings": {
             "name": "Avesco AG",
             "url": "https://www.avesco.ch/",
-            "asset_name": "sponsor-image86-1f433bb0.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_12": {
@@ -358,7 +357,7 @@
           "settings": {
             "name": "​Basler & Hofmann",
             "url": "https://www.baslerhofmann.ch/",
-            "asset_name": "sponsor-image87-eb52c75d.png"
+            "asset_name": "sponsor-image86-1f433bb0.png"
           }
         },
         "sponsor_block_13": {
@@ -366,7 +365,7 @@
           "settings": {
             "name": "FGU",
             "url": "https://swisstunnel.ch/",
-            "asset_name": "sponsor-image88-64a2a847.png"
+            "asset_name": "sponsor-image87-eb52c75d.png"
           }
         },
         "sponsor_block_14": {
@@ -374,7 +373,7 @@
           "settings": {
             "name": "Implenia Schweiz AG",
             "url": "https://www.implenia.com/",
-            "asset_name": "sponsor-image89-2f9f3884.png"
+            "asset_name": "sponsor-image88-64a2a847.png"
           }
         },
         "sponsor_block_15": {
@@ -382,7 +381,7 @@
           "settings": {
             "name": "OST Ostschweizer Fachhochschule",
             "url": "https://www.ost.ch/",
-            "asset_name": "sponsor-image90-4c034ea7.png"
+            "asset_name": "sponsor-image89-2f9f3884.png"
           }
         },
         "sponsor_block_16": {
@@ -390,7 +389,7 @@
           "settings": {
             "name": "Renesco AG",
             "url": "https://www.renesco.com/",
-            "asset_name": "sponsor-image91-5145a615.png"
+            "asset_name": "sponsor-image90-4c034ea7.png"
           }
         },
         "sponsor_block_17": {
@@ -398,8 +397,7 @@
           "settings": {
             "name": "Rothpletz, Lienhard \\+ Cie AG",
             "url": "https://www.rothpletz.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/rothpletz.ch"
+            "asset_name": "sponsor-image91-5145a615.png"
           }
         },
         "sponsor_block_18": {
@@ -413,7 +411,7 @@
           "settings": {
             "name": "IST InfraStrukturTreff",
             "url": "https://ist-ch.ch/",
-            "asset_name": "sponsor-image93-0fca7d7b.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_20": {
@@ -421,7 +419,7 @@
           "settings": {
             "name": "Pini Group SA",
             "url": "https://www.pini.group/",
-            "asset_name": "sponsor-image94-e76473bf.png"
+            "asset_name": "sponsor-image93-0fca7d7b.png"
           }
         },
         "sponsor_block_21": {
@@ -429,8 +427,7 @@
           "settings": {
             "name": "suisse.ing",
             "url": "https://www.suisse-ing.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/suisse-ing.ch"
+            "asset_name": "sponsor-image94-e76473bf.png"
           }
         }
       },

@@ -188,7 +188,7 @@
           "settings": {
             "name": "ACO AG",
             "url": "https://www.aco.ch/",
-            "asset_name": "sponsor-image2-1f433bb0.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_3": {
@@ -196,7 +196,7 @@
           "settings": {
             "name": "​Basler & Hofmann",
             "url": "https://www.baslerhofmann.ch/",
-            "asset_name": "sponsor-image3-f9e25bc7.png"
+            "asset_name": "sponsor-image2-1f433bb0.png"
           }
         },
         "sponsor_block_4": {
@@ -204,7 +204,7 @@
           "settings": {
             "name": "BITEX BIMOID AG",
             "url": "https://bitexbimoid.ch/",
-            "asset_name": "sponsor-image4-27ba7f1e.png"
+            "asset_name": "sponsor-image3-f9e25bc7.png"
           }
         },
         "sponsor_block_5": {
@@ -212,7 +212,7 @@
           "settings": {
             "name": "Cellere Bau AG",
             "url": "https://cellere.ch/",
-            "asset_name": "sponsor-image5-2e08b887.png"
+            "asset_name": "sponsor-image4-27ba7f1e.png"
           }
         },
         "sponsor_block_6": {
@@ -220,7 +220,7 @@
           "settings": {
             "name": "flexBelag bau ag",
             "url": "http://flexbelag.ch/",
-            "asset_name": "sponsor-image6-cadbbc35.png"
+            "asset_name": "sponsor-image5-2e08b887.png"
           }
         },
         "sponsor_block_7": {
@@ -228,7 +228,7 @@
           "settings": {
             "name": "Hüppi AG",
             "url": "https://www.hueppi.ch/",
-            "asset_name": "sponsor-image7-64a2a847.png"
+            "asset_name": "sponsor-image6-cadbbc35.png"
           }
         },
         "sponsor_block_8": {
@@ -236,7 +236,7 @@
           "settings": {
             "name": "Implenia Schweiz AG",
             "url": "https://www.implenia.com/",
-            "asset_name": "sponsor-image8-1cc87842.png"
+            "asset_name": "sponsor-image7-64a2a847.png"
           }
         },
         "sponsor_block_9": {
@@ -244,7 +244,7 @@
           "settings": {
             "name": "Marti Grupe",
             "url": "https://www.martiag.ch/",
-            "asset_name": "sponsor-image9-5a34d521.png"
+            "asset_name": "sponsor-image8-1cc87842.png"
           }
         },
         "sponsor_block_10": {
@@ -252,7 +252,7 @@
           "settings": {
             "name": "Neuteerbit AG Salmsach",
             "url": "https://www.neuteerbit.ch/",
-            "asset_name": "sponsor-image10-33a66ccf.png"
+            "asset_name": "sponsor-image9-5a34d521.png"
           }
         },
         "sponsor_block_11": {
@@ -260,7 +260,7 @@
           "settings": {
             "name": "Schweizerischer Baumeisterverband",
             "url": "http://www.baumeister.ch/de/",
-            "asset_name": "sponsor-image11-1c8677fb.png"
+            "asset_name": "sponsor-image10-33a66ccf.png"
           }
         },
         "sponsor_block_12": {
@@ -268,7 +268,7 @@
           "settings": {
             "name": "ViaTec AG",
             "url": "https://viatec.ch/",
-            "asset_name": "sponsor-image12-0a5d0a9e.png"
+            "asset_name": "sponsor-image11-1c8677fb.png"
           }
         },
         "sponsor_block_13": {
@@ -276,8 +276,7 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/walo.ch"
+            "asset_name": "sponsor-image12-0a5d0a9e.png"
           }
         },
         "sponsor_block_14": {
@@ -291,7 +290,7 @@
           "settings": {
             "name": "Bau Power Group AG",
             "url": "https://www.baupowergroup.com/",
-            "asset_name": "sponsor-image14-427d5447.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_16": {
@@ -299,7 +298,7 @@
           "settings": {
             "name": "BHZ Baustoff Holding Zürich",
             "url": "https://www.bhz-zh.ch/",
-            "asset_name": "sponsor-image15-3d4066e0.png"
+            "asset_name": "sponsor-image14-427d5447.png"
           }
         },
         "sponsor_block_17": {
@@ -307,7 +306,7 @@
           "settings": {
             "name": "CREABETON BAUSTOFF AG",
             "url": "https://creabeton-baustoff.ch/",
-            "asset_name": "sponsor-image16-19cc68e2.png"
+            "asset_name": "sponsor-image15-3d4066e0.png"
           }
         },
         "sponsor_block_18": {
@@ -315,7 +314,7 @@
           "settings": {
             "name": "Infra Suisse",
             "url": "https://infra-suisse.ch/",
-            "asset_name": "sponsor-image17-dca67908.png"
+            "asset_name": "sponsor-image16-19cc68e2.png"
           }
         },
         "sponsor_block_19": {
@@ -323,7 +322,7 @@
           "settings": {
             "name": "Ingenieurbureau Heierli AG",
             "url": "https://www.heierli.ch/",
-            "asset_name": "sponsor-image18-940db7c8.png"
+            "asset_name": "sponsor-image17-dca67908.png"
           }
         },
         "sponsor_block_20": {
@@ -331,7 +330,7 @@
           "settings": {
             "name": "Locher Ingenieure AG",
             "url": "https://locher-ing.ch/",
-            "asset_name": "sponsor-image19-bda9f4ef.png"
+            "asset_name": "sponsor-image18-940db7c8.png"
           }
         },
         "sponsor_block_21": {
@@ -339,7 +338,7 @@
           "settings": {
             "name": "Ebicon AG",
             "url": "http://www.ebicon.ch/",
-            "asset_name": "sponsor-image20-1eeebe9d.png"
+            "asset_name": "sponsor-image19-bda9f4ef.png"
           }
         },
         "sponsor_block_22": {
@@ -347,7 +346,7 @@
           "settings": {
             "name": "Eckert Baulogistik AG",
             "url": "http://www.eckert-bag.ch/",
-            "asset_name": "sponsor-image21-82d01b97.png"
+            "asset_name": "sponsor-image20-1eeebe9d.png"
           }
         },
         "sponsor_block_23": {
@@ -355,7 +354,7 @@
           "settings": {
             "name": "EcoSoil AG",
             "url": "https://ecosoil.ch/",
-            "asset_name": "sponsor-image22-2f9f3884.png"
+            "asset_name": "sponsor-image21-82d01b97.png"
           }
         },
         "sponsor_block_24": {
@@ -363,7 +362,7 @@
           "settings": {
             "name": "OST Ostschweizer Fachhochschule",
             "url": "https://www.ost.ch/",
-            "asset_name": "sponsor-image23-b73fa34d.png"
+            "asset_name": "sponsor-image22-2f9f3884.png"
           }
         },
         "sponsor_block_25": {
@@ -371,7 +370,7 @@
           "settings": {
             "name": "Q Point AG",
             "url": "https://q-point.com/",
-            "asset_name": "sponsor-image24-3aefbb4f.png"
+            "asset_name": "sponsor-image23-b73fa34d.png"
           }
         },
         "sponsor_block_26": {
@@ -379,7 +378,7 @@
           "settings": {
             "name": "Schällibaum AG",
             "url": "https://www.schaellibaum.ch/",
-            "asset_name": "sponsor-image25-f1e641a8.png"
+            "asset_name": "sponsor-image24-3aefbb4f.png"
           }
         },
         "sponsor_block_27": {
@@ -387,7 +386,7 @@
           "settings": {
             "name": "EFP AG",
             "url": "https://www.efp.ch/",
-            "asset_name": "sponsor-image26-76ac6e2e.png"
+            "asset_name": "sponsor-image25-f1e641a8.png"
           }
         },
         "sponsor_block_28": {
@@ -395,7 +394,7 @@
           "settings": {
             "name": "Grund- und Tiefbau AG Basel",
             "url": "https://www.grundundtiefbauag.ch/",
-            "asset_name": "sponsor-image27-06d237b7.png"
+            "asset_name": "sponsor-image26-76ac6e2e.png"
           }
         },
         "sponsor_block_29": {
@@ -403,7 +402,7 @@
           "settings": {
             "name": "STRABAG AG, Schweiz",
             "url": "https://www.strabag.ch/",
-            "asset_name": "sponsor-image28-02381d61.png"
+            "asset_name": "sponsor-image27-06d237b7.png"
           }
         },
         "sponsor_block_30": {
@@ -411,8 +410,7 @@
           "settings": {
             "name": "Geoinfra Ingenieure AG",
             "url": "https://www.geoinfra.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/geoinfra.ch"
+            "asset_name": "sponsor-image28-02381d61.png"
           }
         }
       },

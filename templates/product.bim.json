@@ -153,7 +153,7 @@
           "settings": {
             "name": "OST Ostschweizer Fachhochschule",
             "url": "https://www.ost.ch/",
-            "asset_name": "sponsor-image71-5eebd1bd.png"
+            "asset_name": ""
           }
         },
         "sponsor_block_3": {
@@ -161,7 +161,7 @@
           "settings": {
             "name": "​Gemeinde Küsnacht",
             "url": "https://www.kuesnacht.ch/",
-            "asset_name": "sponsor-image72-1f433bb0.png"
+            "asset_name": "sponsor-image71-5eebd1bd.png"
           }
         },
         "sponsor_block_4": {
@@ -169,7 +169,7 @@
           "settings": {
             "name": "​Basler & Hofmann",
             "url": "https://www.baslerhofmann.ch/",
-            "asset_name": "sponsor-image73-0a5d0a9e.png"
+            "asset_name": "sponsor-image72-1f433bb0.png"
           }
         },
         "sponsor_block_5": {
@@ -177,8 +177,7 @@
           "settings": {
             "name": "Walo Bertschinger AG",
             "url": "https://walo.ch/",
-            "asset_name": "",
-            "image_url": "https://logo.clearbit.com/walo.ch"
+            "asset_name": "sponsor-image73-0a5d0a9e.png"
           }
         }
       },
