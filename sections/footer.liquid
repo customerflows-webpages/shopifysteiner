@@ -13,7 +13,7 @@
 
   <div class="fwb-footer__inner fwb-wrap">
     <div class="fwb-footer__brand">
-      <p class="fwb-footer__shop-name">{{ shop.name }}</p>
+      <p class="fwb-footer__shop-name">{{ section.settings.brand_name | default: shop.name }}</p>
     </div>
     <div class="fwb-footer__cols">
       <div class="fwb-footer__col">
@@ -106,6 +106,7 @@
 {
   "name": "Footer",
   "settings": [
+    { "type": "text", "id": "brand_name", "label": "Markenname (Footer)", "default": "FachWissenBau" },
     { "type": "link_list", "id": "menu", "label": "Footer Links", "default": "footer" },
     { "type": "image_picker", "id": "bg_image", "label": "Hintergrundbild (Stadtpanorama)" },
     {
