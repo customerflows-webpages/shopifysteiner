@@ -40,6 +40,7 @@
     "verlag_teaser": {
       "type": "homepage-verlag-teaser",
       "settings": {
+        "image": "shopify://shop_images/Flyer.png",
         "label": "Verlag",
         "heading": "Bereit zum Blättern.",
         "body": "Fundiertes Wissen für die Schweizer Bauwirtschaft – präzise aufbereitet, praxisnah verfasst und direkt anwendbar. Für alle, die auf der Baustelle und im Studium den Durchblick wollen.",
