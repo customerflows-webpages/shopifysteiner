@@ -64,7 +64,7 @@
                             {%- if block.settings[lbl] != blank and block.settings[val] != blank -%}
                               <div class="fwb-product__spec-row">
                                 <dt class="fwb-product__spec-label">{{ block.settings[lbl] }}</dt>
-                                <dd class="fwb-product__spec-value">{{ block.settings[val] }}</dd>
+                                <dd class="fwb-product__spec-value">{{ block.settings[val] | newline_to_br }}</dd>
                               </div>
                             {%- endif -%}
                           {%- endfor -%}

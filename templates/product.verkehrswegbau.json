@@ -29,7 +29,7 @@
           "settings": {
             "title": "Zusätzliche Information",
             "spec_label_1": "ISBN",
-            "spec_value_1": "Band 1: 978-3-9525983-0-6, Band 2: 978-3-9525983-1-3, Band 3: 978-3-9525983-2-0",
+            "spec_value_1": "Band 1: 978-3-9525983-0-6\nBand 2: 978-3-9525983-1-3\nBand 3: 978-3-9525983-2-0",
             "spec_label_2": "Verlag",
             "spec_value_2": "FachWissenBau GmbH",
             "spec_label_3": "Autoren",
@@ -45,7 +45,7 @@
             "spec_label_8": "Grösse",
             "spec_value_8": "22.3 × 28.6 cm",
             "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 5 kg",
+            "spec_value_9": "ca. 4.0 kg",
             "spec_label_10": "Sprache",
             "spec_value_10": "Deutsch"
           }
