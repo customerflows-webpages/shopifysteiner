@@ -31,21 +31,14 @@
       </div>
     </div>
 
-    <!-- Authors intro: text left, ONE team photo (both guys) right -->
+    <!-- Authors intro -->
     <div class="fwb-ueber-uns__autoren-header">
       <div class="fwb-ueber-uns__autoren-text">
         {%- if section.settings.authors_heading != blank -%}
           <h2 class="fwb-h2 fwb-ueber-uns__autoren-heading">{{ section.settings.authors_heading }}</h2>
         {%- endif -%}
         {%- if section.settings.authors_intro != blank -%}
-          <p class="fwb-body">{{ section.settings.authors_intro }}</p>
-        {%- endif -%}
-      </div>
-      <div class="fwb-ueber-uns__team-photo">
-        {%- if section.settings.team_image != blank -%}
-          <img src="{{ section.settings.team_image | img_url: '1000x' }}" alt="Die Autoren" loading="lazy">
-        {%- else -%}
-          <img src="{{ 'ueber-uns-team.jpg' | asset_url }}" alt="Die Autoren" loading="lazy">
+          <div class="fwb-body">{{ section.settings.authors_intro | newline_to_br }}</div>
         {%- endif -%}
       </div>
     </div>
@@ -151,12 +144,9 @@
     filter: grayscale(100%);
   }
 
-  /* ── Authors intro: text left, one team photo right ── */
+  /* ── Authors intro ── */
   .fwb-ueber-uns__autoren-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(3rem, 6vw, 8rem);
-    align-items: center;
+    max-width: 760px;
     margin-bottom: clamp(4rem, 8vw, 8rem);
     padding-bottom: clamp(4rem, 8vw, 8rem);
     border-bottom: 1px solid var(--fwb-grey-200);
@@ -171,14 +161,6 @@
   .fwb-ueber-uns__autoren-heading {
     font-style: italic;
     font-weight: 300;
-  }
-
-  .fwb-ueber-uns__team-photo img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    object-position: top;
-    filter: grayscale(15%);
   }
 
   /* ── Authors grid: each card = portrait + accordion ── */
@@ -305,8 +287,7 @@
   }
 
   @media (max-width: 768px) {
-    .fwb-ueber-uns__title-row,
-    .fwb-ueber-uns__autoren-header { grid-template-columns: 1fr; }
+    .fwb-ueber-uns__title-row { grid-template-columns: 1fr; }
   }
 {% endstylesheet %}
 
@@ -342,8 +323,7 @@
     { "type": "image_picker", "id": "image_2", "label": "Bild unten rechts" },
     { "type": "header", "content": "Autoren Bereich" },
     { "type": "text", "id": "authors_heading", "label": "Autoren Überschrift", "default": "Die Autoren" },
-    { "type": "textarea", "id": "authors_intro", "label": "Autoren Einleitungstext", "default": "Die beiden Autoren verfügen zusammen über mehr als 40 Jahre Berufserfahrung." },
-    { "type": "image_picker", "id": "team_image", "label": "Gemeinsames Foto (beide Autoren)" }
+    { "type": "textarea", "id": "authors_intro", "label": "Autoren Einleitungstext", "default": "Die beiden Autoren – Rolf Steiner und Tobias Frick – vereinen über 50 Jahre Praxiserfahrung in der Planung und Ausführung von Infrastrukturprojekten – in der Schweiz wie auch im Ausland." }
   ],
   "blocks": [
     {
