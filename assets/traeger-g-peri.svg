@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" role="img" aria-label="PERI">
+  <rect width="320" height="120" fill="none"/>
+  <rect x="10" y="25" width="230" height="70" fill="#ffd200"/>
+  <rect x="10" y="88" width="230" height="7" fill="#f15a24"/>
+  <text x="32" y="78" fill="#ef3e23" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="58" font-weight="900">PERI</text>
+</svg>

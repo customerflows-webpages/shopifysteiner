@@ -133,14 +133,14 @@
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://www.fhgr.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">FHGR</span>
+          <a href="https://www.fhgr.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-fhgr.svg' | asset_url }}" alt="Fachhochschule Graubünden" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://www.fpreisig.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">F. Preisig AG</span>
+          <a href="https://www.fpreisig.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-fpreisig.svg' | asset_url }}" alt="F. Preisig AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -163,8 +163,8 @@
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://bischoff-bau.ch" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">Bischoff</span>
+          <a href="https://bischoff-bau.ch" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-bischoff.webp' | asset_url }}" alt="Bischoff Bau AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -181,8 +181,8 @@
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://www.ibz.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">IBZ</span>
+          <a href="https://www.ibz.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-ibz.svg' | asset_url }}" alt="IBZ" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -199,8 +199,8 @@
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://buechel-ag.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark fwb-traeger__wordmark--stacked">Büchel<br>Bewehrungen</span>
+          <a href="https://buechel-ag.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-buechel.svg' | asset_url }}" alt="Büchel Bewehrungen" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -247,14 +247,14 @@
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://www.parifondsbau.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">Parifonds Bau</span>
+          <a href="https://www.parifondsbau.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-wide">
+            <img src="{{ 'traeger-g-parifonds.svg' | asset_url }}" alt="Parifonds Bau" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
         <div class="fwb-traeger__item">
-          <a href="https://www.peri.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-word">
-            <span class="fwb-traeger__wordmark">PERI</span>
+          <a href="https://www.peri.ch/" target="_blank" rel="noopener" class="fwb-traeger__link fwb-traeger__link--gold-square">
+            <img src="{{ 'traeger-g-peri.svg' | asset_url }}" alt="PERI AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -413,8 +413,8 @@
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__link {
-    width: 170px;
-    height: 74px;
+    width: 160px;
+    height: 68px;
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__logo {
@@ -423,46 +423,18 @@
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__link--gold-square {
-    width: 92px;
-    height: 92px;
+    width: 78px;
+    height: 78px;
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__link--gold-wide {
-    width: clamp(180px, 13vw, 220px);
-    height: 72px;
+    width: clamp(150px, 11vw, 185px);
+    height: 66px;
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__link--gold-extra-wide {
-    width: clamp(210px, 15vw, 260px);
-    height: 70px;
-  }
-
-  .fwb-traeger__grid--gold .fwb-traeger__link--gold-word {
-    width: clamp(155px, 12vw, 210px);
-    height: 72px;
-  }
-
-  .fwb-traeger__wordmark {
-    display: block;
-    color: var(--fwb-grey-700);
-    font-family: var(--fwb-font-heading);
-    font-size: clamp(1.05rem, 1.4vw, 1.45rem);
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    line-height: 1.05;
-    text-align: center;
-    filter: grayscale(100%);
-    opacity: 0.72;
-    transition: opacity 0.2s ease, color 0.2s ease;
-  }
-
-  .fwb-traeger__wordmark--stacked {
-    font-size: clamp(0.95rem, 1.2vw, 1.2rem);
-  }
-
-  .fwb-traeger__link:hover .fwb-traeger__wordmark {
-    color: var(--fwb-grey-900);
-    opacity: 1;
+    width: clamp(175px, 13vw, 215px);
+    height: 64px;
   }
 
   .fwb-traeger__link:hover .fwb-traeger__logo {
