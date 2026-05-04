@@ -19,19 +19,37 @@
 
         <div class="fwb-traeger__item">
           <a href="https://aco.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'sponsor-image77-5c10b6fd.png' | asset_url }}" alt="ACO AG" loading="lazy" class="fwb-traeger__logo">
+            <img src="{{ 'traeger-p-aco.png' | asset_url }}" alt="ACO AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
         <div class="fwb-traeger__item">
           <a href="https://vigier-ciment.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'traeger-p-vigier.jpg' | asset_url }}" alt="Ciements Vigier SA" loading="lazy" class="fwb-traeger__logo">
+            <img src="{{ 'traeger-p-vigier.jpg' | asset_url }}" alt="Ciments Vigier SA" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
         <div class="fwb-traeger__item">
           <a href="https://eberhard.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
             <img src="{{ 'traeger-p-eberhard.svg' | asset_url }}" alt="Eberhard Unternehmungen" loading="lazy" class="fwb-traeger__logo">
+          </a>
+        </div>
+
+        <div class="fwb-traeger__item">
+          <a href="https://ist-ch.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
+            <img src="{{ 'traeger-p-ist.png' | asset_url }}" alt="IST – InfraStrukturTreff" loading="lazy" class="fwb-traeger__logo">
+          </a>
+        </div>
+
+        <div class="fwb-traeger__item">
+          <a href="https://martiag.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
+            <img src="{{ 'traeger-p-marti.svg' | asset_url }}" alt="Marti Gruppe" loading="lazy" class="fwb-traeger__logo">
+          </a>
+        </div>
+
+        <div class="fwb-traeger__item">
+          <a href="https://mauderli.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
+            <img src="{{ 'sponsor-image41-753db82d.png' | asset_url }}" alt="Mauderli AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -49,19 +67,7 @@
 
         <div class="fwb-traeger__item">
           <a href="https://infra-suisse.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'sponsor-image79-19cc68e2.png' | asset_url }}" alt="Infra Suisse" loading="lazy" class="fwb-traeger__logo">
-          </a>
-        </div>
-
-        <div class="fwb-traeger__item">
-          <a href="https://ist-ch.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'traeger-p-ist.png' | asset_url }}" alt="IST – InfraStrukturTreff" loading="lazy" class="fwb-traeger__logo">
-          </a>
-        </div>
-
-        <div class="fwb-traeger__item">
-          <a href="https://martiag.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'traeger-p-marti.svg' | asset_url }}" alt="Marti Gruppe" loading="lazy" class="fwb-traeger__logo">
+            <img src="{{ 'traeger-p-infra.png' | asset_url }}" alt="Infra Suisse" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -79,7 +85,7 @@
 
         <div class="fwb-traeger__item">
           <a href="https://walo.ch" target="_blank" rel="noopener" class="fwb-traeger__link">
-            <img src="{{ 'sponsor-image46-0a5d0a9e.png' | asset_url }}" alt="Walo Bertschinger AG" loading="lazy" class="fwb-traeger__logo">
+            <img src="{{ 'traeger-p-walo.png' | asset_url }}" alt="Walo Bertschinger AG" loading="lazy" class="fwb-traeger__logo">
           </a>
         </div>
 
@@ -289,36 +295,51 @@
   .fwb-traeger__grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.5rem 4rem;
+    gap: 2.75rem 4rem;
     align-items: center;
   }
 
   .fwb-traeger__item {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .fwb-traeger__link {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 0;
+    cursor: pointer;
   }
 
   .fwb-traeger__logo {
     object-fit: contain;
-    width: auto;
+    width: 100%;
+    height: 100%;
     filter: grayscale(100%);
     opacity: 0.65;
     transition: filter 0.2s ease, opacity 0.2s ease;
   }
 
+  .fwb-traeger__grid--platin .fwb-traeger__link {
+    width: clamp(130px, 12vw, 190px);
+    height: 94px;
+  }
+
   .fwb-traeger__grid--platin .fwb-traeger__logo {
-    max-height: 88px;
-    max-width: 260px;
+    max-height: 94px;
+    max-width: 190px;
+  }
+
+  .fwb-traeger__grid--gold .fwb-traeger__link {
+    width: clamp(110px, 10vw, 165px);
+    height: 76px;
   }
 
   .fwb-traeger__grid--gold .fwb-traeger__logo {
-    max-height: 72px;
-    max-width: 220px;
+    max-height: 76px;
+    max-width: 165px;
   }
 
   .fwb-traeger__link:hover .fwb-traeger__logo {
