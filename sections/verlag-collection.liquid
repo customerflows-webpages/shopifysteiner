@@ -32,7 +32,7 @@
             </div>
           </a>
           <div class="fwb-verlag__card-info">
-            <h2 class="fwb-verlag__card-title">{{ product.title }}</h2>
+            <h2 class="fwb-verlag__card-title">{% render 'book-title', title: product.title %}</h2>
             <p class="fwb-verlag__card-price">ab {{ product.price_min | money }}</p>
             <p class="fwb-verlag__card-desc fwb-body">{{ product.description | strip_html | truncate: 110 }}</p>
             <a href="{{ product.url }}" class="fwb-btn fwb-verlag__card-btn">{{ section.settings.card_btn_label | default: 'Mehr erfahren' }}</a>

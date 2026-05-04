@@ -45,7 +45,7 @@
                         {%- endif -%}
                       </span>
                       <span class="fwb-header__dropdown-item-text">
-                        <span class="fwb-header__dropdown-item-title">{{ product.title }}</span>
+                        <span class="fwb-header__dropdown-item-title">{% render 'book-title', title: product.title %}</span>
                         <span class="fwb-header__dropdown-item-price">ab {{ product.price_min | money }}</span>
                       </span>
                     </a>
@@ -105,11 +105,11 @@
             <a href="{{ link.url }}" class="fwb-header__mobile-link fwb-header__mobile-parent">{{ link.title }}</a>
             {%- if verlag_products.size > 0 -%}
               {%- for product in verlag_products -%}
-                <a href="{{ product.url }}" class="fwb-header__mobile-link fwb-header__mobile-child">{{ product.title }}</a>
+                <a href="{{ product.url }}" class="fwb-header__mobile-link fwb-header__mobile-child">{% render 'book-title', title: product.title %}</a>
               {%- endfor -%}
             {%- else -%}
               {%- for product in collections.all.products limit:4 -%}
-                <a href="{{ product.url }}" class="fwb-header__mobile-link fwb-header__mobile-child">{{ product.title }}</a>
+                <a href="{{ product.url }}" class="fwb-header__mobile-link fwb-header__mobile-child">{% render 'book-title', title: product.title %}</a>
               {%- endfor -%}
             {%- endif -%}
           </div>

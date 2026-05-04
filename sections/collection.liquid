@@ -22,7 +22,7 @@
           %}
         {% endif %}
         <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
+          <p><a href="{{ product.url }}">{% render 'book-title', title: product.title %}</a></p>
           <p>{{ product.price | money }}</p>
         </div>
       </div>

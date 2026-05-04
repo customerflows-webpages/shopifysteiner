@@ -159,6 +159,11 @@ button { cursor: pointer; font-family: inherit; }
 .fwb-mt-md  { margin-top: 2rem; }
 .fwb-mt-lg  { margin-top: 3.5rem; }
 
+.fwb-title-break {
+  display: block;
+  white-space: nowrap;
+}
+
 /* ── Shopify section grid ────────────────────────────────────────────────────── */
 
 .shopify-section {

@@ -1,0 +1,13 @@
+{%- liquid
+  assign title_text = title | default: ''
+  assign title_parts = title_text | split: ' ('
+  assign title_lead = title_parts[0]
+  assign title_suffix = title_text | remove_first: title_lead | strip
+-%}
+
+{%- if title_parts.size > 1 and title_suffix != blank -%}
+  {{- title_lead | escape -}}
+  <span class="fwb-title-break">{{ title_suffix | escape }}</span>
+{%- else -%}
+  {{- title_text | escape -}}
+{%- endif -%}

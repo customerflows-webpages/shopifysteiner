@@ -78,7 +78,7 @@
 
               {%- comment -%} Item details {%- endcomment -%}
               <div class="fwb-cart__item-details">
-                <a href="{{ item.url }}" class="fwb-cart__item-title">{{ item.product.title }}</a>
+                <a href="{{ item.url }}" class="fwb-cart__item-title">{% render 'book-title', title: item.product.title %}</a>
 
                 {%- unless item.variant.title == 'Default Title' -%}
                   <p class="fwb-cart__item-variant">{{ item.variant.title }}</p>

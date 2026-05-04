@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="fwb-book-grid__info">
-            <h3 class="fwb-book-grid__title">{{ book.title }}</h3>
+            <h3 class="fwb-book-grid__title">{% render 'book-title', title: book.title %}</h3>
             <p class="fwb-book-grid__price">ab {{ book.price_min | money }}</p>
           </div>
         </a>
