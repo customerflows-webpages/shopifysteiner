@@ -45,7 +45,7 @@
             "spec_label_8": "Grösse",
             "spec_value_8": "22.3 × 28.6 cm",
             "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 3.6 kg",
+            "spec_value_9": "ca. 3.3 kg",
             "spec_label_10": "Sprache",
             "spec_value_10": "Deutsch"
           }
@@ -106,7 +106,7 @@
           "type": "chapter",
           "settings": {
             "chapter": "Sprengvortrieb",
-            "sub_chapters": "Vortriebszyklus im Sprengvortrieb\nSprengstoffe\nZündmittel\nSprengschema\nBohren von Sprenglöchern\nLaden\nVerdämmen\nZündung\nLüften\nSchutterung\nFelsreinigung und Nachprofilieren\nProvisорische Ausbruchsicherung\nErmittlung der Zykluszeiten"
+            "sub_chapters": "Vortriebszyklus im Sprengvortrieb\nSprengstoffe\nZündmittel\nSprengschema\nBohren von Sprenglöchern\nLaden\nVerdämmen\nZündung\nLüften\nSchutterung\nFelsreinigung und Nachprofilieren\nProvisorische Ausbruchsicherung im SPV\nErmittlung der Zykluszeiten im Sprengvortrieb"
           }
         },
         "ch07": {
@@ -148,14 +148,14 @@
           "type": "chapter",
           "settings": {
             "chapter": "Abdichtung und Entwässerung",
-            "sub_chapters": "Generelles zum Wasserhaushalt über und unter Tag\nEntwässerungs- und Abdichtungskonzept\nAbdichtungssysteme\nEntwässerungssysteme\nMassnahmen zur Verhinderung von Versinterungen\nUnterhalt mit mechanischen Verfahren"
+            "sub_chapters": "Generelles zum Wasserhaushalt über und unter Tag\nEntwässerungs- und Abdichtungskonzept\nAbdichtungssysteme\nEntwässerungssysteme\nMassnahmen zur Verhinderung von Versinterungen\nUnterhalt mit mechanischen Verfahren\nAnwendungsbeispiele für Ableitkonzepte\nAnwendungsbeispiele für Verdrängungskonzepte"
           }
         },
         "ch13": {
           "type": "chapter",
           "settings": {
             "chapter": "Ausbau",
-            "sub_chapters": "Ausbauarten\nAnforderungen an die Innenschale\nEinbau der Innenschale\nEinbau der Sohle\nEinbau des Gewölbes\nFirstspaltverpressung\nFahrbahnentwässerung von Strassentunneln"
+            "sub_chapters": "Ausbauarten\nAnforderungen an die Innenschale\nEinbau der Innenschale\nEinbau der Sohle\nEinbau des Gewölbes\nFirstspaltverpressung\nAnforderungen an die Projektierung\nFahrbahnentwässerung von Strassentunneln"
           }
         },
         "ch14": {

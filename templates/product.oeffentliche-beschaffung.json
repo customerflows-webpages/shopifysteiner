@@ -27,7 +27,7 @@
             "spec_label_2": "Verlag",
             "spec_value_2": "FachWissenBau GmbH",
             "spec_label_3": "Autoren",
-            "spec_value_3": "Philipp Troesch, Rolf Steiner, Tobias Frick",
+            "spec_value_3": "Rolf Steiner, Philipp Troesch, Tobias Frick",
             "spec_label_4": "Erscheinungsjahr",
             "spec_value_4": "2026",
             "spec_label_5": "Auflage",
@@ -35,11 +35,11 @@
             "spec_label_6": "",
             "spec_value_6": "",
             "spec_label_7": "Anzahl Seiten",
-            "spec_value_7": "227 Seiten",
+            "spec_value_7": "230 Seiten",
             "spec_label_8": "Grösse",
             "spec_value_8": "22.3 × 28.6 cm",
             "spec_label_9": "Gewicht",
-            "spec_value_9": "ca. 0.8 kg",
+            "spec_value_9": "ca. 1.2 kg",
             "spec_label_10": "Sprache",
             "spec_value_10": "Deutsch"
           }
@@ -113,7 +113,7 @@
       "settings": {
         "label": "Inhaltsverzeichnis",
         "heading": "Die Kapitel im Überblick.",
-        "subheading": "227 Seiten praxisnahe Orientierung im öffentlichen Beschaffungswesen – verständlich, nachvollziehbar und direkt anwendbar."
+        "subheading": "230 Seiten praxisnahe Orientierung im öffentlichen Beschaffungswesen – verständlich, nachvollziehbar und direkt anwendbar."
       }
     },
     "product_authors": {
@@ -122,20 +122,20 @@
         "author_01": {
           "type": "author",
           "settings": {
-            "name": "Philipp Troesch",
-            "role": "Autor",
-            "credentials": "Rechtsanwalt, lic. iur.",
-            "bio": "Philipp Troesch verfügt über mehr als 25 Jahre Berufserfahrung als Rechtsanwalt in der Schweiz und im Ausland. Sein beruflicher Werdegang führte ihn in verschiedene Anwaltskanzleien in Zürich, Bern und Santiago de Chile sowie in eine führende internationale Kanzlei in Yangon (Myanmar), wo er als Senior Counsel tätig war. Seit 2020 ist er Rechtsanwalt und Partner bei ZL ZurichLawyers. Seine vielfältige Erfahrung aus anwaltlicher Tätigkeit, Verwaltung und internationalen Mandaten bringt er praxisnah und gewinnbringend in seine berufliche Arbeit ein."
-          }
-        },
-        "author_02": {
-          "type": "author",
-          "settings": {
             "image_asset": "author-rolf-steiner.jpg",
             "name": "Rolf Steiner",
             "role": "Autor & Verleger",
             "credentials": "",
             "bio": ""
+          }
+        },
+        "author_02": {
+          "type": "author",
+          "settings": {
+            "name": "Philipp Troesch",
+            "role": "Autor",
+            "credentials": "Rechtsanwalt, lic. iur.",
+            "bio": "Philipp Troesch verfügt über mehr als 25 Jahre Berufserfahrung als Rechtsanwalt in der Schweiz und im Ausland. Sein beruflicher Werdegang führte ihn in verschiedene Anwaltskanzleien in Zürich, Bern und Santiago de Chile sowie in eine führende internationale Kanzlei in Yangon (Myanmar), wo er als Senior Counsel tätig war. Seit 2020 ist er Rechtsanwalt und Partner bei ZL ZurichLawyers. Seine vielfältige Erfahrung aus anwaltlicher Tätigkeit, Verwaltung und internationalen Mandaten bringt er praxisnah und gewinnbringend in seine berufliche Arbeit ein."
           }
         },
         "author_03": {
