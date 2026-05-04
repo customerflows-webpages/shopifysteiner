@@ -5,15 +5,18 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/page
 {% endcomment %}
 
-{% if page.handle == 'kontakt' %}
+{% assign page_title_handle = page.title | handleize %}
+{% assign is_contact_page = false %}
+{% if page.handle == 'kontakt' or page_title_handle == 'kontakt' or request.path contains '/pages/kontakt' %}
+  {% assign is_contact_page = true %}
+{% endif %}
+
+{% if is_contact_page %}
   <section class="fwb-contact">
     <div class="fwb-wrap fwb-contact__wrap">
       <div class="fwb-contact__header">
         <p class="fwb-label">Kontakt</p>
         <h1 class="fwb-h1 fwb-contact__title">{{ page.title | default: 'Kontakt' }}</h1>
-        {% if page.content != blank %}
-          <div class="fwb-body fwb-contact__content">{{ page.content }}</div>
-        {% endif %}
       </div>
 
       {% form 'contact', id: 'fwb-contact-form', class: 'fwb-contact__form', enctype: 'multipart/form-data' %}
