@@ -83,13 +83,15 @@
     display: block;
     overflow: hidden;
     position: relative;
+    aspect-ratio: 4/5;
     background: var(--fwb-grey-100);
   }
 
   .fwb-verlag__card-image img {
     width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
+    height: 100%;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    object-fit: contain;
     transition: transform 0.55s ease;
     display: block;
   }

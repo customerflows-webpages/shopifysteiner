@@ -82,13 +82,15 @@
   .fwb-book-grid__image-wrap {
     position: relative;
     overflow: hidden;
+    aspect-ratio: 3/4;
     background: var(--fwb-grey-100);
   }
 
   .fwb-book-grid__image-wrap img {
     width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
+    height: 100%;
+    padding: clamp(0.65rem, 1.6vw, 1.2rem);
+    object-fit: contain;
     transition: transform 0.5s ease;
     display: block;
   }
