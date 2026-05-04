@@ -1,4 +1,4 @@
-{%- if section.blocks.size > 0 or section.settings.heading != blank -%}
+{%- if section.blocks.size > 0 -%}
 <div class="fwb-sponsors">
   <div class="fwb-wrap">
 
@@ -14,57 +14,47 @@
       {%- endif -%}
     </div>
 
-    {%- if section.blocks.size > 0 -%}
-      <div class="fwb-sponsors__grid">
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'heading' -%}
-            <div class="fwb-sponsors__tier-heading" {{ block.shopify_attributes }}>{{ block.settings.title }}</div>
-          {%- else -%}
-            <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
-              {%- if block.settings.asset_name != blank or block.settings.image_url != blank or block.settings.image != blank -%}
-                <div class="fwb-sponsors__logo-wrap">
-                  {%- if block.settings.url != blank -%}
-                    <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
-                  {%- endif -%}
-                  {%- if block.settings.asset_name != blank -%}
-                    <img
-                      src="{{ block.settings.asset_name | asset_url }}"
-                      alt="{{ block.settings.name | default: 'Sponsor' }}"
-                      loading="lazy"
-                      class="fwb-sponsors__logo"
-                      onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
-                    >
-                  {%- elsif block.settings.image_url != blank -%}
-                    <img
-                      src="{{ block.settings.image_url }}"
-                      alt="{{ block.settings.name | default: 'Sponsor' }}"
-                      loading="lazy"
-                      class="fwb-sponsors__logo"
-                      onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
-                    >
-                  {%- else -%}
-                    <img
-                      src="{{ block.settings.image | img_url: '400x' }}"
-                      alt="{{ block.settings.name | default: 'Sponsor' }}"
-                      loading="lazy"
-                      class="fwb-sponsors__logo"
-                    >
-                  {%- endif -%}
-                  {%- if block.settings.url != blank -%}
-                    </a>
-                  {%- endif -%}
-                </div>
-                {%- if block.settings.name != blank -%}
-                  <div class="fwb-sponsors__name-fallback" style="display:none">
-                    {%- if block.settings.url != blank -%}
-                      <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
-                    {%- else -%}
-                      {{ block.settings.name }}
-                    {%- endif -%}
-                  </div>
+    <div class="fwb-sponsors__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'heading' -%}
+          <div class="fwb-sponsors__tier-heading" {{ block.shopify_attributes }}>{{ block.settings.title }}</div>
+        {%- else -%}
+          <div class="fwb-sponsors__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.asset_name != blank or block.settings.image_url != blank or block.settings.image != blank -%}
+              <div class="fwb-sponsors__logo-wrap">
+                {%- if block.settings.url != blank -%}
+                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener" class="fwb-sponsors__logo-link">
                 {%- endif -%}
-              {%- elsif block.settings.name != blank -%}
-                <div class="fwb-sponsors__name-only">
+                {%- if block.settings.asset_name != blank -%}
+                  <img
+                    src="{{ block.settings.asset_name | asset_url }}"
+                    alt="{{ block.settings.name | default: 'Sponsor' }}"
+                    loading="lazy"
+                    class="fwb-sponsors__logo"
+                    onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
+                  >
+                {%- elsif block.settings.image_url != blank -%}
+                  <img
+                    src="{{ block.settings.image_url }}"
+                    alt="{{ block.settings.name | default: 'Sponsor' }}"
+                    loading="lazy"
+                    class="fwb-sponsors__logo"
+                    onerror="var p=this.closest('.fwb-sponsors__item');var fb=p&&p.querySelector('.fwb-sponsors__name-fallback');if(fb){fb.style.display='';this.style.display='none'}"
+                  >
+                {%- else -%}
+                  <img
+                    src="{{ block.settings.image | img_url: '400x' }}"
+                    alt="{{ block.settings.name | default: 'Sponsor' }}"
+                    loading="lazy"
+                    class="fwb-sponsors__logo"
+                  >
+                {%- endif -%}
+                {%- if block.settings.url != blank -%}
+                  </a>
+                {%- endif -%}
+              </div>
+              {%- if block.settings.name != blank -%}
+                <div class="fwb-sponsors__name-fallback" style="display:none">
                   {%- if block.settings.url != blank -%}
                     <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
                   {%- else -%}
@@ -72,16 +62,22 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-              {%- if block.settings.caption != blank -%}
-                <p class="fwb-sponsors__caption">{{ block.settings.caption }}</p>
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
-      </div>
-    {%- else -%}
-      <p class="fwb-sponsors__placeholder fwb-body">Sponsoreninformationen folgen in Kürze.</p>
-    {%- endif -%}
+            {%- elsif block.settings.name != blank -%}
+              <div class="fwb-sponsors__name-only">
+                {%- if block.settings.url != blank -%}
+                  <a href="{{ block.settings.url }}" target="_blank" rel="noopener">{{ block.settings.name }}</a>
+                {%- else -%}
+                  {{ block.settings.name }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.caption != blank -%}
+              <p class="fwb-sponsors__caption">{{ block.settings.caption }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
 
   </div>
 </div>
