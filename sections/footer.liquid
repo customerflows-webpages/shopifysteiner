@@ -59,26 +59,66 @@
   .fwb-footer__bg { position: absolute; inset: 0; z-index: 0; }
   .fwb-footer__bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; filter: grayscale(100%) opacity(0.4); }
   .fwb-footer__overlay { display: none; }
-  .fwb-footer__inner { position: relative; z-index: 1; padding-top: 6rem; padding-bottom: 6rem; color: var(--fwb-black); text-align: center; }
+  .fwb-footer__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    color: var(--fwb-black);
+    text-align: center;
+    font-family: var(--fwb-font-body);
+  }
   .fwb-footer__brand { margin-bottom: 2.5rem; }
-  .fwb-footer__shop-name { font-family: var(--fwb-font-heading); font-size: clamp(2rem,4vw,3.5rem); font-weight: 400; color: var(--fwb-black); }
+  .fwb-footer__shop-name {
+    font-family: var(--fwb-font-body);
+    font-size: clamp(2rem,4vw,3.5rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--fwb-black);
+  }
   
-  .fwb-footer__cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+  .fwb-footer__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: end;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   
-  .fwb-footer__col { display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
+  .fwb-footer__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    min-height: 100%;
+    text-align: left;
+  }
   .fwb-footer__col--center { align-items: center; gap: 0.8rem; }
   .fwb-footer__col--right { align-items: flex-end; text-align: right; }
   
-  .fwb-footer__col-text { font-size: 1.1rem; line-height: 1.5; color: var(--fwb-black); text-decoration: none; }
+  .fwb-footer__col-text {
+    font-family: var(--fwb-font-body);
+    font-size: clamp(0.875rem, 1vw, 0.95rem);
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: var(--fwb-black);
+    text-decoration: none;
+  }
   
   .fwb-footer__pill {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--fwb-black);
-    border-radius: 50px;
-    padding: 0.4rem 1.8rem;
-    font-size: 1rem;
+    border-radius: var(--fwb-btn-radius, 0);
+    padding: 0.7rem 2rem;
+    font-family: var(--fwb-font-body);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--fwb-black);
     text-decoration: none;
     transition: all var(--fwb-transition);
