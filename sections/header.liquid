@@ -26,7 +26,7 @@
       {% for link in section.settings.menu.links %}
         {%- unless hidden_links contains link.title -%}
           {%- if link.title == 'Verlag' or link.title == 'Publikationen' -%}
-            {%- assign verlag_products = collections['verlag'].products -%}
+            {%- assign pub_handles = 'baupraxis-oeffentliche-beschaffung,baupraxis-tief-und-strassenbau,baupraxis-verkehrswegbau-die-projektierung,baupraxis-der-untertagbau,bim-in-der-praxis' | split: ',' -%}
             <div class="fwb-header__dropdown">
               <button class="fwb-header__nav-link fwb-header__dropdown-trigger" aria-expanded="false">
                 {{ link.title }}
@@ -35,8 +35,9 @@
                 </svg>
               </button>
               <div class="fwb-header__dropdown-menu">
-                {%- if verlag_products.size > 0 -%}
-                  {%- for product in verlag_products -%}
+                {%- for handle in pub_handles -%}
+                  {%- assign product = all_products[handle] -%}
+                  {%- unless product == empty -%}
                     <a href="{{ product.url }}" class="fwb-header__dropdown-item">
                       <span class="fwb-header__dropdown-item-preview">
                         {%- if product.featured_image != blank -%}
@@ -48,23 +49,8 @@
                         <span class="fwb-header__dropdown-item-price">ab {{ product.price_min | money }}</span>
                       </span>
                     </a>
-                  {%- endfor -%}
-                {%- else -%}
-                  {%- assign all_products = collections.all.products -%}
-                  {%- for product in all_products limit:4 -%}
-                    <a href="{{ product.url }}" class="fwb-header__dropdown-item">
-                      <span class="fwb-header__dropdown-item-preview">
-                        {%- if product.featured_image != blank -%}
-                          <img src="{{ product.featured_image | img_url: '80x80', crop: 'center' }}" alt="{{ product.title | escape }}" width="40" height="40">
-                        {%- endif -%}
-                      </span>
-                      <span class="fwb-header__dropdown-item-text">
-                        <span class="fwb-header__dropdown-item-title">{{ product.title }}</span>
-                        <span class="fwb-header__dropdown-item-price">ab {{ product.price_min | money }}</span>
-                      </span>
-                    </a>
-                  {%- endfor -%}
-                {%- endif -%}
+                  {%- endunless -%}
+                {%- endfor -%}
                 <a href="{{ link.url }}" class="fwb-header__dropdown-all">Alle Publikationen ansehen &rarr;</a>
               </div>
             </div>

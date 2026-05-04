@@ -12,7 +12,10 @@
     </div>
 
     <div class="fwb-verlag__grid" style="--cols:{{ section.settings.columns }}">
-      {%- for product in collection.products -%}
+      {%- assign ordered_handles = 'baupraxis-oeffentliche-beschaffung,baupraxis-tief-und-strassenbau,baupraxis-verkehrswegbau-die-projektierung,baupraxis-der-untertagbau,bim-in-der-praxis' | split: ',' -%}
+      {%- for handle in ordered_handles -%}
+        {%- assign product = all_products[handle] -%}
+        {%- unless product == empty -%}
         <article class="fwb-verlag__card">
           <a href="{{ product.url }}" class="fwb-verlag__card-image">
             {%- if product.featured_image != blank -%}
@@ -35,8 +38,7 @@
             <a href="{{ product.url }}" class="fwb-btn fwb-verlag__card-btn">{{ section.settings.card_btn_label | default: 'Mehr erfahren' }}</a>
           </div>
         </article>
-      {%- else -%}
-        <p class="fwb-body" style="grid-column:1/-1; color:var(--fwb-grey-500);">Keine Produkte gefunden.</p>
+        {%- endunless -%}
       {%- endfor -%}
     </div>
 
