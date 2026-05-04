@@ -144,6 +144,10 @@
               assign sample_files = 'Band 1|Verkehrswegbua_Band_1-Leseprobe.pdf,Band 2|Verkehrswegbua_Band_2-Leseprobe.pdf,Band 3|Verkehrswegbua_Band_3-Leseprobe.pdf'
             elsif product.handle == 'baupraxis-tief-und-strassenbau'
               assign sample_files = 'Band 1|Band_1-Leseprobe.pdf,Band 2|Band_2-Leseprobe.pdf'
+            elsif product.handle == 'baupraxis-der-untertagbau'
+              assign sample_files = 'Band 1|LeseprobeUntertagbau_Band_1.pdf,Band 2|LeseprobeUntertagbau_Band_2.pdf'
+            elsif product.handle == 'bim-in-der-praxis'
+              assign sample_files = 'PDF|BIM-Leseprobe.pdf'
             endif
           -%}
 
