@@ -33,8 +33,8 @@
         "chapter_5": "Wissen vertiefen",
         "price_label": "Ab",
         "cta_label": "Jetzt entdecken",
-        "cta_secondary_label": "Leseprobe ansehen",
-        "cta_secondary_url": "/products/baupraxis-oeffentliche-beschaffung"
+        "cta_secondary_label": "",
+        "cta_secondary_url": ""
       }
     },
     "verlag_teaser": {

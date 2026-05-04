@@ -137,6 +137,35 @@
               {%- endif -%}
             </button>
           {%- endform -%}
+
+          {%- liquid
+            assign sample_files = ''
+            if product.handle == 'baupraxis-verkehrswegbau-die-projektierung'
+              assign sample_files = 'Band 1|Verkehrswegbua_Band_1-Leseprobe.pdf,Band 2|Verkehrswegbua_Band_2-Leseprobe.pdf,Band 3|Verkehrswegbua_Band_3-Leseprobe.pdf'
+            elsif product.handle == 'baupraxis-tief-und-strassenbau'
+              assign sample_files = 'Band 1|Band_1-Leseprobe.pdf,Band 2|Band_2-Leseprobe.pdf'
+            endif
+          -%}
+
+          {%- if sample_files != blank -%}
+            <div class="fwb-product__samples" aria-label="Leseproben">
+              <p class="fwb-label fwb-product__samples-label">Leseproben</p>
+              <div class="fwb-product__sample-links">
+                {%- assign sample_items = sample_files | split: ',' -%}
+                {%- for sample_item in sample_items -%}
+                  {%- assign sample = sample_item | split: '|' -%}
+                  <a
+                    href="{{ sample[1] | asset_url }}"
+                    class="fwb-btn fwb-product__sample-btn"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {{ sample[0] }}
+                  </a>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endif -%}
         </div>
 
       </div>
@@ -484,6 +513,29 @@
     letter-spacing: 0.1em;
     text-align: center;
     justify-content: center;
+  }
+
+  .fwb-product__samples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--fwb-grey-300);
+  }
+
+  .fwb-product__sample-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .fwb-product__sample-btn {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    background: var(--fwb-white);
+    font-size: 0.68rem;
   }
 
   /* Gallery carousel */
