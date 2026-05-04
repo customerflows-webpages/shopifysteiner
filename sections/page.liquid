@@ -5,9 +5,465 @@
   https://shopify.dev/docs/storefronts/themes/architecture/templates/page
 {% endcomment %}
 
-<h1>{{ page.title }}</h1>
+{% if page.handle == 'kontakt' %}
+  <section class="fwb-contact">
+    <div class="fwb-wrap fwb-contact__wrap">
+      <div class="fwb-contact__header">
+        <p class="fwb-label">Kontakt</p>
+        <h1 class="fwb-h1 fwb-contact__title">{{ page.title | default: 'Kontakt' }}</h1>
+        {% if page.content != blank %}
+          <div class="fwb-body fwb-contact__content">{{ page.content }}</div>
+        {% endif %}
+      </div>
 
-{{ page.content }}
+      {% form 'contact', id: 'fwb-contact-form', class: 'fwb-contact__form', enctype: 'multipart/form-data' %}
+        {% if form.posted_successfully? %}
+          <div class="fwb-contact__notice fwb-contact__notice--success" tabindex="-1">
+            Vielen Dank. Ihre Anfrage wurde gesendet.
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="fwb-contact__notice fwb-contact__notice--error">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <p class="fwb-contact__required-note">* zeigt erforderliche Felder an</p>
+
+        <fieldset class="fwb-contact__fieldset">
+          <legend class="fwb-contact__legend">Kontaktgrund*</legend>
+          <div class="fwb-contact__switches" role="radiogroup" aria-label="Kontaktgrund">
+            <label class="fwb-contact__switch">
+              <input type="radio" name="contact[Kontaktgrund]" value="Allgemeine Anfrage" data-contact-type="allgemein" checked>
+              <span>Allgemeine Anfrage</span>
+            </label>
+            <label class="fwb-contact__switch">
+              <input type="radio" name="contact[Kontaktgrund]" value="Auszubildende, Studierende &amp; Dozierende" data-contact-type="bildung">
+              <span>Auszubildende, Studierende &amp; Dozierende</span>
+            </label>
+            <label class="fwb-contact__switch">
+              <input type="radio" name="contact[Kontaktgrund]" value="Buchhandlungen" data-contact-type="buchhandel">
+              <span>Buchhandlungen</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <section class="fwb-contact__conditional" data-contact-panel="bildung" hidden>
+          <h2 class="fwb-contact__section-title">Auszubildende, Studierende &amp; Dozierende</h2>
+          <p class="fwb-contact__hint">
+            Für Auszubildende, Studierende &amp; Dozierende gelten spezielle Konditionen.
+            Bitte laden Sie zur Identifikation eine Kopie Ihrer Legitimationskarte (PDF oder Bild) hoch.
+          </p>
+
+          <div class="fwb-contact__field">
+            <label for="contact-legitimation">Legitimationskarte*</label>
+            <input id="contact-legitimation" type="file" name="contact[Legitimationskarte]" accept=".pdf,.jpg,.jpeg,.gif,.png,application/pdf,image/jpeg,image/gif,image/png" data-required-when-active data-max-file-size="66060288" disabled>
+            <p class="fwb-contact__help">Akzeptierte Datentypen: pdf, jpg, jpeg, gif, png, Max. Dateigröße: 63 MB.</p>
+          </div>
+
+          <fieldset class="fwb-contact__fieldset fwb-contact__book-group" data-book-group>
+            <legend class="fwb-contact__legend">Bitte gewünschtes Buch auswählen*</legend>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="Baupraxis - Der Tief- und Strassenbau Band 1 &amp; 2 (2te Auflage)" disabled> Baupraxis - Der Tief- und Strassenbau Band 1 &amp; 2 (2te Auflage)</label>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="BIM in der Praxis – Erfahrungen aus dem Infrastrukturbau" disabled> BIM in der Praxis – Erfahrungen aus dem Infrastrukturbau</label>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="BauPraxis – Der Untertagbau (1te Auflage)" disabled> BauPraxis – Der Untertagbau (1te Auflage)</label>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="BauPraxis – Verkehrswegbau-Die Projektierung" disabled> BauPraxis – Verkehrswegbau-Die Projektierung</label>
+          </fieldset>
+        </section>
+
+        <section class="fwb-contact__conditional" data-contact-panel="buchhandel" hidden>
+          <h2 class="fwb-contact__section-title">Buchhandlungen</h2>
+          <p class="fwb-contact__hint">
+            Für Buchhandlungen gelten spezielle Konditionen.
+            Bitte geben Sie zur Identifikation Ihre UID/Mehrwertsteuernummer ein.
+          </p>
+
+          <div class="fwb-contact__field">
+            <label for="contact-uid">UID / Mehrwertsteuernummer*</label>
+            <input id="contact-uid" type="text" name="contact[UID / Mehrwertsteuernummer]" autocomplete="off" data-required-when-active disabled>
+          </div>
+
+          <fieldset class="fwb-contact__fieldset fwb-contact__book-group" data-book-group>
+            <legend class="fwb-contact__legend">Bitte gewünschtes Buch auswählen*</legend>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="Baupraxis - Der Tief- und Strassenbau Band 1 &amp; 2 (2te Auflage)" disabled> Baupraxis - Der Tief- und Strassenbau Band 1 &amp; 2 (2te Auflage)</label>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="BIM in der Praxis – Erfahrungen aus dem Infrastrukturbau" disabled> BIM in der Praxis – Erfahrungen aus dem Infrastrukturbau</label>
+            <label class="fwb-contact__check"><input type="checkbox" name="contact[Buch][]" value="BauPraxis – Der Untertagbau (1te Auflage)" disabled> BauPraxis – Der Untertagbau (1te Auflage)</label>
+          </fieldset>
+        </section>
+
+        <fieldset class="fwb-contact__fieldset">
+          <legend class="fwb-contact__legend fwb-contact__section-title">Adressdaten</legend>
+
+          <div class="fwb-contact__field">
+            <label for="contact-company">Firma*</label>
+            <input id="contact-company" type="text" name="contact[Firma]" autocomplete="organization" required>
+          </div>
+
+          <div class="fwb-contact__field">
+            <span class="fwb-contact__group-label">Name*</span>
+            <div class="fwb-contact__grid fwb-contact__grid--two">
+              <label>
+                <span>Vorname</span>
+                <input type="text" name="contact[Vorname]" autocomplete="given-name" required>
+              </label>
+              <label>
+                <span>Nachname</span>
+                <input type="text" name="contact[Nachname]" autocomplete="family-name" required>
+              </label>
+            </div>
+          </div>
+
+          <div class="fwb-contact__field">
+            <span class="fwb-contact__group-label">Adresse*</span>
+            <label>
+              <span>Strasse &amp; Hausnummer</span>
+              <input type="text" name="contact[Strasse &amp; Hausnummer]" autocomplete="street-address" required>
+            </label>
+            <div class="fwb-contact__grid fwb-contact__grid--zip">
+              <label>
+                <span>PLZ</span>
+                <input type="text" name="contact[PLZ]" autocomplete="postal-code" required>
+              </label>
+              <label>
+                <span>Ort</span>
+                <input type="text" name="contact[Ort]" autocomplete="address-level2" required>
+              </label>
+            </div>
+          </div>
+
+          <div class="fwb-contact__field">
+            <label for="contact-email">E-Mailadresse*</label>
+            <input id="contact-email" type="email" name="contact[email]" autocomplete="email" required>
+          </div>
+
+          <div class="fwb-contact__field">
+            <label for="contact-message">Ihre Nachricht*</label>
+            <textarea id="contact-message" name="contact[body]" rows="7" maxlength="500" required></textarea>
+            <p class="fwb-contact__counter"><span data-contact-counter>0</span> von 500 max. Zeichenanzahl</p>
+          </div>
+        </fieldset>
+
+        <button class="fwb-contact__submit" type="submit">Anfrage senden</button>
+      {% endform %}
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var form = document.getElementById('fwb-contact-form');
+      if (!form) return;
+
+      var radios = form.querySelectorAll('input[data-contact-type]');
+      var panels = form.querySelectorAll('[data-contact-panel]');
+      var message = form.querySelector('#contact-message');
+      var counter = form.querySelector('[data-contact-counter]');
+      var typeMap = {
+        'auszubildende-studierende-dozierende': 'bildung',
+        'buchhandlungen': 'buchhandel',
+        'allgemeine-anfrage': 'allgemein'
+      };
+
+      function activeType() {
+        var checked = form.querySelector('input[data-contact-type]:checked');
+        return checked ? checked.getAttribute('data-contact-type') : 'allgemein';
+      }
+
+      function setPanelState() {
+        var current = activeType();
+
+        panels.forEach(function (panel) {
+          var active = panel.getAttribute('data-contact-panel') === current;
+          panel.hidden = !active;
+
+          panel.querySelectorAll('input, select, textarea').forEach(function (field) {
+            field.disabled = !active;
+            if (field.hasAttribute('data-required-when-active')) {
+              field.required = active;
+            }
+            if (!active && (field.type === 'checkbox' || field.type === 'radio')) {
+              field.checked = false;
+            }
+          });
+        });
+      }
+
+      function updateCounter() {
+        if (message && counter) counter.textContent = message.value.length;
+      }
+
+      function validateBooks() {
+        form.querySelectorAll('[data-book-group]').forEach(function (group) {
+          var boxes = group.querySelectorAll('input[type="checkbox"]:not(:disabled)');
+          if (!boxes.length) return;
+          var valid = Array.prototype.some.call(boxes, function (box) { return box.checked; });
+          boxes[0].setCustomValidity(valid ? '' : 'Bitte wählen Sie mindestens ein Buch aus.');
+        });
+      }
+
+      function validateFiles() {
+        form.querySelectorAll('input[type="file"][data-max-file-size]:not(:disabled)').forEach(function (input) {
+          var max = parseInt(input.getAttribute('data-max-file-size'), 10);
+          var file = input.files && input.files[0];
+          input.setCustomValidity(file && file.size > max ? 'Die Datei darf maximal 63 MB gross sein.' : '');
+        });
+      }
+
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          setPanelState();
+          validateBooks();
+        });
+      });
+
+      form.addEventListener('change', function () {
+        validateBooks();
+        validateFiles();
+      });
+
+      form.addEventListener('submit', function () {
+        validateBooks();
+        validateFiles();
+      });
+
+      if (message) message.addEventListener('input', updateCounter);
+
+      var params = new URLSearchParams(window.location.search);
+      var requestedType = typeMap[params.get('typ') || ''];
+      if (requestedType) {
+        var requestedRadio = form.querySelector('input[data-contact-type="' + requestedType + '"]');
+        if (requestedRadio) requestedRadio.checked = true;
+      }
+
+      setPanelState();
+      updateCounter();
+    })();
+  </script>
+
+  {% stylesheet %}
+    .fwb-contact {
+      background: var(--fwb-grey-100);
+      padding-block: var(--fwb-section-pad);
+    }
+
+    .fwb-contact__wrap {
+      max-width: 940px;
+    }
+
+    .fwb-contact__header {
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+      max-width: 720px;
+    }
+
+    .fwb-contact__title {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .fwb-contact__content {
+      color: var(--fwb-grey-600);
+    }
+
+    .fwb-contact__form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .fwb-contact__required-note,
+    .fwb-contact__help,
+    .fwb-contact__counter {
+      color: var(--fwb-grey-500);
+      font-size: 0.86rem;
+      margin: 0;
+    }
+
+    .fwb-contact__fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .fwb-contact__legend,
+    .fwb-contact__group-label,
+    .fwb-contact label {
+      color: var(--fwb-black);
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.7rem;
+    }
+
+    .fwb-contact__switches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .fwb-contact__switch {
+      margin: 0;
+    }
+
+    .fwb-contact__switch input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .fwb-contact__switch span {
+      align-items: center;
+      border: 1px solid var(--fwb-grey-300);
+      display: flex;
+      min-height: 48px;
+      padding: 0.9rem 1.15rem;
+      transition: background var(--fwb-transition), border-color var(--fwb-transition), color var(--fwb-transition);
+    }
+
+    .fwb-contact__switch input:checked + span {
+      background: var(--fwb-black);
+      border-color: var(--fwb-black);
+      color: var(--fwb-white);
+    }
+
+    .fwb-contact__switch input:focus-visible + span {
+      outline: 2px solid var(--fwb-black);
+      outline-offset: 3px;
+    }
+
+    .fwb-contact__conditional {
+      background: var(--fwb-white);
+      border: 1px solid var(--fwb-grey-200);
+      padding: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .fwb-contact__section-title {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 500;
+      margin: 0 0 1rem;
+    }
+
+    .fwb-contact__hint {
+      color: var(--fwb-grey-600);
+      line-height: 1.7;
+      margin: 0 0 1.5rem;
+      max-width: 720px;
+    }
+
+    .fwb-contact__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .fwb-contact__field:last-child {
+      margin-bottom: 0;
+    }
+
+    .fwb-contact__grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .fwb-contact__grid--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fwb-contact__grid--zip {
+      grid-template-columns: minmax(110px, 0.4fr) minmax(0, 1fr);
+    }
+
+    .fwb-contact input[type="text"],
+    .fwb-contact input[type="email"],
+    .fwb-contact input[type="file"],
+    .fwb-contact textarea {
+      background: var(--fwb-white);
+      border: 1px solid var(--fwb-grey-300);
+      border-radius: 0;
+      color: var(--fwb-black);
+      font: inherit;
+      min-height: 50px;
+      padding: 0.85rem 1rem;
+      width: 100%;
+    }
+
+    .fwb-contact input:focus,
+    .fwb-contact textarea:focus {
+      border-color: var(--fwb-black);
+      outline: 1px solid var(--fwb-black);
+    }
+
+    .fwb-contact textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .fwb-contact__check {
+      align-items: flex-start;
+      color: var(--fwb-grey-700);
+      display: flex;
+      gap: 0.75rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 0.65rem;
+    }
+
+    .fwb-contact__check input {
+      margin-top: 0.25rem;
+      width: auto;
+    }
+
+    .fwb-contact__submit {
+      align-self: flex-start;
+      background: var(--fwb-black);
+      border: 1px solid var(--fwb-black);
+      color: var(--fwb-white);
+      cursor: pointer;
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      min-height: 54px;
+      padding: 0 2rem;
+      text-transform: uppercase;
+      transition: background var(--fwb-transition), color var(--fwb-transition);
+    }
+
+    .fwb-contact__submit:hover {
+      background: transparent;
+      color: var(--fwb-black);
+    }
+
+    .fwb-contact__notice {
+      border: 1px solid var(--fwb-grey-300);
+      padding: 1rem 1.25rem;
+    }
+
+    .fwb-contact__notice--success {
+      border-color: var(--fwb-black);
+    }
+
+    .fwb-contact__notice--error {
+      color: var(--fwb-black);
+    }
+
+    @media (max-width: 720px) {
+      .fwb-contact__grid--two,
+      .fwb-contact__grid--zip {
+        grid-template-columns: 1fr;
+      }
+
+      .fwb-contact__switch,
+      .fwb-contact__switch span,
+      .fwb-contact__submit {
+        width: 100%;
+      }
+    }
+  {% endstylesheet %}
+{% else %}
+  <h1>{{ page.title }}</h1>
+
+  {{ page.content }}
+{% endif %}
 
 {% schema %}
 {
