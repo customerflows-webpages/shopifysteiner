@@ -14,9 +14,10 @@
     "footer": {
       "type": "footer",
       "settings": {
+        "brand_name": "FachWissenBau",
         "menu": "footer",
         "address": "FachWissenBau GmbH\nFlorastrasse 42b\n8610 Uster",
-        "email": "info@fachwissenbau.ch",
+        "email": "",
         "linkedin_url": ""
       }
     }
