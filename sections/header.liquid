@@ -78,6 +78,10 @@
           {%- endif -%}
         {%- endunless -%}
       {% endfor %}
+      <a
+        href="/pages/contact"
+        class="fwb-header__nav-link{% if request.page_type == 'page' and page.handle == 'contact' %} is-active{% endif %}"
+      >Kontakt</a>
     </nav>
 
     <div class="fwb-header__actions">
@@ -125,6 +129,7 @@
         {%- endif -%}
       {%- endunless -%}
     {% endfor %}
+    <a href="/pages/contact" class="fwb-header__mobile-link{% if request.page_type == 'page' and page.handle == 'contact' %} is-active{% endif %}">Kontakt</a>
   </div>
 </header>
 
