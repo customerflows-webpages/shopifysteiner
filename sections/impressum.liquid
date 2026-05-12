@@ -1,0 +1,93 @@
+<section class="fwb-legal">
+  <div class="fwb-wrap fwb-legal__wrap">
+
+    <header class="fwb-legal__header">
+      <p class="fwb-label">Rechtliches</p>
+      <h1 class="fwb-h1 fwb-legal__title">Impressum</h1>
+    </header>
+
+    <div class="fwb-legal__body">
+
+      <div class="fwb-legal__card">
+        <p class="fwb-label fwb-legal__card-label">Zuständig für Inhalt</p>
+        <address class="fwb-legal__address">
+          Fachwissenbau GmbH<br>
+          Rolf Steiner<br>
+          Florastrasse 42<br>
+          8610 Uster
+        </address>
+        <a href="mailto:info@fachwissenbau.ch" class="fwb-legal__email">info@fachwissenbau.ch</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .fwb-legal {
+    background: var(--fwb-grey-100);
+    padding-block: var(--fwb-section-pad);
+    min-height: 60vh;
+  }
+
+  .fwb-legal__wrap {
+    max-width: 760px;
+  }
+
+  .fwb-legal__header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-legal__title {
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 0.6rem;
+  }
+
+  .fwb-legal__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .fwb-legal__card {
+    background: var(--fwb-white);
+    border: 1px solid var(--fwb-grey-200);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 380px;
+  }
+
+  .fwb-legal__card-label {
+    color: var(--fwb-grey-500);
+    margin-bottom: 0.25rem;
+  }
+
+  .fwb-legal__address {
+    font-style: normal;
+    line-height: 1.9;
+    font-size: 0.95rem;
+    color: var(--fwb-grey-700);
+  }
+
+  .fwb-legal__email {
+    font-size: 0.9rem;
+    color: var(--fwb-black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity var(--fwb-transition);
+  }
+
+  .fwb-legal__email:hover { opacity: 0.6; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Impressum",
+  "settings": []
+}
+{% endschema %}

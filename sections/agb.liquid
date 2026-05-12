@@ -1,0 +1,109 @@
+<section class="fwb-legal">
+  <div class="fwb-wrap fwb-legal__wrap">
+
+    <header class="fwb-legal__header">
+      <p class="fwb-label">Rechtliches</p>
+      <h1 class="fwb-h1 fwb-legal__title">Allgemeine Geschäftsbedingungen</h1>
+    </header>
+
+    <div class="fwb-legal__body">
+      <div class="fwb-prose">
+
+        <h2>Bestellungen</h2>
+        <p>Alle Bestellungen sind grundsätzlich verbindlich. Die Angaben zur Lieferfrist sind unverbindlich und betragen in der Regel 5 Arbeitstage. Bei Lieferhindernissen werden Sie via E-Mail informiert. Vorübergehend nicht lieferbare Titel werden für Sie vorgemerkt.</p>
+
+        <h2>Preisangaben</h2>
+        <p>Alle Preise verstehen sich inklusive MwSt. Die angegebenen Preise gelten ohne Gewähr unter Vorbehalt allfälliger unvorhersehbarer Preisänderungen der Verlage oder Lieferanten. Wir behalten uns im Ausnahmefall Preisanpassungen vor.</p>
+
+        <h2>Datenschutz</h2>
+        <p>Alle Informationen, die wir von Ihnen erhalten, nutzen wir mit der notwendigen Sorgfalt. Die FachWissenBau GmbH verwendet die gesammelten Informationen über Sie nur, um Bestellungen auszuführen und Ihnen einen bequemeren Einkauf zu ermöglichen.</p>
+
+        <h2>Marketing</h2>
+        <p>Die Nutzung unserer Website gilt als Ihre Zustimmung zur Sammlung und zur Nutzung dieser Informationen durch die FachWissenBau GmbH. Daten aus Bestellungen (aktuelle, historische) inkl. E-Mail-Adressen können für Marketingzwecke der FachWissenBau GmbH verwendet werden.</p>
+
+        <h2>Porto</h2>
+        <p>Versand innerhalb der Schweiz durch die Schweizerische Post (Priority).<br>
+        Auslandlieferungen Europa und Welt: auf Anfrage.</p>
+
+        <h2>Rücksendung</h2>
+        <p>Bei Herstellungsfehlern und Falschlieferungen tauschen wir Ihnen die betreffenden Artikel gegen ein tadelloses Exemplar um. Bitte nehmen Sie mit uns <a href="/pages/contact">Kontakt auf</a>.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .fwb-legal {
+    background: var(--fwb-grey-100);
+    padding-block: var(--fwb-section-pad);
+  }
+
+  .fwb-legal__wrap {
+    max-width: 760px;
+  }
+
+  .fwb-legal__header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-legal__title {
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 0.6rem;
+  }
+
+  .fwb-legal__body {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .fwb-prose {
+    color: var(--fwb-grey-700);
+    line-height: 1.85;
+  }
+
+  .fwb-prose h2 {
+    font-family: var(--fwb-font-heading);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--fwb-black);
+    margin: 2.75rem 0 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--fwb-grey-200);
+  }
+
+  .fwb-prose h2:first-child { margin-top: 0; }
+
+  .fwb-prose p {
+    font-size: 0.91rem;
+    margin: 0 0 1.2rem;
+  }
+
+  .fwb-prose p:last-child { margin-bottom: 0; }
+
+  .fwb-prose strong {
+    font-weight: 600;
+    color: var(--fwb-black);
+  }
+
+  .fwb-prose a {
+    color: var(--fwb-black);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity var(--fwb-transition);
+  }
+
+  .fwb-prose a:hover { opacity: 0.6; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "AGB",
+  "settings": []
+}
+{% endschema %}
