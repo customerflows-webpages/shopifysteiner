@@ -182,7 +182,7 @@
   }
   .fwb-footer__legal-copy {
     font-size: 0.72rem;
-    color: var(--fwb-grey-500);
+    color: var(--fwb-black);
     letter-spacing: 0.02em;
   }
   .fwb-footer__legal-links {
@@ -191,12 +191,13 @@
   }
   .fwb-footer__legal-links a {
     font-size: 0.72rem;
-    color: var(--fwb-grey-500);
+    color: var(--fwb-black);
     letter-spacing: 0.02em;
     text-decoration: none;
-    transition: color var(--fwb-transition);
+    font-weight: 500;
+    transition: opacity var(--fwb-transition);
   }
-  .fwb-footer__legal-links a:hover { color: var(--fwb-black); }
+  .fwb-footer__legal-links a:hover { opacity: 0.5; }
 
   @media (max-width: 900px) {
     .fwb-footer__inner {
