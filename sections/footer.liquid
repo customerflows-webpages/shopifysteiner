@@ -38,6 +38,15 @@
       </div>
     </div>
   </div>
+
+  <div class="fwb-footer__legal-bar fwb-wrap">
+    <span class="fwb-footer__legal-copy">&copy; {{ 'now' | date: '%Y' }} FachWissenBau GmbH</span>
+    <nav class="fwb-footer__legal-links" aria-label="Rechtliches">
+      <a href="/pages/impressum">Impressum</a>
+      <a href="/pages/datenschutz">Datenschutz</a>
+      <a href="/pages/agb">AGB</a>
+    </nav>
+  </div>
 </footer>
 
 {% stylesheet %}
@@ -159,7 +168,36 @@
   
   .fwb-footer__social { color: var(--fwb-black); margin-top: 1.5rem; display: inline-flex; justify-content: center; align-items: center; text-decoration: none; transition: opacity var(--fwb-transition); }
   .fwb-footer__social:hover { opacity: 0.7; }
-  
+
+  .fwb-footer__legal-bar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+  .fwb-footer__legal-copy {
+    font-size: 0.72rem;
+    color: var(--fwb-grey-500);
+    letter-spacing: 0.02em;
+  }
+  .fwb-footer__legal-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .fwb-footer__legal-links a {
+    font-size: 0.72rem;
+    color: var(--fwb-grey-500);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color var(--fwb-transition);
+  }
+  .fwb-footer__legal-links a:hover { color: var(--fwb-black); }
+
   @media (max-width: 900px) {
     .fwb-footer__inner {
       display: flex;
@@ -178,6 +216,8 @@
     .fwb-footer__col { min-height: 0; align-items: center; text-align: center; }
     .fwb-footer__col--right { align-items: center; text-align: center; }
     .fwb-footer__pill { max-width: 100%; }
+    .fwb-footer__legal-bar { flex-direction: column; text-align: center; gap: 0.75rem; }
+    .fwb-footer__legal-links { justify-content: center; flex-wrap: wrap; gap: 1rem; }
   }
 {% endstylesheet %}
 
