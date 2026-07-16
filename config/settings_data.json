@@ -22,6 +22,14 @@
     "min_page_margin": 20,
     "section_padding": 80,
     "button_border_radius": 0,
-    "input_corner_radius": 0
+    "input_corner_radius": 0,
+    "content_for_index": [],
+    "blocks": {
+      "9238438218474412794": {
+        "type": "shopify://apps/shop-protector/blocks/shop-protector/dc9480dd-8b2e-44c6-af5f-83d151d09a0d",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   }
 }
