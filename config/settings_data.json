@@ -29,6 +29,11 @@
         "type": "shopify://apps/shop-protector/blocks/shop-protector/dc9480dd-8b2e-44c6-af5f-83d151d09a0d",
         "disabled": false,
         "settings": {}
+      },
+      "12318114026695823084": {
+        "type": "shopify://apps/yeps/blocks/yeps/e514c124-b6d8-42cf-8001-0defa550f08e",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
